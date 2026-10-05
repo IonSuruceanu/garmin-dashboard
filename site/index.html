@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Garmin Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div>
+      <span class="eyebrow" id="athlete">Garmin dashboard</span>
+      <h1>Training &amp; recovery</h1>
+      <p class="sub" id="sync-line">Loading your data…</p>
+    </div>
+    <div class="range" role="group" aria-label="Date range">
+      <button data-days="7">7 days</button>
+      <button data-days="14">14 days</button>
+      <button data-days="30" aria-pressed="true">30 days</button>
+      <button data-days="0">All</button>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" hidden></div>
+  <div class="banner info" id="wear-note" hidden></div>
+
+  <section class="panel today" id="today-panel" hidden>
+    <div class="panel-head">
+      <h2 id="today-title">Today</h2>
+      <span class="muted" id="today-source"></span>
+    </div>
+    <div class="today-grid">
+      <div class="readiness" id="readiness"></div>
+      <div>
+        <div class="choice" id="choice" hidden></div>
+        <h3 class="sub-head">What would you like to do?</h3>
+        <div class="options" id="options"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tiles" id="tiles" aria-label="Summary"></section>
+
+  <section class="panel" id="insights-panel" hidden>
+    <div class="panel-head">
+      <h2>What's going on</h2>
+      <span class="muted">Compared with your own baseline · not medical advice</span>
+    </div>
+    <div class="insights" id="insights"></div>
+  </section>
+
+  <section class="panel" id="running-panel" hidden>
+    <div class="panel-head">
+      <h2>Running</h2>
+      <span class="muted" id="running-status"></span>
+    </div>
+    <div class="vo2" id="vo2" hidden></div>
+    <div class="tiles inner" id="run-tiles"></div>
+    <div class="predictions" id="predictions"></div>
+    <div class="charts" id="run-charts"></div>
+    <div class="intensity" id="intensity"></div>
+  </section>
+
+  <section class="charts" id="charts" aria-label="Daily trends"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Recent activities</h2>
+      <span class="muted" id="act-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table id="activities">
+        <thead><tr><th>Date</th><th>Activity</th><th class="num">Distance</th><th class="num">Time</th><th class="num">Avg HR</th><th class="num">Calories</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Data sources</h2></div>
+    <div class="sources" id="sources"></div>
+  </section>
+</main>
+
+<div class="tooltip" id="tooltip" role="status" hidden></div>
+<script src="app.js?v=6"></script>
+</body>
+</html>

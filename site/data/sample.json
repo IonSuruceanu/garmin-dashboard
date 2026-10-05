@@ -1,0 +1,2558 @@
+{
+ "athlete": "Demo athlete",
+ "daily": [
+  {
+   "date": "2026-09-06",
+   "steps": 14664,
+   "calories": 2198,
+   "activeCalories": 374,
+   "distanceKm": 12.03,
+   "restingHr": 49,
+   "stressAvg": 29,
+   "bodyBatteryHigh": 88,
+   "bodyBatteryLow": 11,
+   "intensityMinutes": 64,
+   "sleepMin": 394,
+   "deepMin": 75,
+   "lightMin": 240,
+   "remMin": 79,
+   "awakeMin": 18,
+   "sleepScore": 63,
+   "hrv": 54,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-07",
+   "steps": 7943,
+   "calories": 2285,
+   "activeCalories": 864,
+   "distanceKm": 7.67,
+   "restingHr": 49,
+   "stressAvg": 25,
+   "bodyBatteryHigh": 90,
+   "bodyBatteryLow": 30,
+   "intensityMinutes": 74,
+   "sleepMin": 376,
+   "deepMin": 82,
+   "lightMin": 198,
+   "remMin": 96,
+   "awakeMin": 8,
+   "sleepScore": 80,
+   "hrv": 70,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-08",
+   "steps": 4763,
+   "calories": 2372,
+   "activeCalories": 596,
+   "distanceKm": 7.61,
+   "restingHr": 56,
+   "stressAvg": 21,
+   "bodyBatteryHigh": 88,
+   "bodyBatteryLow": 19,
+   "intensityMinutes": 71,
+   "sleepMin": 371,
+   "deepMin": 80,
+   "lightMin": 218,
+   "remMin": 73,
+   "awakeMin": 16,
+   "sleepScore": 65,
+   "hrv": 70,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-09",
+   "steps": 10101,
+   "calories": 2299,
+   "activeCalories": 860,
+   "distanceKm": 10.83,
+   "restingHr": 48,
+   "stressAvg": 37,
+   "bodyBatteryHigh": 76,
+   "bodyBatteryLow": 25,
+   "intensityMinutes": 87,
+   "sleepMin": 415,
+   "deepMin": 91,
+   "lightMin": 214,
+   "remMin": 110,
+   "awakeMin": 39,
+   "sleepScore": 75,
+   "hrv": 76,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-10",
+   "steps": 9924,
+   "calories": 2713,
+   "activeCalories": 554,
+   "distanceKm": 11.74,
+   "restingHr": 51,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 88,
+   "bodyBatteryLow": 19,
+   "intensityMinutes": 67,
+   "sleepMin": 422,
+   "deepMin": 75,
+   "lightMin": 248,
+   "remMin": 99,
+   "awakeMin": 36,
+   "sleepScore": 90,
+   "hrv": 62,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-11",
+   "steps": 5934,
+   "calories": 3148,
+   "activeCalories": 728,
+   "distanceKm": 4.81,
+   "restingHr": 53,
+   "stressAvg": 22,
+   "bodyBatteryHigh": 99,
+   "bodyBatteryLow": 25,
+   "intensityMinutes": 53,
+   "sleepMin": 370,
+   "deepMin": 83,
+   "lightMin": 199,
+   "remMin": 88,
+   "awakeMin": 7,
+   "sleepScore": 92,
+   "hrv": 73,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-12",
+   "steps": 9572,
+   "calories": 2817,
+   "activeCalories": 908,
+   "distanceKm": 8.46,
+   "restingHr": 55,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 96,
+   "bodyBatteryLow": 12,
+   "intensityMinutes": 34,
+   "sleepMin": 407,
+   "deepMin": 59,
+   "lightMin": 230,
+   "remMin": 118,
+   "awakeMin": 35,
+   "sleepScore": 84,
+   "hrv": 73,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-13",
+   "steps": 14602,
+   "calories": 3012,
+   "activeCalories": 591,
+   "distanceKm": 10.88,
+   "restingHr": 53,
+   "stressAvg": 18,
+   "bodyBatteryHigh": 100,
+   "bodyBatteryLow": 24,
+   "intensityMinutes": 45,
+   "sleepMin": 361,
+   "deepMin": 59,
+   "lightMin": 229,
+   "remMin": 73,
+   "awakeMin": 15,
+   "sleepScore": 81,
+   "hrv": 55,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-14",
+   "steps": 8709,
+   "calories": 2364,
+   "activeCalories": 1056,
+   "distanceKm": 5.72,
+   "restingHr": 54,
+   "stressAvg": 33,
+   "bodyBatteryHigh": 72,
+   "bodyBatteryLow": 15,
+   "intensityMinutes": 57,
+   "sleepMin": 376,
+   "deepMin": 86,
+   "lightMin": 217,
+   "remMin": 73,
+   "awakeMin": 30,
+   "sleepScore": 79,
+   "hrv": 60,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-15",
+   "steps": 8561,
+   "calories": 2950,
+   "activeCalories": 667,
+   "distanceKm": 10.51,
+   "restingHr": 54,
+   "stressAvg": 25,
+   "bodyBatteryHigh": 74,
+   "bodyBatteryLow": 12,
+   "intensityMinutes": 22,
+   "sleepMin": 420,
+   "deepMin": 63,
+   "lightMin": 260,
+   "remMin": 97,
+   "awakeMin": 14,
+   "sleepScore": 69,
+   "hrv": 73,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-16",
+   "steps": 13652,
+   "calories": 2473,
+   "activeCalories": 569,
+   "distanceKm": 6.1,
+   "restingHr": 50,
+   "stressAvg": 31,
+   "bodyBatteryHigh": 87,
+   "bodyBatteryLow": 21,
+   "intensityMinutes": 78,
+   "sleepMin": 391,
+   "deepMin": 69,
+   "lightMin": 252,
+   "remMin": 70,
+   "awakeMin": 25,
+   "sleepScore": 92,
+   "hrv": 56,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-17",
+   "steps": 11481,
+   "calories": 2903,
+   "activeCalories": 707,
+   "distanceKm": 7.39,
+   "restingHr": 49,
+   "stressAvg": 33,
+   "bodyBatteryHigh": 90,
+   "bodyBatteryLow": 22,
+   "intensityMinutes": 7,
+   "sleepMin": 397,
+   "deepMin": 99,
+   "lightMin": 196,
+   "remMin": 102,
+   "awakeMin": 17,
+   "sleepScore": 64,
+   "hrv": 58,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-18",
+   "steps": 9571,
+   "calories": 2207,
+   "activeCalories": 404,
+   "distanceKm": 3.0,
+   "restingHr": 50,
+   "stressAvg": 35,
+   "bodyBatteryHigh": 73,
+   "bodyBatteryLow": 21,
+   "intensityMinutes": 78,
+   "sleepMin": 367,
+   "deepMin": 83,
+   "lightMin": 204,
+   "remMin": 80,
+   "awakeMin": 6,
+   "sleepScore": 64,
+   "hrv": 58,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-19",
+   "steps": 14394,
+   "calories": 2616,
+   "activeCalories": 655,
+   "distanceKm": 9.63,
+   "restingHr": 55,
+   "stressAvg": 21,
+   "bodyBatteryHigh": 73,
+   "bodyBatteryLow": 25,
+   "intensityMinutes": 59,
+   "sleepMin": 397,
+   "deepMin": 94,
+   "lightMin": 209,
+   "remMin": 94,
+   "awakeMin": 35,
+   "sleepScore": 77,
+   "hrv": 61,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-20",
+   "steps": 9613,
+   "calories": 2642,
+   "activeCalories": 790,
+   "distanceKm": 12.12,
+   "restingHr": 50,
+   "stressAvg": 34,
+   "bodyBatteryHigh": 70,
+   "bodyBatteryLow": 16,
+   "intensityMinutes": 67,
+   "sleepMin": 342,
+   "deepMin": 60,
+   "lightMin": 203,
+   "remMin": 79,
+   "awakeMin": 28,
+   "sleepScore": 66,
+   "hrv": 74,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-21",
+   "steps": 8883,
+   "calories": 2286,
+   "activeCalories": 1012,
+   "distanceKm": 12.3,
+   "restingHr": 56,
+   "stressAvg": 29,
+   "bodyBatteryHigh": 99,
+   "bodyBatteryLow": 15,
+   "intensityMinutes": 45,
+   "sleepMin": 417,
+   "deepMin": 89,
+   "lightMin": 257,
+   "remMin": 71,
+   "awakeMin": 19,
+   "sleepScore": 79,
+   "hrv": 69,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-22",
+   "steps": 14047,
+   "calories": 2499,
+   "activeCalories": 545,
+   "distanceKm": 12.0,
+   "restingHr": 51,
+   "stressAvg": 24,
+   "bodyBatteryHigh": 86,
+   "bodyBatteryLow": 25,
+   "intensityMinutes": 45,
+   "sleepMin": 396,
+   "deepMin": 87,
+   "lightMin": 218,
+   "remMin": 91,
+   "awakeMin": 6,
+   "sleepScore": 62,
+   "hrv": 77,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-23",
+   "steps": 7172,
+   "calories": 2805,
+   "activeCalories": 757,
+   "distanceKm": 11.89,
+   "restingHr": 53,
+   "stressAvg": 29,
+   "bodyBatteryHigh": 72,
+   "bodyBatteryLow": 17,
+   "intensityMinutes": 13,
+   "sleepMin": 395,
+   "deepMin": 72,
+   "lightMin": 223,
+   "remMin": 100,
+   "awakeMin": 19,
+   "sleepScore": 77,
+   "hrv": 58,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-24",
+   "steps": 14224,
+   "calories": 2103,
+   "activeCalories": 790,
+   "distanceKm": 13.0,
+   "restingHr": 53,
+   "stressAvg": 38,
+   "bodyBatteryHigh": 72,
+   "bodyBatteryLow": 31,
+   "intensityMinutes": 15,
+   "sleepMin": 410,
+   "deepMin": 76,
+   "lightMin": 251,
+   "remMin": 83,
+   "awakeMin": 29,
+   "sleepScore": 87,
+   "hrv": 74,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-25",
+   "steps": 11109,
+   "calories": 2780,
+   "activeCalories": 388,
+   "distanceKm": 11.81,
+   "restingHr": 54,
+   "stressAvg": 32,
+   "bodyBatteryHigh": 82,
+   "bodyBatteryLow": 33,
+   "intensityMinutes": 10,
+   "sleepMin": 379,
+   "deepMin": 67,
+   "lightMin": 212,
+   "remMin": 100,
+   "awakeMin": 15,
+   "sleepScore": 67,
+   "hrv": 56,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-26",
+   "steps": 14745,
+   "calories": 2399,
+   "activeCalories": 926,
+   "distanceKm": 12.09,
+   "restingHr": 55,
+   "stressAvg": 39,
+   "bodyBatteryHigh": 99,
+   "bodyBatteryLow": 21,
+   "intensityMinutes": 19,
+   "sleepMin": 384,
+   "deepMin": 56,
+   "lightMin": 249,
+   "remMin": 79,
+   "awakeMin": 40,
+   "sleepScore": 79,
+   "hrv": 56,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-27",
+   "steps": 12627,
+   "calories": 2385,
+   "activeCalories": 744,
+   "distanceKm": 13.85,
+   "restingHr": 51,
+   "stressAvg": 24,
+   "bodyBatteryHigh": 70,
+   "bodyBatteryLow": 18,
+   "intensityMinutes": 27,
+   "sleepMin": 329,
+   "deepMin": 56,
+   "lightMin": 203,
+   "remMin": 70,
+   "awakeMin": 23,
+   "sleepScore": 78,
+   "hrv": 59,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-28",
+   "steps": 12918,
+   "calories": 2958,
+   "activeCalories": 434,
+   "distanceKm": 3.67,
+   "restingHr": 53,
+   "stressAvg": 32,
+   "bodyBatteryHigh": 91,
+   "bodyBatteryLow": 28,
+   "intensityMinutes": 66,
+   "sleepMin": 405,
+   "deepMin": 92,
+   "lightMin": 223,
+   "remMin": 90,
+   "awakeMin": 31,
+   "sleepScore": 88,
+   "hrv": 68,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-29",
+   "steps": 12577,
+   "calories": 3145,
+   "activeCalories": 319,
+   "distanceKm": 12.6,
+   "restingHr": 50,
+   "stressAvg": 37,
+   "bodyBatteryHigh": 70,
+   "bodyBatteryLow": 34,
+   "intensityMinutes": 19,
+   "sleepMin": 376,
+   "deepMin": 63,
+   "lightMin": 209,
+   "remMin": 104,
+   "awakeMin": 16,
+   "sleepScore": 66,
+   "hrv": 67,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-30",
+   "steps": 13117,
+   "calories": 2226,
+   "activeCalories": 633,
+   "distanceKm": 10.51,
+   "restingHr": 56,
+   "stressAvg": 35,
+   "bodyBatteryHigh": 85,
+   "bodyBatteryLow": 35,
+   "intensityMinutes": 13,
+   "sleepMin": 415,
+   "deepMin": 94,
+   "lightMin": 205,
+   "remMin": 116,
+   "awakeMin": 40,
+   "sleepScore": 63,
+   "hrv": 59,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-01",
+   "steps": 5601,
+   "calories": 3139,
+   "activeCalories": 763,
+   "distanceKm": 9.18,
+   "restingHr": 49,
+   "stressAvg": 32,
+   "bodyBatteryHigh": 80,
+   "bodyBatteryLow": 29,
+   "intensityMinutes": 64,
+   "sleepMin": 349,
+   "deepMin": 67,
+   "lightMin": 195,
+   "remMin": 87,
+   "awakeMin": 37,
+   "sleepScore": 68,
+   "hrv": 74,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-02",
+   "steps": 12737,
+   "calories": 3079,
+   "activeCalories": 819,
+   "distanceKm": 13.36,
+   "restingHr": 56,
+   "stressAvg": 26,
+   "bodyBatteryHigh": 99,
+   "bodyBatteryLow": 27,
+   "intensityMinutes": 25,
+   "sleepMin": 425,
+   "deepMin": 72,
+   "lightMin": 255,
+   "remMin": 98,
+   "awakeMin": 33,
+   "sleepScore": 66,
+   "hrv": 65,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-03",
+   "steps": 9177,
+   "calories": 2248,
+   "activeCalories": 987,
+   "distanceKm": 5.65,
+   "restingHr": 49,
+   "stressAvg": 24,
+   "bodyBatteryHigh": 91,
+   "bodyBatteryLow": 19,
+   "intensityMinutes": 15,
+   "sleepMin": 403,
+   "deepMin": 62,
+   "lightMin": 246,
+   "remMin": 95,
+   "awakeMin": 14,
+   "sleepScore": 92,
+   "hrv": 74,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-04",
+   "steps": 6342,
+   "calories": 2618,
+   "activeCalories": 440,
+   "distanceKm": 13.64,
+   "restingHr": 51,
+   "stressAvg": 41,
+   "bodyBatteryHigh": 100,
+   "bodyBatteryLow": 13,
+   "intensityMinutes": 50,
+   "sleepMin": 444,
+   "deepMin": 96,
+   "lightMin": 236,
+   "remMin": 112,
+   "awakeMin": 36,
+   "sleepScore": 67,
+   "hrv": 73,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-05",
+   "steps": 12447,
+   "calories": 2927,
+   "activeCalories": 647,
+   "distanceKm": 7.63,
+   "restingHr": 53,
+   "stressAvg": 28,
+   "bodyBatteryHigh": 72,
+   "bodyBatteryLow": 33,
+   "intensityMinutes": 46,
+   "sleepMin": 394,
+   "deepMin": 69,
+   "lightMin": 245,
+   "remMin": 80,
+   "awakeMin": 6,
+   "sleepScore": 72,
+   "hrv": 69,
+   "hrvStatus": "BALANCED"
+  }
+ ],
+ "activities": [
+  {
+   "id": 1000,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-10-05 08:30:00",
+   "distanceKm": 8.08,
+   "durationMin": 46.1,
+   "avgHr": 133,
+   "calories": 552,
+   "elevationM": 262,
+   "maxHr": 145,
+   "avgSpeedKmh": 10.52,
+   "aerobicTE": 3.1,
+   "anaerobicTE": 2.3,
+   "trainingLoad": 98,
+   "cadence": 164,
+   "hrZonesMin": [
+    6.9,
+    32.3,
+    4.6,
+    2.3,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1001,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-10-04 07:16:00",
+   "distanceKm": 49.09,
+   "durationMin": 116.4,
+   "avgHr": 134,
+   "calories": 665,
+   "elevationM": 76,
+   "maxHr": 163,
+   "avgSpeedKmh": 25.3,
+   "aerobicTE": 4.0,
+   "anaerobicTE": 1.4,
+   "trainingLoad": 219
+  },
+  {
+   "id": 1002,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-10-03 07:35:00",
+   "distanceKm": 16.44,
+   "durationMin": 95.4,
+   "avgHr": 141,
+   "calories": 324,
+   "elevationM": 137,
+   "maxHr": 153,
+   "avgSpeedKmh": 10.34,
+   "aerobicTE": 2.8,
+   "anaerobicTE": 2.0,
+   "trainingLoad": 61,
+   "cadence": 165,
+   "hrZonesMin": [
+    14.3,
+    66.8,
+    9.5,
+    4.8,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1004,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-10-01 08:10:00",
+   "distanceKm": 8.56,
+   "durationMin": 48.9,
+   "avgHr": 136,
+   "calories": 382,
+   "elevationM": 22,
+   "maxHr": 147,
+   "avgSpeedKmh": 10.5,
+   "aerobicTE": 2.9,
+   "anaerobicTE": 2.3,
+   "trainingLoad": 81,
+   "cadence": 168,
+   "hrZonesMin": [
+    7.3,
+    34.2,
+    4.9,
+    2.4,
+    0.0
+   ],
+   "vo2max": 52
+  },
+  {
+   "id": 1005,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-09-30 07:26:00",
+   "distanceKm": 11.49,
+   "durationMin": 54.7,
+   "avgHr": 166,
+   "calories": 527,
+   "elevationM": 177,
+   "maxHr": 177,
+   "avgSpeedKmh": 12.6,
+   "aerobicTE": 4.0,
+   "anaerobicTE": 0.1,
+   "trainingLoad": 44,
+   "cadence": 172,
+   "hrZonesMin": [
+    5.5,
+    10.9,
+    10.9,
+    21.9,
+    5.5
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1006,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-09-29 07:13:00",
+   "distanceKm": null,
+   "durationMin": 45.2,
+   "avgHr": 145,
+   "calories": 756,
+   "elevationM": null,
+   "maxHr": 174,
+   "avgSpeedKmh": null,
+   "aerobicTE": 3.8,
+   "anaerobicTE": 1.0,
+   "trainingLoad": 169
+  },
+  {
+   "id": 1007,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-28 07:27:00",
+   "distanceKm": 12.21,
+   "durationMin": 69.9,
+   "avgHr": 133,
+   "calories": 393,
+   "elevationM": 207,
+   "maxHr": 147,
+   "avgSpeedKmh": 10.48,
+   "aerobicTE": 2.4,
+   "anaerobicTE": 2.1,
+   "trainingLoad": 43,
+   "cadence": 166,
+   "hrZonesMin": [
+    10.5,
+    48.9,
+    7.0,
+    3.5,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1008,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-09-27 07:48:00",
+   "distanceKm": 50.05,
+   "durationMin": 107.9,
+   "avgHr": 136,
+   "calories": 863,
+   "elevationM": 124,
+   "maxHr": 157,
+   "avgSpeedKmh": 27.83,
+   "aerobicTE": 2.1,
+   "anaerobicTE": 0.5,
+   "trainingLoad": 108
+  },
+  {
+   "id": 1009,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-09-26 07:33:00",
+   "distanceKm": 18.86,
+   "durationMin": 109.9,
+   "avgHr": 138,
+   "calories": 581,
+   "elevationM": 125,
+   "maxHr": 152,
+   "avgSpeedKmh": 10.3,
+   "aerobicTE": 2.8,
+   "anaerobicTE": 0.8,
+   "trainingLoad": 131,
+   "cadence": 165,
+   "hrZonesMin": [
+    16.5,
+    76.9,
+    11.0,
+    5.5,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1011,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-24 07:25:00",
+   "distanceKm": 7.77,
+   "durationMin": 44.6,
+   "avgHr": 136,
+   "calories": 520,
+   "elevationM": 45,
+   "maxHr": 147,
+   "avgSpeedKmh": 10.45,
+   "aerobicTE": 2.9,
+   "anaerobicTE": 0.1,
+   "trainingLoad": 45,
+   "cadence": 165,
+   "hrZonesMin": [
+    6.7,
+    31.2,
+    4.5,
+    2.2,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1012,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-09-23 07:19:00",
+   "distanceKm": 13.31,
+   "durationMin": 63.7,
+   "avgHr": 168,
+   "calories": 648,
+   "elevationM": 391,
+   "maxHr": 178,
+   "avgSpeedKmh": 12.54,
+   "aerobicTE": 4.3,
+   "anaerobicTE": 1.2,
+   "trainingLoad": 112,
+   "cadence": 164,
+   "hrZonesMin": [
+    6.4,
+    12.7,
+    12.7,
+    25.5,
+    6.4
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1013,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-09-22 08:05:00",
+   "distanceKm": null,
+   "durationMin": 44.5,
+   "avgHr": 150,
+   "calories": 392,
+   "elevationM": null,
+   "maxHr": 178,
+   "avgSpeedKmh": null,
+   "aerobicTE": 3.7,
+   "anaerobicTE": 1.4,
+   "trainingLoad": 44
+  },
+  {
+   "id": 1014,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-21 08:14:00",
+   "distanceKm": 11.2,
+   "durationMin": 64.4,
+   "avgHr": 138,
+   "calories": 337,
+   "elevationM": 15,
+   "maxHr": 146,
+   "avgSpeedKmh": 10.43,
+   "aerobicTE": 2.4,
+   "anaerobicTE": 0.9,
+   "trainingLoad": 66,
+   "cadence": 174,
+   "hrZonesMin": [
+    9.7,
+    45.1,
+    6.4,
+    3.2,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1015,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-09-20 07:31:00",
+   "distanceKm": 42.85,
+   "durationMin": 76.2,
+   "avgHr": 122,
+   "calories": 765,
+   "elevationM": 274,
+   "maxHr": 136,
+   "avgSpeedKmh": 33.74,
+   "aerobicTE": 3.5,
+   "anaerobicTE": 0.2,
+   "trainingLoad": 161
+  },
+  {
+   "id": 1016,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-09-19 07:09:00",
+   "distanceKm": 22.72,
+   "durationMin": 133.0,
+   "avgHr": 142,
+   "calories": 486,
+   "elevationM": 378,
+   "maxHr": 159,
+   "avgSpeedKmh": 10.25,
+   "aerobicTE": 2.9,
+   "anaerobicTE": 1.0,
+   "trainingLoad": 162,
+   "cadence": 174,
+   "hrZonesMin": [
+    19.9,
+    93.1,
+    13.3,
+    6.7,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1020,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-09-15 08:28:00",
+   "distanceKm": null,
+   "durationMin": 38.1,
+   "avgHr": 154,
+   "calories": 386,
+   "elevationM": null,
+   "maxHr": 166,
+   "avgSpeedKmh": null,
+   "aerobicTE": 3.1,
+   "anaerobicTE": 1.2,
+   "trainingLoad": 212
+  },
+  {
+   "id": 1022,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-09-13 08:02:00",
+   "distanceKm": 39.1,
+   "durationMin": 100.5,
+   "avgHr": 147,
+   "calories": 727,
+   "elevationM": 238,
+   "maxHr": 162,
+   "avgSpeedKmh": 23.34,
+   "aerobicTE": 4.2,
+   "anaerobicTE": 1.4,
+   "trainingLoad": 119
+  },
+  {
+   "id": 1023,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-09-12 08:00:00",
+   "distanceKm": 15.27,
+   "durationMin": 89.8,
+   "avgHr": 147,
+   "calories": 710,
+   "elevationM": 137,
+   "maxHr": 157,
+   "avgSpeedKmh": 10.2,
+   "aerobicTE": 2.8,
+   "anaerobicTE": 2.4,
+   "trainingLoad": 93,
+   "cadence": 175,
+   "hrZonesMin": [
+    13.5,
+    62.9,
+    9.0,
+    4.5,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1025,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-10 07:16:00",
+   "distanceKm": 8.82,
+   "durationMin": 51.1,
+   "avgHr": 138,
+   "calories": 365,
+   "elevationM": 360,
+   "maxHr": 146,
+   "avgSpeedKmh": 10.36,
+   "aerobicTE": 2.9,
+   "anaerobicTE": 2.2,
+   "trainingLoad": 164,
+   "cadence": 171,
+   "hrZonesMin": [
+    7.7,
+    35.8,
+    5.1,
+    2.6,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1026,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-09-09 07:18:00",
+   "distanceKm": 11.58,
+   "durationMin": 55.9,
+   "avgHr": 162,
+   "calories": 589,
+   "elevationM": 0,
+   "maxHr": 174,
+   "avgSpeedKmh": 12.43,
+   "aerobicTE": 3.7,
+   "anaerobicTE": 2.1,
+   "trainingLoad": 70,
+   "cadence": 169,
+   "hrZonesMin": [
+    5.6,
+    11.2,
+    11.2,
+    22.4,
+    5.6
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1027,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-09-08 08:15:00",
+   "distanceKm": null,
+   "durationMin": 33.5,
+   "avgHr": 145,
+   "calories": 531,
+   "elevationM": null,
+   "maxHr": 158,
+   "avgSpeedKmh": null,
+   "aerobicTE": 2.6,
+   "anaerobicTE": 0.1,
+   "trainingLoad": 209
+  },
+  {
+   "id": 1028,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-07 07:19:00",
+   "distanceKm": 8.51,
+   "durationMin": 49.4,
+   "avgHr": 144,
+   "calories": 573,
+   "elevationM": 97,
+   "maxHr": 160,
+   "avgSpeedKmh": 10.34,
+   "aerobicTE": 2.6,
+   "anaerobicTE": 1.1,
+   "trainingLoad": 47,
+   "cadence": 172,
+   "hrZonesMin": [
+    7.4,
+    34.6,
+    4.9,
+    2.5,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1030,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-09-05 07:52:00",
+   "distanceKm": 18.63,
+   "durationMin": 110.0,
+   "avgHr": 142,
+   "calories": 747,
+   "elevationM": 25,
+   "maxHr": 160,
+   "avgSpeedKmh": 10.16,
+   "aerobicTE": 2.7,
+   "anaerobicTE": 1.2,
+   "trainingLoad": 127,
+   "cadence": 168,
+   "hrZonesMin": [
+    16.5,
+    77.0,
+    11.0,
+    5.5,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1032,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-03 08:01:00",
+   "distanceKm": 8.49,
+   "durationMin": 49.4,
+   "avgHr": 135,
+   "calories": 415,
+   "elevationM": 38,
+   "maxHr": 150,
+   "avgSpeedKmh": 10.31,
+   "aerobicTE": 2.5,
+   "anaerobicTE": 2.0,
+   "trainingLoad": 180,
+   "cadence": 170,
+   "hrZonesMin": [
+    7.4,
+    34.6,
+    4.9,
+    2.5,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1033,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-09-02 07:11:00",
+   "distanceKm": 10.12,
+   "durationMin": 49.1,
+   "avgHr": 164,
+   "calories": 494,
+   "elevationM": 188,
+   "maxHr": 178,
+   "avgSpeedKmh": 12.37,
+   "aerobicTE": 4.0,
+   "anaerobicTE": 0.5,
+   "trainingLoad": 45,
+   "cadence": 175,
+   "hrZonesMin": [
+    4.9,
+    9.8,
+    9.8,
+    19.6,
+    4.9
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1034,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-09-01 07:43:00",
+   "distanceKm": null,
+   "durationMin": 47.0,
+   "avgHr": 149,
+   "calories": 534,
+   "elevationM": null,
+   "maxHr": 179,
+   "avgSpeedKmh": null,
+   "aerobicTE": 4.1,
+   "anaerobicTE": 0.3,
+   "trainingLoad": 168
+  },
+  {
+   "id": 1035,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-31 07:27:00",
+   "distanceKm": 7.72,
+   "durationMin": 45.0,
+   "avgHr": 134,
+   "calories": 659,
+   "elevationM": 330,
+   "maxHr": 149,
+   "avgSpeedKmh": 10.29,
+   "aerobicTE": 2.8,
+   "anaerobicTE": 0.8,
+   "trainingLoad": 45,
+   "cadence": 173,
+   "hrZonesMin": [
+    6.8,
+    31.5,
+    4.5,
+    2.2,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1037,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-08-29 08:07:00",
+   "distanceKm": 21.61,
+   "durationMin": 128.1,
+   "avgHr": 148,
+   "calories": 361,
+   "elevationM": 114,
+   "maxHr": 157,
+   "avgSpeedKmh": 10.12,
+   "aerobicTE": 3.0,
+   "anaerobicTE": 2.4,
+   "trainingLoad": 67,
+   "cadence": 172,
+   "hrZonesMin": [
+    19.2,
+    89.7,
+    12.8,
+    6.4,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1041,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-08-25 07:04:00",
+   "distanceKm": null,
+   "durationMin": 44.9,
+   "avgHr": 137,
+   "calories": 381,
+   "elevationM": null,
+   "maxHr": 157,
+   "avgSpeedKmh": null,
+   "aerobicTE": 3.2,
+   "anaerobicTE": 1.1,
+   "trainingLoad": 68
+  },
+  {
+   "id": 1043,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-23 08:14:00",
+   "distanceKm": 37.22,
+   "durationMin": 88.4,
+   "avgHr": 156,
+   "calories": 251,
+   "elevationM": 5,
+   "maxHr": 185,
+   "avgSpeedKmh": 25.26,
+   "aerobicTE": 2.7,
+   "anaerobicTE": 1.2,
+   "trainingLoad": 120
+  },
+  {
+   "id": 1044,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-08-22 07:31:00",
+   "distanceKm": 18.15,
+   "durationMin": 108.1,
+   "avgHr": 144,
+   "calories": 279,
+   "elevationM": 210,
+   "maxHr": 156,
+   "avgSpeedKmh": 10.07,
+   "aerobicTE": 2.9,
+   "anaerobicTE": 0.5,
+   "trainingLoad": 212,
+   "cadence": 167,
+   "hrZonesMin": [
+    16.2,
+    75.7,
+    10.8,
+    5.4,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1046,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-20 07:29:00",
+   "distanceKm": 7.96,
+   "durationMin": 46.7,
+   "avgHr": 133,
+   "calories": 621,
+   "elevationM": 349,
+   "maxHr": 144,
+   "avgSpeedKmh": 10.23,
+   "aerobicTE": 3.0,
+   "anaerobicTE": 2.0,
+   "trainingLoad": 169,
+   "cadence": 168,
+   "hrZonesMin": [
+    7.0,
+    32.7,
+    4.7,
+    2.3,
+    0.0
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1047,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-08-19 07:59:00",
+   "distanceKm": 9.99,
+   "durationMin": 48.8,
+   "avgHr": 158,
+   "calories": 361,
+   "elevationM": 319,
+   "maxHr": 175,
+   "avgSpeedKmh": 12.28,
+   "aerobicTE": 4.3,
+   "anaerobicTE": 2.2,
+   "trainingLoad": 164,
+   "cadence": 166,
+   "hrZonesMin": [
+    4.9,
+    9.8,
+    9.8,
+    19.5,
+    4.9
+   ],
+   "vo2max": 51
+  },
+  {
+   "id": 1050,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-16 07:53:00",
+   "distanceKm": 34.58,
+   "durationMin": 78.9,
+   "avgHr": 143,
+   "calories": 710,
+   "elevationM": 364,
+   "maxHr": 165,
+   "avgSpeedKmh": 26.3,
+   "aerobicTE": 3.6,
+   "anaerobicTE": 2.5,
+   "trainingLoad": 82
+  },
+  {
+   "id": 1051,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-08-15 07:23:00",
+   "distanceKm": 19.22,
+   "durationMin": 114.9,
+   "avgHr": 139,
+   "calories": 282,
+   "elevationM": 159,
+   "maxHr": 148,
+   "avgSpeedKmh": 10.04,
+   "aerobicTE": 2.5,
+   "anaerobicTE": 2.5,
+   "trainingLoad": 153,
+   "cadence": 168,
+   "hrZonesMin": [
+    17.2,
+    80.4,
+    11.5,
+    5.7,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1053,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-13 07:15:00",
+   "distanceKm": 8.05,
+   "durationMin": 47.4,
+   "avgHr": 143,
+   "calories": 615,
+   "elevationM": 393,
+   "maxHr": 156,
+   "avgSpeedKmh": 10.19,
+   "aerobicTE": 3.1,
+   "anaerobicTE": 1.1,
+   "trainingLoad": 52,
+   "cadence": 172,
+   "hrZonesMin": [
+    7.1,
+    33.2,
+    4.7,
+    2.4,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1054,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-08-12 07:46:00",
+   "distanceKm": 12.33,
+   "durationMin": 60.5,
+   "avgHr": 162,
+   "calories": 670,
+   "elevationM": 126,
+   "maxHr": 173,
+   "avgSpeedKmh": 12.23,
+   "aerobicTE": 3.7,
+   "anaerobicTE": 0.1,
+   "trainingLoad": 56,
+   "cadence": 175,
+   "hrZonesMin": [
+    6.1,
+    12.1,
+    12.1,
+    24.2,
+    6.1
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1055,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-08-11 07:46:00",
+   "distanceKm": null,
+   "durationMin": 37.4,
+   "avgHr": 157,
+   "calories": 294,
+   "elevationM": null,
+   "maxHr": 177,
+   "avgSpeedKmh": null,
+   "aerobicTE": 3.6,
+   "anaerobicTE": 1.7,
+   "trainingLoad": 110
+  },
+  {
+   "id": 1056,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-10 08:16:00",
+   "distanceKm": 10.51,
+   "durationMin": 62.0,
+   "avgHr": 144,
+   "calories": 274,
+   "elevationM": 119,
+   "maxHr": 159,
+   "avgSpeedKmh": 10.17,
+   "aerobicTE": 3.1,
+   "anaerobicTE": 2.4,
+   "trainingLoad": 138,
+   "cadence": 166,
+   "hrZonesMin": [
+    9.3,
+    43.4,
+    6.2,
+    3.1,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1057,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-09 07:38:00",
+   "distanceKm": 49.15,
+   "durationMin": 112.7,
+   "avgHr": 156,
+   "calories": 491,
+   "elevationM": 167,
+   "maxHr": 178,
+   "avgSpeedKmh": 26.17,
+   "aerobicTE": 3.0,
+   "anaerobicTE": 2.0,
+   "trainingLoad": 192
+  },
+  {
+   "id": 1060,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-06 07:20:00",
+   "distanceKm": 6.83,
+   "durationMin": 40.4,
+   "avgHr": 133,
+   "calories": 743,
+   "elevationM": 282,
+   "maxHr": 142,
+   "avgSpeedKmh": 10.14,
+   "aerobicTE": 2.5,
+   "anaerobicTE": 2.5,
+   "trainingLoad": 66,
+   "cadence": 167,
+   "hrZonesMin": [
+    6.1,
+    28.3,
+    4.0,
+    2.0,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1061,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-08-05 08:30:00",
+   "distanceKm": 13.22,
+   "durationMin": 65.2,
+   "avgHr": 162,
+   "calories": 676,
+   "elevationM": 235,
+   "maxHr": 174,
+   "avgSpeedKmh": 12.17,
+   "aerobicTE": 4.1,
+   "anaerobicTE": 2.1,
+   "trainingLoad": 210,
+   "cadence": 168,
+   "hrZonesMin": [
+    6.5,
+    13.0,
+    13.0,
+    26.1,
+    6.5
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1062,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-08-04 07:33:00",
+   "distanceKm": null,
+   "durationMin": 36.0,
+   "avgHr": 133,
+   "calories": 440,
+   "elevationM": null,
+   "maxHr": 152,
+   "avgSpeedKmh": null,
+   "aerobicTE": 2.5,
+   "anaerobicTE": 0.7,
+   "trainingLoad": 188
+  },
+  {
+   "id": 1063,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-03 07:08:00",
+   "distanceKm": 8.31,
+   "durationMin": 49.2,
+   "avgHr": 132,
+   "calories": 788,
+   "elevationM": 118,
+   "maxHr": 147,
+   "avgSpeedKmh": 10.13,
+   "aerobicTE": 2.4,
+   "anaerobicTE": 2.5,
+   "trainingLoad": 66,
+   "cadence": 169,
+   "hrZonesMin": [
+    7.4,
+    34.4,
+    4.9,
+    2.5,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1064,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-02 07:15:00",
+   "distanceKm": 34.55,
+   "durationMin": 104.5,
+   "avgHr": 155,
+   "calories": 448,
+   "elevationM": 38,
+   "maxHr": 178,
+   "avgSpeedKmh": 19.84,
+   "aerobicTE": 3.1,
+   "anaerobicTE": 0.4,
+   "trainingLoad": 194
+  },
+  {
+   "id": 1065,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-08-01 08:25:00",
+   "distanceKm": 20.72,
+   "durationMin": 125.0,
+   "avgHr": 142,
+   "calories": 884,
+   "elevationM": 179,
+   "maxHr": 159,
+   "avgSpeedKmh": 9.95,
+   "aerobicTE": 2.9,
+   "anaerobicTE": 0.9,
+   "trainingLoad": 51,
+   "cadence": 175,
+   "hrZonesMin": [
+    18.8,
+    87.5,
+    12.5,
+    6.2,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1067,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-07-30 07:01:00",
+   "distanceKm": 8.59,
+   "durationMin": 51.0,
+   "avgHr": 140,
+   "calories": 439,
+   "elevationM": 317,
+   "maxHr": 154,
+   "avgSpeedKmh": 10.11,
+   "aerobicTE": 3.0,
+   "anaerobicTE": 0.1,
+   "trainingLoad": 166,
+   "cadence": 165,
+   "hrZonesMin": [
+    7.6,
+    35.7,
+    5.1,
+    2.6,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1068,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-07-29 07:19:00",
+   "distanceKm": 11.39,
+   "durationMin": 56.4,
+   "avgHr": 162,
+   "calories": 657,
+   "elevationM": 356,
+   "maxHr": 179,
+   "avgSpeedKmh": 12.12,
+   "aerobicTE": 3.9,
+   "anaerobicTE": 0.7,
+   "trainingLoad": 118,
+   "cadence": 169,
+   "hrZonesMin": [
+    5.6,
+    11.3,
+    11.3,
+    22.6,
+    5.6
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1070,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-07-27 07:46:00",
+   "distanceKm": 9.08,
+   "durationMin": 54.0,
+   "avgHr": 138,
+   "calories": 458,
+   "elevationM": 3,
+   "maxHr": 153,
+   "avgSpeedKmh": 10.09,
+   "aerobicTE": 2.5,
+   "anaerobicTE": 1.1,
+   "trainingLoad": 63,
+   "cadence": 176,
+   "hrZonesMin": [
+    8.1,
+    37.8,
+    5.4,
+    2.7,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1072,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-07-25 08:22:00",
+   "distanceKm": 19.27,
+   "durationMin": 116.7,
+   "avgHr": 140,
+   "calories": 887,
+   "elevationM": 189,
+   "maxHr": 149,
+   "avgSpeedKmh": 9.91,
+   "aerobicTE": 2.8,
+   "anaerobicTE": 0.9,
+   "trainingLoad": 81,
+   "cadence": 170,
+   "hrZonesMin": [
+    17.5,
+    81.7,
+    11.7,
+    5.8,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1074,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-07-23 07:25:00",
+   "distanceKm": 6.75,
+   "durationMin": 40.3,
+   "avgHr": 143,
+   "calories": 744,
+   "elevationM": 161,
+   "maxHr": 161,
+   "avgSpeedKmh": 10.05,
+   "aerobicTE": 3.1,
+   "anaerobicTE": 1.6,
+   "trainingLoad": 62,
+   "cadence": 176,
+   "hrZonesMin": [
+    6.0,
+    28.2,
+    4.0,
+    2.0,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1075,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-07-22 08:18:00",
+   "distanceKm": 12.12,
+   "durationMin": 60.3,
+   "avgHr": 160,
+   "calories": 828,
+   "elevationM": 111,
+   "maxHr": 171,
+   "avgSpeedKmh": 12.06,
+   "aerobicTE": 4.3,
+   "anaerobicTE": 1.3,
+   "trainingLoad": 138,
+   "cadence": 175,
+   "hrZonesMin": [
+    6.0,
+    12.1,
+    12.1,
+    24.1,
+    6.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1076,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-07-21 08:11:00",
+   "distanceKm": null,
+   "durationMin": 48.8,
+   "avgHr": 120,
+   "calories": 581,
+   "elevationM": null,
+   "maxHr": 135,
+   "avgSpeedKmh": null,
+   "aerobicTE": 2.9,
+   "anaerobicTE": 1.1,
+   "trainingLoad": 200
+  },
+  {
+   "id": 1077,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-07-20 08:23:00",
+   "distanceKm": 8.08,
+   "durationMin": 48.3,
+   "avgHr": 132,
+   "calories": 648,
+   "elevationM": 337,
+   "maxHr": 147,
+   "avgSpeedKmh": 10.04,
+   "aerobicTE": 2.8,
+   "anaerobicTE": 1.1,
+   "trainingLoad": 45,
+   "cadence": 167,
+   "hrZonesMin": [
+    7.2,
+    33.8,
+    4.8,
+    2.4,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1078,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-07-19 07:58:00",
+   "distanceKm": 49.41,
+   "durationMin": 114.5,
+   "avgHr": 143,
+   "calories": 359,
+   "elevationM": 34,
+   "maxHr": 159,
+   "avgSpeedKmh": 25.89,
+   "aerobicTE": 2.8,
+   "anaerobicTE": 0.9,
+   "trainingLoad": 153
+  },
+  {
+   "id": 1079,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-07-18 08:24:00",
+   "distanceKm": 13.29,
+   "durationMin": 80.8,
+   "avgHr": 140,
+   "calories": 571,
+   "elevationM": 398,
+   "maxHr": 149,
+   "avgSpeedKmh": 9.87,
+   "aerobicTE": 3.0,
+   "anaerobicTE": 1.9,
+   "trainingLoad": 136,
+   "cadence": 173,
+   "hrZonesMin": [
+    12.1,
+    56.6,
+    8.1,
+    4.0,
+    0.0
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1081,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-07-16 07:24:00",
+   "distanceKm": 6.07,
+   "durationMin": 36.4,
+   "avgHr": 134,
+   "calories": 419,
+   "elevationM": 351,
+   "maxHr": 146,
+   "avgSpeedKmh": 10.01,
+   "aerobicTE": 2.5,
+   "anaerobicTE": 0.9,
+   "trainingLoad": 104,
+   "cadence": 171,
+   "hrZonesMin": [
+    5.5,
+    25.5,
+    3.6,
+    1.8,
+    0.0
+   ],
+   "vo2max": 49
+  },
+  {
+   "id": 1082,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-07-15 08:01:00",
+   "distanceKm": 8.99,
+   "durationMin": 44.9,
+   "avgHr": 168,
+   "calories": 493,
+   "elevationM": 163,
+   "maxHr": 181,
+   "avgSpeedKmh": 12.01,
+   "aerobicTE": 3.7,
+   "anaerobicTE": 0.5,
+   "trainingLoad": 81,
+   "cadence": 170,
+   "hrZonesMin": [
+    4.5,
+    9.0,
+    9.0,
+    18.0,
+    4.5
+   ],
+   "vo2max": 50
+  },
+  {
+   "id": 1083,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-07-14 07:14:00",
+   "distanceKm": null,
+   "durationMin": 47.4,
+   "avgHr": 121,
+   "calories": 618,
+   "elevationM": null,
+   "maxHr": 147,
+   "avgSpeedKmh": null,
+   "aerobicTE": 3.2,
+   "anaerobicTE": 1.5,
+   "trainingLoad": 66
+  }
+ ],
+ "extras": {
+  "vo2max": 51.4,
+  "trainingStatus": "Productive",
+  "profile": {
+   "sex": "male",
+   "age": 38
+  },
+  "racePredictions": {
+   "5k": 22.9,
+   "10k": 47.6,
+   "half": 105.8,
+   "marathon": 223.5
+  }
+ },
+ "running": {
+  "thisWeekKm": 8.1,
+  "avgWeekKm": 41.7,
+  "runsThisWeek": 1,
+  "longestRecentKm": 18.9,
+  "cadence": 169,
+  "daysSinceLong": 9,
+  "vo2max": 51.4,
+  "vo2": {
+   "value": 51.4,
+   "source": "Garmin",
+   "history": [
+    {
+     "date": "2026-07-15",
+     "value": 50
+    },
+    {
+     "date": "2026-07-16",
+     "value": 49
+    },
+    {
+     "date": "2026-07-18",
+     "value": 50
+    },
+    {
+     "date": "2026-07-20",
+     "value": 50
+    },
+    {
+     "date": "2026-07-22",
+     "value": 50
+    },
+    {
+     "date": "2026-07-23",
+     "value": 50
+    },
+    {
+     "date": "2026-07-25",
+     "value": 50
+    },
+    {
+     "date": "2026-07-27",
+     "value": 50
+    },
+    {
+     "date": "2026-07-29",
+     "value": 50
+    },
+    {
+     "date": "2026-07-30",
+     "value": 50
+    },
+    {
+     "date": "2026-08-01",
+     "value": 50
+    },
+    {
+     "date": "2026-08-03",
+     "value": 50
+    },
+    {
+     "date": "2026-08-05",
+     "value": 50
+    },
+    {
+     "date": "2026-08-06",
+     "value": 50
+    },
+    {
+     "date": "2026-08-10",
+     "value": 50
+    },
+    {
+     "date": "2026-08-12",
+     "value": 50
+    },
+    {
+     "date": "2026-08-13",
+     "value": 50
+    },
+    {
+     "date": "2026-08-15",
+     "value": 50
+    },
+    {
+     "date": "2026-08-19",
+     "value": 51
+    },
+    {
+     "date": "2026-08-20",
+     "value": 51
+    },
+    {
+     "date": "2026-08-22",
+     "value": 51
+    },
+    {
+     "date": "2026-08-29",
+     "value": 51
+    },
+    {
+     "date": "2026-08-31",
+     "value": 51
+    },
+    {
+     "date": "2026-09-02",
+     "value": 51
+    },
+    {
+     "date": "2026-09-03",
+     "value": 51
+    },
+    {
+     "date": "2026-09-05",
+     "value": 51
+    },
+    {
+     "date": "2026-09-07",
+     "value": 51
+    },
+    {
+     "date": "2026-09-09",
+     "value": 51
+    },
+    {
+     "date": "2026-09-10",
+     "value": 51
+    },
+    {
+     "date": "2026-09-12",
+     "value": 51
+    },
+    {
+     "date": "2026-09-19",
+     "value": 51
+    },
+    {
+     "date": "2026-09-21",
+     "value": 51
+    },
+    {
+     "date": "2026-09-23",
+     "value": 51
+    },
+    {
+     "date": "2026-09-24",
+     "value": 51
+    },
+    {
+     "date": "2026-09-26",
+     "value": 51
+    },
+    {
+     "date": "2026-09-28",
+     "value": 51
+    },
+    {
+     "date": "2026-09-30",
+     "value": 51
+    },
+    {
+     "date": "2026-10-01",
+     "value": 52
+    },
+    {
+     "date": "2026-10-03",
+     "value": 51
+    },
+    {
+     "date": "2026-10-05",
+     "value": 51
+    }
+   ],
+   "change": 1.7,
+   "since": "2026-07-15",
+   "level": "Excellent",
+   "next": {
+    "level": "Superior",
+    "at": 54.0
+   },
+   "profile": {
+    "sex": "male",
+    "age": 38
+   }
+  },
+  "trainingStatus": "Productive",
+  "weekly": [
+   {
+    "week": "2026-07-20",
+    "km": 46.2,
+    "runs": 4,
+    "longestKm": 19.3,
+    "partial": false
+   },
+   {
+    "week": "2026-07-27",
+    "km": 49.8,
+    "runs": 4,
+    "longestKm": 20.7,
+    "partial": false
+   },
+   {
+    "week": "2026-08-03",
+    "km": 28.4,
+    "runs": 3,
+    "longestKm": 13.2,
+    "partial": false
+   },
+   {
+    "week": "2026-08-10",
+    "km": 50.1,
+    "runs": 4,
+    "longestKm": 19.2,
+    "partial": false
+   },
+   {
+    "week": "2026-08-17",
+    "km": 36.1,
+    "runs": 3,
+    "longestKm": 18.1,
+    "partial": false
+   },
+   {
+    "week": "2026-08-24",
+    "km": 21.6,
+    "runs": 1,
+    "longestKm": 21.6,
+    "partial": false
+   },
+   {
+    "week": "2026-08-31",
+    "km": 45.0,
+    "runs": 4,
+    "longestKm": 18.6,
+    "partial": false
+   },
+   {
+    "week": "2026-09-07",
+    "km": 44.2,
+    "runs": 4,
+    "longestKm": 15.3,
+    "partial": false
+   },
+   {
+    "week": "2026-09-14",
+    "km": 22.7,
+    "runs": 1,
+    "longestKm": 22.7,
+    "partial": false
+   },
+   {
+    "week": "2026-09-21",
+    "km": 51.1,
+    "runs": 4,
+    "longestKm": 18.9,
+    "partial": false
+   },
+   {
+    "week": "2026-09-28",
+    "km": 48.7,
+    "runs": 4,
+    "longestKm": 16.4,
+    "partial": false
+   },
+   {
+    "week": "2026-10-05",
+    "km": 8.1,
+    "runs": 1,
+    "longestKm": 8.1,
+    "partial": true
+   }
+  ],
+  "efficiency": [
+   {
+    "date": "2026-07-15",
+    "value": 1.192
+   },
+   {
+    "date": "2026-07-16",
+    "value": 1.244
+   },
+   {
+    "date": "2026-07-18",
+    "value": 1.175
+   },
+   {
+    "date": "2026-07-20",
+    "value": 1.267
+   },
+   {
+    "date": "2026-07-22",
+    "value": 1.256
+   },
+   {
+    "date": "2026-07-23",
+    "value": 1.171
+   },
+   {
+    "date": "2026-07-25",
+    "value": 1.179
+   },
+   {
+    "date": "2026-07-27",
+    "value": 1.218
+   },
+   {
+    "date": "2026-07-29",
+    "value": 1.247
+   },
+   {
+    "date": "2026-07-30",
+    "value": 1.203
+   },
+   {
+    "date": "2026-08-01",
+    "value": 1.167
+   },
+   {
+    "date": "2026-08-03",
+    "value": 1.28
+   },
+   {
+    "date": "2026-08-05",
+    "value": 1.252
+   },
+   {
+    "date": "2026-08-06",
+    "value": 1.271
+   },
+   {
+    "date": "2026-08-10",
+    "value": 1.177
+   },
+   {
+    "date": "2026-08-12",
+    "value": 1.258
+   },
+   {
+    "date": "2026-08-13",
+    "value": 1.188
+   },
+   {
+    "date": "2026-08-15",
+    "value": 1.203
+   },
+   {
+    "date": "2026-08-19",
+    "value": 1.296
+   },
+   {
+    "date": "2026-08-20",
+    "value": 1.282
+   },
+   {
+    "date": "2026-08-22",
+    "value": 1.166
+   },
+   {
+    "date": "2026-08-29",
+    "value": 1.14
+   },
+   {
+    "date": "2026-08-31",
+    "value": 1.28
+   },
+   {
+    "date": "2026-09-02",
+    "value": 1.257
+   },
+   {
+    "date": "2026-09-03",
+    "value": 1.273
+   },
+   {
+    "date": "2026-09-05",
+    "value": 1.193
+   },
+   {
+    "date": "2026-09-07",
+    "value": 1.196
+   },
+   {
+    "date": "2026-09-09",
+    "value": 1.279
+   },
+   {
+    "date": "2026-09-10",
+    "value": 1.251
+   },
+   {
+    "date": "2026-09-12",
+    "value": 1.157
+   },
+   {
+    "date": "2026-09-19",
+    "value": 1.203
+   },
+   {
+    "date": "2026-09-21",
+    "value": 1.26
+   },
+   {
+    "date": "2026-09-23",
+    "value": 1.244
+   },
+   {
+    "date": "2026-09-24",
+    "value": 1.281
+   },
+   {
+    "date": "2026-09-26",
+    "value": 1.244
+   },
+   {
+    "date": "2026-09-28",
+    "value": 1.313
+   },
+   {
+    "date": "2026-09-30",
+    "value": 1.265
+   },
+   {
+    "date": "2026-10-01",
+    "value": 1.287
+   },
+   {
+    "date": "2026-10-03",
+    "value": 1.222
+   },
+   {
+    "date": "2026-10-05",
+    "value": 1.318
+   }
+  ],
+  "intensity": {
+   "easy": 75,
+   "moderate": 12,
+   "hard": 13,
+   "minutes": 928
+  },
+  "paces": {
+   "source": "Garmin race predictor",
+   "predictions": {
+    "5k": 22.9,
+    "10k": 47.6,
+    "half": 105.8,
+    "marathon": 223.5
+   },
+   "easy": [
+    5.74,
+    6.24
+   ],
+   "threshold": 4.89,
+   "interval": 4.58,
+   "easyHrMax": 145,
+   "maxHr": 181
+  }
+ },
+ "today": {
+  "score": 62,
+  "level": "steady",
+  "label": "Good for steady training",
+  "source": "your HRV, resting HR, sleep and recent training",
+  "factors": [
+   {
+    "effect": "+",
+    "text": "HRV 69 ms, 6% above your normal"
+   },
+   {
+    "effect": "=",
+    "text": "Resting HR 53 bpm (+1 vs normal)"
+   },
+   {
+    "effect": "=",
+    "text": "Slept 6h 34m"
+   },
+   {
+    "effect": "=",
+    "text": "Body Battery 72"
+   },
+   {
+    "effect": "-",
+    "text": "Hard session yesterday"
+   }
+  ],
+  "daysSinceHard": 0,
+  "date": "2026-10-05",
+  "options": [
+   {
+    "key": "easy",
+    "title": "Easy run",
+    "duration": "40\u201360 min",
+    "summary": "Relaxed, conversational pace: 5:44\u20136:14 /km, heart rate under 145 bpm.",
+    "steps": [
+     "40\u201360 min at 5:44\u20136:14 /km, heart rate under 145 bpm",
+     "Optional: 4\u20136 \u00d7 20 s relaxed strides at the end"
+    ],
+    "status": "recommended",
+    "why": ""
+   },
+   {
+    "key": "rest",
+    "title": "Rest or mobility",
+    "duration": "20\u201330 min",
+    "summary": "No running. A walk, stretching or foam rolling.",
+    "steps": [
+     "10 min easy walk",
+     "10\u201315 min mobility: hips, calves, hamstrings",
+     "Optional: foam roll legs"
+    ],
+    "status": "good",
+    "why": ""
+   },
+   {
+    "key": "recovery",
+    "title": "Recovery run",
+    "duration": "25\u201335 min",
+    "summary": "Very easy, slower than your easy pace, heart rate under 145 bpm.",
+    "steps": [
+     "25\u201335 min very easy (around 6:14 /km or slower)",
+     "Walk breaks are fine"
+    ],
+    "status": "good",
+    "why": ""
+   },
+   {
+    "key": "long",
+    "title": "Long run",
+    "duration": "about 17 km",
+    "summary": "Builds endurance. Steady and easy: 5:44\u20136:14 /km. Better tomorrow or the day after, once you've recovered from your last hard session.",
+    "steps": [
+     "17 km at 5:44\u20136:14 /km, heart rate under 145 bpm",
+     "Take water / fuel if over 75 min",
+     "Keep the last 2 km relaxed, not a race"
+    ],
+    "status": "good",
+    "why": ""
+   },
+   {
+    "key": "strength",
+    "title": "Strength for runners",
+    "duration": "30\u201340 min",
+    "summary": "Legs and core. Makes you more injury-resistant.",
+    "steps": [
+     "3 rounds: 10 squats, 10 lunges per leg, 12 calf raises per leg",
+     "3 rounds: 30 s plank, 30 s side plank each side, 10 glute bridges",
+     "Finish with 5 min mobility"
+    ],
+    "status": "good",
+    "why": ""
+   },
+   {
+    "key": "tempo",
+    "title": "Tempo run",
+    "duration": "45\u201355 min",
+    "summary": "Threshold pace, comfortably hard: 4:50\u20134:56 /km.",
+    "steps": [
+     "15 min warm-up at 5:44\u20136:14 /km",
+     "3 \u00d7 8 min at 4:50\u20134:56 /km, 2 min easy jog between",
+     "10 min cool-down easy"
+    ],
+    "status": "no",
+    "why": "You had a hard session recently; give it at least 48 hours."
+   },
+   {
+    "key": "intervals",
+    "title": "Intervals",
+    "duration": "45\u201350 min",
+    "summary": "Short, fast repeats at 5K pace: 4:29\u20134:38 /km.",
+    "steps": [
+     "15 min warm-up at 5:44\u20136:14 /km + 4 strides",
+     "6 \u00d7 800 m at 4:29\u20134:38 /km, 2 min easy jog between",
+     "10 min cool-down easy"
+    ],
+    "status": "no",
+    "why": "Save very hard efforts for a day when you're fully recovered."
+   }
+  ]
+ },
+ "insights": [
+  {
+   "level": "watch",
+   "title": "You're short on sleep",
+   "detail": "Averaging 6h 41m a night this week, average score 71; 1 night(s) under 6 hours. That's about 5h 44m below a 7h30 target. An earlier night or two would help recovery."
+  },
+  {
+   "level": "watch",
+   "title": "Your long run is a big share of your week",
+   "detail": "Longest run in the last 2 weeks was 18.9 km. Keeping your long run under about 35\u201340% of your weekly distance lowers injury risk."
+  },
+  {
+   "level": "good",
+   "title": "HRV is trending up",
+   "detail": "7-day average 69 ms, 6% above your baseline of 65 ms. You're absorbing training well."
+  },
+  {
+   "level": "good",
+   "title": "Training load is steady",
+   "detail": "6h 47m of training across 6 day(s) in the last 7 days, vs an average of 6h 01m a week over the 3 weeks before."
+  },
+  {
+   "level": "good",
+   "title": "75% of your running is easy",
+   "detail": "That's the 80/20 balance most coaches recommend: lots of easy running builds the base, the hard 20% builds speed."
+  },
+  {
+   "level": "good",
+   "title": "Aerobic fitness is improving",
+   "detail": "Your recent runs cover 4% more distance per heartbeat than earlier ones: you're running faster at the same effort."
+  },
+  {
+   "level": "good",
+   "title": "VO2 max up 1.7",
+   "detail": "Now 51.4, up about 1.7 since 2026-07-15. Your aerobic engine is getting bigger."
+  },
+  {
+   "level": "info",
+   "title": "Daily steps down 17%",
+   "detail": "10,285 a day this week vs 12,406 the week before."
+  },
+  {
+   "level": "info",
+   "title": "8.1 km run this week",
+   "detail": "Your last 4 weeks averaged 41.7 km. A sensible target for a full week is about 46 km (no more than ~10% above your average)."
+  },
+  {
+   "level": "info",
+   "title": "2.6 to reach 'Superior'",
+   "detail": "Your VO2 max of 51.4 rates 'Excellent' for your age and sex; 'Superior' starts at 54.0."
+  }
+ ],
+ "source": "sample",
+ "fetchedAt": "2026-10-05T19:42:05+00:00"
+}
