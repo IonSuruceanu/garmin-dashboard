@@ -124,11 +124,28 @@ def port_in_use(port):
     return False
 
 
+def our_dashboard_running(port):
+    """True if the thing on this port is already this dashboard (serve.py)."""
+    import urllib.request
+    for host in ("127.0.0.1", "[::1]"):
+        try:
+            with urllib.request.urlopen(f"http://{host}:{port}/api/status", timeout=2) as r:
+                if json.load(r).get("server"):
+                    return True
+        except Exception:  # noqa: BLE001 - anything else on the port isn't us
+            continue
+    return False
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--port", type=int, default=8000)
     args = p.parse_args()
     if port_in_use(args.port):
+        if our_dashboard_running(args.port):
+            print(f"The dashboard is already running at http://localhost:{args.port} (in another window).")
+            print("Use that one, or close its window first if you want to restart it.")
+            return
         sys.exit(f"Port {args.port} is already in use, probably by an older dashboard (e.g. `python -m http.server`)\n"
                  f"in another Terminal window. Close that window (or press Ctrl+C in it) and start again,\n"
                  f"or use another port: python serve.py --port {args.port + 1}")
