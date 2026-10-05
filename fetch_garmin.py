@@ -65,9 +65,11 @@ def connect():
         # Each run tries several sign-in methods, so retrying straight away
         # only extends Garmin's block.
         sys.exit(
-            f"Garmin is temporarily blocking sign-ins from this internet connection ({e}).\n"
-            "Wait 1-2 hours without retrying, or connect to a different network\n"
-            "(for example your phone's hotspot) and run the script once."
+            f"Couldn't sign in to Garmin: {e}\n"
+            "If that mentions 429 or 'rate limited', Garmin is temporarily blocking sign-ins\n"
+            "from this internet connection. Wait 1-2 hours without retrying, or connect to a\n"
+            "different network (for example your phone's hotspot) and run the script once.\n"
+            "Otherwise, check your internet connection and try again."
         )
     return api
 
