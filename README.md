@@ -53,6 +53,13 @@ Run it again whenever you want fresh numbers.
 
 ## View the dashboard
 
+The easy way: in Finder, open the `garmin-dashboard` folder and double-click
+**`start.command`**. It updates the project, installs what's needed, starts the
+dashboard and the Telegram bot, and opens the page. (The first time, macOS may
+ask you to confirm opening it.)
+
+Or from Terminal, inside the project folder:
+
 ```bash
 python serve.py
 ```
@@ -61,8 +68,9 @@ Then open <http://localhost:8000>. Keep the Terminal window open while you use
 it. At the top you get **↻ Refresh from Garmin** and **Send report to
 Telegram**; after picking a workout, **Send to Telegram** sends you its plan.
 
-(`python -m http.server 8000 -d site` also works, just without those buttons.) (Opening `index.html` directly from the file
-system doesn't work, because browsers block it from loading the data file.)
+(`python -m http.server 8000 -d site` also works, just without those buttons.
+Opening `index.html` directly from the file system doesn't work, because
+browsers block it from loading the data file.)
 
 If `garmin.json` doesn't exist yet, the page shows demo data from
 `site/data/sample.json`, with a banner saying so. Regenerate the demo data with
