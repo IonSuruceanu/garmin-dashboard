@@ -24,6 +24,7 @@ and Telegram messages.
   Telegram, with your Garmin data as context (optional, needs an API key).
 - **`mcp_server.py`** connects the dashboard to the Claude desktop app, so you
   can ask about your training in the normal Claude chat (no API key needed).
+- **`publish.py`** builds the password-protected online version for GitHub Pages.
 - **`serve.py`** runs the dashboard locally with buttons for refreshing and
   sending to Telegram, and keeps the bot answering within seconds.
 - **`.github/workflows/garmin-telegram.yml`** runs the two Telegram scripts on
@@ -209,6 +210,32 @@ you can follow up; `/new` starts over.
 
 You can also ask from Terminal: `python coach_ai.py "Should I run today?"`.
 Answers are coaching guidance, not medical advice.
+
+### Your dashboard online, password-protected
+
+GitHub can publish the dashboard every morning on GitHub Pages, so you can open
+it on any phone or computer, even with your Mac off. The data is **encrypted with
+your password** before it's published (AES-256-GCM, key from PBKDF2-SHA256 with
+600,000 iterations); the page asks for the password and decrypts in your browser.
+Without it, visitors only see a lock screen. The online version has no Refresh /
+notes buttons (those need your Mac); it updates every morning.
+
+1. Make the repository public: **Settings → General → Danger Zone → Change
+   visibility** (free GitHub Pages needs a public repo; your data and secrets stay
+   private).
+2. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. Add a repository secret **`DASHBOARD_PASSWORD`**: a long passphrase (four or
+   more random words). Anyone can download the encrypted file and try passwords
+   offline, so don't reuse a short or existing password.
+4. **Actions → Garmin → Telegram → Run workflow**. When it finishes, the
+   dashboard is at `https://<your-username>.github.io/garmin-dashboard/`.
+
+"Remember on this device" keeps you unlocked on that browser; **Lock** (next to
+the sync time) forgets it. Changing `DASHBOARD_PASSWORD` locks every device.
+
+What the GitHub job keeps between runs (Garmin login, history) is encrypted too
+(`state.py`, key derived from the `TELEGRAM_BOT_TOKEN` secret), and its logs only
+show counts, never run names or data.
 
 ### Run it automatically on GitHub
 

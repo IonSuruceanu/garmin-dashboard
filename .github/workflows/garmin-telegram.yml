@@ -3,14 +3,14 @@ name: Garmin → Telegram
 on:
   schedule:
     # Times are UTC. GitHub may start scheduled runs a few minutes late.
-    - cron: "15 5 * * *" # morning summary: 07:15 in Switzerland in summer, 06:15 in winter
+    - cron: "15 5 * * *" # morning: summary + dashboard update, 07:15 in Switzerland in summer, 06:15 in winter
     - cron: "40 * * * *" # every hour: message about any new activity
-  workflow_dispatch: # "Run workflow" button for testing
+  workflow_dispatch: # "Run workflow" button
     inputs:
       task:
         description: What to run
         type: choice
-        options: [both, morning summary, new activities]
+        options: [both, morning summary and dashboard, new activities]
         default: both
 
 permissions:
@@ -24,14 +24,20 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
+    outputs:
+      publish: ${{ steps.build.outputs.built }}
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       GARMIN_TOKENS_SEED: ${{ secrets.GARMIN_TOKENS }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # optional: Claude answers questions
+      DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }} # optional: publishes the encrypted dashboard
+      DASHBOARD_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/data/garmin.enc.json
+      # Encrypts what the job keeps between runs (see state.py).
+      STATE_SECRET: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       SUMMARY: ${{ github.event.schedule == '15 5 * * *' || (github.event_name == 'workflow_dispatch' && inputs.task != 'new activities') }}
-      WATCH: ${{ github.event.schedule == '40 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.task != 'morning summary') }}
+      WATCH: ${{ github.event.schedule == '40 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.task != 'morning summary and dashboard') }}
     steps:
       - name: Check secrets are set
         id: check
@@ -61,16 +67,23 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      # Garmin refreshes the login on each run. The refreshed login (and the list
-      # of activities already messaged) is kept in the Actions cache, which is
-      # private to this repo, so the next run starts from it.
-      - name: Restore Garmin login
+      - name: Install
+        if: steps.check.outputs.ready == 'true'
+        run: pip install -r requirements.txt
+
+      # The Garmin login (refreshed on every run) and the saved history are kept in
+      # the Actions cache, encrypted, so the next run can continue from them.
+      - name: Restore saved state
         if: steps.check.outputs.ready == 'true'
         uses: actions/cache/restore@v4
         with:
-          path: ~/.garminconnect
-          key: garmin-state-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: garmin-state-
+          path: .state.enc
+          key: garmin-enc-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: garmin-enc-
+
+      - name: Decrypt saved state
+        if: steps.check.outputs.ready == 'true'
+        run: python state.py unpack
 
       - name: Use GARMIN_TOKENS secret if it is new
         if: steps.check.outputs.ready == 'true'
@@ -78,7 +91,7 @@ jobs:
           umask 077
           mkdir -p ~/.garminconnect
           seed_hash=$(printf '%s' "$GARMIN_TOKENS_SEED" | sha256sum | cut -d' ' -f1)
-          # A changed secret (e.g. after signing in again on the Mac) replaces the cached login.
+          # A changed secret (e.g. after signing in again on the Mac) replaces the saved login.
           if [ ! -f ~/.garminconnect/garmin_tokens.json ] || [ "$(cat ~/.garminconnect/seed.sha 2>/dev/null)" != "$seed_hash" ]; then
             printf '%s' "$GARMIN_TOKENS_SEED" > ~/.garminconnect/garmin_tokens.json
             echo "$seed_hash" > ~/.garminconnect/seed.sha
@@ -86,10 +99,6 @@ jobs:
           else
             echo "Using login saved by the previous run."
           fi
-
-      - name: Install
-        if: steps.check.outputs.ready == 'true'
-        run: pip install -r requirements.txt
 
       - name: Message new activities
         if: steps.check.outputs.ready == 'true' && env.WATCH == 'true'
@@ -103,8 +112,20 @@ jobs:
       - name: Morning summary
         if: steps.check.outputs.ready == 'true' && env.SUMMARY == 'true'
         run: |
-          python fetch_garmin.py --quick
+          python fetch_garmin.py
           python telegram_summary.py
+
+      - name: Build the encrypted dashboard
+        id: build
+        if: steps.check.outputs.ready == 'true' && env.SUMMARY == 'true' && env.DASHBOARD_PASSWORD != ''
+        run: |
+          python publish.py --out _site
+          echo "built=true" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.build.outputs.built == 'true'
+        with:
+          path: _site
 
       - name: Tell me on Telegram if it failed
         if: failure() && steps.check.outputs.ready == 'true'
@@ -113,9 +134,29 @@ jobs:
             --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
             --data-urlencode "text=⚠️ Garmin → Telegram failed. Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
-      - name: Save refreshed Garmin login
+      - name: Encrypt state
+        if: always() && steps.check.outputs.ready == 'true'
+        run: python state.py pack
+
+      - name: Save state
         if: always() && steps.check.outputs.ready == 'true'
         uses: actions/cache/save@v4
         with:
-          path: ~/.garminconnect
-          key: garmin-state-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .state.enc
+          key: garmin-enc-${{ github.run_id }}-${{ github.run_attempt }}
+
+  # Publishes the encrypted dashboard on GitHub Pages (Settings → Pages → Source:
+  # GitHub Actions). Runs only after the morning build.
+  deploy:
+    needs: run
+    if: needs.run.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
