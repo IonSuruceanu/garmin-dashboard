@@ -56,6 +56,7 @@
     $('sync-line').textContent = (data.source === 'sample' ? 'Demo data · generated ' : 'Synced from Garmin Connect ') + ago(data.fetchedAt) +
       (rows.length ? ' · ' + day(rows[0].date) + ' – ' + day(rows[rows.length - 1].date) : '');
     if (data.source === 'sample') showBanner('You are looking at <strong>demo data</strong>. Run <code>python fetch_garmin.py</code> to load your own Garmin data.');
+    renderWearNote(rows);
     renderToday();
     renderTiles(rows);
     renderInsights();
@@ -70,7 +71,7 @@
     var tiles = [
       { label: 'Avg steps', value: num(avg(rows, 'steps')), note: 'per day' },
       { label: 'Avg sleep', value: hm(avg(rows, 'sleepMin')), note: 'score ' + num(avg(rows, 'sleepScore')) },
-      { label: 'Resting HR', value: num(rhr && rhr.restingHr), unit: 'bpm', note: 'avg ' + num(avg(rows, 'restingHr')) },
+      { label: 'Resting HR', value: num(rhr && rhr.restingHr), unit: 'bpm', note: rhr && !rhr.sleepMin ? 'daytime estimate: watch not worn overnight' : 'avg ' + num(avg(rows, 'restingHr')) },
       { label: 'HRV', value: num(hrv && hrv.hrv), unit: 'ms', note: hrv && hrv.hrvStatus ? hrv.hrvStatus.toLowerCase().replace(/_/g, ' ') : 'last night' },
       { label: 'Avg stress', value: num(avg(rows, 'stressAvg')), note: '0–100 scale' },
       { label: 'Body Battery', value: num(bb && bb.bodyBatteryHigh), note: 'latest daily high' }
@@ -96,6 +97,16 @@
       return '<article class="insight ' + esc(i.level) + '"><span class="insight-tag"><svg viewBox="0 0 24 24" aria-hidden="true">' + tag[1] + '</svg>' + tag[0] + '</span>' +
         '<h3>' + esc(i.title) + '</h3><p>' + esc(i.detail) + '</p></article>';
     }).join('');
+  }
+
+  // Sleep, HRV and a true resting heart rate all need the watch worn overnight.
+  function renderWearNote(rows) {
+    var nights = rows.filter(function (r) { return r.sleepMin; }).length;
+    var show = rows.length >= 3 && nights < rows.length * 0.3;
+    $('wear-note').hidden = !show;
+    if (show) $('wear-note').innerHTML = '<strong>Your watch recorded sleep on only ' + nights + ' of ' + rows.length + ' nights.</strong> ' +
+      'Wear it overnight to get sleep, HRV and an accurate resting heart rate (without night-time data Garmin estimates resting HR from daytime, so it reads high). ' +
+      'Until then, readiness is based mostly on your training.';
   }
 
   // ---------- today ----------

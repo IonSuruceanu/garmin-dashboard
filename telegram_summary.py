@@ -121,6 +121,8 @@ def build_message(data):
         status = f" ({hrv['hrvStatus'].lower().replace('_', ' ')})" if hrv.get("hrvStatus") else ""
         lines.append(f"💓 HRV: <b>{hrv['hrv']} ms</b>{status}" + trend(hrv["hrv"], avg(history, "hrv"), " ms"))
     rhr = latest(days[-2:], "restingHr")
+    if rhr and not rhr.get("sleepMin"):
+        rhr = None  # daytime estimate, not a real resting value
     if rhr:
         lines.append(f"❤️ Resting HR: <b>{rhr['restingHr']} bpm</b>" +
                      trend(rhr["restingHr"], avg(history, "restingHr"), " bpm", higher_is_better=False))

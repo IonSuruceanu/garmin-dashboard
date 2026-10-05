@@ -33,8 +33,9 @@ def recovery(daily):
     """Resting HR and HRV: the two clearest signals of how recovered you are."""
     out = []
     recent, base = daily[-3:], daily[:-3]
-    rhr_now, rhr_base = _avg(_col(recent, "restingHr")), _avg(_col(base, "restingHr"))
-    if rhr_now is not None and rhr_base is not None and len(base) >= 7:
+    rhr_now = _avg([coach.night_rhr(d) for d in recent])
+    rhr_base = _avg([coach.night_rhr(d) for d in base])
+    if rhr_now is not None and rhr_base is not None and len([d for d in base if coach.night_rhr(d)]) >= 7:
         diff = rhr_now - rhr_base
         if diff >= 3:
             out.append((WATCH, "Resting heart rate is up",

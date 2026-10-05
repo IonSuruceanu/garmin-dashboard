@@ -65,6 +65,7 @@ button { font: inherit; color: inherit; }
 
 .banner { background: var(--warn-soft); color: var(--warn); padding: 12px 16px; font-size: 14px; border-left: 3px solid var(--warn); }
 .banner code { font: 13px var(--mono); }
+.banner.info { background: var(--accent-soft); color: var(--fg); border-left-color: var(--accent); }
 
 .tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .tile { background: var(--surface); padding: 16px 18px; display: grid; gap: 4px; align-content: start; }

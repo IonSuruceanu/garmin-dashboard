@@ -52,6 +52,12 @@ def fmt_time(minutes):
     return f"{h}:{m:02d}:{s:02d}" if h else f"{m}:{s:02d}"
 
 
+def night_rhr(d):
+    """Resting HR only counts when the watch was worn overnight; otherwise
+    Garmin estimates it from daytime readings and it reads far too high."""
+    return d.get("restingHr") if d.get("sleepMin") else None
+
+
 def _max_hr(runs):
     vals = [a.get("maxHr") for a in runs if a.get("maxHr")]
     return max(vals) if vals else None
@@ -233,8 +239,8 @@ def readiness(data, today, max_hr):
         score += _clamp(pct * 1.2, -15, 10)
         factors.append(("+" if pct >= 3 else "-" if pct <= -5 else "=",
                         f"HRV {last['hrv']} ms, {abs(pct):.0f}% {'above' if pct >= 0 else 'below'} your normal"))
-    rhr_base = _avg([d.get("restingHr") for d in base[-21:]])
-    if last.get("restingHr") and rhr_base:
+    rhr_base = _avg([night_rhr(d) for d in base[-21:]])
+    if night_rhr(last) and rhr_base:
         diff = last["restingHr"] - rhr_base
         score -= _clamp(diff * 3, -6, 15)
         factors.append(("-" if diff >= 2 else "+" if diff <= -1 else "=",
@@ -270,6 +276,9 @@ def readiness(data, today, max_hr):
         elif ratio < 0.8:
             score += 5
             factors.append(("+", "Lighter week than usual, so you're fresh"))
+
+    if not last.get("sleepMin") and not last.get("hrv"):
+        factors.append(("=", "No overnight data from your watch: wear it to bed for a fuller picture"))
 
     garmin = extras.get("readiness") or {}
     source = "your HRV, resting HR, sleep and recent training"
