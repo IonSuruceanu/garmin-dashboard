@@ -1,1 +1,2 @@
 garminconnect>=0.3.2
+truststore>=0.9  # use the Mac's own certificates for HTTPS

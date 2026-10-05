@@ -177,17 +177,24 @@ def run_once():
 def listen(stop=None):
     """Keep answering until stopped. Long polling: Telegram holds each request
     open for up to 30 s and returns as soon as a message arrives."""
-    token, chat_id = credentials()
-    offset = None
+    token = chat_id = None
+    offset, last_error = None, None
     while not (stop and stop.is_set()):
         try:
+            if token is None:
+                token, chat_id = credentials()
+                if last_error:
+                    print("Telegram bot connected.", file=sys.stderr)
+                last_error = None
             params = {"timeout": 30, **({"offset": offset} if offset else {})}
             for u in tg.telegram(token, "getUpdates", params, timeout=40):
                 offset = u["update_id"] + 1
                 safe_handle(u, token, chat_id)
-        except SystemExit as e:  # e.g. GitHub's hourly job polling at the same moment
-            print(f"Telegram: {e}; retrying shortly.", file=sys.stderr)
-            time.sleep(10)
+        except SystemExit as e:  # no connection, or GitHub's hourly job polling at the same moment
+            if str(e) != last_error:  # say it once, not every retry
+                print(f"\nTelegram bot: {e}\nRetrying every 30 seconds…\n", file=sys.stderr)
+                last_error = str(e)
+            time.sleep(30 if token is None else 10)
         except Exception as e:  # network hiccup: keep the listener alive
             print(f"Telegram listener error: {e}", file=sys.stderr)
             time.sleep(5)

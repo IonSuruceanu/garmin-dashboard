@@ -13,6 +13,7 @@ import html
 import json
 import os
 import re
+import ssl
 import subprocess
 import sys
 import urllib.error
@@ -30,17 +31,44 @@ class BadToken(Exception):
     pass
 
 
+def _ssl_context():
+    """Trust the same certificates as your computer (macOS Keychain), so it works
+    behind antivirus web protection, VPNs and inspecting networks too."""
+    try:
+        import truststore
+        return truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+    except ImportError:
+        pass
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
+SSL_CONTEXT = _ssl_context()
+NO_SECURE_CONNECTION = (
+    "Couldn't make a secure connection to Telegram. Something on this network is\n"
+    "intercepting it (antivirus web protection, a VPN, or a work/school network).\n"
+    "Run `pip install -r requirements.txt` so Python uses your Mac's certificates;\n"
+    "if it still fails, try another network such as your phone's hotspot.")
+
+
 def telegram(token, method, params=None, timeout=20):
     url = f"https://api.telegram.org/bot{token}/{method}"
     body = urllib.parse.urlencode(params or {}).encode()
     try:
-        with urllib.request.urlopen(url, data=body, timeout=timeout) as r:
+        with urllib.request.urlopen(url, data=body, timeout=timeout, context=SSL_CONTEXT) as r:
             return json.load(r)["result"]
     except urllib.error.HTTPError as e:
         if e.code in (401, 404):
             raise BadToken() from None
         detail = json.load(e).get("description", e.reason)
         sys.exit(f"Telegram error: {detail}")
+    except urllib.error.URLError as e:
+        if isinstance(e.reason, ssl.SSLError):
+            sys.exit(NO_SECURE_CONNECTION)
+        sys.exit(f"Couldn't reach Telegram: {e.reason}. Check your internet connection.")
 
 
 def check_token(token):
