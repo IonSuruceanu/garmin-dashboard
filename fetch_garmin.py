@@ -38,6 +38,8 @@ MAX_DETAILS_PER_FETCH = 40  # spread the first big download over a few fetches
 MAX_WEATHER_PER_FETCH = 150
 ACTIVITY_DAYS = 84  # used by the demo data
 TOKEN_DIR = os.getenv("GARMINTOKENS", "~/.garminconnect")
+# On GitHub the logs can be public: print counts only, never names or error text.
+QUIET = bool(os.getenv("GITHUB_ACTIONS"))
 
 
 def dig(obj, *keys):
@@ -97,7 +99,8 @@ def safe(label, fn, *args):
     try:
         return fn(*args)
     except Exception as e:  # noqa: BLE001 - one missing metric shouldn't stop the export
-        print(f"  ! {label}: {e}", file=sys.stderr)
+        detail = type(e).__name__ if QUIET else e
+        print(f"  ! {label.split()[0]}: {detail}", file=sys.stderr)
         return None
 
 
@@ -285,7 +288,8 @@ def sync_daily(api, days):
     print(f"Daily data: {len(todo)} day(s) to fetch ({len(saved)} saved)…")
     for n, ds in enumerate(sorted(todo), 1):
         saved[ds] = fetch_day(api, date.fromisoformat(ds))
-        print(f"  {ds}  ({n}/{len(todo)})", end="\r")
+        if not QUIET:
+            print(f"  {ds}  ({n}/{len(todo)})", end="\r")
         time.sleep(0.3)  # be gentle; Garmin rate-limits aggressive clients
         if n % 20 == 0:
             store.write("daily.json", saved)  # keep progress if interrupted
@@ -331,7 +335,8 @@ def sync_details(api, acts):
         d["decoupling"] = run_detail.decoupling(d)
         store.save_detail(a["id"], d)
         acts[str(a["id"])]["decoupling"] = d["decoupling"]
-        print(f"  {a['start'][:10]} {a.get('name') or ''}  ({n}/{len(batch)})", end="\r")
+        if not QUIET:
+            print(f"  {a['start'][:10]} {a.get('name') or ''}  ({n}/{len(batch)})", end="\r")
         time.sleep(0.5)
     store.write("activities.json", acts)
     if len(todo) > len(batch):

@@ -7,7 +7,7 @@
 <title>Garmin Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 <main class="page">
@@ -15,7 +15,7 @@
     <div>
       <span class="eyebrow" id="athlete">Garmin dashboard</span>
       <h1>Training &amp; recovery</h1>
-      <p class="sub" id="sync-line">Loading your data…</p>
+      <p class="sub"><span id="sync-line">Loading your data…</span> <button class="link-btn" id="lock-link" hidden>Lock</button></p>
     </div>
     <div class="top-actions">
     <div class="actions" id="actions" hidden>
@@ -107,6 +107,18 @@
   </section>
 </main>
 
+<div class="lock" id="lock" hidden>
+  <form class="lock-card" id="lock-form">
+    <span class="eyebrow">Private dashboard</span>
+    <h2>Enter your password</h2>
+    <p class="muted">Your Garmin data is encrypted. It's unlocked here, in your browser.</p>
+    <label class="visually-hidden" for="lock-password">Password</label>
+    <input id="lock-password" name="password" type="password" autocomplete="current-password" required placeholder="Password">
+    <label class="remember"><input type="checkbox" name="remember" checked> Remember on this device</label>
+    <button class="act-btn primary" type="submit">Unlock</button>
+    <p class="lock-msg" id="lock-msg" role="status"></p>
+  </form>
+</div>
 <div class="tooltip" id="tooltip" role="status" hidden></div>
 <div class="toast" id="toast" role="status" hidden></div>
 <div class="drawer-overlay" id="drawer" hidden>
@@ -115,6 +127,6 @@
     <div id="drawer-body"></div>
   </aside>
 </div>
-<script src="app.js?v=10"></script>
+<script src="app.js?v=11"></script>
 </body>
 </html>

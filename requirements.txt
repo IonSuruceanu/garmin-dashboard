@@ -2,3 +2,4 @@ garminconnect>=0.3.2
 truststore>=0.9  # use the Mac's own certificates for HTTPS
 anthropic>=1.0  # Claude answers to questions in Telegram (optional)
 mcp>=2.0  # connector for the Claude desktop app
+cryptography>=42  # encrypts the published dashboard

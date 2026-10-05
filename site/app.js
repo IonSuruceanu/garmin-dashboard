@@ -33,10 +33,90 @@
   // ---------- loading ----------
   function load(url) { return fetch(url, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw r.status; return r.json(); }); }
 
-  load('data/garmin.json').catch(function () {
-    return load('data/sample.json').then(function (d) { d.source = 'sample'; return d; });
-  }).then(function (d) {
-    data = d; render();
+  // ---------- encrypted (published) data ----------
+  // On the published site the data is encrypted; it is decrypted here, in the browser.
+  var encDetails = null;
+  var KEY_STORE = 'garmin-dashboard-key';
+  function b64(s) { var bin = atob(s), out = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i); return out; }
+  function toB64(buf) { var b = new Uint8Array(buf), s = ''; for (var i = 0; i < b.length; i++) s += String.fromCharCode(b[i]); return btoa(s); }
+  function deriveKey(password, blob) {
+    return crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']).then(function (k) {
+      return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(blob.salt), iterations: blob.iterations, hash: 'SHA-256' },
+        k, { name: 'AES-GCM', length: 256 }, true, ['decrypt']);
+    });
+  }
+  function decryptBlob(key, blob) {
+    return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(blob.iv) }, key, b64(blob.data)).then(function (buf) {
+      var stream = new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip'));
+      return new Response(stream).text();
+    }).then(JSON.parse);
+  }
+  function savedKey(blob) {
+    try {
+      var s = JSON.parse(localStorage.getItem(KEY_STORE) || 'null');
+      if (!s || s.salt !== blob.salt) return Promise.resolve(null);
+      return crypto.subtle.importKey('raw', b64(s.key), 'AES-GCM', true, ['decrypt']);
+    } catch (e) { return Promise.resolve(null); }
+  }
+  function useBundle(b) {
+    encDetails = b.details || {};
+    $('lock').hidden = true;
+    $('lock-link').hidden = false;
+    data = b.data; render();
+  }
+  function unlock(blob) {
+    var form = $('lock-form'), msg = $('lock-msg');
+    $('lock').hidden = false;
+    form.password.focus();
+    form.onsubmit = function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button');
+      btn.disabled = true; msg.textContent = 'Unlocking…';
+      deriveKey(form.password.value, blob).then(function (key) {
+        return decryptBlob(key, blob).then(function (b) {
+          if (form.remember.checked) {
+            crypto.subtle.exportKey('raw', key).then(function (raw) {
+              try { localStorage.setItem(KEY_STORE, JSON.stringify({ salt: blob.salt, key: toB64(raw) })); } catch (err) {}
+            });
+          }
+          form.password.value = ''; msg.textContent = '';
+          useBundle(b);
+        });
+      }).catch(function () { msg.textContent = 'Wrong password, or the data couldn\'t be read.'; })
+        .then(function () { btn.disabled = false; });
+    };
+  }
+  $('lock-link').addEventListener('click', function () {
+    try { localStorage.removeItem(KEY_STORE); } catch (e) {}
+    location.reload();
+  });
+
+  function loadPublished() {
+    return load('data/garmin.enc.json').then(function (blob) {
+      if (!window.crypto || !crypto.subtle || typeof DecompressionStream === 'undefined') {
+        $('sync-line').textContent = 'This browser is too old to unlock the dashboard.';
+        return true;
+      }
+      return savedKey(blob).then(function (key) {
+        return key ? decryptBlob(key, blob).then(useBundle) : Promise.reject();
+      }).catch(function () {
+        try { localStorage.removeItem(KEY_STORE); } catch (e) {}
+        $('sync-line').textContent = 'Locked';
+        unlock(blob);
+      }).then(function () { return true; });
+    }, function () { return false; });
+  }
+
+  function getDetail(a) {
+    if (encDetails) return encDetails[a.id] ? Promise.resolve(encDetails[a.id]) : Promise.reject(404);
+    return load('data/' + a.detailPath);
+  }
+
+  loadPublished().then(function (published) {
+    if (published) return;
+    return load('data/garmin.json').catch(function () {
+      return load('data/sample.json').then(function (d) { d.source = 'sample'; return d; });
+    }).then(function (d) { data = d; render(); });
   }).catch(function () {
     $('sync-line').textContent = 'No data found.';
     showBanner('No data yet. Run <code>python fetch_garmin.py</code> (or <code>--sample</code> for demo data), then serve this folder with <code>python -m http.server -d site</code>.');
@@ -502,7 +582,7 @@
       $('detail-laps').innerHTML = '<p class="muted">' + (isRun && (a.distanceKm || 0) >= 4 ? 'Laps and heart-rate details will appear after the next refresh.' : 'Laps and details are kept for runs over 4 km.') + '</p>';
       return;
     }
-    load('data/' + a.detailPath).then(function (d) {
+    getDetail(a).then(function (d) {
       if (openId !== id) return;
       var s = d.series, box = $('detail-charts');
       if (s && s.t && s.t.length) {
