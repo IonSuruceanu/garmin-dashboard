@@ -178,7 +178,7 @@
       { label: '4-week average', value: num(r.avgWeekKm, 1), unit: 'km', note: 'per week' },
       { label: 'Longest (2 wks)', value: num(r.longestRecentKm, 1), unit: 'km', note: r.daysSinceLong < 99 ? 'last long run ' + r.daysSinceLong + ' d ago' : '' },
       { label: 'Easy pace', value: p.easy ? pace(p.easy[0]) + '–' + pace(p.easy[1]) : '—', unit: '/km', note: p.easyHrMax ? 'HR under ' + p.easyHrMax : '' },
-      { label: 'VO2 max', value: r.vo2max ? num(r.vo2max, 1) : '—', note: 'from Garmin' },
+      { label: 'Training status', value: r.trainingStatus || '—', note: 'from Garmin' },
       { label: 'Cadence', value: num(r.cadence), unit: 'spm', note: '4-week average' }
     ];
     $('run-tiles').innerHTML = tiles.map(function (t) {
@@ -192,6 +192,8 @@
       return '<span>' + n[1] + ' <strong>' + raceTime(pr[n[0]]) + '</strong></span>';
     }).join('') + '<span class="muted">' + esc(p.source || '') + '</span>' : '';
 
+    renderVo2(r.vo2);
+
     var box = $('run-charts');
     box.innerHTML = '';
     var weeks = r.weekly.map(function (w) { return { date: w.week, km: w.km, runs: w.runs, partial: w.partial }; });
@@ -200,6 +202,12 @@
       when: function (row) { return 'Week of ' + day(row.date) + (row.partial ? ' (so far)' : ''); },
       axis: function (v) { return num(v); },
       summary: 'last 12 weeks' });
+    if (r.vo2 && r.vo2.history && r.vo2.history.length >= 3) {
+      addChart(box, r.vo2.history, { key: 'value', title: 'VO2 max', kind: 'line', minSpan: 2, round: 1,
+        fmt: function (v) { return 'VO2 max ' + num(v, 1); },
+        axis: function (v) { return num(v); },
+        summary: r.vo2.source === 'Garmin' ? 'from Garmin, per run' : 'weekly estimate from pace and heart rate' });
+    }
     var eff = (r.efficiency || []).slice(-30);
     if (eff.length >= 4) {
       addChart(box, eff, { key: 'value', title: 'Running efficiency', kind: 'line', minSpan: 0.06, round: 0.02,
@@ -215,6 +223,25 @@
       '<div class="int-legend">' + [['Easy', 'easy', 1], ['Moderate', 'moderate', 2], ['Hard', 'hard', 3]].map(function (z) {
         return '<span><i style="background:var(--int-' + z[2] + ')"></i>' + z[0] + ' <strong>' + it[z[1]] + '%</strong></span>';
       }).join('') + '</div>' : '';
+  }
+
+  var VO2_LEVELS = ['Poor', 'Fair', 'Good', 'Excellent', 'Superior'];
+  function renderVo2(v) {
+    $('vo2').hidden = !v;
+    if (!v) return;
+    var who = v.profile && v.profile.age ? ' for a ' + v.profile.age + '-year-old ' + (v.profile.sex === 'female' ? 'woman' : 'man') : '';
+    var idx = VO2_LEVELS.indexOf(v.level);
+    var change = v.change == null ? '' : Math.abs(v.change) < 0.5 ? 'Stable since ' + day(v.since) + '.' :
+      '<span class="' + (v.change > 0 ? 'up' : 'down') + '">' + (v.change > 0 ? '▲ +' : '▼ ') + num(v.change, 1) + '</span> since ' + day(v.since) + '.';
+    $('vo2').innerHTML =
+      '<div class="vo2-value"><small>VO2 max</small>' + num(v.value, 1) + '</div>' +
+      '<div>' + (v.level ?
+        '<div class="vo2-level">' + v.level + '<span>' + esc(who) + '</span></div>' +
+        '<div class="vo2-scale" role="img" aria-label="Fitness level ' + v.level + '">' + VO2_LEVELS.map(function (l, i) { return '<div class="' + (i === idx ? 'on' : '') + '"></div>'; }).join('') + '</div>' +
+        '<div class="vo2-scale-labels">' + VO2_LEVELS.map(function (l, i) { return '<span class="' + (i === idx ? 'on' : '') + '">' + l + '</span>'; }).join('') + '</div>'
+        : '<div class="vo2-level">ml/kg/min<span> · add your age and sex in Garmin Connect to see your fitness level</span></div>') +
+      '<p>' + change + (v.next ? ' ' + esc(v.next.level) + ' starts at ' + num(v.next.at, 1) + '.' : '') +
+      ' <span class="muted">Source: ' + esc(v.source) + '.</span></p></div>';
   }
 
   function addChart(wrap, rows, c) {

@@ -69,6 +69,103 @@ def is_hard(a, max_hr):
     return bool(max_hr and a.get("avgHr") and a["avgHr"] >= 0.86 * max_hr)
 
 
+# ---------- VO2 max ----------
+
+# Fitness classification by age and sex (Cooper Institute norms, the table
+# Garmin uses): minimum VO2 max for Superior, Excellent, Good, Fair.
+VO2_NORMS = {
+    "male": [(29, 55.4, 51.1, 45.4, 41.7), (39, 54.0, 48.3, 44.0, 40.5), (49, 52.5, 46.4, 42.4, 38.5),
+             (59, 48.9, 43.4, 39.2, 35.6), (69, 45.7, 39.5, 35.5, 32.3), (200, 42.1, 36.7, 32.3, 29.4)],
+    "female": [(29, 49.6, 43.9, 39.5, 36.1), (39, 47.4, 42.4, 37.8, 34.4), (49, 45.3, 39.7, 36.3, 33.0),
+               (59, 41.1, 36.7, 33.0, 30.1), (69, 37.8, 33.0, 30.0, 27.5), (200, 36.7, 30.9, 28.1, 25.9)],
+}
+VO2_LEVELS = ["Superior", "Excellent", "Good", "Fair", "Poor"]
+
+
+def vo2_cost(speed_m_min):
+    """Oxygen cost (ml/kg/min) of running at a speed (Daniels & Gilbert)."""
+    return -4.60 + 0.182258 * speed_m_min + 0.000104 * speed_m_min ** 2
+
+
+def run_vo2_estimate(a, max_hr):
+    """Estimate VO2 max from one steady run using heart rate: the speed's oxygen
+    cost divided by the share of VO2 max that heart rate implies (Swain:
+    %HRmax = 0.64 x %VO2max + 37). Rough: hills, heat and fatigue all skew it."""
+    p = run_pace(a)
+    if not (p and max_hr and a.get("avgHr") and (a.get("distanceKm") or 0) >= 3):
+        return None
+    hr_frac = a["avgHr"] / max_hr
+    if not 0.65 <= hr_frac <= 0.95:
+        return None
+    vo2_frac = (hr_frac * 100 - 37) / 64
+    return vo2_cost(1000 / p) / vo2_frac
+
+
+def vo2_level(value, profile):
+    sex, age = (profile or {}).get("sex"), (profile or {}).get("age")
+    if not value or sex not in VO2_NORMS or not age:
+        return None, None
+    row = next(r for r in VO2_NORMS[sex] if age <= r[0])
+    idx = next((i for i, cut in enumerate(row[1:]) if value >= cut), 4)
+    nxt = None if idx == 0 else {"level": VO2_LEVELS[idx - 1], "at": row[idx]}
+    return VO2_LEVELS[idx], nxt
+
+
+def vo2max(runs, extras, today, max_hr):
+    """Current VO2 max, its 12-week trend and fitness level for your age and sex."""
+    garmin_hist = sorted(({"date": _day(a), "value": a["vo2max"]} for a in runs if a.get("vo2max")),
+                         key=lambda x: x["date"])
+    current, source = extras.get("vo2max"), "Garmin"
+    history = garmin_hist
+    if not history:
+        # No Garmin values: weekly median of heart-rate based estimates.
+        monday = today - timedelta(days=today.weekday())
+        for k in range(11, -1, -1):
+            start = monday - timedelta(weeks=k)
+            ests = [e for e in (run_vo2_estimate(a, max_hr) for a in runs
+                                if start.isoformat() <= _day(a) <= (start + timedelta(days=6)).isoformat()) if e]
+            if ests:
+                history.append({"date": start.isoformat(), "value": round(median(ests), 1)})
+        if not current and history:
+            current = round(median([h["value"] for h in history[-3:]]), 1)
+            source = "estimated from your runs' pace and heart rate"
+    if not current and history:
+        current = history[-1]["value"]
+    if not current:
+        return None
+    # Single readings are noisy, so compare the first three with the last three.
+    change = (round(_avg([h["value"] for h in history[-3:]]) - _avg([h["value"] for h in history[:3]]), 1)
+              if len(history) >= 6 else None)
+    level, nxt = vo2_level(current, extras.get("profile"))
+    return {
+        "value": round(current, 1),
+        "source": source,
+        "history": history,
+        "change": change,
+        "since": history[0]["date"] if history else None,
+        "level": level,
+        "next": nxt,
+        "profile": extras.get("profile"),
+    }
+
+
+def vo2_insights(v):
+    if not v:
+        return []
+    out = []
+    if v.get("change") is not None and v["since"]:
+        if v["change"] >= 0.5:
+            out.append(("good", f"VO2 max up {v['change']:.1f}",
+                        f"Now {v['value']}, up about {v['change']:.1f} since {v['since']}. Your aerobic engine is getting bigger."))
+        elif v["change"] <= -0.5:
+            out.append(("watch", f"VO2 max down {abs(v['change']):.1f}",
+                        f"Now {v['value']}, down about {abs(v['change']):.1f} since {v['since']}. Consistent easy running plus one quality session a week usually turns this around."))
+    if v.get("next"):
+        out.append(("info", f"{v['next']['at'] - v['value']:.1f} to reach '{v['next']['level']}'",
+                    f"Your VO2 max of {v['value']} rates '{v['level']}' for your age and sex; '{v['next']['level']}' starts at {v['next']['at']}."))
+    return out
+
+
 # ---------- running analysis ----------
 
 def paces(runs, extras, today):
@@ -175,6 +272,7 @@ def running(data, today):
         "cadence": round(cad) if cad else None,
         "daysSinceLong": days_since_long,
         "vo2max": extras.get("vo2max"),
+        "vo2": vo2max(runs, extras, today, max_hr),
         "trainingStatus": extras.get("trainingStatus"),
         "weekly": weeks,
         "efficiency": efficiency(runs),
@@ -216,6 +314,7 @@ def running_insights(r):
         elif change <= -3:
             out.append(("watch", "Running feels harder than usual",
                         f"Your recent runs cover {abs(change):.0f}% less distance per heartbeat. Heat, fatigue, illness or hills can all cause this. Watch your recovery."))
+    out += vo2_insights(r.get("vo2"))
     if r["longestRecentKm"] and wk and r["longestRecentKm"] > 0.45 * max(wk, avg4 or 0) and avg4 >= 15:
         out.append(("watch", "Your long run is a big share of your week",
                     f"Longest run in the last 2 weeks was {r['longestRecentKm']} km. Keeping your long run under about 35–40% of your weekly distance lowers injury risk."))

@@ -128,6 +128,12 @@ def build_message(data):
                      trend(rhr["restingHr"], avg(history, "restingHr"), " bpm", higher_is_better=False))
     if today.get("bodyBatteryHigh"):
         lines.append(f"🔋 Body Battery: <b>{today['bodyBatteryHigh']}</b>")
+    vo2 = (data.get("running") or {}).get("vo2")
+    if vo2:
+        bits = [vo2["level"]] if vo2.get("level") else []
+        if vo2.get("change") is not None and abs(vo2["change"]) >= 0.5:
+            bits.append(f"{'↑' if vo2['change'] > 0 else '↓'}{abs(vo2['change']):.1f} in 12 weeks")
+        lines.append(f"🫁 VO2 max: <b>{vo2['value']}</b>" + (f" · {', '.join(bits)}" if bits else ""))
 
     if yesterday and (yesterday.get("steps") or yesterday.get("stressAvg") is not None):
         lines += ["", "<b>Yesterday</b>"]

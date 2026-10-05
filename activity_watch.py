@@ -113,6 +113,14 @@ def message(a, history):
         lines.append(te)
     if a.get("trainingLoad"):
         lines.append(f"📈 Training load {a['trainingLoad']}")
+    # Garmin attaches its VO2 max estimate to runs; mention it when it moves.
+    if a.get("vo2max"):
+        prev = next((h["vo2max"] for h in history if h.get("vo2max") and h["id"] != a["id"]
+                     and (h.get("start") or "") < (a.get("start") or "")), None)
+        if prev and a["vo2max"] != prev:
+            lines.append(f"🫁 VO2 max {'up' if a['vo2max'] > prev else 'down'} to <b>{a['vo2max']}</b> (was {prev})")
+        elif not prev:
+            lines.append(f"🫁 VO2 max {a['vo2max']}")
     note = compare(a, history)
     if note:
         lines += ["", f"<i>{esc(note)}</i>"]

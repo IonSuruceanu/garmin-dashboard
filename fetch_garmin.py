@@ -182,6 +182,18 @@ def fetch_extras(api, today):
     if vo2.get("vo2MaxPreciseValue") or vo2.get("vo2MaxValue"):
         extras["vo2max"] = round(vo2.get("vo2MaxPreciseValue") or vo2.get("vo2MaxValue"), 1)
 
+    user = dig(safe("profile", api.get_user_profile), "userData") or {}
+    profile = {}
+    if user.get("gender") in ("MALE", "FEMALE"):
+        profile["sex"] = user["gender"].lower()
+    if user.get("birthDate"):
+        born = date.fromisoformat(user["birthDate"][:10])  # only the age is kept
+        profile["age"] = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+    if profile:
+        extras["profile"] = profile
+    if not extras.get("vo2max") and user.get("vo2MaxRunning"):
+        extras["vo2max"] = round(user["vo2MaxRunning"], 1)
+
     rp = first(safe("race predictions", api.get_race_predictions))
     if isinstance(rp, dict):
         keys = {"5k": "time5K", "10k": "time10K", "half": "timeHalfMarathon", "marathon": "timeMarathon"}
@@ -244,7 +256,11 @@ def sample_data(days):
             a["hrZonesMin"] = [round(m * x, 1) for x in ((.15, .7, .1, .05, 0) if easy else (.1, .2, .2, .4, .1))]
             a["aerobicTE"] = round(rnd.uniform(2.4, 3.2) if easy else rnd.uniform(3.6, 4.4), 1)
     activities.sort(key=lambda a: a["start"], reverse=True)
-    extras = {"vo2max": 51.4, "trainingStatus": "Productive",
+    for a in activities:  # Garmin attaches its VO2 max estimate to runs
+        if a["type"] == "running":
+            days_ago = (today - date.fromisoformat(a["start"][:10])).days
+            a["vo2max"] = round(49.6 + (ACTIVITY_DAYS - days_ago) / ACTIVITY_DAYS * 1.8 + rnd.uniform(-0.3, 0.3))
+    extras = {"vo2max": 51.4, "trainingStatus": "Productive", "profile": {"sex": "male", "age": 38},
               "racePredictions": {"5k": 22.9, "10k": 47.6, "half": 105.8, "marathon": 223.5}}
     return {"athlete": "Demo athlete", "daily": daily, "activities": activities, "extras": extras}
 
