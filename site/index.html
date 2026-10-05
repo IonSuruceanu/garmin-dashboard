@@ -7,7 +7,7 @@
 <title>Garmin Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 <main class="page">
@@ -17,11 +17,17 @@
       <h1>Training &amp; recovery</h1>
       <p class="sub" id="sync-line">Loading your data…</p>
     </div>
+    <div class="top-actions">
+    <div class="actions" id="actions" hidden>
+      <button class="act-btn" data-api="refresh">↻ Refresh from Garmin</button>
+      <button class="act-btn primary" data-api="report" data-needs-telegram>Send report to Telegram</button>
+    </div>
     <div class="range" role="group" aria-label="Date range">
       <button data-days="7">7 days</button>
       <button data-days="14">14 days</button>
       <button data-days="30" aria-pressed="true">30 days</button>
       <button data-days="0">All</button>
+    </div>
     </div>
   </header>
 
@@ -87,6 +93,7 @@
 </main>
 
 <div class="tooltip" id="tooltip" role="status" hidden></div>
-<script src="app.js?v=6"></script>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="app.js?v=7"></script>
 </body>
 </html>

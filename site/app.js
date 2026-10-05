@@ -42,6 +42,45 @@
     showBanner('No data yet. Run <code>python fetch_garmin.py</code> (or <code>--sample</code> for demo data), then serve this folder with <code>python -m http.server -d site</code>.');
   });
 
+  // ---------- actions (serve.py only) ----------
+  var server = { server: false, telegram: false };
+  fetch('/api/status', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (s) {
+    if (!s || !s.server) return;
+    server = s;
+    $('actions').hidden = false;
+    document.querySelectorAll('[data-needs-telegram]').forEach(function (b) {
+      if (!s.telegram) { b.disabled = true; b.title = 'Set up Telegram first: python telegram_summary.py --setup'; }
+    });
+    if (data) renderToday();
+  }).catch(function () {});
+
+  var toastTimer;
+  function toast(msg, isError) {
+    var t = $('toast');
+    t.textContent = msg; t.className = 'toast' + (isError ? ' error' : ''); t.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, isError ? 8000 : 4000);
+  }
+
+  function callApi(name, body, btn) {
+    var label = btn && btn.textContent;
+    if (btn) { btn.disabled = true; btn.textContent = name === 'refresh' ? 'Refreshing… (up to a minute)' : 'Sending…'; }
+    return fetch('/api/' + name, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'Something went wrong'); return j; }); })
+      .then(function (j) {
+        toast(j.message || 'Done');
+        if (name === 'refresh') return load('data/garmin.json').then(function (d) { data = d; render(); });
+      })
+      .catch(function (e) { toast(e.message, true); })
+      .then(function () { if (btn) { btn.disabled = false; btn.textContent = label; } });
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-api]');
+    if (!b) return;
+    e.stopPropagation();
+    callApi(b.dataset.api, b.dataset.key ? { key: b.dataset.key } : null, b);
+  }, true);
+
   function showBanner(html) { var b = $('banner'); b.innerHTML = html; b.hidden = false; }
 
   // ---------- render ----------
@@ -148,6 +187,7 @@
       $('choice').innerHTML = '<span class="tile-label">Your plan today</span><h3>' + esc(pick.title) + ' · ' + esc(pick.duration) + '</h3>' +
         '<ol>' + pick.steps.map(function (st) { return '<li>' + esc(st) + '</li>'; }).join('') + '</ol>' +
         '<div class="choice-actions">' + (pick.status === 'no' ? '<span class="muted">Heads up: ' + esc(pick.why) + '</span>' : '') +
+        (server.telegram ? '<button class="act-btn primary" data-api="workout" data-key="' + pick.key + '">Send to Telegram</button>' : '') +
         '<button class="link-btn" data-clear>Change my choice</button></div>';
     }
   }

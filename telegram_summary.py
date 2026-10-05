@@ -30,11 +30,11 @@ class BadToken(Exception):
     pass
 
 
-def telegram(token, method, params=None):
+def telegram(token, method, params=None, timeout=20):
     url = f"https://api.telegram.org/bot{token}/{method}"
     body = urllib.parse.urlencode(params or {}).encode()
     try:
-        with urllib.request.urlopen(url, data=body, timeout=20) as r:
+        with urllib.request.urlopen(url, data=body, timeout=timeout) as r:
             return json.load(r)["result"]
     except urllib.error.HTTPError as e:
         if e.code in (401, 404):
@@ -104,17 +104,28 @@ def setup():
     print(f"For GitHub Actions: TELEGRAM_CHAT_ID = {chat['id']} (the token is the one from BotFather)")
 
 
-def send(message):
-    """Send an HTML-formatted message to your chat."""
-    # GitHub Actions passes these as secrets; on your Mac they come from telegram.json.
+def config():
+    """Bot token and chat id: GitHub secrets in Actions, telegram.json on your Mac."""
     cfg = {"token": os.getenv("TELEGRAM_BOT_TOKEN"), "chat_id": os.getenv("TELEGRAM_CHAT_ID")}
-    if not (cfg["token"] and cfg["chat_id"]):
-        if not CONFIG_FILE.exists():
-            sys.exit("Telegram isn't set up yet. Run: python telegram_summary.py --setup")
-        cfg = json.loads(CONFIG_FILE.read_text())
+    if cfg["token"] and cfg["chat_id"]:
+        return cfg
+    if CONFIG_FILE.exists():
+        return json.loads(CONFIG_FILE.read_text())
+    return None
+
+
+def send(message, buttons=None):
+    """Send an HTML-formatted message to your chat, optionally with tap buttons
+    given as rows of (label, callback_data) pairs."""
+    cfg = config()
+    if not cfg:
+        sys.exit("Telegram isn't set up yet. Run: python telegram_summary.py --setup")
+    params = {"chat_id": cfg["chat_id"], "text": message, "parse_mode": "HTML", "disable_web_page_preview": "true"}
+    if buttons:
+        params["reply_markup"] = json.dumps({"inline_keyboard": [
+            [{"text": label, "callback_data": data} for label, data in row] for row in buttons]})
     try:
-        telegram(cfg["token"], "sendMessage", {"chat_id": cfg["chat_id"], "text": message,
-                                               "parse_mode": "HTML", "disable_web_page_preview": "true"})
+        telegram(cfg["token"], "sendMessage", params)
     except BadToken:
         sys.exit("Telegram rejected the saved bot token (revoked?). Run: python telegram_summary.py --setup")
 

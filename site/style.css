@@ -122,6 +122,17 @@ tr:last-child td { border-bottom: 0; }
 .insight h3 { font-size: 15px; }
 .insight p { margin: 0; color: var(--muted); font-size: 14px; }
 
+/* Actions (only when started with serve.py) */
+.top-actions { display: grid; gap: 10px; justify-items: end; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.act-btn { background: var(--surface); border: 1px solid var(--line); color: var(--heading); padding: 8px 14px; font-size: 14px; font-weight: 500; cursor: pointer; }
+.act-btn:hover:not(:disabled) { border-color: var(--accent); }
+.act-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.act-btn:disabled { opacity: .55; cursor: progress; }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 60; background: var(--heading); color: var(--surface); padding: 10px 16px; font-size: 14px; max-width: calc(100% - 32px); box-shadow: 0 8px 24px rgba(10, 34, 102, .2); }
+.toast.error { background: var(--warn); color: #fff; }
+@media (max-width: 760px) { .top-actions { justify-items: stretch; width: 100%; } .actions { justify-content: stretch; } .act-btn { flex: 1; } }
+
 /* Today */
 .sub-head { font-size: 14px; margin: 0 0 10px; color: var(--heading); }
 .today-grid { display: grid; grid-template-columns: 260px 1fr; gap: 24px; }

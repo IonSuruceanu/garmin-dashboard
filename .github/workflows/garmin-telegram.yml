@@ -85,6 +85,11 @@ jobs:
         if: steps.check.outputs.ready == 'true' && env.WATCH == 'true'
         run: python activity_watch.py
 
+      # Replies to /report, /today and /refresh sent while your Mac was off.
+      - name: Answer Telegram commands
+        if: steps.check.outputs.ready == 'true' && env.WATCH == 'true'
+        run: python telegram_bot.py --once
+
       - name: Morning summary
         if: steps.check.outputs.ready == 'true' && env.SUMMARY == 'true'
         run: |

@@ -16,6 +16,9 @@ and Telegram messages.
   shows that file as charts, tables and insights.
 - **`telegram_summary.py`** sends a morning summary to your Telegram.
 - **`activity_watch.py`** sends a Telegram message after each new activity.
+- **`telegram_bot.py`** answers `/report`, `/today` and `/refresh` sent to your bot.
+- **`serve.py`** runs the dashboard locally with buttons for refreshing and
+  sending to Telegram, and keeps the bot answering within seconds.
 - **`.github/workflows/garmin-telegram.yml`** runs the two Telegram scripts on
   GitHub's servers, so they work while your Mac is off.
 
@@ -51,10 +54,14 @@ Run it again whenever you want fresh numbers.
 ## View the dashboard
 
 ```bash
-python -m http.server 8000 -d site
+python serve.py
 ```
 
-Then open <http://localhost:8000>. (Opening `index.html` directly from the file
+Then open <http://localhost:8000>. Keep the Terminal window open while you use
+it. At the top you get **↻ Refresh from Garmin** and **Send report to
+Telegram**; after picking a workout, **Send to Telegram** sends you its plan.
+
+(`python -m http.server 8000 -d site` also works, just without those buttons.) (Opening `index.html` directly from the file
 system doesn't work, because browsers block it from loading the data file.)
 
 If `garmin.json` doesn't exist yet, the page shows demo data from
@@ -114,6 +121,20 @@ python telegram_summary.py            # send this morning's summary now
 python telegram_summary.py --dry-run  # just print it
 python activity_watch.py              # message any new activities
 ```
+
+### Ask your bot for a report
+
+Send these to your bot in Telegram:
+
+| Command | What you get |
+|---|---|
+| `/report` | today's full summary |
+| `/today` | readiness and workout options as buttons; tap one for the full plan |
+| `/refresh` | fetches new data from Garmin, then sends the report |
+
+While `python serve.py` (or `python telegram_bot.py`) is running on your Mac,
+the bot answers within seconds. When it isn't, the hourly GitHub job answers,
+so the reply can take up to an hour. The bot only answers your own chat.
 
 ### Run it automatically on GitHub
 
