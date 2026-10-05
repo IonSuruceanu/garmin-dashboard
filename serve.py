@@ -11,6 +11,9 @@ you picked. While it runs, your Telegram bot also answers /report, /today and
 
 import argparse
 import json
+import socket
+import sys
+import traceback
 import threading
 from datetime import date
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -101,13 +104,34 @@ class Handler(SimpleHTTPRequestHandler):
             return self.reply(400, {"error": str(e)})
         except SystemExit as e:  # the scripts exit with a readable message on errors
             return self.reply(500, {"error": str(e)})
+        except Exception as e:  # noqa: BLE001 - always answer the page; details go to Terminal
+            traceback.print_exc()
+            return self.reply(500, {"error": f"Something went wrong ({type(e).__name__}: {e}). Details are in the Terminal window."})
         return self.reply(404, {"error": "Unknown action."})
+
+
+def port_in_use(port):
+    """True if something already answers on this port (IPv4 or IPv6), e.g. an old
+    `python -m http.server` left running in another Terminal window."""
+    for family, host in ((socket.AF_INET, "127.0.0.1"), (socket.AF_INET6, "::1")):
+        try:
+            with socket.socket(family, socket.SOCK_STREAM) as s:
+                s.settimeout(0.5)
+                if s.connect_ex((host, port)) == 0:
+                    return True
+        except OSError:
+            continue
+    return False
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--port", type=int, default=8000)
     args = p.parse_args()
+    if port_in_use(args.port):
+        sys.exit(f"Port {args.port} is already in use, probably by an older dashboard (e.g. `python -m http.server`)\n"
+                 f"in another Terminal window. Close that window (or press Ctrl+C in it) and start again,\n"
+                 f"or use another port: python serve.py --port {args.port + 1}")
     server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     print(f"Dashboard running at http://localhost:{args.port}  (press Ctrl+C to stop)")
     stop = threading.Event()

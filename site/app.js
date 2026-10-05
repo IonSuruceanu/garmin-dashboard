@@ -63,9 +63,21 @@
 
   function callApi(name, body, btn) {
     var label = btn && btn.textContent;
-    if (btn) { btn.disabled = true; btn.textContent = name === 'refresh' ? 'Refreshing… (up to a minute)' : 'Sending…'; }
+    if (btn) { btn.disabled = true; btn.textContent = name === 'refresh' ? 'Refreshing… (the first time takes a few minutes)' : 'Saving…'; }
     return fetch('/api/' + name, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'Something went wrong'); return j; }); })
+      .then(function (r) {
+        return r.text().then(function (text) {
+          var j;
+          try { j = JSON.parse(text); } catch (e) {
+            // An HTML page instead of our JSON: usually an older `python -m http.server` on the same port.
+            throw new Error(r.status === 501 || r.status === 404
+              ? 'This button needs serve.py, but another (older) server answered. Close any Terminal window running "python -m http.server", then start the dashboard again.'
+              : 'The dashboard server sent an unexpected reply (HTTP ' + r.status + '). Check its Terminal window.');
+          }
+          if (!r.ok) throw new Error(j.error || 'Something went wrong');
+          return j;
+        });
+      })
       .then(function (j) {
         toast(j.message || 'Done');
         if (name === 'refresh') return load('data/garmin.json').then(function (d) { data = d; render(); });

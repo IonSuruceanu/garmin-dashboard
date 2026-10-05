@@ -61,8 +61,12 @@ def refresh():
         raise ValueError("A refresh is already running.")
     try:
         args = ["--quick"] if os.getenv("GITHUB_ACTIONS") else []
-        r = subprocess.run([sys.executable, str(ROOT / "fetch_garmin.py"), *args], cwd=ROOT,
-                           stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=600)
+        try:
+            # The first full download (history, run details, weather) can take several minutes.
+            r = subprocess.run([sys.executable, str(ROOT / "fetch_garmin.py"), *args], cwd=ROOT,
+                               stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=1800)
+        except subprocess.TimeoutExpired:
+            raise ValueError("Refresh took over 30 minutes and was stopped. Run `python fetch_garmin.py` in Terminal to see why.") from None
     finally:
         _refresh_lock.release()
     if r.returncode != 0:
