@@ -26,6 +26,10 @@ DATA_FILE = ROOT / "site" / "data" / "garmin.json"
 CONFIG_FILE = ROOT / "telegram.json"  # gitignored: holds your bot token
 
 
+class BadToken(Exception):
+    pass
+
+
 def telegram(token, method, params=None):
     url = f"https://api.telegram.org/bot{token}/{method}"
     body = urllib.parse.urlencode(params or {}).encode()
@@ -33,8 +37,23 @@ def telegram(token, method, params=None):
         with urllib.request.urlopen(url, data=body, timeout=20) as r:
             return json.load(r)["result"]
     except urllib.error.HTTPError as e:
+        if e.code in (401, 404):
+            raise BadToken() from None
         detail = json.load(e).get("description", e.reason)
         sys.exit(f"Telegram error: {detail}")
+
+
+def check_token(token):
+    """The bot's details, or None if Telegram rejects the token."""
+    try:
+        return telegram(token, "getMe")
+    except BadToken:
+        return None
+
+
+REJECTED = ("Telegram rejected that token: it was revoked, or one character is off\n"
+            "(e.g. letter O vs zero). Copy the newest token from BotFather in Telegram\n"
+            "on this Mac (desktop app or web.telegram.org) rather than retyping it.")
 
 
 TOKEN_RE = re.compile(r"\d{6,}:[A-Za-z0-9_-]{30,}")
@@ -56,17 +75,21 @@ def clipboard():
 def setup():
     print("1. In Telegram, open @BotFather, send /newbot (or /mybots for an existing bot)")
     print("   and copy the bot's token.")
-    token = find_token(clipboard())
+    token, bot = find_token(clipboard()), None
     if token:
-        bot = telegram(token, "getMe")
-        answer = input(f"Found the token for @{bot['username']} on your clipboard. Use it? [Y/n] ").strip().lower()
-        if answer not in ("", "y", "yes"):
-            token = None
-    if not token:
-        token = find_token(input("Paste the bot token here, then press Enter: "))
+        bot = check_token(token)
+        if not bot:
+            print("\nThe token on your clipboard doesn't work.\n" + REJECTED + "\n")
+        elif input(f"Found the token for @{bot['username']} on your clipboard. Use it? [Y/n] ").strip().lower() not in ("", "y", "yes"):
+            bot = None
+    while not bot:
+        token = find_token(input("Copy the token from BotFather, paste it here and press Enter: "))
         if not token:
-            sys.exit("That doesn't look like a bot token (it looks like 123456789:AAH...). Copy it from BotFather and try again.")
-        bot = telegram(token, "getMe")
+            print("That doesn't look like a bot token (it looks like 123456789:AAH...).")
+            continue
+        bot = check_token(token)
+        if not bot:
+            print(REJECTED)
     print(f"\n2. Now open your bot (t.me/{bot['username']}) in Telegram and press Start, or send it any message.")
     input("   Then press Enter here… ")
     updates = telegram(token, "getUpdates")
@@ -89,8 +112,11 @@ def send(message):
         if not CONFIG_FILE.exists():
             sys.exit("Telegram isn't set up yet. Run: python telegram_summary.py --setup")
         cfg = json.loads(CONFIG_FILE.read_text())
-    telegram(cfg["token"], "sendMessage", {"chat_id": cfg["chat_id"], "text": message,
-                                           "parse_mode": "HTML", "disable_web_page_preview": "true"})
+    try:
+        telegram(cfg["token"], "sendMessage", {"chat_id": cfg["chat_id"], "text": message,
+                                               "parse_mode": "HTML", "disable_web_page_preview": "true"})
+    except BadToken:
+        sys.exit("Telegram rejected the saved bot token (revoked?). Run: python telegram_summary.py --setup")
 
 
 
