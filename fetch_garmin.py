@@ -7,6 +7,7 @@ after that the saved login tokens in ~/.garminconnect are reused.
     python fetch_garmin.py              # last 30 days
     python fetch_garmin.py --days 90
     python fetch_garmin.py --sample     # write fake demo data, no Garmin login
+    python fetch_garmin.py --reanalyse  # recalculate insights from saved data, no Garmin login
     python fetch_garmin.py --print-tokens  # show saved login for the GitHub secret
 """
 
@@ -252,6 +253,8 @@ def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--days", type=int, default=30, help="how many days back to fetch (default 30)")
     p.add_argument("--sample", action="store_true", help="write fake demo data to site/data/sample.json")
+    p.add_argument("--reanalyse", action="store_true",
+                   help="recalculate insights and coaching from the saved data, without contacting Garmin")
     p.add_argument("--print-tokens", action="store_true",
                    help="print your saved Garmin login, to paste into the GARMIN_TOKENS GitHub secret")
     args = p.parse_args()
@@ -264,6 +267,16 @@ def main():
         return
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
+    if args.reanalyse:
+        target = DATA_DIR / "garmin.json"
+        if not target.exists():
+            sys.exit("No saved data yet. Run `python fetch_garmin.py` first.")
+        payload = json.loads(target.read_text())
+        payload.update(coach.build(payload))
+        payload["insights"] = insights.build(payload)
+        target.write_text(json.dumps(payload, indent=1))
+        print(f"Recalculated insights and coaching for {len(payload.get('daily', []))} days. Reload the page.")
+        return
     if args.sample:
         payload, target = sample_data(args.days), DATA_DIR / "sample.json"
     else:

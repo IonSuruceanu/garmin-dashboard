@@ -55,6 +55,7 @@
     $('athlete').textContent = data.athlete || 'Garmin dashboard';
     $('sync-line').textContent = (data.source === 'sample' ? 'Demo data · generated ' : 'Synced from Garmin Connect ') + ago(data.fetchedAt) +
       (rows.length ? ' · ' + day(rows[0].date) + ' – ' + day(rows[rows.length - 1].date) : '');
+    if (data.source === 'garmin' && !data.today) showBanner('Your data was fetched with an older version, so <strong>Today, insights and the running analysis</strong> are missing. Run <code>python fetch_garmin.py</code> again, then reload.');
     if (data.source === 'sample') showBanner('You are looking at <strong>demo data</strong>. Run <code>python fetch_garmin.py</code> to load your own Garmin data.');
     renderWearNote(rows);
     renderToday();
@@ -227,7 +228,7 @@
   var CHARTS = [
     { key: 'steps', title: 'Steps', kind: 'bar', fmt: function (v) { return num(v); }, summary: function (r) { return 'avg ' + num(avg(r, 'steps')); } },
     { key: 'sleepMin', title: 'Sleep', kind: 'bar', fmt: hm, axis: function (v) { return Math.round(v / 60) + 'h'; }, summary: function (r) { return 'avg ' + hm(avg(r, 'sleepMin')); } },
-    { key: 'restingHr', title: 'Resting heart rate', kind: 'line', fmt: function (v) { return num(v) + ' bpm'; }, summary: function (r) { return 'avg ' + num(avg(r, 'restingHr')) + ' bpm'; } },
+    { key: 'restingHr', title: 'Resting heart rate', kind: 'line', nightOnly: true, emptyText: 'Needs the watch worn overnight', fmt: function (v) { return num(v) + ' bpm'; }, summary: function (r) { var v = avg(r.filter(function (x) { return x.sleepMin; }), 'restingHr'); return v == null ? '' : 'avg ' + num(v) + ' bpm'; } },
     { key: 'hrv', title: 'Overnight HRV', kind: 'line', fmt: function (v) { return num(v) + ' ms'; }, summary: function (r) { return 'avg ' + num(avg(r, 'hrv')) + ' ms'; } }
   ];
 
@@ -239,7 +240,8 @@
       box.className = 'chart'; box.style.margin = 0;
       box.innerHTML = '<div class="chart-head"><h3>' + c.title + '</h3><span class="muted">' + c.summary(rows) + '</span></div>';
       wrap.appendChild(box);
-      drawChart(box, rows, c);
+      // Without overnight wear Garmin's resting HR is a daytime estimate, so leave it out.
+      drawChart(box, c.nightOnly ? rows.map(function (r) { return Object.assign({}, r, { restingHr: r.sleepMin ? r.restingHr : null }); }) : rows, c);
     });
   }
 
@@ -257,7 +259,7 @@
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': c.title + ' per day' }, box);
     var vals = rows.map(function (r) { return r[c.key]; });
     var present = vals.filter(function (v) { return v != null; });
-    if (!present.length) { el('text', { x: W / 2, y: H / 2, 'text-anchor': 'middle', 'class': 'empty-note' }, svg).textContent = 'No data in this range'; return; }
+    if (!present.length) { el('text', { x: W / 2, y: H / 2, 'text-anchor': 'middle', 'class': 'empty-note' }, svg).textContent = c.emptyText || 'No data in this range'; return; }
 
     // Bars start at zero; lines zoom to their range so small changes stay visible.
     var lo = 0, hi;
