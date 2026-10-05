@@ -12,6 +12,8 @@ import argparse
 import html
 import json
 import os
+import re
+import subprocess
 import sys
 import urllib.error
 import urllib.parse
@@ -35,13 +37,38 @@ def telegram(token, method, params=None):
         sys.exit(f"Telegram error: {detail}")
 
 
+TOKEN_RE = re.compile(r"\d{6,}:[A-Za-z0-9_-]{30,}")
+
+
+def find_token(text):
+    """Pull a bot token out of pasted text; spaces and line breaks are ignored."""
+    m = TOKEN_RE.search(re.sub(r"\s+", "", text or ""))
+    return m.group(0) if m else None
+
+
+def clipboard():
+    try:  # macOS
+        return subprocess.run(["pbpaste"], capture_output=True, text=True, timeout=5).stdout
+    except (OSError, subprocess.SubprocessError):
+        return ""
+
+
 def setup():
-    print("1. In Telegram, open @BotFather, send /newbot and follow the steps.")
-    print("2. BotFather replies with a token like 123456:ABC-xyz. Paste it here.")
-    token = input("Bot token: ").strip()
-    bot = telegram(token, "getMe")
-    print(f"\n3. Now open your bot (t.me/{bot['username']}), press Start or send it any message.")
-    input("   Press Enter here once you've done that… ")
+    print("1. In Telegram, open @BotFather, send /newbot (or /mybots for an existing bot)")
+    print("   and copy the bot's token.")
+    token = find_token(clipboard())
+    if token:
+        bot = telegram(token, "getMe")
+        answer = input(f"Found the token for @{bot['username']} on your clipboard. Use it? [Y/n] ").strip().lower()
+        if answer not in ("", "y", "yes"):
+            token = None
+    if not token:
+        token = find_token(input("Paste the bot token here, then press Enter: "))
+        if not token:
+            sys.exit("That doesn't look like a bot token (it looks like 123456789:AAH...). Copy it from BotFather and try again.")
+        bot = telegram(token, "getMe")
+    print(f"\n2. Now open your bot (t.me/{bot['username']}) in Telegram and press Start, or send it any message.")
+    input("   Then press Enter here… ")
     updates = telegram(token, "getUpdates")
     chats = [u["message"]["chat"] for u in updates if "message" in u]
     if not chats:
@@ -51,7 +78,7 @@ def setup():
     CONFIG_FILE.chmod(0o600)
     telegram(token, "sendMessage", {"chat_id": chat["id"], "text": "✅ Garmin dashboard connected. Your summaries will arrive here."})
     print(f"Saved to {CONFIG_FILE.name}. Check Telegram for a test message.")
-    print(f"For GitHub Actions use: TELEGRAM_BOT_TOKEN = your token, TELEGRAM_CHAT_ID = {chat['id']}")
+    print(f"For GitHub Actions: TELEGRAM_CHAT_ID = {chat['id']} (the token is the one from BotFather)")
 
 
 def send(message):
