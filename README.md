@@ -5,7 +5,10 @@ HRV, stress, Body Battery and recent activities, with plain-language insights
 and Telegram messages.
 
 - **`fetch_garmin.py`** signs in to Garmin Connect with your account and saves
-  your data to `site/data/garmin.json`.
+  your data to `site/data/garmin.json`: 90 days of sleep/HRV/daily data,
+  activities since 1 January 2026, laps and heart-rate/pace detail for runs over
+  4 km, weather for every run, and your Garmin heart-rate settings. History is
+  kept in `site/data/store/`, so each fetch only downloads what's new.
 - **`insights.py`** compares your recent days with your own baseline (sleep,
   HRV, resting heart rate, training load, stress, steps) and writes short
   insights into the same file.
@@ -44,9 +47,14 @@ pip install -r requirements.txt
 ## Get your data
 
 ```bash
-python fetch_garmin.py            # last 30 days
-python fetch_garmin.py --days 90  # or further back
+python fetch_garmin.py                    # 90 days daily data, activities since 1 Jan 2026
+python fetch_garmin.py --since 2025-06-01 # go further back for activities
+python fetch_garmin.py --reanalyse        # recalculate from saved data, no Garmin login
 ```
+
+The first run downloads a lot (all days, all activities, laps for up to 40
+runs at a time, weather), so it takes a few minutes; run it in Terminal. After
+that, each fetch takes seconds and picks up the remaining run details.
 
 The first time, it asks for your Garmin email, password and, if you use 2-step
 verification, the code Garmin sends you. It then saves a login token in
@@ -93,7 +101,14 @@ If `garmin.json` doesn't exist yet, the page shows demo data from
 - **Running:** weekly distance (12 weeks), running efficiency (metres per
   heartbeat; rising means fitter), easy/moderate/hard balance, easy pace,
   VO2 max, cadence and race predictions.
-- Daily charts, recent activities and data sources.
+- **Training history:** weekly distance since January, training blocks (a block
+  ends after 2+ quiet weeks) with the week-on-week jump before each ended, and
+  fitness by month: best effort as a 5K-equivalent and distance per heartbeat,
+  both raw and heat-adjusted, compared with now.
+- **Run detail:** click any activity for weather, laps, heart rate and pace over
+  time, heart-rate drift, and your notes (run type, shoes, effort 1-10, comment).
+- **Notes & sources:** weight (from Garmin or logged here) and mileage per shoe.
+- Daily charts and recent activities.
 
 Paces come from Garmin's race predictions when available, otherwise from your
 best recent run. All of this is calculated on your computer; no AI service or
@@ -107,8 +122,14 @@ extra API is used. It's guidance, not medical advice.
   is updated (`pip install -U garminconnect`).
 - **Sign-in problems.** If you change your Garmin password or sign-in keeps
   failing, delete the `~/.garminconnect` folder and run the script again.
-- **Rate limits.** Fetching many months at once makes many requests; Garmin may
-  temporarily block you. Keep `--days` modest and re-run occasionally.
+- **Rate limits.** The first full download makes many requests; run details are
+  spread over several fetches (40 runs each) to stay under Garmin's limits.
+- **Weather** comes from [Open-Meteo](https://open-meteo.com) (free, no key) for
+  each run's start place and time, and is cached. "Heat-adjusted" paces use the
+  runner's rule of thumb on temperature + dew point; it's an estimate.
+- **Heart-rate numbers** (max HR, zones, easy ceiling, lactate threshold) come
+  from your Garmin settings when available, so the dashboard, Telegram and Claude
+  all use the same values.
 - **Missing metrics.** Values your watch doesn't record (for example HRV on
   older models) show as "—".
 

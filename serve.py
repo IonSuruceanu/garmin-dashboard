@@ -12,6 +12,7 @@ you picked. While it runs, your Telegram bot also answers /report, /today and
 import argparse
 import json
 import threading
+from datetime import date
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -19,6 +20,22 @@ import telegram_bot as bot
 import telegram_summary as tg
 
 SITE = Path(__file__).resolve().parent / "site"
+
+
+def save_note(path, body):
+    """Save a run note or a weight, then recalculate garmin.json (no Garmin call)."""
+    import fetch_garmin
+    import store
+    if not store.read("activities.json", {}):
+        raise ValueError("Notes need your own Garmin data. Run `python fetch_garmin.py` first.")
+    if path == "/api/note":
+        if not body.get("id"):
+            raise ValueError("Which run? (missing id)")
+        store.save_run_note(body["id"], body.get("runType"), body.get("shoes"), body.get("effort"), body.get("comment"))
+    else:
+        store.save_weight(body.get("date") or date.today().isoformat(), body.get("kg"))
+    fetch_garmin.rebuild()
+    return {"ok": True, "message": "Saved."}
 
 
 def telegram_ready():
@@ -68,6 +85,8 @@ class Handler(SimpleHTTPRequestHandler):
         try:
             if self.path == "/api/refresh":
                 return self.reply(200, {"ok": True, "message": bot.refresh()})
+            if self.path in ("/api/note", "/api/weight"):
+                return self.reply(200, save_note(self.path, body))
             if self.path in ("/api/report", "/api/workout"):
                 if not telegram_ready():
                     return self.reply(400, {"error": "Telegram isn't set up. Run: python telegram_summary.py --setup"})

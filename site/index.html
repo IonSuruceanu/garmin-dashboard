@@ -7,7 +7,7 @@
 <title>Garmin Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 <main class="page">
@@ -65,10 +65,24 @@
       <span class="muted" id="running-status"></span>
     </div>
     <div class="vo2" id="vo2" hidden></div>
+    <p class="hr-settings" id="hr-settings"></p>
     <div class="tiles inner" id="run-tiles"></div>
+    <div class="tiles inner" id="dyn-tiles" hidden></div>
     <div class="predictions" id="predictions"></div>
     <div class="charts" id="run-charts"></div>
     <div class="intensity" id="intensity"></div>
+  </section>
+
+  <section class="panel" id="history-panel" hidden>
+    <div class="panel-head">
+      <h2>Training history</h2>
+      <span class="muted" id="history-sub"></span>
+    </div>
+    <div class="charts one" id="history-charts"></div>
+    <h3 class="sub-head">Training blocks</h3>
+    <div class="table-wrap"><table id="blocks-table"></table></div>
+    <h3 class="sub-head">Fitness by month <span class="muted">· best effort as a 5K-equivalent time, and distance per heartbeat; "adj." corrects for heat</span></h3>
+    <div class="table-wrap"><table id="months-table"></table></div>
   </section>
 
   <section class="charts" id="charts" aria-label="Daily trends"></section>
@@ -80,20 +94,27 @@
     </div>
     <div class="table-wrap">
       <table id="activities">
-        <thead><tr><th>Date</th><th>Activity</th><th class="num">Distance</th><th class="num">Time</th><th class="num">Avg HR</th><th class="num">Calories</th></tr></thead>
+        <thead><tr><th>Date</th><th>Activity</th><th class="num">Distance</th><th class="num">Time</th><th class="num">Pace</th><th class="num">Avg HR</th><th class="num">Temp</th><th class="num">Drift</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
   </section>
 
   <section class="panel">
-    <div class="panel-head"><h2>Data sources</h2></div>
+    <div class="panel-head"><h2>Notes &amp; sources</h2></div>
+    <div class="notes-extra" id="notes-extra"></div>
     <div class="sources" id="sources"></div>
   </section>
 </main>
 
 <div class="tooltip" id="tooltip" role="status" hidden></div>
 <div class="toast" id="toast" role="status" hidden></div>
-<script src="app.js?v=7"></script>
+<div class="drawer-overlay" id="drawer" hidden>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <button class="drawer-close" id="drawer-close" aria-label="Close">×</button>
+    <div id="drawer-body"></div>
+  </aside>
+</div>
+<script src="app.js?v=9"></script>
 </body>
 </html>

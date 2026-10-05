@@ -17,6 +17,7 @@ answers your own chat (the one saved by `telegram_summary.py --setup`).
 import argparse
 import html
 import json
+import os
 import subprocess
 import sys
 import threading
@@ -53,12 +54,14 @@ def is_stale(data):
     return age.total_seconds() > STALE_HOURS * 3600
 
 
-def refresh(days=28):
-    """Fetch fresh data from Garmin in a separate process, using the saved login."""
+def refresh():
+    """Fetch fresh data from Garmin in a separate process, using the saved login.
+    On GitHub (nothing saved between runs) it fetches the quick version."""
     if not _refresh_lock.acquire(blocking=False):
         raise ValueError("A refresh is already running.")
     try:
-        r = subprocess.run([sys.executable, str(ROOT / "fetch_garmin.py"), "--days", str(days)], cwd=ROOT,
+        args = ["--quick"] if os.getenv("GITHUB_ACTIONS") else []
+        r = subprocess.run([sys.executable, str(ROOT / "fetch_garmin.py"), *args], cwd=ROOT,
                            stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=600)
     finally:
         _refresh_lock.release()

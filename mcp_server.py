@@ -29,8 +29,12 @@ INSTRUCTIONS = """Personal Garmin training data, already analysed by the athlete
 dashboard. Start with get_today for readiness and workout options. Data comes from \
 Garmin Connect and may be hours old: check fetchedAt and call refresh_from_garmin if \
 the athlete wants fresh numbers. Missing sleep/HRV means the watch wasn't worn \
-overnight; resting HR on those days is a daytime estimate and reads high. Give \
-coaching guidance, not medical advice."""
+overnight; resting HR on those days is a daytime estimate and reads high. \
+Activities carry weather (temperature, dew point) and heat-adjusted pace; use \
+get_training_history for blocks/monthly fitness and get_run_detail for laps and \
+heart-rate drift. Heart-rate numbers (easy ceiling, zones) come from the athlete's \
+Garmin settings, see get_running -> hr. Notes (run type, shoes, effort 1-10) are the \
+athlete's own; ask before adding one. Give coaching guidance, not medical advice."""
 
 
 def load():
@@ -111,10 +115,78 @@ def build_server():
 
     @server.tool()
     @readable
-    def refresh_from_garmin(days: int = 30) -> str:
-        """Fetch fresh data from Garmin Connect and recalculate everything. Takes up to
-        a minute. Uses the saved Garmin login on this Mac."""
-        r = subprocess.run([sys.executable, str(ROOT / "fetch_garmin.py"), "--days", str(max(7, min(days, 90)))],
+    def get_training_history() -> dict:
+        """Training since the start of the saved history: weekly distance and load,
+        training blocks (runs of active weeks ended by 2+ quiet weeks, with the late
+        week-on-week jump before each ended), fitness by month (best effort as a
+        5K-equivalent, raw and heat-adjusted; distance per heartbeat, raw and
+        heat-adjusted; average temperature), and the last 6 weeks vs the best month."""
+        r = load().get("running") or {}
+        return {"history": r.get("history"), "monthly": r.get("monthly"), "fitnessCompare": r.get("fitnessCompare"),
+                "drift": r.get("drift"), "shoes": r.get("shoes"), "weight": r.get("weight")}
+
+    @server.tool()
+    @readable
+    def get_run_detail(activity_id: str = "latest") -> dict:
+        """One activity in full: summary, weather and heat adjustment, your note, laps
+        (pace, HR, cadence, stride per lap), and HR/pace/cadence every 30 s, plus
+        aerobic decoupling (HR drift, %). activity_id from get_activities, or "latest"
+        for the most recent run. Details exist for runs over 4 km."""
+        import store
+        acts = load().get("activities") or []
+        if activity_id == "latest":
+            a = next((x for x in acts if "running" in (x.get("type") or "")), None)
+        else:
+            a = next((x for x in acts if str(x.get("id")) == str(activity_id)), None)
+        if not a:
+            raise ValueError("No such activity. Use get_activities to find the id.")
+        d = store.detail(a["id"]) if (a.get("detailPath") or "").startswith("store/") else None
+        if d is None and a.get("detailPath"):
+            p = ROOT / "site" / "data" / a["detailPath"]
+            d = json.loads(p.read_text()) if p.exists() else None
+        return {"activity": a, "detail": d or "No laps or time series saved for this activity (runs over 4 km only)."}
+
+    @server.tool()
+    @readable
+    def add_run_note(activity_id: str = "latest", run_type: str = "", shoes: str = "",
+                     effort: int = 0, comment: str = "") -> str:
+        """Save the athlete's own note on a run (only what they told you). run_type:
+        solo, run club, with friends, race or treadmill. shoes: the shoe name, used for
+        mileage. effort: how hard it felt, 1-10 (0 = leave unchanged). activity_id from
+        get_activities, or "latest" for the most recent run. Leave a field empty to
+        keep it as is."""
+        import fetch_garmin
+        import store
+        acts = load().get("activities") or []
+        a = (next((x for x in acts if "running" in (x.get("type") or "")), None) if activity_id == "latest"
+             else next((x for x in acts if str(x.get("id")) == str(activity_id)), None))
+        if not a:
+            raise ValueError("No such activity. Use get_activities to find the id.")
+        if not store.read("activities.json", {}):
+            raise ValueError("Notes need your own Garmin data. Call refresh_from_garmin first.")
+        entry = store.save_run_note(a["id"], run_type or None, shoes or None, effort or None, comment or None)
+        fetch_garmin.rebuild()
+        return f"Saved for {a.get('name')} on {(a.get('start') or '')[:10]}: {entry}"
+
+    @server.tool()
+    @readable
+    def log_weight(kg: float, day: str = "") -> str:
+        """Log the athlete's body weight in kg for a day (YYYY-MM-DD, default today)."""
+        import fetch_garmin
+        import store
+        from datetime import date
+        store.save_weight(day or date.today().isoformat(), kg)
+        if store.read("activities.json", {}):
+            fetch_garmin.rebuild()
+        return f"Logged {kg} kg."
+
+    @server.tool()
+    @readable
+    def refresh_from_garmin() -> str:
+        """Fetch new data from Garmin Connect (only what changed since last time) and
+        recalculate everything. Usually under a minute; the first full download of
+        history, run details and weather takes longer."""
+        r = subprocess.run([sys.executable, str(ROOT / "fetch_garmin.py")],
                            cwd=ROOT, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=600)
         if r.returncode != 0:
             raise ValueError("Refresh failed: " + " ".join((r.stderr or r.stdout).strip().splitlines()[-4:]))

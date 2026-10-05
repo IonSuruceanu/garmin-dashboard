@@ -22,6 +22,8 @@ import urllib.request
 from datetime import date, datetime
 from pathlib import Path
 
+import net
+
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "site" / "data" / "garmin.json"
 CONFIG_FILE = ROOT / "telegram.json"  # gitignored: holds your bot token
@@ -31,22 +33,7 @@ class BadToken(Exception):
     pass
 
 
-def _ssl_context():
-    """Trust the same certificates as your computer (macOS Keychain), so it works
-    behind antivirus web protection, VPNs and inspecting networks too."""
-    try:
-        import truststore
-        return truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
-    except ImportError:
-        pass
-    try:
-        import certifi
-        return ssl.create_default_context(cafile=certifi.where())
-    except ImportError:
-        return ssl.create_default_context()
-
-
-SSL_CONTEXT = _ssl_context()
+SSL_CONTEXT = net.SSL_CONTEXT
 NO_SECURE_CONNECTION = (
     "Couldn't make a secure connection to Telegram. Something on this network is\n"
     "intercepting it (antivirus web protection, a VPN, or a work/school network).\n"

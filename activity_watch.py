@@ -19,7 +19,10 @@ from datetime import datetime
 from pathlib import Path
 
 import fetch_garmin
+import run_detail
+import store
 import telegram_summary
+import weather
 
 STATE_FILE = Path(fetch_garmin.TOKEN_DIR).expanduser() / "seen_activities.json"
 RUN_TYPES = ("running", "walking", "hiking")
@@ -121,10 +124,36 @@ def message(a, history):
             lines.append(f"🫁 VO2 max {'up' if a['vo2max'] > prev else 'down'} to <b>{a['vo2max']}</b> (was {prev})")
         elif not prev:
             lines.append(f"🫁 VO2 max {a['vo2max']}")
+    w = a.get("weather")
+    if w:
+        line = f"🌡 {w['tempC']:.0f}°C" + (f", dew point {w['dewPointC']:.0f}°C" if w.get("dewPointC") is not None else "")
+        if a.get("heatPct") and a.get("heatAdjPace"):
+            line += f" · heat cost ~{a['heatPct']:.1f}%, about {mmss(a['heatAdjPace'])} /km in cool air"
+        lines.append(line)
+    if a.get("decoupling") is not None:
+        verdict = "steady" if a["decoupling"] <= 5 else "drifted"
+        lines.append(f"📉 Heart-rate drift {a['decoupling']:+.1f}% ({verdict})")
     note = compare(a, history)
     if note:
         lines += ["", f"<i>{esc(note)}</i>"]
     return "\n".join(lines)
+
+
+def add_weather_and_drift(api, a):
+    """Weather at the run, and HR drift from its laps (runs over 4 km)."""
+    if a.get("lat") is not None and a.get("start"):
+        w = weather.lookup(a["lat"], a["lon"], a["start"], a.get("durationMin"))
+        if w:
+            a["weather"] = w
+            a["heatPct"] = weather.heat_slowdown_pct(w.get("tempC"), w.get("dewPointC"))
+            if a.get("distanceKm") and a.get("durationMin"):
+                a["heatAdjPace"] = weather.adjusted_pace(a["durationMin"] / a["distanceKm"], a["heatPct"])
+    if "running" in (a.get("type") or "") and (a.get("distanceKm") or 0) >= fetch_garmin.DETAIL_MIN_KM:
+        splits = fetch_garmin.safe("laps", api.get_activity_splits, a["id"])
+        raw = fetch_garmin.safe("details", api.get_activity_details, a["id"], 1000, 0)
+        d = {"laps": run_detail.laps(splits), "series": run_detail.series(raw)}
+        d["decoupling"] = a["decoupling"] = run_detail.decoupling(d)
+        store.save_detail(a["id"], d)  # saved for the dashboard too
 
 
 def main():
@@ -149,6 +178,7 @@ def main():
     seen = json.loads(STATE_FILE.read_text()).get("seen", [])
     new = [a for a in reversed(recent) if a["id"] not in seen]  # oldest first
     for a in new:
+        add_weather_and_drift(api, a)
         msg = message(a, recent)
         if args.dry_run:
             print(msg, end="\n\n")

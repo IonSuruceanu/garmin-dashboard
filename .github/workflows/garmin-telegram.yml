@@ -103,7 +103,7 @@ jobs:
       - name: Morning summary
         if: steps.check.outputs.ready == 'true' && env.SUMMARY == 'true'
         run: |
-          python fetch_garmin.py --days 28
+          python fetch_garmin.py --quick
           python telegram_summary.py
 
       - name: Tell me on Telegram if it failed
