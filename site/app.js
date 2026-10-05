@@ -42,6 +42,57 @@
     showBanner('No data yet. Run <code>python fetch_garmin.py</code> (or <code>--sample</code> for demo data), then serve this folder with <code>python -m http.server -d site</code>.');
   });
 
+  // ---------- actions (serve.py only) ----------
+  var server = { server: false, telegram: false };
+  fetch('/api/status', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (s) {
+    if (!s || !s.server) return;
+    server = s;
+    $('actions').hidden = false;
+    document.querySelectorAll('[data-needs-telegram]').forEach(function (b) {
+      if (!s.telegram) { b.disabled = true; b.title = 'Set up Telegram first: python telegram_summary.py --setup'; }
+    });
+    if (data) renderToday();
+  }).catch(function () {});
+
+  var toastTimer;
+  function toast(msg, isError) {
+    var t = $('toast');
+    t.textContent = msg; t.className = 'toast' + (isError ? ' error' : ''); t.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, isError ? 8000 : 4000);
+  }
+
+  function callApi(name, body, btn) {
+    var label = btn && btn.textContent;
+    if (btn) { btn.disabled = true; btn.textContent = name === 'refresh' ? 'Refreshing… (the first time takes a few minutes)' : 'Saving…'; }
+    return fetch('/api/' + name, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) })
+      .then(function (r) {
+        return r.text().then(function (text) {
+          var j;
+          try { j = JSON.parse(text); } catch (e) {
+            // An HTML page instead of our JSON: usually an older `python -m http.server` on the same port.
+            throw new Error(r.status === 501 || r.status === 404
+              ? 'This button needs serve.py, but another (older) server answered. Close any Terminal window running "python -m http.server", then start the dashboard again.'
+              : 'The dashboard server sent an unexpected reply (HTTP ' + r.status + '). Check its Terminal window.');
+          }
+          if (!r.ok) throw new Error(j.error || 'Something went wrong');
+          return j;
+        });
+      })
+      .then(function (j) {
+        toast(j.message || 'Done');
+        if (name === 'refresh') return load('data/garmin.json').then(function (d) { data = d; render(); });
+      })
+      .catch(function (e) { toast(e.message, true); })
+      .then(function () { if (btn) { btn.disabled = false; btn.textContent = label; } });
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-api]');
+    if (!b) return;
+    e.stopPropagation();
+    callApi(b.dataset.api, b.dataset.key ? { key: b.dataset.key } : null, b);
+  }, true);
+
   function showBanner(html) { var b = $('banner'); b.innerHTML = html; b.hidden = false; }
 
   // ---------- render ----------
@@ -63,7 +114,9 @@
     renderInsights();
     renderRunning();
     renderCharts(rows);
+    renderHistory();
     renderActivities();
+    renderNotesExtra();
     renderSources();
   }
 
@@ -148,6 +201,7 @@
       $('choice').innerHTML = '<span class="tile-label">Your plan today</span><h3>' + esc(pick.title) + ' · ' + esc(pick.duration) + '</h3>' +
         '<ol>' + pick.steps.map(function (st) { return '<li>' + esc(st) + '</li>'; }).join('') + '</ol>' +
         '<div class="choice-actions">' + (pick.status === 'no' ? '<span class="muted">Heads up: ' + esc(pick.why) + '</span>' : '') +
+        (server.telegram ? '<button class="act-btn primary" data-api="workout" data-key="' + pick.key + '">Send to Telegram</button>' : '') +
         '<button class="link-btn" data-clear>Change my choice</button></div>';
     }
   }
@@ -193,6 +247,25 @@
     }).join('') + '<span class="muted">' + esc(p.source || '') + '</span>' : '';
 
     renderVo2(r.vo2);
+    var hs = r.hr || {};
+    $('hr-settings').innerHTML = hs.maxHr ? 'Heart-rate settings: max <strong>' + hs.maxHr + '</strong> (' + esc(hs.maxHrSource) + ')' +
+      (hs.lthr ? ' · lactate threshold <strong>' + hs.lthr + '</strong>' : '') +
+      (hs.easyCap ? ' · easy ≤ <strong>' + hs.easyCap + '</strong> (' + esc(hs.easySource) + ')' : '') +
+      (hs.zones ? ' · zones from ' + hs.zones.join(' / ') + ' bpm' : '') : '';
+    var dy = r.dynamics;
+    $('dyn-tiles').hidden = !(dy && (dy.now.strideCm || dy.now.gctMs || dy.now.vertOscCm));
+    if (dy) {
+      var dyn = [['Stride length', 'strideCm', 'cm', 0], ['Ground contact', 'gctMs', 'ms', 0], ['Vertical oscillation', 'vertOscCm', 'cm', 1],
+        ['Vertical ratio', 'vertRatio', '%', 1], ['Weekly load', null, '', 0]];
+      var lastFull = r.weekly.length > 1 ? r.weekly[r.weekly.length - 2] : null;
+      $('dyn-tiles').innerHTML = dyn.map(function (d) {
+        if (!d[1]) return '<div class="tile"><span class="tile-label">' + d[0] + '</span><span class="tile-value">' + num(lastFull && lastFull.load) + '</span><span class="tile-note">last full week' +
+          (r.garminLoad && r.garminLoad.acute != null ? ' · Garmin acute ' + r.garminLoad.acute : ' · estimated from HR zones') + '</span></div>';
+        var v = dy.now[d[1]], b = dy.before && dy.before[d[1]];
+        return '<div class="tile"><span class="tile-label">' + d[0] + '</span><span class="tile-value">' + num(v, d[3]) + (v != null ? '<small>' + d[2] + '</small>' : '') +
+          '</span><span class="tile-note">' + (b != null && v != null ? 'was ' + num(b, d[3]) + ' the 4 weeks before' : '4-week average') + '</span></div>';
+      }).join('');
+    }
 
     var box = $('run-charts');
     box.innerHTML = '';
@@ -308,7 +381,7 @@
     });
     var every = Math.ceil(n / Math.max(2, Math.floor(iw / 64)));
     rows.forEach(function (r, i) {
-      if ((n - 1 - i) % every === 0) el('text', { x: x(i), y: H - 4, 'text-anchor': 'middle' }, axis).textContent = day(r.date);
+      if ((n - 1 - i) % every === 0) el('text', { x: x(i), y: H - 4, 'text-anchor': 'middle' }, axis).textContent = c.xLabel ? c.xLabel(r) : day(r.date);
     });
 
     var marks = [];
@@ -364,6 +437,148 @@
     }
   }
 
+  // ---------- training history ----------
+  function monthName(m) { return new Date(m + '-15T12:00:00').toLocaleDateString(undefined, { month: 'short', year: 'numeric' }); }
+
+  function renderHistory() {
+    var h = data.running && data.running.history;
+    var months = (data.running && data.running.monthly) || [];
+    $('history-panel').hidden = !(h && h.weekly && h.weekly.length > 12);
+    if ($('history-panel').hidden) return;
+    $('history-sub').textContent = 'Since ' + day(h.from, { day: 'numeric', month: 'short', year: 'numeric' }) + ' · a block ends after 2+ weeks under ' + num(h.thresholdKm, 0) + ' km';
+    var box = $('history-charts'); box.innerHTML = '';
+    addChart(box, h.weekly.map(function (w) { return { date: w.week, km: w.km, runs: w.runs, partial: w.partial }; }), {
+      key: 'km', title: 'Weekly running distance', kind: 'bar', partialLast: true,
+      fmt: function (v, row) { return num(v, 1) + ' km · ' + row.runs + ' run' + (row.runs === 1 ? '' : 's'); },
+      when: function (row) { return 'Week of ' + day(row.date) + (row.partial ? ' (so far)' : ''); },
+      axis: function (v) { return num(v); }, summary: h.weekly.length + ' weeks' });
+    $('blocks-table').className = 'data-table';
+    $('blocks-table').innerHTML = '<thead><tr><th>Block</th><th class="num">Weeks</th><th class="num">Distance</th><th class="num">Avg / week</th><th class="num">Peak week</th><th class="num">Late jump</th></tr></thead><tbody>' +
+      (h.blocks || []).map(function (b, i) {
+        return '<tr class="' + (b.current ? 'cur' : '') + '"><td>' + day(b.start) + ' – ' + (b.current ? 'now' : day(b.end)) + (b.current ? ' <span class="muted">(current)</span>' : '') + '</td>' +
+          '<td class="num">' + b.weeks + '</td><td class="num">' + num(b.km) + ' km</td><td class="num">' + num(b.avgKm, 1) + ' km</td><td class="num">' + num(b.peakKm, 1) + ' km</td>' +
+          '<td class="num">' + (b.lateJumpPct != null ? (b.lateJumpPct > 0 ? '+' : '') + b.lateJumpPct + '%' : '—') + '</td></tr>';
+      }).join('') + '</tbody>';
+    var fc = data.running.fitnessCompare;
+    $('months-table').className = 'data-table';
+    $('months-table').innerHTML = '<thead><tr><th>Month</th><th class="num">Runs</th><th class="num">Distance</th><th class="num">Best 5K-equiv.</th><th class="num">Heat-adj.</th><th class="num">m / beat</th><th class="num">Heat-adj.</th><th class="num">Avg temp</th></tr></thead><tbody>' +
+      months.map(function (m) {
+        var peak = fc && fc.peakMonth === m.month;
+        return '<tr class="' + (peak ? 'cur' : '') + '"><td>' + monthName(m.month) + (peak ? ' <span class="muted">(best)</span>' : '') + '</td><td class="num">' + m.runs + '</td><td class="num">' + num(m.km) + ' km</td>' +
+          '<td class="num">' + (m.best5k ? raceTime(m.best5k) : '—') + '</td><td class="num">' + (m.best5kAdj ? raceTime(m.best5kAdj) : '—') + '</td>' +
+          '<td class="num">' + num(m.efficiency, 2) + '</td><td class="num">' + num(m.efficiencyAdj, 2) + '</td><td class="num">' + (m.avgTempC != null ? num(m.avgTempC, 0) + '°C' : '—') + '</td></tr>';
+      }).join('') + (fc ? '<tr class="cur"><td>Last 6 weeks</td><td class="num">' + fc.nowRuns + '</td><td></td><td colspan="2" class="num">' + raceTime(fc.now5k) + (fc.heatAdjusted ? ' adj.' : '') +
+        ' (' + (fc.changePct > 0 ? '+' : '') + fc.changePct + '% vs ' + monthName(fc.peakMonth) + ')</td><td colspan="3"></td></tr>' : '') + '</tbody>';
+  }
+
+  // ---------- run detail ----------
+  var RUN_TYPES = ['solo', 'run club', 'with friends', 'race', 'treadmill'];
+  var openId = null;
+
+  function weatherText(w) {
+    if (!w) return '';
+    return num(w.tempC, 0) + '°C' + (w.dewPointC != null ? ', dew point ' + num(w.dewPointC, 0) + '°C' : '') +
+      (w.humidity != null ? ', humidity ' + num(w.humidity, 0) + '%' : '') + (w.windKmh != null ? ', wind ' + num(w.windKmh, 0) + ' km/h' : '');
+  }
+
+  function openDetail(id) {
+    var a = (data.activities || []).filter(function (x) { return String(x.id) === String(id); })[0];
+    if (!a) return;
+    openId = id;
+    $('drawer').hidden = false;
+    var p = a.distanceKm && a.durationMin ? a.durationMin / a.distanceKm : null;
+    var isRun = (a.type || '').indexOf('running') >= 0;
+    var head = '<span class="eyebrow">' + day((a.start || '').slice(0, 10), { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) + ' · ' + esc((a.start || '').slice(11, 16)) + '</span>' +
+      '<h2 id="drawer-title">' + esc(a.name || a.type) + '</h2>' +
+      (a.weather ? '<p class="weather-line">🌡 ' + weatherText(a.weather) + (a.heatPct >= 0.5 ? ' · heat costs about ' + num(a.heatPct, 1) + '% pace' : ' · no heat penalty') + '</p>' : '') +
+      '<div class="tiles">' + [
+        ['Distance', a.distanceKm ? num(a.distanceKm, 2) : '—', 'km'], ['Time', hm(a.durationMin), ''],
+        ['Pace', isRun && p ? pace(p) : '—', '/km'], ['Heat-adjusted', a.heatAdjPace ? pace(a.heatAdjPace) : '—', '/km'],
+        ['Avg HR', num(a.avgHr), 'bpm'], ['HR drift', a.decoupling != null ? num(a.decoupling, 1) : '—', '%']
+      ].map(function (t) { return '<div class="tile"><span class="tile-label">' + t[0] + '</span><span class="tile-value">' + t[1] + (t[2] && t[1] !== '—' ? '<small>' + t[2] + '</small>' : '') + '</span></div>'; }).join('') + '</div>';
+    $('drawer-body').innerHTML = head + '<div id="detail-charts"></div><div id="detail-laps"></div><h3 class="sub-head">Your notes</h3><div id="detail-note"></div>';
+    renderNoteForm(a);
+    if (!a.detailPath) {
+      $('detail-laps').innerHTML = '<p class="muted">' + (isRun && (a.distanceKm || 0) >= 4 ? 'Laps and heart-rate details will appear after the next refresh.' : 'Laps and details are kept for runs over 4 km.') + '</p>';
+      return;
+    }
+    load('data/' + a.detailPath).then(function (d) {
+      if (openId !== id) return;
+      var s = d.series, box = $('detail-charts');
+      if (s && s.t && s.t.length) {
+        var rows = s.t.map(function (t, i) { return { t: t, hr: s.hr[i], pace: s.pace[i] }; });
+        var minLabel = function (r) { return Math.round(r.t) + ' min'; };
+        addChart(box, rows, { key: 'hr', title: 'Heart rate', kind: 'line', minSpan: 10, round: 5, xLabel: minLabel,
+          when: function (r) { return 'at ' + minLabel(r); }, fmt: function (v) { return num(v) + ' bpm'; }, axis: function (v) { return num(v); },
+          summary: d.decoupling != null ? 'drift ' + num(d.decoupling, 1) + '%' : '' });
+        addChart(box, rows, { key: 'pace', title: 'Pace', kind: 'line', minSpan: 0.5, round: 0.25, xLabel: minLabel,
+          when: function (r) { return 'at ' + minLabel(r); }, fmt: function (v) { return pace(v) + ' /km'; }, axis: function (v) { return pace(v); },
+          summary: 'min/km · lower is faster' });
+      }
+      var laps = d.laps || [];
+      if (laps.length) {
+        $('detail-laps').innerHTML = '<h3 class="sub-head">Laps</h3><div class="table-wrap"><table class="data-table"><thead><tr><th>Lap</th><th class="num">Distance</th><th class="num">Pace</th><th class="num">Avg HR</th><th class="num">Cadence</th><th class="num">Stride</th><th class="num">Elev. +</th></tr></thead><tbody>' +
+          laps.map(function (l) {
+            return '<tr><td>' + l.lap + '</td><td class="num">' + num(l.distanceKm, 2) + ' km</td><td class="num">' + pace(l.pace) + '</td><td class="num">' + num(l.avgHr) + '</td>' +
+              '<td class="num">' + num(l.cadence) + '</td><td class="num">' + (l.strideCm ? num(l.strideCm) + ' cm' : '—') + '</td><td class="num">' + (l.elevGainM != null ? num(l.elevGainM) + ' m' : '—') + '</td></tr>';
+          }).join('') + '</tbody></table></div>';
+      }
+    }).catch(function () { $('detail-laps').innerHTML = '<p class="muted">Couldn\'t load the details for this run.</p>'; });
+  }
+
+  function renderNoteForm(a) {
+    var n = a.note || {};
+    var shoes = ((data.running && data.running.shoes) || []).map(function (s) { return s.name; });
+    if (!server.server) {
+      $('detail-note').innerHTML = (n.runType || n.shoes || n.effort || n.comment ? '<p>' + [n.runType, n.shoes, n.effort ? 'effort ' + n.effort + '/10' : '', n.comment].filter(Boolean).map(esc).join(' · ') + '</p>' : '') +
+        '<p class="muted">Start the dashboard with <code>python serve.py</code> (or start.command) to add notes here.</p>';
+      return;
+    }
+    $('detail-note').innerHTML = '<form class="note-form" id="note-form">' +
+      '<label>Run type<select name="runType"><option value="">—</option>' + RUN_TYPES.map(function (t) { return '<option' + (n.runType === t ? ' selected' : '') + '>' + t + '</option>'; }).join('') + '</select></label>' +
+      '<label>Shoes<input name="shoes" list="shoe-list" value="' + esc(n.shoes || '') + '" placeholder="e.g. Novablast 4"><datalist id="shoe-list">' + shoes.map(function (s) { return '<option value="' + esc(s) + '">'; }).join('') + '</datalist></label>' +
+      '<label>How hard (1–10)<select name="effort"><option value="">—</option>' + [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(function (v) { return '<option' + (n.effort === v ? ' selected' : '') + '>' + v + '</option>'; }).join('') + '</select></label>' +
+      '<label class="full">Comment<input name="comment" value="' + esc(n.comment || '') + '" placeholder="Anything worth remembering"></label>' +
+      '<div class="full"><button class="act-btn primary" type="submit">Save note</button></div></form>';
+    $('note-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = e.target, btn = f.querySelector('button');
+      var body = { id: a.id, runType: f.runType.value, shoes: f.shoes.value.trim(), effort: f.effort.value ? +f.effort.value : '', comment: f.comment.value.trim() };
+      callApi('note', body, btn).then(function () { return load('data/garmin.json'); }).then(function (d) { data = d; render(); openDetail(a.id); });
+    });
+  }
+
+  function closeDetail() { $('drawer').hidden = true; openId = null; }
+  $('drawer-close').addEventListener('click', closeDetail);
+  $('drawer').addEventListener('click', function (e) { if (e.target === $('drawer')) closeDetail(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('drawer').hidden) closeDetail(); });
+  $('activities').addEventListener('click', function (e) {
+    var row = e.target.closest('tr[data-id]');
+    if (row) openDetail(row.dataset.id);
+  });
+  $('activities').addEventListener('keydown', function (e) {
+    var row = e.target.closest('tr[data-id]');
+    if (row && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openDetail(row.dataset.id); }
+  });
+
+  // ---------- notes: weight and shoes ----------
+  function renderNotesExtra() {
+    var r = data.running || {};
+    var w = r.weight, shoes = r.shoes || [];
+    $('notes-extra').innerHTML =
+      '<div><span class="tile-label">Weight</span><div class="tile-value">' + (w ? num(w.latest, 1) + '<small>kg</small>' : '—') + '</div>' +
+      '<span class="tile-note">' + (w ? day(w.date) + (w.change28d != null ? ' · ' + (w.change28d > 0 ? '+' : '') + num(w.change28d, 1) + ' kg in 4 weeks' : '') : 'from Garmin or your notes') + '</span>' +
+      (server.server ? '<form id="weight-form"><input name="kg" type="number" step="0.1" min="30" max="250" placeholder="kg" aria-label="Weight in kg" required><button class="act-btn" type="submit">Log today</button></form>' : '') + '</div>' +
+      '<div><span class="tile-label">Shoes</span>' + (shoes.length ? '<ul>' + shoes.map(function (s) {
+        return '<li><strong>' + esc(s.name) + '</strong> · ' + num(s.km) + ' km · ' + s.runs + ' runs</li>';
+      }).join('') + '</ul>' : '<p class="muted">Add shoes to a run\'s notes to track their mileage.</p>') + '</div>';
+    var wf = $('weight-form');
+    if (wf) wf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      callApi('weight', { kg: +wf.kg.value }, wf.querySelector('button')).then(function () { return load('data/garmin.json'); }).then(function (d) { data = d; render(); });
+    });
+  }
+
   var TYPE_LABEL = { running: 'Run', trail_running: 'Trail run', treadmill_running: 'Treadmill', cycling: 'Ride', road_biking: 'Ride', indoor_cycling: 'Indoor ride', virtual_ride: 'Virtual ride', lap_swimming: 'Pool swim', open_water_swimming: 'Open-water swim', strength_training: 'Strength', walking: 'Walk', hiking: 'Hike', yoga: 'Yoga' };
 
   function renderActivities() {
@@ -372,15 +587,19 @@
     var list = acts.filter(function (a) { return !from || (a.start || '') >= from; });
     $('act-count').textContent = list.length + ' in range';
     var body = $('activities').querySelector('tbody');
-    body.innerHTML = list.length ? list.slice(0, 25).map(function (a) {
+    body.innerHTML = list.length ? list.slice(0, 40).map(function (a) {
       var t = TYPE_LABEL[a.type] || (a.type || '').replace(/_/g, ' ');
-      return '<tr><td>' + day((a.start || '').slice(0, 10), { weekday: 'short', day: 'numeric', month: 'short' }) + '</td>' +
+      var isRun = (a.type || '').indexOf('running') >= 0;
+      var p = isRun && a.distanceKm && a.durationMin ? a.durationMin / a.distanceKm : null;
+      return '<tr data-id="' + esc(a.id) + '" tabindex="0" title="Show details"><td>' + day((a.start || '').slice(0, 10), { weekday: 'short', day: 'numeric', month: 'short' }) + '</td>' +
         '<td>' + esc(a.name || t) + (a.name && t.toLowerCase() !== a.name.toLowerCase() ? '<span class="act-type">' + esc(t) + '</span>' : '') + '</td>' +
         '<td class="num">' + (a.distanceKm ? num(a.distanceKm, 2) + ' km' : '—') + '</td>' +
         '<td class="num">' + hm(a.durationMin) + '</td>' +
+        '<td class="num">' + (p ? pace(p) : '—') + '</td>' +
         '<td class="num">' + (a.avgHr ? num(a.avgHr) + ' bpm' : '—') + '</td>' +
-        '<td class="num">' + num(a.calories) + '</td></tr>';
-    }).join('') : '<tr><td colspan="6" class="muted">No activities in this range.</td></tr>';
+        '<td class="num">' + (a.weather ? num(a.weather.tempC, 0) + '°C' : '—') + '</td>' +
+        '<td class="num">' + (a.decoupling != null ? num(a.decoupling, 1) + '%' : '—') + '</td></tr>';
+    }).join('') : '<tr><td colspan="8" class="muted">No activities in this range.</td></tr>';
   }
 
   function renderSources() {

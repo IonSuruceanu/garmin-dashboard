@@ -72,7 +72,7 @@ def sleep(daily, target_min=450):
     score_txt = f", average score {score:.0f}" if score else ""
     if mean < target_min - 30 or len(short) >= 2:
         return [(WATCH, "You're short on sleep",
-                 f"Averaging {_hm(mean)} a night this week{score_txt}; {len(short)} night(s) under 6 hours. "
+                 f"Averaging {_hm(mean)} a night this week{score_txt}" + (f"; {len(short)} night(s) under 6 hours" if short else "") + ". "
                  f"That's about {_hm(debt)} below a 7h30 target. An earlier night or two would help recovery.")]
     if mean >= target_min:
         return [(GOOD, "Sleep is solid", f"Averaging {_hm(mean)} a night this week{score_txt}.")]

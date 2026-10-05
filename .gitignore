@@ -1,9 +1,12 @@
 # Your real Garmin data stays on your machine - never commit it
 site/data/garmin.json
+site/data/store/
 
 # Saved Garmin login tokens and Telegram bot token
 .garminconnect/
 telegram.json
+claude.json
+chat_history.json
 
 .venv/
 venv/

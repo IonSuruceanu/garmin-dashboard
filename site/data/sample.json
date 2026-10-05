@@ -1,8 +1,9 @@
 {
  "athlete": "Demo athlete",
+ "historyFrom": "2026-01-01",
  "daily": [
   {
-   "date": "2026-09-06",
+   "date": "2026-07-08",
    "steps": 14664,
    "calories": 2198,
    "activeCalories": 374,
@@ -22,7 +23,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-07",
+   "date": "2026-07-09",
    "steps": 7943,
    "calories": 2285,
    "activeCalories": 864,
@@ -42,7 +43,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-08",
+   "date": "2026-07-10",
    "steps": 4763,
    "calories": 2372,
    "activeCalories": 596,
@@ -62,7 +63,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-09",
+   "date": "2026-07-11",
    "steps": 10101,
    "calories": 2299,
    "activeCalories": 860,
@@ -82,7 +83,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-10",
+   "date": "2026-07-12",
    "steps": 9924,
    "calories": 2713,
    "activeCalories": 554,
@@ -102,7 +103,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-11",
+   "date": "2026-07-13",
    "steps": 5934,
    "calories": 3148,
    "activeCalories": 728,
@@ -122,7 +123,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-12",
+   "date": "2026-07-14",
    "steps": 9572,
    "calories": 2817,
    "activeCalories": 908,
@@ -142,7 +143,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-13",
+   "date": "2026-07-15",
    "steps": 14602,
    "calories": 3012,
    "activeCalories": 591,
@@ -162,7 +163,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-14",
+   "date": "2026-07-16",
    "steps": 8709,
    "calories": 2364,
    "activeCalories": 1056,
@@ -182,7 +183,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-15",
+   "date": "2026-07-17",
    "steps": 8561,
    "calories": 2950,
    "activeCalories": 667,
@@ -202,7 +203,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-16",
+   "date": "2026-07-18",
    "steps": 13652,
    "calories": 2473,
    "activeCalories": 569,
@@ -222,7 +223,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-17",
+   "date": "2026-07-19",
    "steps": 11481,
    "calories": 2903,
    "activeCalories": 707,
@@ -242,7 +243,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-18",
+   "date": "2026-07-20",
    "steps": 9571,
    "calories": 2207,
    "activeCalories": 404,
@@ -262,7 +263,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-19",
+   "date": "2026-07-21",
    "steps": 14394,
    "calories": 2616,
    "activeCalories": 655,
@@ -282,7 +283,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-20",
+   "date": "2026-07-22",
    "steps": 9613,
    "calories": 2642,
    "activeCalories": 790,
@@ -302,7 +303,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-21",
+   "date": "2026-07-23",
    "steps": 8883,
    "calories": 2286,
    "activeCalories": 1012,
@@ -322,7 +323,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-22",
+   "date": "2026-07-24",
    "steps": 14047,
    "calories": 2499,
    "activeCalories": 545,
@@ -342,7 +343,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-23",
+   "date": "2026-07-25",
    "steps": 7172,
    "calories": 2805,
    "activeCalories": 757,
@@ -362,7 +363,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-24",
+   "date": "2026-07-26",
    "steps": 14224,
    "calories": 2103,
    "activeCalories": 790,
@@ -382,7 +383,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-25",
+   "date": "2026-07-27",
    "steps": 11109,
    "calories": 2780,
    "activeCalories": 388,
@@ -402,7 +403,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-26",
+   "date": "2026-07-28",
    "steps": 14745,
    "calories": 2399,
    "activeCalories": 926,
@@ -422,7 +423,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-27",
+   "date": "2026-07-29",
    "steps": 12627,
    "calories": 2385,
    "activeCalories": 744,
@@ -442,7 +443,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-28",
+   "date": "2026-07-30",
    "steps": 12918,
    "calories": 2958,
    "activeCalories": 434,
@@ -462,7 +463,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-29",
+   "date": "2026-07-31",
    "steps": 12577,
    "calories": 3145,
    "activeCalories": 319,
@@ -482,7 +483,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-09-30",
+   "date": "2026-08-01",
    "steps": 13117,
    "calories": 2226,
    "activeCalories": 633,
@@ -502,7 +503,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-10-01",
+   "date": "2026-08-02",
    "steps": 5601,
    "calories": 3139,
    "activeCalories": 763,
@@ -522,7 +523,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-10-02",
+   "date": "2026-08-03",
    "steps": 12737,
    "calories": 3079,
    "activeCalories": 819,
@@ -542,7 +543,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-10-03",
+   "date": "2026-08-04",
    "steps": 9177,
    "calories": 2248,
    "activeCalories": 987,
@@ -562,7 +563,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-10-04",
+   "date": "2026-08-05",
    "steps": 6342,
    "calories": 2618,
    "activeCalories": 440,
@@ -582,7 +583,7 @@
    "hrvStatus": "BALANCED"
   },
   {
-   "date": "2026-10-05",
+   "date": "2026-08-06",
    "steps": 12447,
    "calories": 2927,
    "activeCalories": 647,
@@ -600,1106 +601,1558 @@
    "sleepScore": 72,
    "hrv": 69,
    "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-07",
+   "steps": 10297,
+   "calories": 2778,
+   "activeCalories": 829,
+   "distanceKm": 9.86,
+   "restingHr": 56,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 73,
+   "bodyBatteryLow": 35,
+   "intensityMinutes": 29,
+   "sleepMin": 374,
+   "deepMin": 84,
+   "lightMin": 192,
+   "remMin": 98,
+   "awakeMin": 11,
+   "sleepScore": 64,
+   "hrv": 60,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-08",
+   "steps": 8430,
+   "calories": 2365,
+   "activeCalories": 732,
+   "distanceKm": 12.35,
+   "restingHr": 52,
+   "stressAvg": 30,
+   "bodyBatteryHigh": 74,
+   "bodyBatteryLow": 27,
+   "intensityMinutes": 65,
+   "sleepMin": 357,
+   "deepMin": 72,
+   "lightMin": 213,
+   "remMin": 72,
+   "awakeMin": 36,
+   "sleepScore": 84,
+   "hrv": 62,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-09",
+   "steps": 15275,
+   "calories": 2475,
+   "activeCalories": 735,
+   "distanceKm": 12.85,
+   "restingHr": 52,
+   "stressAvg": 18,
+   "bodyBatteryHigh": 90,
+   "bodyBatteryLow": 12,
+   "intensityMinutes": 33,
+   "sleepMin": 344,
+   "deepMin": 60,
+   "lightMin": 197,
+   "remMin": 87,
+   "awakeMin": 10,
+   "sleepScore": 81,
+   "hrv": 59,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-10",
+   "steps": 11434,
+   "calories": 2123,
+   "activeCalories": 647,
+   "distanceKm": 13.94,
+   "restingHr": 54,
+   "stressAvg": 26,
+   "bodyBatteryHigh": 89,
+   "bodyBatteryLow": 14,
+   "intensityMinutes": 5,
+   "sleepMin": 350,
+   "deepMin": 59,
+   "lightMin": 205,
+   "remMin": 86,
+   "awakeMin": 38,
+   "sleepScore": 84,
+   "hrv": 59,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-11",
+   "steps": 4825,
+   "calories": 2470,
+   "activeCalories": 506,
+   "distanceKm": 13.25,
+   "restingHr": 52,
+   "stressAvg": 34,
+   "bodyBatteryHigh": 94,
+   "bodyBatteryLow": 16,
+   "intensityMinutes": 37,
+   "sleepMin": 365,
+   "deepMin": 62,
+   "lightMin": 223,
+   "remMin": 80,
+   "awakeMin": 33,
+   "sleepScore": 78,
+   "hrv": 73,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-12",
+   "steps": 4297,
+   "calories": 2612,
+   "activeCalories": 337,
+   "distanceKm": 3.17,
+   "restingHr": 56,
+   "stressAvg": 35,
+   "bodyBatteryHigh": 76,
+   "bodyBatteryLow": 26,
+   "intensityMinutes": 60,
+   "sleepMin": 387,
+   "deepMin": 66,
+   "lightMin": 234,
+   "remMin": 87,
+   "awakeMin": 20,
+   "sleepScore": 91,
+   "hrv": 66,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-13",
+   "steps": 14756,
+   "calories": 3113,
+   "activeCalories": 859,
+   "distanceKm": 12.18,
+   "restingHr": 54,
+   "stressAvg": 34,
+   "bodyBatteryHigh": 79,
+   "bodyBatteryLow": 32,
+   "intensityMinutes": 27,
+   "sleepMin": 418,
+   "deepMin": 61,
+   "lightMin": 245,
+   "remMin": 112,
+   "awakeMin": 19,
+   "sleepScore": 72,
+   "hrv": 58,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-14",
+   "steps": 10630,
+   "calories": 2811,
+   "activeCalories": 355,
+   "distanceKm": 12.21,
+   "restingHr": 48,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 90,
+   "bodyBatteryLow": 33,
+   "intensityMinutes": 32,
+   "sleepMin": 423,
+   "deepMin": 100,
+   "lightMin": 207,
+   "remMin": 116,
+   "awakeMin": 32,
+   "sleepScore": 67,
+   "hrv": 53,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-15",
+   "steps": 12289,
+   "calories": 2677,
+   "activeCalories": 913,
+   "distanceKm": 5.66,
+   "restingHr": 52,
+   "stressAvg": 19,
+   "bodyBatteryHigh": 84,
+   "bodyBatteryLow": 15,
+   "intensityMinutes": 20,
+   "sleepMin": 410,
+   "deepMin": 60,
+   "lightMin": 238,
+   "remMin": 112,
+   "awakeMin": 22,
+   "sleepScore": 76,
+   "hrv": 52,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-16",
+   "steps": 12963,
+   "calories": 2762,
+   "activeCalories": 550,
+   "distanceKm": 3.38,
+   "restingHr": 52,
+   "stressAvg": 24,
+   "bodyBatteryHigh": 81,
+   "bodyBatteryLow": 15,
+   "intensityMinutes": 0,
+   "sleepMin": 396,
+   "deepMin": 71,
+   "lightMin": 232,
+   "remMin": 93,
+   "awakeMin": 26,
+   "sleepScore": 74,
+   "hrv": 54,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-17",
+   "steps": 14748,
+   "calories": 2511,
+   "activeCalories": 554,
+   "distanceKm": 8.55,
+   "restingHr": 48,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 78,
+   "bodyBatteryLow": 12,
+   "intensityMinutes": 18,
+   "sleepMin": 426,
+   "deepMin": 85,
+   "lightMin": 254,
+   "remMin": 87,
+   "awakeMin": 30,
+   "sleepScore": 80,
+   "hrv": 53,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-18",
+   "steps": 8984,
+   "calories": 2576,
+   "activeCalories": 386,
+   "distanceKm": 9.44,
+   "restingHr": 56,
+   "stressAvg": 42,
+   "bodyBatteryHigh": 74,
+   "bodyBatteryLow": 31,
+   "intensityMinutes": 76,
+   "sleepMin": 379,
+   "deepMin": 80,
+   "lightMin": 228,
+   "remMin": 71,
+   "awakeMin": 29,
+   "sleepScore": 86,
+   "hrv": 62,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-19",
+   "steps": 15864,
+   "calories": 2396,
+   "activeCalories": 344,
+   "distanceKm": 12.07,
+   "restingHr": 56,
+   "stressAvg": 38,
+   "bodyBatteryHigh": 83,
+   "bodyBatteryLow": 33,
+   "intensityMinutes": 89,
+   "sleepMin": 391,
+   "deepMin": 86,
+   "lightMin": 226,
+   "remMin": 79,
+   "awakeMin": 37,
+   "sleepScore": 66,
+   "hrv": 68,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-20",
+   "steps": 15247,
+   "calories": 2570,
+   "activeCalories": 387,
+   "distanceKm": 3.34,
+   "restingHr": 50,
+   "stressAvg": 38,
+   "bodyBatteryHigh": 81,
+   "bodyBatteryLow": 13,
+   "intensityMinutes": 48,
+   "sleepMin": 385,
+   "deepMin": 87,
+   "lightMin": 192,
+   "remMin": 106,
+   "awakeMin": 33,
+   "sleepScore": 79,
+   "hrv": 53,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-21",
+   "steps": 15152,
+   "calories": 2600,
+   "activeCalories": 801,
+   "distanceKm": 5.9,
+   "restingHr": 55,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 93,
+   "bodyBatteryLow": 26,
+   "intensityMinutes": 68,
+   "sleepMin": 424,
+   "deepMin": 95,
+   "lightMin": 258,
+   "remMin": 71,
+   "awakeMin": 10,
+   "sleepScore": 83,
+   "hrv": 68,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-22",
+   "steps": 8131,
+   "calories": 2252,
+   "activeCalories": 571,
+   "distanceKm": 5.58,
+   "restingHr": 51,
+   "stressAvg": 25,
+   "bodyBatteryHigh": 93,
+   "bodyBatteryLow": 30,
+   "intensityMinutes": 58,
+   "sleepMin": 426,
+   "deepMin": 59,
+   "lightMin": 250,
+   "remMin": 117,
+   "awakeMin": 36,
+   "sleepScore": 89,
+   "hrv": 64,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-23",
+   "steps": 4765,
+   "calories": 2506,
+   "activeCalories": 379,
+   "distanceKm": 9.6,
+   "restingHr": 53,
+   "stressAvg": 26,
+   "bodyBatteryHigh": 90,
+   "bodyBatteryLow": 33,
+   "intensityMinutes": 88,
+   "sleepMin": 385,
+   "deepMin": 59,
+   "lightMin": 226,
+   "remMin": 100,
+   "awakeMin": 24,
+   "sleepScore": 81,
+   "hrv": 70,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-24",
+   "steps": 4993,
+   "calories": 3094,
+   "activeCalories": 575,
+   "distanceKm": 13.7,
+   "restingHr": 49,
+   "stressAvg": 40,
+   "bodyBatteryHigh": 76,
+   "bodyBatteryLow": 31,
+   "intensityMinutes": 62,
+   "sleepMin": 384,
+   "deepMin": 63,
+   "lightMin": 251,
+   "remMin": 70,
+   "awakeMin": 23,
+   "sleepScore": 84,
+   "hrv": 68,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-25",
+   "steps": 11640,
+   "calories": 2342,
+   "activeCalories": 862,
+   "distanceKm": 5.19,
+   "restingHr": 49,
+   "stressAvg": 33,
+   "bodyBatteryHigh": 70,
+   "bodyBatteryLow": 19,
+   "intensityMinutes": 58,
+   "sleepMin": 421,
+   "deepMin": 73,
+   "lightMin": 249,
+   "remMin": 99,
+   "awakeMin": 9,
+   "sleepScore": 88,
+   "hrv": 68,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-26",
+   "steps": 7437,
+   "calories": 2531,
+   "activeCalories": 376,
+   "distanceKm": 9.4,
+   "restingHr": 50,
+   "stressAvg": 41,
+   "bodyBatteryHigh": 86,
+   "bodyBatteryLow": 18,
+   "intensityMinutes": 46,
+   "sleepMin": 409,
+   "deepMin": 83,
+   "lightMin": 239,
+   "remMin": 87,
+   "awakeMin": 13,
+   "sleepScore": 81,
+   "hrv": 78,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-27",
+   "steps": 5846,
+   "calories": 2847,
+   "activeCalories": 536,
+   "distanceKm": 8.48,
+   "restingHr": 55,
+   "stressAvg": 30,
+   "bodyBatteryHigh": 70,
+   "bodyBatteryLow": 15,
+   "intensityMinutes": 0,
+   "sleepMin": 422,
+   "deepMin": 95,
+   "lightMin": 225,
+   "remMin": 102,
+   "awakeMin": 36,
+   "sleepScore": 83,
+   "hrv": 66,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-28",
+   "steps": 10818,
+   "calories": 2804,
+   "activeCalories": 685,
+   "distanceKm": 6.48,
+   "restingHr": 53,
+   "stressAvg": 18,
+   "bodyBatteryHigh": 80,
+   "bodyBatteryLow": 34,
+   "intensityMinutes": 43,
+   "sleepMin": 377,
+   "deepMin": 80,
+   "lightMin": 208,
+   "remMin": 89,
+   "awakeMin": 30,
+   "sleepScore": 65,
+   "hrv": 58,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-29",
+   "steps": 8148,
+   "calories": 2862,
+   "activeCalories": 366,
+   "distanceKm": 7.32,
+   "restingHr": 49,
+   "stressAvg": 29,
+   "bodyBatteryHigh": 99,
+   "bodyBatteryLow": 23,
+   "intensityMinutes": 35,
+   "sleepMin": 397,
+   "deepMin": 100,
+   "lightMin": 227,
+   "remMin": 70,
+   "awakeMin": 8,
+   "sleepScore": 70,
+   "hrv": 55,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-30",
+   "steps": 14403,
+   "calories": 2404,
+   "activeCalories": 555,
+   "distanceKm": 13.68,
+   "restingHr": 54,
+   "stressAvg": 34,
+   "bodyBatteryHigh": 80,
+   "bodyBatteryLow": 16,
+   "intensityMinutes": 47,
+   "sleepMin": 396,
+   "deepMin": 58,
+   "lightMin": 226,
+   "remMin": 112,
+   "awakeMin": 32,
+   "sleepScore": 90,
+   "hrv": 52,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-08-31",
+   "steps": 12998,
+   "calories": 2516,
+   "activeCalories": 1036,
+   "distanceKm": 3.89,
+   "restingHr": 54,
+   "stressAvg": 32,
+   "bodyBatteryHigh": 89,
+   "bodyBatteryLow": 34,
+   "intensityMinutes": 17,
+   "sleepMin": 450,
+   "deepMin": 95,
+   "lightMin": 260,
+   "remMin": 95,
+   "awakeMin": 23,
+   "sleepScore": 77,
+   "hrv": 53,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-01",
+   "steps": 11736,
+   "calories": 2949,
+   "activeCalories": 651,
+   "distanceKm": 6.1,
+   "restingHr": 52,
+   "stressAvg": 41,
+   "bodyBatteryHigh": 93,
+   "bodyBatteryLow": 30,
+   "intensityMinutes": 33,
+   "sleepMin": 379,
+   "deepMin": 90,
+   "lightMin": 211,
+   "remMin": 78,
+   "awakeMin": 30,
+   "sleepScore": 82,
+   "hrv": 59,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-02",
+   "steps": 5961,
+   "calories": 2442,
+   "activeCalories": 958,
+   "distanceKm": 4.78,
+   "restingHr": 51,
+   "stressAvg": 34,
+   "bodyBatteryHigh": 98,
+   "bodyBatteryLow": 35,
+   "intensityMinutes": 63,
+   "sleepMin": 414,
+   "deepMin": 74,
+   "lightMin": 240,
+   "remMin": 100,
+   "awakeMin": 40,
+   "sleepScore": 69,
+   "hrv": 66,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-03",
+   "steps": 11002,
+   "calories": 2385,
+   "activeCalories": 860,
+   "distanceKm": 5.12,
+   "restingHr": 49,
+   "stressAvg": 23,
+   "bodyBatteryHigh": 80,
+   "bodyBatteryLow": 27,
+   "intensityMinutes": 11,
+   "sleepMin": 441,
+   "deepMin": 76,
+   "lightMin": 247,
+   "remMin": 118,
+   "awakeMin": 25,
+   "sleepScore": 69,
+   "hrv": 63,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-04",
+   "steps": 4329,
+   "calories": 2945,
+   "activeCalories": 692,
+   "distanceKm": 7.55,
+   "restingHr": 56,
+   "stressAvg": 24,
+   "bodyBatteryHigh": 82,
+   "bodyBatteryLow": 18,
+   "intensityMinutes": 43,
+   "sleepMin": 392,
+   "deepMin": 71,
+   "lightMin": 215,
+   "remMin": 106,
+   "awakeMin": 8,
+   "sleepScore": 77,
+   "hrv": 60,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-05",
+   "steps": 15251,
+   "calories": 3130,
+   "activeCalories": 841,
+   "distanceKm": 9.93,
+   "restingHr": 51,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 78,
+   "bodyBatteryLow": 17,
+   "intensityMinutes": 49,
+   "sleepMin": 390,
+   "deepMin": 91,
+   "lightMin": 206,
+   "remMin": 93,
+   "awakeMin": 30,
+   "sleepScore": 82,
+   "hrv": 66,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-06",
+   "steps": 6084,
+   "calories": 2166,
+   "activeCalories": 735,
+   "distanceKm": 10.8,
+   "restingHr": 55,
+   "stressAvg": 36,
+   "bodyBatteryHigh": 85,
+   "bodyBatteryLow": 10,
+   "intensityMinutes": 9,
+   "sleepMin": 363,
+   "deepMin": 82,
+   "lightMin": 192,
+   "remMin": 89,
+   "awakeMin": 30,
+   "sleepScore": 91,
+   "hrv": 78,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-07",
+   "steps": 8070,
+   "calories": 2323,
+   "activeCalories": 529,
+   "distanceKm": 4.7,
+   "restingHr": 56,
+   "stressAvg": 39,
+   "bodyBatteryHigh": 73,
+   "bodyBatteryLow": 33,
+   "intensityMinutes": 89,
+   "sleepMin": 434,
+   "deepMin": 88,
+   "lightMin": 247,
+   "remMin": 99,
+   "awakeMin": 34,
+   "sleepScore": 64,
+   "hrv": 69,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-08",
+   "steps": 7810,
+   "calories": 2176,
+   "activeCalories": 960,
+   "distanceKm": 10.87,
+   "restingHr": 50,
+   "stressAvg": 38,
+   "bodyBatteryHigh": 78,
+   "bodyBatteryLow": 26,
+   "intensityMinutes": 81,
+   "sleepMin": 333,
+   "deepMin": 57,
+   "lightMin": 206,
+   "remMin": 70,
+   "awakeMin": 32,
+   "sleepScore": 84,
+   "hrv": 76,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-09",
+   "steps": 8920,
+   "calories": 3174,
+   "activeCalories": 896,
+   "distanceKm": 5.11,
+   "restingHr": 52,
+   "stressAvg": 25,
+   "bodyBatteryHigh": 95,
+   "bodyBatteryLow": 29,
+   "intensityMinutes": 0,
+   "sleepMin": 337,
+   "deepMin": 62,
+   "lightMin": 199,
+   "remMin": 76,
+   "awakeMin": 5,
+   "sleepScore": 79,
+   "hrv": 61,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-10",
+   "steps": 14560,
+   "calories": 2596,
+   "activeCalories": 786,
+   "distanceKm": 8.79,
+   "restingHr": 56,
+   "stressAvg": 25,
+   "bodyBatteryHigh": 70,
+   "bodyBatteryLow": 23,
+   "intensityMinutes": 90,
+   "sleepMin": 401,
+   "deepMin": 84,
+   "lightMin": 230,
+   "remMin": 87,
+   "awakeMin": 24,
+   "sleepScore": 63,
+   "hrv": 52,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-11",
+   "steps": 5328,
+   "calories": 2626,
+   "activeCalories": 533,
+   "distanceKm": 10.34,
+   "restingHr": 53,
+   "stressAvg": 25,
+   "bodyBatteryHigh": 85,
+   "bodyBatteryLow": 11,
+   "intensityMinutes": 89,
+   "sleepMin": 411,
+   "deepMin": 67,
+   "lightMin": 243,
+   "remMin": 101,
+   "awakeMin": 26,
+   "sleepScore": 84,
+   "hrv": 65,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-12",
+   "steps": 7245,
+   "calories": 2113,
+   "activeCalories": 599,
+   "distanceKm": 11.13,
+   "restingHr": 56,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 76,
+   "bodyBatteryLow": 25,
+   "intensityMinutes": 25,
+   "sleepMin": 431,
+   "deepMin": 78,
+   "lightMin": 240,
+   "remMin": 113,
+   "awakeMin": 24,
+   "sleepScore": 86,
+   "hrv": 78,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-13",
+   "steps": 7628,
+   "calories": 2642,
+   "activeCalories": 1078,
+   "distanceKm": 12.78,
+   "restingHr": 49,
+   "stressAvg": 37,
+   "bodyBatteryHigh": 85,
+   "bodyBatteryLow": 29,
+   "intensityMinutes": 23,
+   "sleepMin": 400,
+   "deepMin": 67,
+   "lightMin": 249,
+   "remMin": 84,
+   "awakeMin": 19,
+   "sleepScore": 77,
+   "hrv": 65,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-14",
+   "steps": 10446,
+   "calories": 2211,
+   "activeCalories": 518,
+   "distanceKm": 3.26,
+   "restingHr": 50,
+   "stressAvg": 31,
+   "bodyBatteryHigh": 71,
+   "bodyBatteryLow": 32,
+   "intensityMinutes": 7,
+   "sleepMin": 378,
+   "deepMin": 97,
+   "lightMin": 208,
+   "remMin": 73,
+   "awakeMin": 16,
+   "sleepScore": 74,
+   "hrv": 66,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-15",
+   "steps": 5300,
+   "calories": 2439,
+   "activeCalories": 637,
+   "distanceKm": 5.1,
+   "restingHr": 56,
+   "stressAvg": 41,
+   "bodyBatteryHigh": 84,
+   "bodyBatteryLow": 11,
+   "intensityMinutes": 39,
+   "sleepMin": 394,
+   "deepMin": 100,
+   "lightMin": 204,
+   "remMin": 90,
+   "awakeMin": 29,
+   "sleepScore": 88,
+   "hrv": 63,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-16",
+   "steps": 5785,
+   "calories": 2105,
+   "activeCalories": 380,
+   "distanceKm": 6.08,
+   "restingHr": 53,
+   "stressAvg": 31,
+   "bodyBatteryHigh": 100,
+   "bodyBatteryLow": 13,
+   "intensityMinutes": 71,
+   "sleepMin": 385,
+   "deepMin": 76,
+   "lightMin": 211,
+   "remMin": 98,
+   "awakeMin": 18,
+   "sleepScore": 74,
+   "hrv": 63,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-17",
+   "steps": 4807,
+   "calories": 3069,
+   "activeCalories": 500,
+   "distanceKm": 7.1,
+   "restingHr": 55,
+   "stressAvg": 24,
+   "bodyBatteryHigh": 80,
+   "bodyBatteryLow": 21,
+   "intensityMinutes": 60,
+   "sleepMin": 372,
+   "deepMin": 74,
+   "lightMin": 201,
+   "remMin": 97,
+   "awakeMin": 6,
+   "sleepScore": 82,
+   "hrv": 65,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-18",
+   "steps": 4666,
+   "calories": 2869,
+   "activeCalories": 335,
+   "distanceKm": 8.1,
+   "restingHr": 48,
+   "stressAvg": 26,
+   "bodyBatteryHigh": 76,
+   "bodyBatteryLow": 33,
+   "intensityMinutes": 8,
+   "sleepMin": 421,
+   "deepMin": 70,
+   "lightMin": 241,
+   "remMin": 110,
+   "awakeMin": 26,
+   "sleepScore": 73,
+   "hrv": 60,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-19",
+   "steps": 8295,
+   "calories": 2748,
+   "activeCalories": 582,
+   "distanceKm": 6.27,
+   "restingHr": 49,
+   "stressAvg": 18,
+   "bodyBatteryHigh": 96,
+   "bodyBatteryLow": 17,
+   "intensityMinutes": 13,
+   "sleepMin": 380,
+   "deepMin": 76,
+   "lightMin": 195,
+   "remMin": 109,
+   "awakeMin": 35,
+   "sleepScore": 84,
+   "hrv": 66,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-20",
+   "steps": 11044,
+   "calories": 3110,
+   "activeCalories": 435,
+   "distanceKm": 13.21,
+   "restingHr": 50,
+   "stressAvg": 18,
+   "bodyBatteryHigh": 95,
+   "bodyBatteryLow": 33,
+   "intensityMinutes": 38,
+   "sleepMin": 421,
+   "deepMin": 79,
+   "lightMin": 222,
+   "remMin": 120,
+   "awakeMin": 14,
+   "sleepScore": 81,
+   "hrv": 59,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-21",
+   "steps": 9928,
+   "calories": 2261,
+   "activeCalories": 824,
+   "distanceKm": 5.17,
+   "restingHr": 50,
+   "stressAvg": 25,
+   "bodyBatteryHigh": 83,
+   "bodyBatteryLow": 12,
+   "intensityMinutes": 83,
+   "sleepMin": 413,
+   "deepMin": 75,
+   "lightMin": 248,
+   "remMin": 90,
+   "awakeMin": 7,
+   "sleepScore": 77,
+   "hrv": 69,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-22",
+   "steps": 10988,
+   "calories": 2315,
+   "activeCalories": 373,
+   "distanceKm": 5.91,
+   "restingHr": 49,
+   "stressAvg": 24,
+   "bodyBatteryHigh": 73,
+   "bodyBatteryLow": 23,
+   "intensityMinutes": 63,
+   "sleepMin": 389,
+   "deepMin": 89,
+   "lightMin": 210,
+   "remMin": 90,
+   "awakeMin": 33,
+   "sleepScore": 67,
+   "hrv": 59,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-23",
+   "steps": 14163,
+   "calories": 2581,
+   "activeCalories": 1065,
+   "distanceKm": 8.92,
+   "restingHr": 49,
+   "stressAvg": 42,
+   "bodyBatteryHigh": 96,
+   "bodyBatteryLow": 19,
+   "intensityMinutes": 37,
+   "sleepMin": 407,
+   "deepMin": 63,
+   "lightMin": 248,
+   "remMin": 96,
+   "awakeMin": 22,
+   "sleepScore": 80,
+   "hrv": 60,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-24",
+   "steps": 7263,
+   "calories": 2999,
+   "activeCalories": 553,
+   "distanceKm": 5.04,
+   "restingHr": 51,
+   "stressAvg": 22,
+   "bodyBatteryHigh": 79,
+   "bodyBatteryLow": 28,
+   "intensityMinutes": 24,
+   "sleepMin": 387,
+   "deepMin": 78,
+   "lightMin": 223,
+   "remMin": 86,
+   "awakeMin": 25,
+   "sleepScore": 64,
+   "hrv": 64,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-25",
+   "steps": 12623,
+   "calories": 2573,
+   "activeCalories": 965,
+   "distanceKm": 11.89,
+   "restingHr": 55,
+   "stressAvg": 19,
+   "bodyBatteryHigh": 73,
+   "bodyBatteryLow": 10,
+   "intensityMinutes": 60,
+   "sleepMin": 410,
+   "deepMin": 71,
+   "lightMin": 254,
+   "remMin": 85,
+   "awakeMin": 19,
+   "sleepScore": 88,
+   "hrv": 66,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-26",
+   "steps": 7815,
+   "calories": 2344,
+   "activeCalories": 351,
+   "distanceKm": 5.09,
+   "restingHr": 51,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 81,
+   "bodyBatteryLow": 26,
+   "intensityMinutes": 22,
+   "sleepMin": 377,
+   "deepMin": 78,
+   "lightMin": 227,
+   "remMin": 72,
+   "awakeMin": 33,
+   "sleepScore": 81,
+   "hrv": 60,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-27",
+   "steps": 14444,
+   "calories": 2816,
+   "activeCalories": 522,
+   "distanceKm": 3.41,
+   "restingHr": 53,
+   "stressAvg": 22,
+   "bodyBatteryHigh": 71,
+   "bodyBatteryLow": 16,
+   "intensityMinutes": 32,
+   "sleepMin": 370,
+   "deepMin": 97,
+   "lightMin": 203,
+   "remMin": 70,
+   "awakeMin": 7,
+   "sleepScore": 81,
+   "hrv": 75,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-28",
+   "steps": 9361,
+   "calories": 2937,
+   "activeCalories": 994,
+   "distanceKm": 7.09,
+   "restingHr": 52,
+   "stressAvg": 20,
+   "bodyBatteryHigh": 76,
+   "bodyBatteryLow": 11,
+   "intensityMinutes": 63,
+   "sleepMin": 370,
+   "deepMin": 96,
+   "lightMin": 191,
+   "remMin": 83,
+   "awakeMin": 40,
+   "sleepScore": 77,
+   "hrv": 54,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-29",
+   "steps": 14879,
+   "calories": 2416,
+   "activeCalories": 954,
+   "distanceKm": 8.87,
+   "restingHr": 50,
+   "stressAvg": 30,
+   "bodyBatteryHigh": 92,
+   "bodyBatteryLow": 18,
+   "intensityMinutes": 52,
+   "sleepMin": 397,
+   "deepMin": 81,
+   "lightMin": 240,
+   "remMin": 76,
+   "awakeMin": 23,
+   "sleepScore": 83,
+   "hrv": 61,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-09-30",
+   "steps": 13281,
+   "calories": 2831,
+   "activeCalories": 724,
+   "distanceKm": 7.58,
+   "restingHr": 53,
+   "stressAvg": 38,
+   "bodyBatteryHigh": 76,
+   "bodyBatteryLow": 22,
+   "intensityMinutes": 51,
+   "sleepMin": 383,
+   "deepMin": 81,
+   "lightMin": 229,
+   "remMin": 73,
+   "awakeMin": 18,
+   "sleepScore": 92,
+   "hrv": 52,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-01",
+   "steps": 5860,
+   "calories": 2285,
+   "activeCalories": 715,
+   "distanceKm": 9.36,
+   "restingHr": 53,
+   "stressAvg": 32,
+   "bodyBatteryHigh": 94,
+   "bodyBatteryLow": 15,
+   "intensityMinutes": 16,
+   "sleepMin": 406,
+   "deepMin": 82,
+   "lightMin": 244,
+   "remMin": 80,
+   "awakeMin": 5,
+   "sleepScore": 63,
+   "hrv": 69,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-02",
+   "steps": 5458,
+   "calories": 2859,
+   "activeCalories": 1054,
+   "distanceKm": 8.55,
+   "restingHr": 50,
+   "stressAvg": 29,
+   "bodyBatteryHigh": 79,
+   "bodyBatteryLow": 15,
+   "intensityMinutes": 66,
+   "sleepMin": 415,
+   "deepMin": 64,
+   "lightMin": 240,
+   "remMin": 111,
+   "awakeMin": 15,
+   "sleepScore": 91,
+   "hrv": 54,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-03",
+   "steps": 7233,
+   "calories": 2717,
+   "activeCalories": 429,
+   "distanceKm": 12.21,
+   "restingHr": 48,
+   "stressAvg": 33,
+   "bodyBatteryHigh": 80,
+   "bodyBatteryLow": 11,
+   "intensityMinutes": 77,
+   "sleepMin": 407,
+   "deepMin": 61,
+   "lightMin": 252,
+   "remMin": 94,
+   "awakeMin": 29,
+   "sleepScore": 64,
+   "hrv": 74,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-04",
+   "steps": 14491,
+   "calories": 2554,
+   "activeCalories": 935,
+   "distanceKm": 7.45,
+   "restingHr": 51,
+   "stressAvg": 33,
+   "bodyBatteryHigh": 75,
+   "bodyBatteryLow": 28,
+   "intensityMinutes": 27,
+   "sleepMin": 418,
+   "deepMin": 94,
+   "lightMin": 210,
+   "remMin": 114,
+   "awakeMin": 7,
+   "sleepScore": 74,
+   "hrv": 68,
+   "hrvStatus": "BALANCED"
+  },
+  {
+   "date": "2026-10-05",
+   "steps": 6016,
+   "calories": 2406,
+   "activeCalories": 552,
+   "distanceKm": 13.68,
+   "restingHr": 51,
+   "stressAvg": 19,
+   "bodyBatteryHigh": 98,
+   "bodyBatteryLow": 27,
+   "intensityMinutes": 86,
+   "sleepMin": 394,
+   "deepMin": 65,
+   "lightMin": 235,
+   "remMin": 94,
+   "awakeMin": 7,
+   "sleepScore": 83,
+   "hrv": 78,
+   "hrvStatus": "BALANCED"
   }
  ],
  "activities": [
   {
-   "id": 1000,
+   "id": 20261005,
    "name": "Easy run",
    "type": "running",
-   "start": "2026-10-05 08:30:00",
-   "distanceKm": 8.08,
-   "durationMin": 46.1,
-   "avgHr": 133,
-   "calories": 552,
-   "elevationM": 262,
-   "maxHr": 145,
-   "avgSpeedKmh": 10.52,
-   "aerobicTE": 3.1,
-   "anaerobicTE": 2.3,
-   "trainingLoad": 98,
-   "cadence": 164,
-   "hrZonesMin": [
-    6.9,
-    32.3,
-    4.6,
-    2.3,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1001,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-10-04 07:16:00",
-   "distanceKm": 49.09,
-   "durationMin": 116.4,
-   "avgHr": 134,
-   "calories": 665,
-   "elevationM": 76,
-   "maxHr": 163,
-   "avgSpeedKmh": 25.3,
-   "aerobicTE": 4.0,
-   "anaerobicTE": 1.4,
-   "trainingLoad": 219
-  },
-  {
-   "id": 1002,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-10-03 07:35:00",
-   "distanceKm": 16.44,
-   "durationMin": 95.4,
+   "start": "2026-10-05 07:28:00",
+   "calories": 646,
+   "distanceKm": 9.57,
+   "durationMin": 53.7,
    "avgHr": 141,
-   "calories": 324,
-   "elevationM": 137,
-   "maxHr": 153,
-   "avgSpeedKmh": 10.34,
-   "aerobicTE": 2.8,
-   "anaerobicTE": 2.0,
-   "trainingLoad": 61,
-   "cadence": 165,
-   "hrZonesMin": [
-    14.3,
-    66.8,
-    9.5,
-    4.8,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1004,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-10-01 08:10:00",
-   "distanceKm": 8.56,
-   "durationMin": 48.9,
-   "avgHr": 136,
-   "calories": 382,
-   "elevationM": 22,
-   "maxHr": 147,
-   "avgSpeedKmh": 10.5,
-   "aerobicTE": 2.9,
-   "anaerobicTE": 2.3,
-   "trainingLoad": 81,
-   "cadence": 168,
-   "hrZonesMin": [
-    7.3,
-    34.2,
-    4.9,
-    2.4,
-    0.0
-   ],
-   "vo2max": 52
-  },
-  {
-   "id": 1005,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-09-30 07:26:00",
-   "distanceKm": 11.49,
-   "durationMin": 54.7,
-   "avgHr": 166,
-   "calories": 527,
-   "elevationM": 177,
-   "maxHr": 177,
-   "avgSpeedKmh": 12.6,
-   "aerobicTE": 4.0,
-   "anaerobicTE": 0.1,
-   "trainingLoad": 44,
-   "cadence": 172,
-   "hrZonesMin": [
-    5.5,
-    10.9,
-    10.9,
-    21.9,
-    5.5
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1006,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-09-29 07:13:00",
-   "distanceKm": null,
-   "durationMin": 45.2,
-   "avgHr": 145,
-   "calories": 756,
-   "elevationM": null,
-   "maxHr": 174,
-   "avgSpeedKmh": null,
-   "aerobicTE": 3.8,
-   "anaerobicTE": 1.0,
-   "trainingLoad": 169
-  },
-  {
-   "id": 1007,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-09-28 07:27:00",
-   "distanceKm": 12.21,
-   "durationMin": 69.9,
-   "avgHr": 133,
-   "calories": 393,
-   "elevationM": 207,
-   "maxHr": 147,
-   "avgSpeedKmh": 10.48,
-   "aerobicTE": 2.4,
-   "anaerobicTE": 2.1,
-   "trainingLoad": 43,
-   "cadence": 166,
-   "hrZonesMin": [
-    10.5,
-    48.9,
-    7.0,
-    3.5,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1008,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-09-27 07:48:00",
-   "distanceKm": 50.05,
-   "durationMin": 107.9,
-   "avgHr": 136,
-   "calories": 863,
-   "elevationM": 124,
-   "maxHr": 157,
-   "avgSpeedKmh": 27.83,
-   "aerobicTE": 2.1,
-   "anaerobicTE": 0.5,
-   "trainingLoad": 108
-  },
-  {
-   "id": 1009,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-09-26 07:33:00",
-   "distanceKm": 18.86,
-   "durationMin": 109.9,
-   "avgHr": 138,
-   "calories": 581,
-   "elevationM": 125,
-   "maxHr": 152,
-   "avgSpeedKmh": 10.3,
-   "aerobicTE": 2.8,
-   "anaerobicTE": 0.8,
-   "trainingLoad": 131,
-   "cadence": 165,
-   "hrZonesMin": [
-    16.5,
-    76.9,
-    11.0,
-    5.5,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1011,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-09-24 07:25:00",
-   "distanceKm": 7.77,
-   "durationMin": 44.6,
-   "avgHr": 136,
-   "calories": 520,
-   "elevationM": 45,
-   "maxHr": 147,
-   "avgSpeedKmh": 10.45,
-   "aerobicTE": 2.9,
-   "anaerobicTE": 0.1,
-   "trainingLoad": 45,
-   "cadence": 165,
-   "hrZonesMin": [
-    6.7,
-    31.2,
-    4.5,
-    2.2,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1012,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-09-23 07:19:00",
-   "distanceKm": 13.31,
-   "durationMin": 63.7,
-   "avgHr": 168,
-   "calories": 648,
-   "elevationM": 391,
-   "maxHr": 178,
-   "avgSpeedKmh": 12.54,
-   "aerobicTE": 4.3,
-   "anaerobicTE": 1.2,
-   "trainingLoad": 112,
-   "cadence": 164,
-   "hrZonesMin": [
-    6.4,
-    12.7,
-    12.7,
-    25.5,
-    6.4
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1013,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-09-22 08:05:00",
-   "distanceKm": null,
-   "durationMin": 44.5,
-   "avgHr": 150,
-   "calories": 392,
-   "elevationM": null,
-   "maxHr": 178,
-   "avgSpeedKmh": null,
-   "aerobicTE": 3.7,
-   "anaerobicTE": 1.4,
-   "trainingLoad": 44
-  },
-  {
-   "id": 1014,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-09-21 08:14:00",
-   "distanceKm": 11.2,
-   "durationMin": 64.4,
-   "avgHr": 138,
-   "calories": 337,
-   "elevationM": 15,
-   "maxHr": 146,
-   "avgSpeedKmh": 10.43,
-   "aerobicTE": 2.4,
-   "anaerobicTE": 0.9,
-   "trainingLoad": 66,
-   "cadence": 174,
-   "hrZonesMin": [
-    9.7,
-    45.1,
-    6.4,
-    3.2,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1015,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-09-20 07:31:00",
-   "distanceKm": 42.85,
-   "durationMin": 76.2,
-   "avgHr": 122,
-   "calories": 765,
-   "elevationM": 274,
-   "maxHr": 136,
-   "avgSpeedKmh": 33.74,
-   "aerobicTE": 3.5,
-   "anaerobicTE": 0.2,
-   "trainingLoad": 161
-  },
-  {
-   "id": 1016,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-09-19 07:09:00",
-   "distanceKm": 22.72,
-   "durationMin": 133.0,
-   "avgHr": 142,
-   "calories": 486,
-   "elevationM": 378,
-   "maxHr": 159,
-   "avgSpeedKmh": 10.25,
-   "aerobicTE": 2.9,
-   "anaerobicTE": 1.0,
-   "trainingLoad": 162,
-   "cadence": 174,
-   "hrZonesMin": [
-    19.9,
-    93.1,
-    13.3,
-    6.7,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1020,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-09-15 08:28:00",
-   "distanceKm": null,
-   "durationMin": 38.1,
-   "avgHr": 154,
-   "calories": 386,
-   "elevationM": null,
-   "maxHr": 166,
-   "avgSpeedKmh": null,
-   "aerobicTE": 3.1,
-   "anaerobicTE": 1.2,
-   "trainingLoad": 212
-  },
-  {
-   "id": 1022,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-09-13 08:02:00",
-   "distanceKm": 39.1,
-   "durationMin": 100.5,
-   "avgHr": 147,
-   "calories": 727,
-   "elevationM": 238,
-   "maxHr": 162,
-   "avgSpeedKmh": 23.34,
-   "aerobicTE": 4.2,
-   "anaerobicTE": 1.4,
-   "trainingLoad": 119
-  },
-  {
-   "id": 1023,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-09-12 08:00:00",
-   "distanceKm": 15.27,
-   "durationMin": 89.8,
-   "avgHr": 147,
-   "calories": 710,
-   "elevationM": 137,
-   "maxHr": 157,
-   "avgSpeedKmh": 10.2,
-   "aerobicTE": 2.8,
-   "anaerobicTE": 2.4,
-   "trainingLoad": 93,
-   "cadence": 175,
-   "hrZonesMin": [
-    13.5,
-    62.9,
-    9.0,
-    4.5,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1025,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-09-10 07:16:00",
-   "distanceKm": 8.82,
-   "durationMin": 51.1,
-   "avgHr": 138,
-   "calories": 365,
-   "elevationM": 360,
-   "maxHr": 146,
-   "avgSpeedKmh": 10.36,
-   "aerobicTE": 2.9,
-   "anaerobicTE": 2.2,
-   "trainingLoad": 164,
-   "cadence": 171,
-   "hrZonesMin": [
-    7.7,
-    35.8,
-    5.1,
-    2.6,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1026,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-09-09 07:18:00",
-   "distanceKm": 11.58,
-   "durationMin": 55.9,
-   "avgHr": 162,
-   "calories": 589,
-   "elevationM": 0,
-   "maxHr": 174,
-   "avgSpeedKmh": 12.43,
-   "aerobicTE": 3.7,
-   "anaerobicTE": 2.1,
-   "trainingLoad": 70,
-   "cadence": 169,
-   "hrZonesMin": [
-    5.6,
-    11.2,
-    11.2,
-    22.4,
-    5.6
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1027,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-09-08 08:15:00",
-   "distanceKm": null,
-   "durationMin": 33.5,
-   "avgHr": 145,
-   "calories": 531,
-   "elevationM": null,
-   "maxHr": 158,
-   "avgSpeedKmh": null,
-   "aerobicTE": 2.6,
-   "anaerobicTE": 0.1,
-   "trainingLoad": 209
-  },
-  {
-   "id": 1028,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-09-07 07:19:00",
-   "distanceKm": 8.51,
-   "durationMin": 49.4,
-   "avgHr": 144,
-   "calories": 573,
-   "elevationM": 97,
-   "maxHr": 160,
-   "avgSpeedKmh": 10.34,
-   "aerobicTE": 2.6,
-   "anaerobicTE": 1.1,
-   "trainingLoad": 47,
-   "cadence": 172,
-   "hrZonesMin": [
-    7.4,
-    34.6,
-    4.9,
-    2.5,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1030,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-09-05 07:52:00",
-   "distanceKm": 18.63,
-   "durationMin": 110.0,
-   "avgHr": 142,
-   "calories": 747,
-   "elevationM": 25,
-   "maxHr": 160,
-   "avgSpeedKmh": 10.16,
-   "aerobicTE": 2.7,
-   "anaerobicTE": 1.2,
-   "trainingLoad": 127,
-   "cadence": 168,
-   "hrZonesMin": [
-    16.5,
-    77.0,
-    11.0,
-    5.5,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1032,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-09-03 08:01:00",
-   "distanceKm": 8.49,
-   "durationMin": 49.4,
-   "avgHr": 135,
-   "calories": 415,
-   "elevationM": 38,
    "maxHr": 150,
-   "avgSpeedKmh": 10.31,
-   "aerobicTE": 2.5,
-   "anaerobicTE": 2.0,
-   "trainingLoad": 180,
-   "cadence": 170,
-   "hrZonesMin": [
-    7.4,
-    34.6,
-    4.9,
-    2.5,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1033,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-09-02 07:11:00",
-   "distanceKm": 10.12,
-   "durationMin": 49.1,
-   "avgHr": 164,
-   "calories": 494,
-   "elevationM": 188,
-   "maxHr": 178,
-   "avgSpeedKmh": 12.37,
-   "aerobicTE": 4.0,
-   "anaerobicTE": 0.5,
-   "trainingLoad": 45,
-   "cadence": 175,
-   "hrZonesMin": [
-    4.9,
-    9.8,
-    9.8,
-    19.6,
-    4.9
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1034,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-09-01 07:43:00",
-   "distanceKm": null,
-   "durationMin": 47.0,
-   "avgHr": 149,
-   "calories": 534,
-   "elevationM": null,
-   "maxHr": 179,
-   "avgSpeedKmh": null,
-   "aerobicTE": 4.1,
-   "anaerobicTE": 0.3,
-   "trainingLoad": 168
-  },
-  {
-   "id": 1035,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-08-31 07:27:00",
-   "distanceKm": 7.72,
-   "durationMin": 45.0,
-   "avgHr": 134,
-   "calories": 659,
-   "elevationM": 330,
-   "maxHr": 149,
-   "avgSpeedKmh": 10.29,
-   "aerobicTE": 2.8,
-   "anaerobicTE": 0.8,
-   "trainingLoad": 45,
-   "cadence": 173,
-   "hrZonesMin": [
-    6.8,
-    31.5,
-    4.5,
-    2.2,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1037,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-08-29 08:07:00",
-   "distanceKm": 21.61,
-   "durationMin": 128.1,
-   "avgHr": 148,
-   "calories": 361,
-   "elevationM": 114,
-   "maxHr": 157,
-   "avgSpeedKmh": 10.12,
-   "aerobicTE": 3.0,
-   "anaerobicTE": 2.4,
-   "trainingLoad": 67,
-   "cadence": 172,
-   "hrZonesMin": [
-    19.2,
-    89.7,
-    12.8,
-    6.4,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1041,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-08-25 07:04:00",
-   "distanceKm": null,
-   "durationMin": 44.9,
-   "avgHr": 137,
-   "calories": 381,
-   "elevationM": null,
-   "maxHr": 157,
-   "avgSpeedKmh": null,
+   "cadence": 169,
+   "strideCm": 118,
+   "gctMs": 261,
+   "vertOscCm": 9.6,
+   "vertRatio": 8.3,
+   "elevationM": 127,
+   "vo2max": 48,
    "aerobicTE": 3.2,
-   "anaerobicTE": 1.1,
-   "trainingLoad": 68
-  },
-  {
-   "id": 1043,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-08-23 08:14:00",
-   "distanceKm": 37.22,
-   "durationMin": 88.4,
-   "avgHr": 156,
-   "calories": 251,
-   "elevationM": 5,
-   "maxHr": 185,
-   "avgSpeedKmh": 25.26,
-   "aerobicTE": 2.7,
-   "anaerobicTE": 1.2,
-   "trainingLoad": 120
-  },
-  {
-   "id": 1044,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-08-22 07:31:00",
-   "distanceKm": 18.15,
-   "durationMin": 108.1,
-   "avgHr": 144,
-   "calories": 279,
-   "elevationM": 210,
-   "maxHr": 156,
-   "avgSpeedKmh": 10.07,
-   "aerobicTE": 2.9,
-   "anaerobicTE": 0.5,
-   "trainingLoad": 212,
-   "cadence": 167,
-   "hrZonesMin": [
-    16.2,
-    75.7,
-    10.8,
-    5.4,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1046,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-08-20 07:29:00",
-   "distanceKm": 7.96,
-   "durationMin": 46.7,
-   "avgHr": 133,
-   "calories": 621,
-   "elevationM": 349,
-   "maxHr": 144,
-   "avgSpeedKmh": 10.23,
-   "aerobicTE": 3.0,
-   "anaerobicTE": 2.0,
-   "trainingLoad": 169,
-   "cadence": 168,
-   "hrZonesMin": [
-    7.0,
-    32.7,
-    4.7,
-    2.3,
-    0.0
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1047,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-08-19 07:59:00",
-   "distanceKm": 9.99,
-   "durationMin": 48.8,
-   "avgHr": 158,
-   "calories": 361,
-   "elevationM": 319,
-   "maxHr": 175,
-   "avgSpeedKmh": 12.28,
-   "aerobicTE": 4.3,
-   "anaerobicTE": 2.2,
-   "trainingLoad": 164,
-   "cadence": 166,
-   "hrZonesMin": [
-    4.9,
-    9.8,
-    9.8,
-    19.5,
-    4.9
-   ],
-   "vo2max": 51
-  },
-  {
-   "id": 1050,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-08-16 07:53:00",
-   "distanceKm": 34.58,
-   "durationMin": 78.9,
-   "avgHr": 143,
-   "calories": 710,
-   "elevationM": 364,
-   "maxHr": 165,
-   "avgSpeedKmh": 26.3,
-   "aerobicTE": 3.6,
-   "anaerobicTE": 2.5,
-   "trainingLoad": 82
-  },
-  {
-   "id": 1051,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-08-15 07:23:00",
-   "distanceKm": 19.22,
-   "durationMin": 114.9,
-   "avgHr": 139,
-   "calories": 282,
-   "elevationM": 159,
-   "maxHr": 148,
-   "avgSpeedKmh": 10.04,
-   "aerobicTE": 2.5,
-   "anaerobicTE": 2.5,
-   "trainingLoad": 153,
-   "cadence": 168,
-   "hrZonesMin": [
-    17.2,
-    80.4,
-    11.5,
-    5.7,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1053,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-08-13 07:15:00",
-   "distanceKm": 8.05,
-   "durationMin": 47.4,
-   "avgHr": 143,
-   "calories": 615,
-   "elevationM": 393,
-   "maxHr": 156,
-   "avgSpeedKmh": 10.19,
-   "aerobicTE": 3.1,
-   "anaerobicTE": 1.1,
-   "trainingLoad": 52,
-   "cadence": 172,
-   "hrZonesMin": [
-    7.1,
-    33.2,
-    4.7,
-    2.4,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1054,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-08-12 07:46:00",
-   "distanceKm": 12.33,
-   "durationMin": 60.5,
-   "avgHr": 162,
-   "calories": 670,
-   "elevationM": 126,
-   "maxHr": 173,
-   "avgSpeedKmh": 12.23,
-   "aerobicTE": 3.7,
-   "anaerobicTE": 0.1,
-   "trainingLoad": 56,
-   "cadence": 175,
-   "hrZonesMin": [
-    6.1,
-    12.1,
-    12.1,
-    24.2,
-    6.1
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1055,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-08-11 07:46:00",
-   "distanceKm": null,
-   "durationMin": 37.4,
-   "avgHr": 157,
-   "calories": 294,
-   "elevationM": null,
-   "maxHr": 177,
-   "avgSpeedKmh": null,
-   "aerobicTE": 3.6,
-   "anaerobicTE": 1.7,
-   "trainingLoad": 110
-  },
-  {
-   "id": 1056,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-08-10 08:16:00",
-   "distanceKm": 10.51,
-   "durationMin": 62.0,
-   "avgHr": 144,
-   "calories": 274,
-   "elevationM": 119,
-   "maxHr": 159,
-   "avgSpeedKmh": 10.17,
-   "aerobicTE": 3.1,
-   "anaerobicTE": 2.4,
-   "trainingLoad": 138,
-   "cadence": 166,
-   "hrZonesMin": [
-    9.3,
-    43.4,
-    6.2,
-    3.1,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1057,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-08-09 07:38:00",
-   "distanceKm": 49.15,
-   "durationMin": 112.7,
-   "avgHr": 156,
-   "calories": 491,
-   "elevationM": 167,
-   "maxHr": 178,
-   "avgSpeedKmh": 26.17,
-   "aerobicTE": 3.0,
-   "anaerobicTE": 2.0,
-   "trainingLoad": 192
-  },
-  {
-   "id": 1060,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-08-06 07:20:00",
-   "distanceKm": 6.83,
-   "durationMin": 40.4,
-   "avgHr": 133,
-   "calories": 743,
-   "elevationM": 282,
-   "maxHr": 142,
-   "avgSpeedKmh": 10.14,
-   "aerobicTE": 2.5,
-   "anaerobicTE": 2.5,
-   "trainingLoad": 66,
-   "cadence": 167,
-   "hrZonesMin": [
-    6.1,
-    28.3,
-    4.0,
-    2.0,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1061,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-08-05 08:30:00",
-   "distanceKm": 13.22,
-   "durationMin": 65.2,
-   "avgHr": 162,
-   "calories": 676,
-   "elevationM": 235,
-   "maxHr": 174,
-   "avgSpeedKmh": 12.17,
-   "aerobicTE": 4.1,
-   "anaerobicTE": 2.1,
-   "trainingLoad": 210,
-   "cadence": 168,
-   "hrZonesMin": [
-    6.5,
-    13.0,
-    13.0,
-    26.1,
-    6.5
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1062,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-08-04 07:33:00",
-   "distanceKm": null,
-   "durationMin": 36.0,
-   "avgHr": 133,
-   "calories": 440,
-   "elevationM": null,
-   "maxHr": 152,
-   "avgSpeedKmh": null,
-   "aerobicTE": 2.5,
-   "anaerobicTE": 0.7,
-   "trainingLoad": 188
-  },
-  {
-   "id": 1063,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-08-03 07:08:00",
-   "distanceKm": 8.31,
-   "durationMin": 49.2,
-   "avgHr": 132,
-   "calories": 788,
-   "elevationM": 118,
-   "maxHr": 147,
-   "avgSpeedKmh": 10.13,
-   "aerobicTE": 2.4,
-   "anaerobicTE": 2.5,
-   "trainingLoad": 66,
-   "cadence": 169,
-   "hrZonesMin": [
-    7.4,
-    34.4,
-    4.9,
-    2.5,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1064,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-08-02 07:15:00",
-   "distanceKm": 34.55,
-   "durationMin": 104.5,
-   "avgHr": 155,
-   "calories": 448,
-   "elevationM": 38,
-   "maxHr": 178,
-   "avgSpeedKmh": 19.84,
-   "aerobicTE": 3.1,
-   "anaerobicTE": 0.4,
-   "trainingLoad": 194
-  },
-  {
-   "id": 1065,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-08-01 08:25:00",
-   "distanceKm": 20.72,
-   "durationMin": 125.0,
-   "avgHr": 142,
-   "calories": 884,
-   "elevationM": 179,
-   "maxHr": 159,
-   "avgSpeedKmh": 9.95,
-   "aerobicTE": 2.9,
-   "anaerobicTE": 0.9,
-   "trainingLoad": 51,
-   "cadence": 175,
-   "hrZonesMin": [
-    18.8,
-    87.5,
-    12.5,
-    6.2,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1067,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-07-30 07:01:00",
-   "distanceKm": 8.59,
-   "durationMin": 51.0,
-   "avgHr": 140,
-   "calories": 439,
-   "elevationM": 317,
-   "maxHr": 154,
-   "avgSpeedKmh": 10.11,
-   "aerobicTE": 3.0,
-   "anaerobicTE": 0.1,
-   "trainingLoad": 166,
-   "cadence": 165,
-   "hrZonesMin": [
-    7.6,
-    35.7,
-    5.1,
-    2.6,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1068,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-07-29 07:19:00",
-   "distanceKm": 11.39,
-   "durationMin": 56.4,
-   "avgHr": 162,
-   "calories": 657,
-   "elevationM": 356,
-   "maxHr": 179,
-   "avgSpeedKmh": 12.12,
-   "aerobicTE": 3.9,
-   "anaerobicTE": 0.7,
-   "trainingLoad": 118,
-   "cadence": 169,
-   "hrZonesMin": [
-    5.6,
-    11.3,
-    11.3,
-    22.6,
-    5.6
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1070,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-07-27 07:46:00",
-   "distanceKm": 9.08,
-   "durationMin": 54.0,
-   "avgHr": 138,
-   "calories": 458,
-   "elevationM": 3,
-   "maxHr": 153,
-   "avgSpeedKmh": 10.09,
-   "aerobicTE": 2.5,
-   "anaerobicTE": 1.1,
-   "trainingLoad": 63,
-   "cadence": 176,
    "hrZonesMin": [
     8.1,
-    37.8,
+    37.6,
     5.4,
     2.7,
     0.0
    ],
-   "vo2max": 50
+   "avgSpeedKmh": 10.69,
+   "decoupling": 1.8,
+   "weather": {
+    "tempC": 15.2,
+    "dewPointC": 5.7,
+    "humidity": 62,
+    "windKmh": 5.5,
+    "source": "sample"
+   },
+   "heatPct": 0.1,
+   "heatAdjPace": 5.606,
+   "note": {
+    "runType": "solo",
+    "shoes": "Novablast 4",
+    "effort": 5
+   },
+   "detailPath": "sample-details/20261005.json"
   },
   {
-   "id": 1072,
+   "id": 20261004,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-10-04 07:58:00",
+   "calories": 490,
+   "distanceKm": 47.65,
+   "durationMin": 92.4,
+   "avgHr": 126
+  },
+  {
+   "id": 20261003,
    "name": "Long run",
    "type": "running",
-   "start": "2026-07-25 08:22:00",
-   "distanceKm": 19.27,
+   "start": "2026-10-03 07:50:00",
+   "calories": 500,
+   "distanceKm": 17.43,
+   "durationMin": 101.7,
+   "avgHr": 144,
+   "maxHr": 155,
+   "cadence": 175,
+   "strideCm": 112,
+   "gctMs": 261,
+   "vertOscCm": 8.5,
+   "vertRatio": 8.2,
+   "elevationM": 145,
+   "vo2max": 48,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    15.3,
+    71.2,
+    10.2,
+    5.1,
+    0.0
+   ],
+   "avgSpeedKmh": 10.28,
+   "decoupling": 2.5,
+   "weather": {
+    "tempC": 15.3,
+    "dewPointC": 10.0,
+    "humidity": 70,
+    "windKmh": 4.3,
+    "source": "sample"
+   },
+   "heatPct": 0.5,
+   "heatAdjPace": 5.806,
+   "note": {
+    "runType": "solo",
+    "shoes": "Pegasus 41",
+    "effort": 6
+   },
+   "detailPath": "sample-details/20261003.json"
+  },
+  {
+   "id": 20260930,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-09-30 07:25:00",
+   "calories": 763,
+   "distanceKm": 12.41,
+   "durationMin": 59.4,
+   "avgHr": 161,
+   "maxHr": 177,
+   "cadence": 171,
+   "strideCm": 109,
+   "gctMs": 250,
+   "vertOscCm": 9.6,
+   "vertRatio": 7.9,
+   "elevationM": 121,
+   "vo2max": 48,
+   "aerobicTE": 3.9,
+   "hrZonesMin": [
+    5.9,
+    11.9,
+    11.9,
+    23.8,
+    5.9
+   ],
+   "avgSpeedKmh": 12.54,
+   "decoupling": 1.4,
+   "weather": {
+    "tempC": 19.2,
+    "dewPointC": 13.3,
+    "humidity": 53,
+    "windKmh": 9.7,
+    "source": "sample"
+   },
+   "heatPct": 1.2,
+   "heatAdjPace": 4.73,
+   "note": {
+    "runType": "run club",
+    "shoes": "Novablast 4",
+    "effort": 8
+   },
+   "detailPath": "sample-details/20260930.json"
+  },
+  {
+   "id": 20260928,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-28 08:00:00",
+   "calories": 343,
+   "distanceKm": 9.97,
+   "durationMin": 58.4,
+   "avgHr": 136,
+   "maxHr": 145,
+   "cadence": 165,
+   "strideCm": 102,
+   "gctMs": 240,
+   "vertOscCm": 8.7,
+   "vertRatio": 7.9,
+   "elevationM": 139,
+   "vo2max": 48,
+   "aerobicTE": 3.1,
+   "hrZonesMin": [
+    8.8,
+    40.9,
+    5.8,
+    2.9,
+    0.0
+   ],
+   "avgSpeedKmh": 10.24,
+   "decoupling": 2.3,
+   "weather": {
+    "tempC": 21.6,
+    "dewPointC": 12.8,
+    "humidity": 59,
+    "windKmh": 7.9,
+    "source": "sample"
+   },
+   "heatPct": 1.6,
+   "heatAdjPace": 5.765,
+   "note": {
+    "runType": "solo",
+    "shoes": "Novablast 4",
+    "effort": 6
+   },
+   "detailPath": "sample-details/20260928.json"
+  },
+  {
+   "id": 20260927,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-09-27 07:30:00",
+   "calories": 811,
+   "distanceKm": 49.66,
+   "durationMin": 90.1,
+   "avgHr": 121
+  },
+  {
+   "id": 20260926,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-09-26 07:01:00",
+   "calories": 608,
+   "distanceKm": 19.43,
+   "durationMin": 114.5,
+   "avgHr": 145,
+   "maxHr": 160,
+   "cadence": 165,
+   "strideCm": 110,
+   "gctMs": 243,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.1,
+   "elevationM": 76,
+   "vo2max": 48,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    17.2,
+    80.1,
+    11.5,
+    5.7,
+    0.0
+   ],
+   "avgSpeedKmh": 10.18,
+   "decoupling": 2.8,
+   "weather": {
+    "tempC": 18.6,
+    "dewPointC": 11.0,
+    "humidity": 48,
+    "windKmh": 15.0,
+    "source": "sample"
+   },
+   "heatPct": 0.9,
+   "heatAdjPace": 5.84,
+   "note": {
+    "runType": "with friends",
+    "shoes": "Novablast 4",
+    "effort": 6
+   },
+   "detailPath": "sample-details/20260926.json"
+  },
+  {
+   "id": 20260924,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-24 07:16:00",
+   "calories": 871,
+   "distanceKm": 8.06,
+   "durationMin": 44.5,
+   "avgHr": 141,
+   "maxHr": 152,
+   "cadence": 169,
+   "strideCm": 108,
+   "gctMs": 265,
+   "vertOscCm": 8.7,
+   "vertRatio": 7.8,
+   "elevationM": 100,
+   "vo2max": 48,
+   "aerobicTE": 2.6,
+   "hrZonesMin": [
+    6.7,
+    31.1,
+    4.5,
+    2.2,
+    0.0
+   ],
+   "avgSpeedKmh": 10.87,
+   "decoupling": 1.4,
+   "weather": {
+    "tempC": 19.1,
+    "dewPointC": 10.1,
+    "humidity": 83,
+    "windKmh": 2.2,
+    "source": "sample"
+   },
+   "heatPct": 0.8,
+   "heatAdjPace": 5.477,
+   "note": {
+    "runType": "solo",
+    "shoes": "Novablast 4",
+    "effort": 6
+   },
+   "detailPath": "sample-details/20260924.json"
+  },
+  {
+   "id": 20260921,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-21 07:08:00",
+   "calories": 517,
+   "distanceKm": 9.82,
+   "durationMin": 55.6,
+   "avgHr": 142,
+   "maxHr": 152,
+   "cadence": 166,
+   "strideCm": 116,
+   "gctMs": 239,
+   "vertOscCm": 9.0,
+   "vertRatio": 8.5,
+   "elevationM": 24,
+   "vo2max": 48,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    8.3,
+    38.9,
+    5.6,
+    2.8,
+    0.0
+   ],
+   "avgSpeedKmh": 10.6,
+   "decoupling": 0.7,
+   "weather": {
+    "tempC": 20.4,
+    "dewPointC": 11.8,
+    "humidity": 48,
+    "windKmh": 15.1,
+    "source": "sample"
+   },
+   "heatPct": 1.2,
+   "heatAdjPace": 5.595,
+   "note": {
+    "runType": "run club",
+    "shoes": "Pegasus 41",
+    "effort": 7
+   },
+   "detailPath": "sample-details/20260921.json"
+  },
+  {
+   "id": 20260920,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-09-20 07:53:00",
+   "calories": 250,
+   "distanceKm": 36.2,
+   "durationMin": 108.6,
+   "avgHr": 137
+  },
+  {
+   "id": 20260919,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-09-19 07:17:00",
+   "calories": 892,
+   "distanceKm": 20.25,
    "durationMin": 116.7,
-   "avgHr": 140,
-   "calories": 887,
-   "elevationM": 189,
-   "maxHr": 149,
-   "avgSpeedKmh": 9.91,
-   "aerobicTE": 2.8,
-   "anaerobicTE": 0.9,
-   "trainingLoad": 81,
+   "avgHr": 148,
+   "maxHr": 156,
    "cadence": 170,
+   "strideCm": 117,
+   "gctMs": 248,
+   "vertOscCm": 9.1,
+   "vertRatio": 8.4,
+   "elevationM": 173,
+   "vo2max": 48,
+   "aerobicTE": 3.2,
    "hrZonesMin": [
     17.5,
     81.7,
@@ -1707,24 +2160,4047 @@
     5.8,
     0.0
    ],
-   "vo2max": 50
+   "avgSpeedKmh": 10.41,
+   "decoupling": 2.5,
+   "weather": {
+    "tempC": 18.0,
+    "dewPointC": 10.1,
+    "humidity": 73,
+    "windKmh": 13.1,
+    "source": "sample"
+   },
+   "heatPct": 0.7,
+   "heatAdjPace": 5.723,
+   "note": {
+    "runType": "with friends",
+    "shoes": "Pegasus 41",
+    "effort": 8
+   },
+   "detailPath": "sample-details/20260919.json"
   },
   {
-   "id": 1074,
+   "id": 20260917,
    "name": "Easy run",
    "type": "running",
-   "start": "2026-07-23 07:25:00",
-   "distanceKm": 6.75,
-   "durationMin": 40.3,
+   "start": "2026-09-17 07:43:00",
+   "calories": 661,
+   "distanceKm": 8.2,
+   "durationMin": 47.2,
+   "avgHr": 137,
+   "maxHr": 148,
+   "cadence": 174,
+   "strideCm": 116,
+   "gctMs": 251,
+   "vertOscCm": 8.3,
+   "vertRatio": 8.0,
+   "elevationM": 14,
+   "vo2max": 48,
+   "aerobicTE": 2.8,
+   "hrZonesMin": [
+    7.1,
+    33.0,
+    4.7,
+    2.4,
+    0.0
+   ],
+   "avgSpeedKmh": 10.42,
+   "decoupling": 1.7,
+   "weather": {
+    "tempC": 21.4,
+    "dewPointC": 14.2,
+    "humidity": 82,
+    "windKmh": 3.5,
+    "source": "sample"
+   },
+   "heatPct": 1.8,
+   "heatAdjPace": 5.654,
+   "note": {
+    "runType": "with friends",
+    "shoes": "Novablast 4",
+    "effort": 8
+   },
+   "detailPath": "sample-details/20260917.json"
+  },
+  {
+   "id": 20260915,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-09-15 07:18:00",
+   "calories": 478,
+   "distanceKm": null,
+   "durationMin": 43.9,
+   "avgHr": 140
+  },
+  {
+   "id": 20260914,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-14 07:19:00",
+   "calories": 275,
+   "distanceKm": 10.99,
+   "durationMin": 62.5,
+   "avgHr": 136,
+   "maxHr": 146,
+   "cadence": 168,
+   "strideCm": 104,
+   "gctMs": 251,
+   "vertOscCm": 9.2,
+   "vertRatio": 7.5,
+   "elevationM": 53,
+   "vo2max": 48,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    9.4,
+    43.8,
+    6.2,
+    3.1,
+    0.0
+   ],
+   "avgSpeedKmh": 10.55,
+   "decoupling": 2.2,
+   "weather": {
+    "tempC": 22.2,
+    "dewPointC": 12.2,
+    "humidity": 62,
+    "windKmh": 12.3,
+    "source": "sample"
+   },
+   "heatPct": 1.6,
+   "heatAdjPace": 5.597,
+   "note": {
+    "runType": "solo",
+    "shoes": "Novablast 4",
+    "effort": 7
+   },
+   "detailPath": "sample-details/20260914.json"
+  },
+  {
+   "id": 20260913,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-09-13 07:56:00",
+   "calories": 619,
+   "distanceKm": 34.38,
+   "durationMin": 107.6,
+   "avgHr": 132
+  },
+  {
+   "id": 20260912,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-09-12 07:50:00",
+   "calories": 410,
+   "distanceKm": 19.15,
+   "durationMin": 113.5,
+   "avgHr": 144,
+   "maxHr": 154,
+   "cadence": 168,
+   "strideCm": 109,
+   "gctMs": 237,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.0,
+   "elevationM": 73,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    17.0,
+    79.4,
+    11.4,
+    5.7,
+    0.0
+   ],
+   "avgSpeedKmh": 10.12,
+   "weather": {
+    "tempC": 20.0,
+    "dewPointC": 10.1,
+    "humidity": 69,
+    "windKmh": 9.2,
+    "source": "sample"
+   },
+   "heatPct": 0.9,
+   "heatAdjPace": 5.874,
+   "note": {
+    "runType": "with friends",
+    "shoes": "Novablast 4",
+    "effort": 5
+   }
+  },
+  {
+   "id": 20260910,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-10 07:22:00",
+   "calories": 311,
+   "distanceKm": 8.4,
+   "durationMin": 47.6,
+   "avgHr": 142,
+   "maxHr": 153,
+   "cadence": 164,
+   "strideCm": 108,
+   "gctMs": 235,
+   "vertOscCm": 8.6,
+   "vertRatio": 7.9,
+   "elevationM": 69,
+   "vo2max": 48,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    7.1,
+    33.3,
+    4.8,
+    2.4,
+    0.0
+   ],
+   "avgSpeedKmh": 10.59,
+   "weather": {
+    "tempC": 22.5,
+    "dewPointC": 14.1,
+    "humidity": 62,
+    "windKmh": 6.5,
+    "source": "sample"
+   },
+   "heatPct": 2.0,
+   "heatAdjPace": 5.556,
+   "note": {
+    "runType": "solo",
+    "shoes": "Novablast 4",
+    "effort": 3
+   }
+  },
+  {
+   "id": 20260909,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-09-09 07:33:00",
+   "calories": 279,
+   "distanceKm": 11.49,
+   "durationMin": 54.9,
+   "avgHr": 167,
+   "maxHr": 182,
+   "cadence": 167,
+   "strideCm": 111,
+   "gctMs": 263,
+   "vertOscCm": 9.3,
+   "vertRatio": 8.0,
+   "elevationM": 92,
+   "vo2max": 48,
+   "aerobicTE": 3.6,
+   "hrZonesMin": [
+    5.5,
+    11.0,
+    11.0,
+    22.0,
+    5.5
+   ],
+   "avgSpeedKmh": 12.56,
+   "weather": {
+    "tempC": 22.1,
+    "dewPointC": 13.2,
+    "humidity": 71,
+    "windKmh": 2.2,
+    "source": "sample"
+   },
+   "heatPct": 1.8,
+   "heatAdjPace": 4.694,
+   "note": {
+    "runType": "solo",
+    "shoes": "Novablast 4",
+    "effort": 4
+   }
+  },
+  {
+   "id": 20260908,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-09-08 07:38:00",
+   "calories": 624,
+   "distanceKm": null,
+   "durationMin": 44.9,
+   "avgHr": 123
+  },
+  {
+   "id": 20260907,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-07 08:00:00",
+   "calories": 530,
+   "distanceKm": 9.6,
+   "durationMin": 53.9,
    "avgHr": 143,
-   "calories": 744,
-   "elevationM": 161,
-   "maxHr": 161,
-   "avgSpeedKmh": 10.05,
+   "maxHr": 152,
+   "cadence": 174,
+   "strideCm": 111,
+   "gctMs": 239,
+   "vertOscCm": 9.6,
+   "vertRatio": 7.7,
+   "elevationM": 33,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    8.1,
+    37.7,
+    5.4,
+    2.7,
+    0.0
+   ],
+   "avgSpeedKmh": 10.69,
+   "weather": {
+    "tempC": 18.7,
+    "dewPointC": 11.1,
+    "humidity": 50,
+    "windKmh": 10.7,
+    "source": "sample"
+   },
+   "heatPct": 0.9,
+   "heatAdjPace": 5.565,
+   "note": {
+    "runType": "with friends",
+    "shoes": "Pegasus 41",
+    "effort": 4
+   }
+  },
+  {
+   "id": 20260906,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-09-06 07:49:00",
+   "calories": 566,
+   "distanceKm": 44.55,
+   "durationMin": 101.2,
+   "avgHr": 140
+  },
+  {
+   "id": 20260905,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-09-05 07:13:00",
+   "calories": 396,
+   "distanceKm": 19.35,
+   "durationMin": 115.1,
+   "avgHr": 145,
+   "maxHr": 158,
+   "cadence": 170,
+   "strideCm": 111,
+   "gctMs": 252,
+   "vertOscCm": 9.2,
+   "vertRatio": 8.4,
+   "elevationM": 49,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    17.3,
+    80.6,
+    11.5,
+    5.8,
+    0.0
+   ],
+   "avgSpeedKmh": 10.09,
+   "weather": {
+    "tempC": 17.9,
+    "dewPointC": 12.8,
+    "humidity": 58,
+    "windKmh": 13.9,
+    "source": "sample"
+   },
+   "heatPct": 1.0,
+   "heatAdjPace": 5.889,
+   "note": {
+    "runType": "run club",
+    "shoes": "Pegasus 41",
+    "effort": 4
+   }
+  },
+  {
+   "id": 20260903,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-09-03 07:26:00",
+   "calories": 296,
+   "distanceKm": 8.15,
+   "durationMin": 46.6,
+   "avgHr": 143,
+   "maxHr": 157,
+   "cadence": 168,
+   "strideCm": 114,
+   "gctMs": 262,
+   "vertOscCm": 8.2,
+   "vertRatio": 8.5,
+   "elevationM": 154,
+   "vo2max": 48,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    7.0,
+    32.6,
+    4.7,
+    2.3,
+    0.0
+   ],
+   "avgSpeedKmh": 10.49,
+   "weather": {
+    "tempC": 19.0,
+    "dewPointC": 13.7,
+    "humidity": 62,
+    "windKmh": 13.4,
+    "source": "sample"
+   },
+   "heatPct": 1.3,
+   "heatAdjPace": 5.644,
+   "note": {
+    "runType": "with friends",
+    "shoes": "Novablast 4",
+    "effort": 7
+   }
+  },
+  {
+   "id": 20260902,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-09-02 07:51:00",
+   "calories": 839,
+   "distanceKm": 11.46,
+   "durationMin": 53.9,
+   "avgHr": 163,
+   "maxHr": 175,
+   "cadence": 172,
+   "strideCm": 100,
+   "gctMs": 255,
+   "vertOscCm": 8.7,
+   "vertRatio": 7.4,
+   "elevationM": 92,
+   "vo2max": 48,
+   "aerobicTE": 4.2,
+   "hrZonesMin": [
+    5.4,
+    10.8,
+    10.8,
+    21.6,
+    5.4
+   ],
+   "avgSpeedKmh": 12.76,
+   "weather": {
+    "tempC": 20.6,
+    "dewPointC": 15.2,
+    "humidity": 71,
+    "windKmh": 8.5,
+    "source": "sample"
+   },
+   "heatPct": 1.8,
+   "heatAdjPace": 4.62,
+   "note": {
+    "runType": "solo",
+    "shoes": "Novablast 4",
+    "effort": 3
+   }
+  },
+  {
+   "id": 20260901,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-09-01 07:32:00",
+   "calories": 351,
+   "distanceKm": null,
+   "durationMin": 38.4,
+   "avgHr": 119
+  },
+  {
+   "id": 20260831,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-31 18:49:00",
+   "calories": 688,
+   "distanceKm": 10.82,
+   "durationMin": 65.9,
+   "avgHr": 146,
+   "maxHr": 159,
+   "cadence": 166,
+   "strideCm": 108,
+   "gctMs": 263,
+   "vertOscCm": 8.6,
+   "vertRatio": 7.4,
+   "elevationM": 52,
+   "vo2max": 49,
+   "aerobicTE": 2.6,
+   "hrZonesMin": [
+    9.9,
+    46.1,
+    6.6,
+    3.3,
+    0.0
+   ],
+   "avgSpeedKmh": 9.85,
+   "weather": {
+    "tempC": 25.1,
+    "dewPointC": 17.8,
+    "humidity": 46,
+    "windKmh": 2.8,
+    "source": "sample"
+   },
+   "heatPct": 3.2,
+   "heatAdjPace": 5.902
+  },
+  {
+   "id": 20260830,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-30 18:58:00",
+   "calories": 444,
+   "distanceKm": 43.4,
+   "durationMin": 87.8,
+   "avgHr": 123
+  },
+  {
+   "id": 20260829,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-08-29 18:15:00",
+   "calories": 607,
+   "distanceKm": 17.17,
+   "durationMin": 104.3,
+   "avgHr": 150,
+   "maxHr": 164,
+   "cadence": 171,
+   "strideCm": 112,
+   "gctMs": 253,
+   "vertOscCm": 9.3,
+   "vertRatio": 8.5,
+   "elevationM": 160,
+   "vo2max": 48,
+   "aerobicTE": 2.6,
+   "hrZonesMin": [
+    15.6,
+    73.0,
+    10.4,
+    5.2,
+    0.0
+   ],
+   "avgSpeedKmh": 9.88,
+   "weather": {
+    "tempC": 25.2,
+    "dewPointC": 19.0,
+    "humidity": 57,
+    "windKmh": 13.6,
+    "source": "sample"
+   },
+   "heatPct": 3.5,
+   "heatAdjPace": 5.869
+  },
+  {
+   "id": 20260827,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-27 19:00:00",
+   "calories": 394,
+   "distanceKm": 8.83,
+   "durationMin": 52.4,
+   "avgHr": 144,
+   "maxHr": 157,
+   "cadence": 172,
+   "strideCm": 107,
+   "gctMs": 246,
+   "vertOscCm": 9.4,
+   "vertRatio": 8.3,
+   "elevationM": 95,
+   "vo2max": 48,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    7.9,
+    36.7,
+    5.2,
+    2.6,
+    0.0
+   ],
+   "avgSpeedKmh": 10.11,
+   "weather": {
+    "tempC": 27.8,
+    "dewPointC": 18.4,
+    "humidity": 58,
+    "windKmh": 17.8,
+    "source": "sample"
+   },
+   "heatPct": 4.1,
+   "heatAdjPace": 5.701
+  },
+  {
+   "id": 20260826,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-08-26 18:04:00",
+   "calories": 762,
+   "distanceKm": 12.48,
+   "durationMin": 61.0,
+   "avgHr": 171,
+   "maxHr": 181,
+   "cadence": 175,
+   "strideCm": 101,
+   "gctMs": 264,
+   "vertOscCm": 9.0,
+   "vertRatio": 8.3,
+   "elevationM": 61,
+   "vo2max": 49,
+   "aerobicTE": 4.1,
+   "hrZonesMin": [
+    6.1,
+    12.2,
+    12.2,
+    24.4,
+    6.1
+   ],
+   "avgSpeedKmh": 12.28,
+   "weather": {
+    "tempC": 23.9,
+    "dewPointC": 16.9,
+    "humidity": 70,
+    "windKmh": 7.8,
+    "source": "sample"
+   },
+   "heatPct": 2.7,
+   "heatAdjPace": 4.759
+  },
+  {
+   "id": 20260825,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-08-25 18:56:00",
+   "calories": 873,
+   "distanceKm": null,
+   "durationMin": 36.5,
+   "avgHr": 122
+  },
+  {
+   "id": 20260824,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-24 18:04:00",
+   "calories": 619,
+   "distanceKm": 9.6,
+   "durationMin": 58.1,
+   "avgHr": 141,
+   "maxHr": 149,
+   "cadence": 167,
+   "strideCm": 105,
+   "gctMs": 261,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.0,
+   "elevationM": 157,
+   "vo2max": 49,
    "aerobicTE": 3.1,
-   "anaerobicTE": 1.6,
-   "trainingLoad": 62,
+   "hrZonesMin": [
+    8.7,
+    40.7,
+    5.8,
+    2.9,
+    0.0
+   ],
+   "avgSpeedKmh": 9.91,
+   "weather": {
+    "tempC": 28.2,
+    "dewPointC": 20.2,
+    "humidity": 58,
+    "windKmh": 7.4,
+    "source": "sample"
+   },
+   "heatPct": 4.7,
+   "heatAdjPace": 5.78
+  },
+  {
+   "id": 20260823,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-23 18:53:00",
+   "calories": 737,
+   "distanceKm": 49.85,
+   "durationMin": 105.2,
+   "avgHr": 132
+  },
+  {
+   "id": 20260820,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-20 18:18:00",
+   "calories": 639,
+   "distanceKm": 8.71,
+   "durationMin": 51.9,
+   "avgHr": 143,
+   "maxHr": 159,
+   "cadence": 175,
+   "strideCm": 108,
+   "gctMs": 265,
+   "vertOscCm": 8.8,
+   "vertRatio": 7.4,
+   "elevationM": 48,
+   "vo2max": 49,
+   "aerobicTE": 2.8,
+   "hrZonesMin": [
+    7.8,
+    36.3,
+    5.2,
+    2.6,
+    0.0
+   ],
+   "avgSpeedKmh": 10.07,
+   "weather": {
+    "tempC": 24.1,
+    "dewPointC": 16.3,
+    "humidity": 46,
+    "windKmh": 15.4,
+    "source": "sample"
+   },
+   "heatPct": 2.7,
+   "heatAdjPace": 5.802
+  },
+  {
+   "id": 20260816,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-16 18:44:00",
+   "calories": 707,
+   "distanceKm": 33.96,
+   "durationMin": 113.7,
+   "avgHr": 132
+  },
+  {
+   "id": 20260813,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-13 18:21:00",
+   "calories": 261,
+   "distanceKm": 8.31,
+   "durationMin": 48.8,
+   "avgHr": 144,
+   "maxHr": 160,
+   "cadence": 175,
+   "strideCm": 116,
+   "gctMs": 265,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.0,
+   "elevationM": 164,
+   "vo2max": 49,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    7.3,
+    34.2,
+    4.9,
+    2.4,
+    0.0
+   ],
+   "avgSpeedKmh": 10.22,
+   "weather": {
+    "tempC": 24.0,
+    "dewPointC": 15.3,
+    "humidity": 58,
+    "windKmh": 11.6,
+    "source": "sample"
+   },
+   "heatPct": 2.5,
+   "heatAdjPace": 5.729
+  },
+  {
+   "id": 20260812,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-08-12 18:15:00",
+   "calories": 298,
+   "distanceKm": 10.13,
+   "durationMin": 50.6,
+   "avgHr": 166,
+   "maxHr": 181,
+   "cadence": 168,
+   "strideCm": 103,
+   "gctMs": 257,
+   "vertOscCm": 8.4,
+   "vertRatio": 8.5,
+   "elevationM": 32,
+   "vo2max": 49,
+   "aerobicTE": 4.3,
+   "hrZonesMin": [
+    5.1,
+    10.1,
+    10.1,
+    20.2,
+    5.1
+   ],
+   "avgSpeedKmh": 12.01,
+   "weather": {
+    "tempC": 27.7,
+    "dewPointC": 22.4,
+    "humidity": 68,
+    "windKmh": 16.7,
+    "source": "sample"
+   },
+   "heatPct": 5.1,
+   "heatAdjPace": 4.753
+  },
+  {
+   "id": 20260811,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-08-11 18:12:00",
+   "calories": 826,
+   "distanceKm": null,
+   "durationMin": 41.7,
+   "avgHr": 120
+  },
+  {
+   "id": 20260810,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-10 18:07:00",
+   "calories": 775,
+   "distanceKm": 9.84,
+   "durationMin": 60.0,
+   "avgHr": 145,
+   "maxHr": 154,
    "cadence": 176,
+   "strideCm": 114,
+   "gctMs": 239,
+   "vertOscCm": 9.4,
+   "vertRatio": 8.1,
+   "elevationM": 39,
+   "vo2max": 49,
+   "aerobicTE": 3.2,
+   "hrZonesMin": [
+    9.0,
+    42.0,
+    6.0,
+    3.0,
+    0.0
+   ],
+   "avgSpeedKmh": 9.84,
+   "weather": {
+    "tempC": 24.4,
+    "dewPointC": 16.5,
+    "humidity": 66,
+    "windKmh": 9.4,
+    "source": "sample"
+   },
+   "heatPct": 2.8,
+   "heatAdjPace": 5.931
+  },
+  {
+   "id": 20260809,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-09 18:12:00",
+   "calories": 793,
+   "distanceKm": 44.86,
+   "durationMin": 105.7,
+   "avgHr": 125
+  },
+  {
+   "id": 20260808,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-08-08 18:44:00",
+   "calories": 337,
+   "distanceKm": 14.98,
+   "durationMin": 93.3,
+   "avgHr": 151,
+   "maxHr": 165,
+   "cadence": 169,
+   "strideCm": 116,
+   "gctMs": 242,
+   "vertOscCm": 9.0,
+   "vertRatio": 7.9,
+   "elevationM": 39,
+   "vo2max": 48,
+   "aerobicTE": 3.2,
+   "hrZonesMin": [
+    14.0,
+    65.3,
+    9.3,
+    4.7,
+    0.0
+   ],
+   "avgSpeedKmh": 9.63,
+   "weather": {
+    "tempC": 24.3,
+    "dewPointC": 15.6,
+    "humidity": 53,
+    "windKmh": 14.0,
+    "source": "sample"
+   },
+   "heatPct": 2.6,
+   "heatAdjPace": 6.07
+  },
+  {
+   "id": 20260806,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-06 18:38:00",
+   "calories": 884,
+   "distanceKm": 6.82,
+   "durationMin": 41.6,
+   "avgHr": 144,
+   "maxHr": 156,
+   "cadence": 173,
+   "strideCm": 118,
+   "gctMs": 248,
+   "vertOscCm": 9.5,
+   "vertRatio": 8.0,
+   "elevationM": 175,
+   "vo2max": 48,
+   "aerobicTE": 3.1,
+   "hrZonesMin": [
+    6.2,
+    29.1,
+    4.2,
+    2.1,
+    0.0
+   ],
+   "avgSpeedKmh": 9.84,
+   "weather": {
+    "tempC": 23.9,
+    "dewPointC": 16.9,
+    "humidity": 66,
+    "windKmh": 12.1,
+    "source": "sample"
+   },
+   "heatPct": 2.7,
+   "heatAdjPace": 5.939
+  },
+  {
+   "id": 20260805,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-08-05 18:00:00",
+   "calories": 430,
+   "distanceKm": 10.72,
+   "durationMin": 54.5,
+   "avgHr": 167,
+   "maxHr": 175,
+   "cadence": 171,
+   "strideCm": 118,
+   "gctMs": 256,
+   "vertOscCm": 8.7,
+   "vertRatio": 7.6,
+   "elevationM": 31,
+   "vo2max": 49,
+   "aerobicTE": 4.0,
+   "hrZonesMin": [
+    5.5,
+    10.9,
+    10.9,
+    21.8,
+    5.5
+   ],
+   "avgSpeedKmh": 11.8,
+   "weather": {
+    "tempC": 28.3,
+    "dewPointC": 23.0,
+    "humidity": 62,
+    "windKmh": 10.6,
+    "source": "sample"
+   },
+   "heatPct": 5.5,
+   "heatAdjPace": 4.819
+  },
+  {
+   "id": 20260804,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-08-04 18:18:00",
+   "calories": 323,
+   "distanceKm": null,
+   "durationMin": 43.9,
+   "avgHr": 134
+  },
+  {
+   "id": 20260803,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-08-03 18:40:00",
+   "calories": 332,
+   "distanceKm": 8.06,
+   "durationMin": 49.9,
+   "avgHr": 141,
+   "maxHr": 156,
+   "cadence": 174,
+   "strideCm": 112,
+   "gctMs": 237,
+   "vertOscCm": 9.6,
+   "vertRatio": 8.4,
+   "elevationM": 132,
+   "vo2max": 48,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    7.5,
+    34.9,
+    5.0,
+    2.5,
+    0.0
+   ],
+   "avgSpeedKmh": 9.69,
+   "weather": {
+    "tempC": 29.0,
+    "dewPointC": 21.0,
+    "humidity": 45,
+    "windKmh": 15.5,
+    "source": "sample"
+   },
+   "heatPct": 5.1,
+   "heatAdjPace": 5.891
+  },
+  {
+   "id": 20260802,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-08-02 18:25:00",
+   "calories": 301,
+   "distanceKm": 49.47,
+   "durationMin": 99.6,
+   "avgHr": 133
+  },
+  {
+   "id": 20260729,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-07-29 18:43:00",
+   "calories": 422,
+   "distanceKm": 8.69,
+   "durationMin": 44.6,
+   "avgHr": 167,
+   "maxHr": 180,
+   "cadence": 170,
+   "strideCm": 105,
+   "gctMs": 255,
+   "vertOscCm": 9.4,
+   "vertRatio": 7.8,
+   "elevationM": 104,
+   "vo2max": 49,
+   "aerobicTE": 4.3,
+   "hrZonesMin": [
+    4.5,
+    8.9,
+    8.9,
+    17.8,
+    4.5
+   ],
+   "avgSpeedKmh": 11.69,
+   "weather": {
+    "tempC": 27.2,
+    "dewPointC": 17.7,
+    "humidity": 79,
+    "windKmh": 6.1,
+    "source": "sample"
+   },
+   "heatPct": 3.7,
+   "heatAdjPace": 4.949
+  },
+  {
+   "id": 20260728,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-07-28 18:53:00",
+   "calories": 398,
+   "distanceKm": null,
+   "durationMin": 39.6,
+   "avgHr": 123
+  },
+  {
+   "id": 20260727,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-07-27 18:06:00",
+   "calories": 750,
+   "distanceKm": 9.01,
+   "durationMin": 57.0,
+   "avgHr": 147,
+   "maxHr": 160,
+   "cadence": 164,
+   "strideCm": 111,
+   "gctMs": 264,
+   "vertOscCm": 8.3,
+   "vertRatio": 7.7,
+   "elevationM": 167,
+   "vo2max": 49,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    8.5,
+    39.9,
+    5.7,
+    2.9,
+    0.0
+   ],
+   "avgSpeedKmh": 9.48,
+   "weather": {
+    "tempC": 29.9,
+    "dewPointC": 22.1,
+    "humidity": 55,
+    "windKmh": 5.9,
+    "source": "sample"
+   },
+   "heatPct": 5.6,
+   "heatAdjPace": 5.991
+  },
+  {
+   "id": 20260725,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-07-25 18:19:00",
+   "calories": 451,
+   "distanceKm": 13.43,
+   "durationMin": 83.6,
+   "avgHr": 144,
+   "maxHr": 154,
+   "cadence": 169,
+   "strideCm": 114,
+   "gctMs": 249,
+   "vertOscCm": 9.0,
+   "vertRatio": 7.7,
+   "elevationM": 152,
+   "vo2max": 49,
+   "aerobicTE": 2.4,
+   "hrZonesMin": [
+    12.5,
+    58.5,
+    8.4,
+    4.2,
+    0.0
+   ],
+   "avgSpeedKmh": 9.64,
+   "weather": {
+    "tempC": 24.3,
+    "dewPointC": 14.8,
+    "humidity": 85,
+    "windKmh": 14.0,
+    "source": "sample"
+   },
+   "heatPct": 2.4,
+   "heatAdjPace": 6.079
+  },
+  {
+   "id": 20260722,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-07-22 18:56:00",
+   "calories": 395,
+   "distanceKm": 9.12,
+   "durationMin": 46.3,
+   "avgHr": 164,
+   "maxHr": 180,
+   "cadence": 170,
+   "strideCm": 105,
+   "gctMs": 256,
+   "vertOscCm": 9.1,
+   "vertRatio": 8.1,
+   "elevationM": 128,
+   "vo2max": 49,
+   "aerobicTE": 3.9,
+   "hrZonesMin": [
+    4.6,
+    9.3,
+    9.3,
+    18.5,
+    4.6
+   ],
+   "avgSpeedKmh": 11.82,
+   "weather": {
+    "tempC": 26.1,
+    "dewPointC": 19.6,
+    "humidity": 53,
+    "windKmh": 13.0,
+    "source": "sample"
+   },
+   "heatPct": 3.9,
+   "heatAdjPace": 4.886
+  },
+  {
+   "id": 20260721,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-07-21 18:00:00",
+   "calories": 777,
+   "distanceKm": null,
+   "durationMin": 44.3,
+   "avgHr": 122
+  },
+  {
+   "id": 20260720,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-07-20 18:52:00",
+   "calories": 822,
+   "distanceKm": 7.47,
+   "durationMin": 46.3,
+   "avgHr": 142,
+   "maxHr": 158,
+   "cadence": 168,
+   "strideCm": 107,
+   "gctMs": 265,
+   "vertOscCm": 8.3,
+   "vertRatio": 7.8,
+   "elevationM": 115,
+   "vo2max": 49,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    6.9,
+    32.4,
+    4.6,
+    2.3,
+    0.0
+   ],
+   "avgSpeedKmh": 9.68,
+   "weather": {
+    "tempC": 25.1,
+    "dewPointC": 15.4,
+    "humidity": 50,
+    "windKmh": 13.0,
+    "source": "sample"
+   },
+   "heatPct": 2.7,
+   "heatAdjPace": 6.035
+  },
+  {
+   "id": 20260719,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-07-19 18:44:00",
+   "calories": 460,
+   "distanceKm": 40.8,
+   "durationMin": 100.1,
+   "avgHr": 122
+  },
+  {
+   "id": 20260718,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-07-18 18:13:00",
+   "calories": 603,
+   "distanceKm": 14.47,
+   "durationMin": 90.1,
+   "avgHr": 149,
+   "maxHr": 160,
+   "cadence": 168,
+   "strideCm": 116,
+   "gctMs": 237,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.5,
+   "elevationM": 123,
+   "vo2max": 49,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    13.5,
+    63.1,
+    9.0,
+    4.5,
+    0.0
+   ],
+   "avgSpeedKmh": 9.64,
+   "weather": {
+    "tempC": 24.7,
+    "dewPointC": 15.7,
+    "humidity": 75,
+    "windKmh": 15.3,
+    "source": "sample"
+   },
+   "heatPct": 2.7,
+   "heatAdjPace": 6.063
+  },
+  {
+   "id": 20260715,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-07-15 18:36:00",
+   "calories": 483,
+   "distanceKm": 8.6,
+   "durationMin": 44.8,
+   "avgHr": 167,
+   "maxHr": 181,
+   "cadence": 174,
+   "strideCm": 118,
+   "gctMs": 246,
+   "vertOscCm": 9.5,
+   "vertRatio": 7.5,
+   "elevationM": 177,
+   "vo2max": 49,
+   "aerobicTE": 3.6,
+   "hrZonesMin": [
+    4.5,
+    9.0,
+    9.0,
+    17.9,
+    4.5
+   ],
+   "avgSpeedKmh": 11.52,
+   "weather": {
+    "tempC": 27.8,
+    "dewPointC": 18.1,
+    "humidity": 79,
+    "windKmh": 11.7,
+    "source": "sample"
+   },
+   "heatPct": 4.0,
+   "heatAdjPace": 5.009
+  },
+  {
+   "id": 20260714,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-07-14 18:48:00",
+   "calories": 560,
+   "distanceKm": null,
+   "durationMin": 37.9,
+   "avgHr": 119
+  },
+  {
+   "id": 20260713,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-07-13 18:51:00",
+   "calories": 609,
+   "distanceKm": 8.01,
+   "durationMin": 49.2,
+   "avgHr": 146,
+   "maxHr": 157,
+   "cadence": 170,
+   "strideCm": 111,
+   "gctMs": 263,
+   "vertOscCm": 9.1,
+   "vertRatio": 7.6,
+   "elevationM": 39,
+   "vo2max": 49,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    7.4,
+    34.4,
+    4.9,
+    2.5,
+    0.0
+   ],
+   "avgSpeedKmh": 9.77,
+   "weather": {
+    "tempC": 25.1,
+    "dewPointC": 18.2,
+    "humidity": 54,
+    "windKmh": 12.8,
+    "source": "sample"
+   },
+   "heatPct": 3.3,
+   "heatAdjPace": 5.946
+  },
+  {
+   "id": 20260621,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-06-21 18:54:00",
+   "calories": 725,
+   "distanceKm": 46.62,
+   "durationMin": 110.7,
+   "avgHr": 122
+  },
+  {
+   "id": 20260620,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-06-20 18:44:00",
+   "calories": 431,
+   "distanceKm": 20.3,
+   "durationMin": 116.5,
+   "avgHr": 146,
+   "maxHr": 155,
+   "cadence": 165,
+   "strideCm": 117,
+   "gctMs": 264,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.0,
+   "elevationM": 86,
+   "vo2max": 49,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    17.5,
+    81.5,
+    11.7,
+    5.8,
+    0.0
+   ],
+   "avgSpeedKmh": 10.45,
+   "weather": {
+    "tempC": 21.1,
+    "dewPointC": 12.5,
+    "humidity": 49,
+    "windKmh": 6.6,
+    "source": "sample"
+   },
+   "heatPct": 1.4,
+   "heatAdjPace": 5.66
+  },
+  {
+   "id": 20260618,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-06-18 18:23:00",
+   "calories": 797,
+   "distanceKm": 8.43,
+   "durationMin": 48.6,
+   "avgHr": 142,
+   "maxHr": 152,
+   "cadence": 176,
+   "strideCm": 103,
+   "gctMs": 256,
+   "vertOscCm": 8.9,
+   "vertRatio": 8.1,
+   "elevationM": 79,
+   "vo2max": 50,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    7.3,
+    34.0,
+    4.9,
+    2.4,
+    0.0
+   ],
+   "avgSpeedKmh": 10.41,
+   "weather": {
+    "tempC": 26.4,
+    "dewPointC": 18.5,
+    "humidity": 46,
+    "windKmh": 13.5,
+    "source": "sample"
+   },
+   "heatPct": 3.7,
+   "heatAdjPace": 5.559
+  },
+  {
+   "id": 20260617,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-06-17 18:29:00",
+   "calories": 495,
+   "distanceKm": 11.03,
+   "durationMin": 52.3,
+   "avgHr": 169,
+   "maxHr": 183,
+   "cadence": 174,
+   "strideCm": 118,
+   "gctMs": 241,
+   "vertOscCm": 8.6,
+   "vertRatio": 8.0,
+   "elevationM": 62,
+   "vo2max": 49,
+   "aerobicTE": 4.0,
+   "hrZonesMin": [
+    5.2,
+    10.5,
+    10.5,
+    20.9,
+    5.2
+   ],
+   "avgSpeedKmh": 12.65,
+   "weather": {
+    "tempC": 25.7,
+    "dewPointC": 17.9,
+    "humidity": 50,
+    "windKmh": 13.3,
+    "source": "sample"
+   },
+   "heatPct": 3.4,
+   "heatAdjPace": 4.586
+  },
+  {
+   "id": 20260616,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-06-16 18:45:00",
+   "calories": 382,
+   "distanceKm": null,
+   "durationMin": 37.1,
+   "avgHr": 126
+  },
+  {
+   "id": 20260614,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-06-14 18:24:00",
+   "calories": 445,
+   "distanceKm": 41.45,
+   "durationMin": 95.3,
+   "avgHr": 131
+  },
+  {
+   "id": 20260613,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-06-13 18:50:00",
+   "calories": 499,
+   "distanceKm": 16.94,
+   "durationMin": 99.8,
+   "avgHr": 149,
+   "maxHr": 159,
+   "cadence": 164,
+   "strideCm": 109,
+   "gctMs": 247,
+   "vertOscCm": 9.0,
+   "vertRatio": 7.5,
+   "elevationM": 146,
+   "vo2max": 50,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    15.0,
+    69.9,
+    10.0,
+    5.0,
+    0.0
+   ],
+   "avgSpeedKmh": 10.18,
+   "weather": {
+    "tempC": 26.3,
+    "dewPointC": 18.8,
+    "humidity": 71,
+    "windKmh": 17.4,
+    "source": "sample"
+   },
+   "heatPct": 3.8,
+   "heatAdjPace": 5.676
+  },
+  {
+   "id": 20260611,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-06-11 18:59:00",
+   "calories": 851,
+   "distanceKm": 9.12,
+   "durationMin": 51.7,
+   "avgHr": 146,
+   "maxHr": 158,
+   "cadence": 170,
+   "strideCm": 108,
+   "gctMs": 265,
+   "vertOscCm": 9.4,
+   "vertRatio": 8.6,
+   "elevationM": 27,
+   "vo2max": 49,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    7.8,
+    36.2,
+    5.2,
+    2.6,
+    0.0
+   ],
+   "avgSpeedKmh": 10.58,
+   "weather": {
+    "tempC": 22.5,
+    "dewPointC": 17.3,
+    "humidity": 74,
+    "windKmh": 5.5,
+    "source": "sample"
+   },
+   "heatPct": 2.6,
+   "heatAdjPace": 5.525
+  },
+  {
+   "id": 20260610,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-06-10 18:22:00",
+   "calories": 532,
+   "distanceKm": 10.61,
+   "durationMin": 49.8,
+   "avgHr": 164,
+   "maxHr": 173,
+   "cadence": 169,
+   "strideCm": 106,
+   "gctMs": 249,
+   "vertOscCm": 9.1,
+   "vertRatio": 7.4,
+   "elevationM": 66,
+   "vo2max": 50,
+   "aerobicTE": 4.1,
+   "hrZonesMin": [
+    5.0,
+    10.0,
+    10.0,
+    19.9,
+    5.0
+   ],
+   "avgSpeedKmh": 12.78,
+   "weather": {
+    "tempC": 22.9,
+    "dewPointC": 14.4,
+    "humidity": 83,
+    "windKmh": 9.0,
+    "source": "sample"
+   },
+   "heatPct": 2.1,
+   "heatAdjPace": 4.597
+  },
+  {
+   "id": 20260609,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-06-09 18:27:00",
+   "calories": 313,
+   "distanceKm": null,
+   "durationMin": 43.8,
+   "avgHr": 139
+  },
+  {
+   "id": 20260607,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-06-07 18:10:00",
+   "calories": 780,
+   "distanceKm": 46.36,
+   "durationMin": 88.5,
+   "avgHr": 121
+  },
+  {
+   "id": 20260606,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-06-06 18:44:00",
+   "calories": 816,
+   "distanceKm": 15.93,
+   "durationMin": 94.9,
+   "avgHr": 144,
+   "maxHr": 152,
+   "cadence": 174,
+   "strideCm": 100,
+   "gctMs": 241,
+   "vertOscCm": 8.4,
+   "vertRatio": 8.3,
+   "elevationM": 155,
+   "vo2max": 49,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    14.2,
+    66.4,
+    9.5,
+    4.7,
+    0.0
+   ],
+   "avgSpeedKmh": 10.07,
+   "weather": {
+    "tempC": 25.7,
+    "dewPointC": 19.2,
+    "humidity": 66,
+    "windKmh": 18.0,
+    "source": "sample"
+   },
+   "heatPct": 3.7,
+   "heatAdjPace": 5.745
+  },
+  {
+   "id": 20260604,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-06-04 18:40:00",
+   "calories": 410,
+   "distanceKm": 8.2,
+   "durationMin": 47.6,
+   "avgHr": 142,
+   "maxHr": 158,
+   "cadence": 167,
+   "strideCm": 113,
+   "gctMs": 240,
+   "vertOscCm": 8.3,
+   "vertRatio": 8.1,
+   "elevationM": 37,
+   "vo2max": 49,
+   "aerobicTE": 3.2,
+   "hrZonesMin": [
+    7.1,
+    33.3,
+    4.8,
+    2.4,
+    0.0
+   ],
+   "avgSpeedKmh": 10.34,
+   "weather": {
+    "tempC": 24.1,
+    "dewPointC": 14.2,
+    "humidity": 70,
+    "windKmh": 2.7,
+    "source": "sample"
+   },
+   "heatPct": 2.3,
+   "heatAdjPace": 5.674
+  },
+  {
+   "id": 20260603,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-06-03 18:39:00",
+   "calories": 851,
+   "distanceKm": 10.54,
+   "durationMin": 50.6,
+   "avgHr": 164,
+   "maxHr": 174,
+   "cadence": 169,
+   "strideCm": 110,
+   "gctMs": 246,
+   "vertOscCm": 9.6,
+   "vertRatio": 8.4,
+   "elevationM": 141,
+   "vo2max": 49,
+   "aerobicTE": 4.1,
+   "hrZonesMin": [
+    5.1,
+    10.1,
+    10.1,
+    20.2,
+    5.1
+   ],
+   "avgSpeedKmh": 12.5,
+   "weather": {
+    "tempC": 23.9,
+    "dewPointC": 16.7,
+    "humidity": 57,
+    "windKmh": 7.5,
+    "source": "sample"
+   },
+   "heatPct": 2.7,
+   "heatAdjPace": 4.675
+  },
+  {
+   "id": 20260602,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-06-02 18:59:00",
+   "calories": 837,
+   "distanceKm": null,
+   "durationMin": 37.9,
+   "avgHr": 124
+  },
+  {
+   "id": 20260601,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-06-01 18:49:00",
+   "calories": 569,
+   "distanceKm": 9.59,
+   "durationMin": 57.0,
+   "avgHr": 147,
+   "maxHr": 163,
+   "cadence": 175,
+   "strideCm": 113,
+   "gctMs": 247,
+   "vertOscCm": 8.8,
+   "vertRatio": 7.4,
+   "elevationM": 99,
+   "vo2max": 49,
+   "aerobicTE": 2.4,
+   "hrZonesMin": [
+    8.5,
+    39.9,
+    5.7,
+    2.9,
+    0.0
+   ],
+   "avgSpeedKmh": 10.09,
+   "weather": {
+    "tempC": 24.0,
+    "dewPointC": 14.4,
+    "humidity": 48,
+    "windKmh": 5.7,
+    "source": "sample"
+   },
+   "heatPct": 2.3,
+   "heatAdjPace": 5.81
+  },
+  {
+   "id": 20260530,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-05-30 07:19:00",
+   "calories": 398,
+   "distanceKm": 16.68,
+   "durationMin": 100.5,
+   "avgHr": 143,
+   "maxHr": 152,
+   "cadence": 169,
+   "strideCm": 110,
+   "gctMs": 261,
+   "vertOscCm": 9.1,
+   "vertRatio": 7.7,
+   "elevationM": 93,
+   "vo2max": 49,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    15.1,
+    70.3,
+    10.1,
+    5.0,
+    0.0
+   ],
+   "avgSpeedKmh": 9.96,
+   "weather": {
+    "tempC": 16.7,
+    "dewPointC": 10.7,
+    "humidity": 81,
+    "windKmh": 2.2,
+    "source": "sample"
+   },
+   "heatPct": 0.7,
+   "heatAdjPace": 5.983
+  },
+  {
+   "id": 20260528,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-05-28 07:38:00",
+   "calories": 363,
+   "distanceKm": 7.61,
+   "durationMin": 44.5,
+   "avgHr": 143,
+   "maxHr": 155,
+   "cadence": 175,
+   "strideCm": 111,
+   "gctMs": 244,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.0,
+   "elevationM": 162,
+   "vo2max": 49,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    6.7,
+    31.1,
+    4.5,
+    2.2,
+    0.0
+   ],
+   "avgSpeedKmh": 10.26,
+   "weather": {
+    "tempC": 18.7,
+    "dewPointC": 9.3,
+    "humidity": 76,
+    "windKmh": 15.6,
+    "source": "sample"
+   },
+   "heatPct": 0.7,
+   "heatAdjPace": 5.807
+  },
+  {
+   "id": 20260527,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-05-27 07:54:00",
+   "calories": 533,
+   "distanceKm": 11.07,
+   "durationMin": 54.1,
+   "avgHr": 167,
+   "maxHr": 179,
+   "cadence": 176,
+   "strideCm": 104,
+   "gctMs": 248,
+   "vertOscCm": 9.4,
+   "vertRatio": 7.4,
+   "elevationM": 150,
+   "vo2max": 49,
+   "aerobicTE": 4.0,
+   "hrZonesMin": [
+    5.4,
+    10.8,
+    10.8,
+    21.6,
+    5.4
+   ],
+   "avgSpeedKmh": 12.28,
+   "weather": {
+    "tempC": 18.1,
+    "dewPointC": 10.0,
+    "humidity": 84,
+    "windKmh": 11.2,
+    "source": "sample"
+   },
+   "heatPct": 0.7,
+   "heatAdjPace": 4.853
+  },
+  {
+   "id": 20260526,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-05-26 07:43:00",
+   "calories": 408,
+   "distanceKm": null,
+   "durationMin": 41.0,
+   "avgHr": 139
+  },
+  {
+   "id": 20260525,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-05-25 07:35:00",
+   "calories": 583,
+   "distanceKm": 9.08,
+   "durationMin": 53.9,
+   "avgHr": 139,
+   "maxHr": 151,
+   "cadence": 164,
+   "strideCm": 100,
+   "gctMs": 240,
+   "vertOscCm": 9.0,
+   "vertRatio": 8.1,
+   "elevationM": 99,
+   "vo2max": 49,
+   "aerobicTE": 2.4,
+   "hrZonesMin": [
+    8.1,
+    37.7,
+    5.4,
+    2.7,
+    0.0
+   ],
+   "avgSpeedKmh": 10.11,
+   "weather": {
+    "tempC": 19.2,
+    "dewPointC": 13.0,
+    "humidity": 61,
+    "windKmh": 9.0,
+    "source": "sample"
+   },
+   "heatPct": 1.2,
+   "heatAdjPace": 5.866
+  },
+  {
+   "id": 20260523,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-05-23 07:24:00",
+   "calories": 456,
+   "distanceKm": 16.28,
+   "durationMin": 98.9,
+   "avgHr": 148,
+   "maxHr": 160,
+   "cadence": 173,
+   "strideCm": 115,
+   "gctMs": 250,
+   "vertOscCm": 9.3,
+   "vertRatio": 7.4,
+   "elevationM": 95,
+   "vo2max": 49,
+   "aerobicTE": 2.8,
+   "hrZonesMin": [
+    14.8,
+    69.2,
+    9.9,
+    4.9,
+    0.0
+   ],
+   "avgSpeedKmh": 9.88,
+   "weather": {
+    "tempC": 18.2,
+    "dewPointC": 12.1,
+    "humidity": 60,
+    "windKmh": 11.4,
+    "source": "sample"
+   },
+   "heatPct": 0.9,
+   "heatAdjPace": 6.021
+  },
+  {
+   "id": 20260521,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-05-21 07:05:00",
+   "calories": 727,
+   "distanceKm": 7.57,
+   "durationMin": 45.5,
+   "avgHr": 143,
+   "maxHr": 152,
+   "cadence": 172,
+   "strideCm": 104,
+   "gctMs": 263,
+   "vertOscCm": 8.6,
+   "vertRatio": 7.9,
+   "elevationM": 83,
+   "vo2max": 49,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    6.8,
+    31.8,
+    4.5,
+    2.3,
+    0.0
+   ],
+   "avgSpeedKmh": 9.98,
+   "weather": {
+    "tempC": 19.5,
+    "dewPointC": 10.0,
+    "humidity": 75,
+    "windKmh": 6.6,
+    "source": "sample"
+   },
+   "heatPct": 0.9,
+   "heatAdjPace": 5.957
+  },
+  {
+   "id": 20260520,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-05-20 07:17:00",
+   "calories": 893,
+   "distanceKm": 10.0,
+   "durationMin": 49.8,
+   "avgHr": 161,
+   "maxHr": 173,
+   "cadence": 165,
+   "strideCm": 116,
+   "gctMs": 235,
+   "vertOscCm": 8.8,
+   "vertRatio": 8.5,
+   "elevationM": 83,
+   "vo2max": 49,
+   "aerobicTE": 3.9,
+   "hrZonesMin": [
+    5.0,
+    10.0,
+    10.0,
+    19.9,
+    5.0
+   ],
+   "avgSpeedKmh": 12.05,
+   "weather": {
+    "tempC": 15.6,
+    "dewPointC": 7.2,
+    "humidity": 52,
+    "windKmh": 3.0,
+    "source": "sample"
+   },
+   "heatPct": 0.3,
+   "heatAdjPace": 4.965
+  },
+  {
+   "id": 20260518,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-05-18 07:23:00",
+   "calories": 361,
+   "distanceKm": 8.73,
+   "durationMin": 51.3,
+   "avgHr": 142,
+   "maxHr": 153,
+   "cadence": 172,
+   "strideCm": 100,
+   "gctMs": 242,
+   "vertOscCm": 8.4,
+   "vertRatio": 8.6,
+   "elevationM": 126,
+   "vo2max": 49,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    7.7,
+    35.9,
+    5.1,
+    2.6,
+    0.0
+   ],
+   "avgSpeedKmh": 10.21,
+   "weather": {
+    "tempC": 16.5,
+    "dewPointC": 8.4,
+    "humidity": 80,
+    "windKmh": 16.2,
+    "source": "sample"
+   },
+   "heatPct": 0.4,
+   "heatAdjPace": 5.853
+  },
+  {
+   "id": 20260517,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-05-17 07:20:00",
+   "calories": 779,
+   "distanceKm": 36.06,
+   "durationMin": 104.9,
+   "avgHr": 129
+  },
+  {
+   "id": 20260516,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-05-16 07:40:00",
+   "calories": 648,
+   "distanceKm": 15.93,
+   "durationMin": 98.9,
+   "avgHr": 148,
+   "maxHr": 156,
+   "cadence": 170,
+   "strideCm": 101,
+   "gctMs": 259,
+   "vertOscCm": 8.7,
+   "vertRatio": 7.9,
+   "elevationM": 95,
+   "vo2max": 49,
+   "aerobicTE": 3.1,
+   "hrZonesMin": [
+    14.8,
+    69.2,
+    9.9,
+    4.9,
+    0.0
+   ],
+   "avgSpeedKmh": 9.66,
+   "weather": {
+    "tempC": 19.7,
+    "dewPointC": 14.6,
+    "humidity": 68,
+    "windKmh": 17.8,
+    "source": "sample"
+   },
+   "heatPct": 1.6,
+   "heatAdjPace": 6.111
+  },
+  {
+   "id": 20260514,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-05-14 07:11:00",
+   "calories": 296,
+   "distanceKm": 6.76,
+   "durationMin": 40.0,
+   "avgHr": 144,
+   "maxHr": 156,
+   "cadence": 165,
+   "strideCm": 103,
+   "gctMs": 238,
+   "vertOscCm": 8.8,
+   "vertRatio": 7.6,
+   "elevationM": 161,
+   "vo2max": 49,
+   "aerobicTE": 2.6,
+   "hrZonesMin": [
+    6.0,
+    28.0,
+    4.0,
+    2.0,
+    0.0
+   ],
+   "avgSpeedKmh": 10.14,
+   "weather": {
+    "tempC": 16.1,
+    "dewPointC": 10.6,
+    "humidity": 72,
+    "windKmh": 9.4,
+    "source": "sample"
+   },
+   "heatPct": 0.6,
+   "heatAdjPace": 5.882
+  },
+  {
+   "id": 20260513,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-05-13 07:39:00",
+   "calories": 436,
+   "distanceKm": 8.81,
+   "durationMin": 43.1,
+   "avgHr": 168,
+   "maxHr": 176,
+   "cadence": 164,
+   "strideCm": 103,
+   "gctMs": 264,
+   "vertOscCm": 9.2,
+   "vertRatio": 7.6,
+   "elevationM": 14,
+   "vo2max": 49,
+   "aerobicTE": 4.1,
+   "hrZonesMin": [
+    4.3,
+    8.6,
+    8.6,
+    17.2,
+    4.3
+   ],
+   "avgSpeedKmh": 12.26,
+   "weather": {
+    "tempC": 15.5,
+    "dewPointC": 10.0,
+    "humidity": 64,
+    "windKmh": 5.8,
+    "source": "sample"
+   },
+   "heatPct": 0.5,
+   "heatAdjPace": 4.868
+  },
+  {
+   "id": 20260512,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-05-12 07:28:00",
+   "calories": 775,
+   "distanceKm": null,
+   "durationMin": 36.3,
+   "avgHr": 135
+  },
+  {
+   "id": 20260511,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-05-11 07:10:00",
+   "calories": 630,
+   "distanceKm": 8.38,
+   "durationMin": 51.4,
+   "avgHr": 141,
+   "maxHr": 157,
+   "cadence": 171,
+   "strideCm": 116,
+   "gctMs": 237,
+   "vertOscCm": 8.4,
+   "vertRatio": 8.3,
+   "elevationM": 92,
+   "vo2max": 49,
+   "aerobicTE": 3.1,
+   "hrZonesMin": [
+    7.7,
+    36.0,
+    5.1,
+    2.6,
+    0.0
+   ],
+   "avgSpeedKmh": 9.78,
+   "weather": {
+    "tempC": 19.0,
+    "dewPointC": 12.2,
+    "humidity": 68,
+    "windKmh": 16.4,
+    "source": "sample"
+   },
+   "heatPct": 1.0,
+   "heatAdjPace": 6.073
+  },
+  {
+   "id": 20260510,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-05-10 07:48:00",
+   "calories": 738,
+   "distanceKm": 35.84,
+   "durationMin": 104.5,
+   "avgHr": 125
+  },
+  {
+   "id": 20260509,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-05-09 07:13:00",
+   "calories": 390,
+   "distanceKm": 14.89,
+   "durationMin": 92.6,
+   "avgHr": 143,
+   "maxHr": 155,
+   "cadence": 167,
+   "strideCm": 100,
+   "gctMs": 237,
+   "vertOscCm": 9.2,
+   "vertRatio": 8.0,
+   "elevationM": 24,
+   "vo2max": 49,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    13.9,
+    64.8,
+    9.3,
+    4.6,
+    0.0
+   ],
+   "avgSpeedKmh": 9.65,
+   "weather": {
+    "tempC": 17.0,
+    "dewPointC": 10.6,
+    "humidity": 56,
+    "windKmh": 12.2,
+    "source": "sample"
+   },
+   "heatPct": 0.7,
+   "heatAdjPace": 6.176
+  },
+  {
+   "id": 20260506,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-05-06 08:00:00",
+   "calories": 789,
+   "distanceKm": 8.58,
+   "durationMin": 42.3,
+   "avgHr": 160,
+   "maxHr": 174,
+   "cadence": 167,
+   "strideCm": 108,
+   "gctMs": 253,
+   "vertOscCm": 8.5,
+   "vertRatio": 8.4,
+   "elevationM": 143,
+   "vo2max": 49,
+   "aerobicTE": 4.2,
+   "hrZonesMin": [
+    4.2,
+    8.5,
+    8.5,
+    16.9,
+    4.2
+   ],
+   "avgSpeedKmh": 12.17,
+   "weather": {
+    "tempC": 16.7,
+    "dewPointC": 7.7,
+    "humidity": 53,
+    "windKmh": 3.3,
+    "source": "sample"
+   },
+   "heatPct": 0.4,
+   "heatAdjPace": 4.91
+  },
+  {
+   "id": 20260505,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-05-05 07:01:00",
+   "calories": 702,
+   "distanceKm": null,
+   "durationMin": 45.7,
+   "avgHr": 128
+  },
+  {
+   "id": 20260503,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-05-03 07:15:00",
+   "calories": 493,
+   "distanceKm": 35.24,
+   "durationMin": 93.7,
+   "avgHr": 123
+  },
+  {
+   "id": 20260502,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-05-02 07:31:00",
+   "calories": 361,
+   "distanceKm": 13.28,
+   "durationMin": 83.7,
+   "avgHr": 141,
+   "maxHr": 151,
+   "cadence": 172,
+   "strideCm": 101,
+   "gctMs": 255,
+   "vertOscCm": 9.5,
+   "vertRatio": 8.2,
+   "elevationM": 64,
+   "vo2max": 49,
+   "aerobicTE": 3.1,
+   "hrZonesMin": [
+    12.6,
+    58.6,
+    8.4,
+    4.2,
+    0.0
+   ],
+   "avgSpeedKmh": 9.52,
+   "weather": {
+    "tempC": 16.0,
+    "dewPointC": 10.2,
+    "humidity": 50,
+    "windKmh": 14.1,
+    "source": "sample"
+   },
+   "heatPct": 0.6,
+   "heatAdjPace": 6.265
+  },
+  {
+   "id": 20260430,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-04-30 07:07:00",
+   "calories": 893,
+   "distanceKm": 6.19,
+   "durationMin": 36.7,
+   "avgHr": 136,
+   "maxHr": 146,
+   "cadence": 175,
+   "strideCm": 114,
+   "gctMs": 252,
+   "vertOscCm": 9.4,
+   "vertRatio": 7.9,
+   "elevationM": 48,
+   "vo2max": 48,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    5.5,
+    25.7,
+    3.7,
+    1.8,
+    0.0
+   ],
+   "avgSpeedKmh": 10.12,
+   "weather": {
+    "tempC": 10.9,
+    "dewPointC": 4.8,
+    "humidity": 51,
+    "windKmh": 6.3,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.929
+  },
+  {
+   "id": 20260429,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-04-29 07:29:00",
+   "calories": 449,
+   "distanceKm": 8.99,
+   "durationMin": 44.1,
+   "avgHr": 163,
+   "maxHr": 172,
+   "cadence": 173,
+   "strideCm": 111,
+   "gctMs": 263,
+   "vertOscCm": 9.2,
+   "vertRatio": 8.3,
+   "elevationM": 34,
+   "vo2max": 49,
+   "aerobicTE": 3.9,
+   "hrZonesMin": [
+    4.4,
+    8.8,
+    8.8,
+    17.6,
+    4.4
+   ],
+   "avgSpeedKmh": 12.23,
+   "weather": {
+    "tempC": 14.5,
+    "dewPointC": 5.0,
+    "humidity": 46,
+    "windKmh": 3.2,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.905
+  },
+  {
+   "id": 20260428,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-04-28 07:30:00",
+   "calories": 638,
+   "distanceKm": null,
+   "durationMin": 38.0,
+   "avgHr": 125
+  },
+  {
+   "id": 20260412,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-04-12 07:43:00",
+   "calories": 555,
+   "distanceKm": 43.51,
+   "durationMin": 98.1,
+   "avgHr": 138
+  },
+  {
+   "id": 20260411,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-04-11 07:14:00",
+   "calories": 426,
+   "distanceKm": 16.05,
+   "durationMin": 95.0,
+   "avgHr": 145,
+   "maxHr": 153,
+   "cadence": 172,
+   "strideCm": 100,
+   "gctMs": 261,
+   "vertOscCm": 9.5,
+   "vertRatio": 7.7,
+   "elevationM": 141,
+   "vo2max": 49,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    14.2,
+    66.5,
+    9.5,
+    4.8,
+    0.0
+   ],
+   "avgSpeedKmh": 10.14,
+   "weather": {
+    "tempC": 14.8,
+    "dewPointC": 4.8,
+    "humidity": 84,
+    "windKmh": 2.9,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.919
+  },
+  {
+   "id": 20260409,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-04-09 07:35:00",
+   "calories": 628,
+   "distanceKm": 8.76,
+   "durationMin": 50.6,
+   "avgHr": 137,
+   "maxHr": 151,
+   "cadence": 165,
+   "strideCm": 102,
+   "gctMs": 243,
+   "vertOscCm": 8.6,
+   "vertRatio": 7.7,
+   "elevationM": 32,
+   "vo2max": 49,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    7.6,
+    35.4,
+    5.1,
+    2.5,
+    0.0
+   ],
+   "avgSpeedKmh": 10.39,
+   "weather": {
+    "tempC": 9.5,
+    "dewPointC": 4.2,
+    "humidity": 61,
+    "windKmh": 9.2,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.776
+  },
+  {
+   "id": 20260408,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-04-08 07:13:00",
+   "calories": 829,
+   "distanceKm": 10.85,
+   "durationMin": 52.4,
+   "avgHr": 164,
+   "maxHr": 176,
+   "cadence": 170,
+   "strideCm": 103,
+   "gctMs": 265,
+   "vertOscCm": 8.8,
+   "vertRatio": 8.1,
+   "elevationM": 165,
+   "vo2max": 49,
+   "aerobicTE": 3.8,
+   "hrZonesMin": [
+    5.2,
+    10.5,
+    10.5,
+    21.0,
+    5.2
+   ],
+   "avgSpeedKmh": 12.42,
+   "weather": {
+    "tempC": 12.6,
+    "dewPointC": 7.2,
+    "humidity": 47,
+    "windKmh": 5.2,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.829
+  },
+  {
+   "id": 20260406,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-04-06 07:44:00",
+   "calories": 546,
+   "distanceKm": 9.26,
+   "durationMin": 54.6,
+   "avgHr": 142,
+   "maxHr": 158,
+   "cadence": 166,
+   "strideCm": 107,
+   "gctMs": 236,
+   "vertOscCm": 9.5,
+   "vertRatio": 8.0,
+   "elevationM": 37,
+   "vo2max": 49,
+   "aerobicTE": 2.8,
+   "hrZonesMin": [
+    8.2,
+    38.2,
+    5.5,
+    2.7,
+    0.0
+   ],
+   "avgSpeedKmh": 10.18,
+   "weather": {
+    "tempC": 10.2,
+    "dewPointC": 4.3,
+    "humidity": 48,
+    "windKmh": 7.1,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.896
+  },
+  {
+   "id": 20260405,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-04-05 07:56:00",
+   "calories": 784,
+   "distanceKm": 38.99,
+   "durationMin": 99.9,
+   "avgHr": 124
+  },
+  {
+   "id": 20260404,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-04-04 07:48:00",
+   "calories": 489,
+   "distanceKm": 16.26,
+   "durationMin": 96.2,
+   "avgHr": 146,
+   "maxHr": 161,
+   "cadence": 175,
+   "strideCm": 106,
+   "gctMs": 264,
+   "vertOscCm": 8.6,
+   "vertRatio": 8.3,
+   "elevationM": 108,
+   "vo2max": 49,
+   "aerobicTE": 2.5,
+   "hrZonesMin": [
+    14.4,
+    67.3,
+    9.6,
+    4.8,
+    0.0
+   ],
+   "avgSpeedKmh": 10.14,
+   "weather": {
+    "tempC": 13.8,
+    "dewPointC": 7.8,
+    "humidity": 77,
+    "windKmh": 14.4,
+    "source": "sample"
+   },
+   "heatPct": 0.1,
+   "heatAdjPace": 5.91
+  },
+  {
+   "id": 20260402,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-04-02 07:17:00",
+   "calories": 682,
+   "distanceKm": 7.27,
+   "durationMin": 43.0,
+   "avgHr": 136,
+   "maxHr": 148,
+   "cadence": 166,
+   "strideCm": 118,
+   "gctMs": 239,
+   "vertOscCm": 8.6,
+   "vertRatio": 8.4,
+   "elevationM": 150,
+   "vo2max": 49,
+   "aerobicTE": 3.1,
+   "hrZonesMin": [
+    6.5,
+    30.1,
+    4.3,
+    2.1,
+    0.0
+   ],
+   "avgSpeedKmh": 10.14,
+   "weather": {
+    "tempC": 13.1,
+    "dewPointC": 6.5,
+    "humidity": 59,
+    "windKmh": 3.4,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.915
+  },
+  {
+   "id": 20260401,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-04-01 07:41:00",
+   "calories": 864,
+   "distanceKm": 10.05,
+   "durationMin": 48.9,
+   "avgHr": 160,
+   "maxHr": 170,
+   "cadence": 173,
+   "strideCm": 109,
+   "gctMs": 253,
+   "vertOscCm": 8.8,
+   "vertRatio": 8.5,
+   "elevationM": 106,
+   "vo2max": 49,
+   "aerobicTE": 3.9,
+   "hrZonesMin": [
+    4.9,
+    9.8,
+    9.8,
+    19.6,
+    4.9
+   ],
+   "avgSpeedKmh": 12.33,
+   "weather": {
+    "tempC": 10.7,
+    "dewPointC": 2.6,
+    "humidity": 76,
+    "windKmh": 5.7,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.866
+  },
+  {
+   "id": 20260331,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-03-31 07:50:00",
+   "calories": 713,
+   "distanceKm": null,
+   "durationMin": 47.3,
+   "avgHr": 136
+  },
+  {
+   "id": 20260330,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-03-30 07:19:00",
+   "calories": 864,
+   "distanceKm": 8.49,
+   "durationMin": 51.0,
+   "avgHr": 143,
+   "maxHr": 151,
+   "cadence": 169,
+   "strideCm": 111,
+   "gctMs": 265,
+   "vertOscCm": 9.0,
+   "vertRatio": 7.9,
+   "elevationM": 52,
+   "vo2max": 48,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    7.6,
+    35.7,
+    5.1,
+    2.6,
+    0.0
+   ],
+   "avgSpeedKmh": 9.99,
+   "weather": {
+    "tempC": 8.7,
+    "dewPointC": 1.8,
+    "humidity": 60,
+    "windKmh": 12.3,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.007
+  },
+  {
+   "id": 20260329,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-03-29 07:03:00",
+   "calories": 282,
+   "distanceKm": 33.79,
+   "durationMin": 85.9,
+   "avgHr": 138
+  },
+  {
+   "id": 20260328,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-03-28 07:13:00",
+   "calories": 374,
+   "distanceKm": 14.92,
+   "durationMin": 88.5,
+   "avgHr": 143,
+   "maxHr": 158,
+   "cadence": 175,
+   "strideCm": 105,
+   "gctMs": 264,
+   "vertOscCm": 8.3,
+   "vertRatio": 8.3,
+   "elevationM": 47,
+   "vo2max": 48,
+   "aerobicTE": 2.5,
+   "hrZonesMin": [
+    13.3,
+    61.9,
+    8.8,
+    4.4,
+    0.0
+   ],
+   "avgSpeedKmh": 10.12,
+   "weather": {
+    "tempC": 10.9,
+    "dewPointC": 1.6,
+    "humidity": 70,
+    "windKmh": 13.3,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.932
+  },
+  {
+   "id": 20260326,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-03-26 07:44:00",
+   "calories": 664,
+   "distanceKm": 7.36,
+   "durationMin": 42.3,
+   "avgHr": 142,
+   "maxHr": 152,
+   "cadence": 171,
+   "strideCm": 113,
+   "gctMs": 252,
+   "vertOscCm": 8.3,
+   "vertRatio": 8.2,
+   "elevationM": 64,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    6.3,
+    29.6,
+    4.2,
+    2.1,
+    0.0
+   ],
+   "avgSpeedKmh": 10.44,
+   "weather": {
+    "tempC": 9.6,
+    "dewPointC": 2.5,
+    "humidity": 62,
+    "windKmh": 2.1,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.747
+  },
+  {
+   "id": 20260325,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-03-25 07:52:00",
+   "calories": 392,
+   "distanceKm": 10.49,
+   "durationMin": 51.3,
+   "avgHr": 164,
+   "maxHr": 176,
+   "cadence": 166,
+   "strideCm": 113,
+   "gctMs": 236,
+   "vertOscCm": 8.6,
+   "vertRatio": 7.9,
+   "elevationM": 174,
+   "vo2max": 48,
+   "aerobicTE": 4.3,
+   "hrZonesMin": [
+    5.1,
+    10.3,
+    10.3,
+    20.5,
+    5.1
+   ],
+   "avgSpeedKmh": 12.27,
+   "weather": {
+    "tempC": 8.9,
+    "dewPointC": 2.1,
+    "humidity": 65,
+    "windKmh": 10.4,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.89
+  },
+  {
+   "id": 20260324,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-03-24 07:55:00",
+   "calories": 287,
+   "distanceKm": null,
+   "durationMin": 41.1,
+   "avgHr": 121
+  },
+  {
+   "id": 20260323,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-03-23 07:00:00",
+   "calories": 297,
+   "distanceKm": 8.14,
+   "durationMin": 49.3,
+   "avgHr": 136,
+   "maxHr": 152,
+   "cadence": 172,
+   "strideCm": 112,
+   "gctMs": 254,
+   "vertOscCm": 8.4,
+   "vertRatio": 8.2,
+   "elevationM": 162,
+   "vo2max": 48,
+   "aerobicTE": 2.5,
+   "hrZonesMin": [
+    7.4,
+    34.5,
+    4.9,
+    2.5,
+    0.0
+   ],
+   "avgSpeedKmh": 9.91,
+   "weather": {
+    "tempC": 5.3,
+    "dewPointC": -1.2,
+    "humidity": 47,
+    "windKmh": 12.1,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.057
+  },
+  {
+   "id": 20260322,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-03-22 07:50:00",
+   "calories": 291,
+   "distanceKm": 40.3,
+   "durationMin": 101.3,
+   "avgHr": 130
+  },
+  {
+   "id": 20260321,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-03-21 07:35:00",
+   "calories": 303,
+   "distanceKm": 16.34,
+   "durationMin": 98.7,
+   "avgHr": 147,
+   "maxHr": 161,
+   "cadence": 169,
+   "strideCm": 116,
+   "gctMs": 243,
+   "vertOscCm": 9.4,
+   "vertRatio": 7.8,
+   "elevationM": 62,
+   "vo2max": 48,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    14.8,
+    69.1,
+    9.9,
+    4.9,
+    0.0
+   ],
+   "avgSpeedKmh": 9.93,
+   "weather": {
+    "tempC": 7.6,
+    "dewPointC": 0.5,
+    "humidity": 58,
+    "windKmh": 7.1,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.04
+  },
+  {
+   "id": 20260319,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-03-19 07:06:00",
+   "calories": 772,
+   "distanceKm": 7.06,
+   "durationMin": 42.0,
+   "avgHr": 138,
+   "maxHr": 146,
+   "cadence": 167,
+   "strideCm": 113,
+   "gctMs": 255,
+   "vertOscCm": 8.4,
+   "vertRatio": 7.5,
+   "elevationM": 178,
+   "vo2max": 48,
+   "aerobicTE": 2.8,
+   "hrZonesMin": [
+    6.3,
+    29.4,
+    4.2,
+    2.1,
+    0.0
+   ],
+   "avgSpeedKmh": 10.09,
+   "weather": {
+    "tempC": 10.6,
+    "dewPointC": 3.9,
+    "humidity": 66,
+    "windKmh": 14.3,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.949
+  },
+  {
+   "id": 20260318,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-03-18 07:53:00",
+   "calories": 578,
+   "distanceKm": 9.38,
+   "durationMin": 46.2,
+   "avgHr": 164,
+   "maxHr": 179,
+   "cadence": 169,
+   "strideCm": 113,
+   "gctMs": 248,
+   "vertOscCm": 9.6,
+   "vertRatio": 8.2,
+   "elevationM": 56,
+   "vo2max": 48,
+   "aerobicTE": 4.1,
+   "hrZonesMin": [
+    4.6,
+    9.2,
+    9.2,
+    18.5,
+    4.6
+   ],
+   "avgSpeedKmh": 12.18,
+   "weather": {
+    "tempC": 10.2,
+    "dewPointC": 5.1,
+    "humidity": 46,
+    "windKmh": 11.8,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.925
+  },
+  {
+   "id": 20260317,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-03-17 07:09:00",
+   "calories": 753,
+   "distanceKm": null,
+   "durationMin": 39.0,
+   "avgHr": 123
+  },
+  {
+   "id": 20260316,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-03-16 07:50:00",
+   "calories": 342,
+   "distanceKm": 8.54,
+   "durationMin": 52.0,
+   "avgHr": 140,
+   "maxHr": 151,
+   "cadence": 171,
+   "strideCm": 106,
+   "gctMs": 251,
+   "vertOscCm": 8.3,
+   "vertRatio": 8.4,
+   "elevationM": 39,
+   "vo2max": 48,
+   "aerobicTE": 2.6,
+   "hrZonesMin": [
+    7.8,
+    36.4,
+    5.2,
+    2.6,
+    0.0
+   ],
+   "avgSpeedKmh": 9.85,
+   "weather": {
+    "tempC": 10.3,
+    "dewPointC": 2.3,
+    "humidity": 54,
+    "windKmh": 4.2,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.089
+  },
+  {
+   "id": 20260315,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-03-15 07:22:00",
+   "calories": 406,
+   "distanceKm": 37.1,
+   "durationMin": 97.0,
+   "avgHr": 135
+  },
+  {
+   "id": 20260314,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-03-14 07:09:00",
+   "calories": 560,
+   "distanceKm": 15.59,
+   "durationMin": 93.8,
+   "avgHr": 145,
+   "maxHr": 155,
+   "cadence": 172,
+   "strideCm": 111,
+   "gctMs": 255,
+   "vertOscCm": 9.0,
+   "vertRatio": 8.2,
+   "elevationM": 63,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    14.1,
+    65.7,
+    9.4,
+    4.7,
+    0.0
+   ],
+   "avgSpeedKmh": 9.97,
+   "weather": {
+    "tempC": 5.5,
+    "dewPointC": -4.0,
+    "humidity": 55,
+    "windKmh": 3.6,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.017
+  },
+  {
+   "id": 20260312,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-03-12 07:49:00",
+   "calories": 730,
+   "distanceKm": 6.52,
+   "durationMin": 39.2,
+   "avgHr": 140,
+   "maxHr": 154,
+   "cadence": 174,
+   "strideCm": 108,
+   "gctMs": 248,
+   "vertOscCm": 9.2,
+   "vertRatio": 8.0,
+   "elevationM": 81,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    5.9,
+    27.4,
+    3.9,
+    2.0,
+    0.0
+   ],
+   "avgSpeedKmh": 9.98,
+   "weather": {
+    "tempC": 9.6,
+    "dewPointC": 1.3,
+    "humidity": 58,
+    "windKmh": 9.8,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.012
+  },
+  {
+   "id": 20260311,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-03-11 07:14:00",
+   "calories": 651,
+   "distanceKm": 8.89,
+   "durationMin": 43.3,
+   "avgHr": 161,
+   "maxHr": 172,
+   "cadence": 171,
+   "strideCm": 117,
+   "gctMs": 258,
+   "vertOscCm": 8.5,
+   "vertRatio": 8.6,
+   "elevationM": 100,
+   "vo2max": 48,
+   "aerobicTE": 4.3,
+   "hrZonesMin": [
+    4.3,
+    8.7,
+    8.7,
+    17.3,
+    4.3
+   ],
+   "avgSpeedKmh": 12.32,
+   "weather": {
+    "tempC": 10.6,
+    "dewPointC": 3.0,
+    "humidity": 77,
+    "windKmh": 8.6,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.871
+  },
+  {
+   "id": 20260310,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-03-10 07:37:00",
+   "calories": 521,
+   "distanceKm": null,
+   "durationMin": 37.3,
+   "avgHr": 127
+  },
+  {
+   "id": 20260308,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-03-08 07:03:00",
+   "calories": 508,
+   "distanceKm": 38.21,
+   "durationMin": 96.9,
+   "avgHr": 118
+  },
+  {
+   "id": 20260307,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-03-07 07:36:00",
+   "calories": 717,
+   "distanceKm": 13.89,
+   "durationMin": 86.3,
+   "avgHr": 148,
+   "maxHr": 156,
+   "cadence": 174,
+   "strideCm": 111,
+   "gctMs": 251,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.3,
+   "elevationM": 126,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    12.9,
+    60.4,
+    8.6,
+    4.3,
+    0.0
+   ],
+   "avgSpeedKmh": 9.66,
+   "weather": {
+    "tempC": 8.1,
+    "dewPointC": 2.6,
+    "humidity": 61,
+    "windKmh": 14.2,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.213
+  },
+  {
+   "id": 20260305,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-03-05 07:54:00",
+   "calories": 669,
+   "distanceKm": 6.38,
+   "durationMin": 38.3,
+   "avgHr": 138,
+   "maxHr": 151,
+   "cadence": 176,
+   "strideCm": 100,
+   "gctMs": 247,
+   "vertOscCm": 9.4,
+   "vertRatio": 8.5,
+   "elevationM": 37,
+   "vo2max": 48,
+   "aerobicTE": 2.8,
+   "hrZonesMin": [
+    5.7,
+    26.8,
+    3.8,
+    1.9,
+    0.0
+   ],
+   "avgSpeedKmh": 9.99,
+   "weather": {
+    "tempC": 7.9,
+    "dewPointC": 2.8,
+    "humidity": 51,
+    "windKmh": 14.5,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.003
+  },
+  {
+   "id": 20260304,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-03-04 07:56:00",
+   "calories": 847,
+   "distanceKm": 9.08,
+   "durationMin": 45.5,
+   "avgHr": 161,
+   "maxHr": 176,
+   "cadence": 170,
+   "strideCm": 110,
+   "gctMs": 243,
+   "vertOscCm": 9.1,
+   "vertRatio": 7.5,
+   "elevationM": 117,
+   "vo2max": 48,
+   "aerobicTE": 3.9,
+   "hrZonesMin": [
+    4.5,
+    9.1,
+    9.1,
+    18.2,
+    4.5
+   ],
+   "avgSpeedKmh": 11.97,
+   "weather": {
+    "tempC": 9.0,
+    "dewPointC": 0.7,
+    "humidity": 74,
+    "windKmh": 4.5,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.011
+  },
+  {
+   "id": 20260303,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-03-03 07:36:00",
+   "calories": 851,
+   "distanceKm": null,
+   "durationMin": 45.0,
+   "avgHr": 131
+  },
+  {
+   "id": 20260302,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-03-02 07:17:00",
+   "calories": 461,
+   "distanceKm": 7.99,
+   "durationMin": 48.4,
+   "avgHr": 136,
+   "maxHr": 150,
+   "cadence": 176,
+   "strideCm": 113,
+   "gctMs": 257,
+   "vertOscCm": 8.5,
+   "vertRatio": 8.6,
+   "elevationM": 85,
+   "vo2max": 48,
+   "aerobicTE": 2.5,
+   "hrZonesMin": [
+    7.3,
+    33.9,
+    4.8,
+    2.4,
+    0.0
+   ],
+   "avgSpeedKmh": 9.9,
+   "weather": {
+    "tempC": 5.7,
+    "dewPointC": -3.9,
+    "humidity": 69,
+    "windKmh": 8.5,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.058
+  },
+  {
+   "id": 20260208,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-02-08 07:09:00",
+   "calories": 401,
+   "distanceKm": 46.95,
+   "durationMin": 106.4,
+   "avgHr": 131
+  },
+  {
+   "id": 20260207,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-02-07 07:41:00",
+   "calories": 493,
+   "distanceKm": 17.71,
+   "durationMin": 104.9,
+   "avgHr": 142,
+   "maxHr": 152,
+   "cadence": 167,
+   "strideCm": 110,
+   "gctMs": 254,
+   "vertOscCm": 8.9,
+   "vertRatio": 7.6,
+   "elevationM": 93,
+   "vo2max": 48,
+   "aerobicTE": 2.6,
+   "hrZonesMin": [
+    15.7,
+    73.4,
+    10.5,
+    5.2,
+    0.0
+   ],
+   "avgSpeedKmh": 10.13,
+   "weather": {
+    "tempC": 2.4,
+    "dewPointC": -4.3,
+    "humidity": 83,
+    "windKmh": 17.9,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.923
+  },
+  {
+   "id": 20260205,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-02-05 07:14:00",
+   "calories": 721,
+   "distanceKm": 7.55,
+   "durationMin": 43.8,
+   "avgHr": 136,
+   "maxHr": 149,
+   "cadence": 173,
+   "strideCm": 110,
+   "gctMs": 251,
+   "vertOscCm": 8.4,
+   "vertRatio": 8.4,
+   "elevationM": 179,
+   "vo2max": 48,
+   "aerobicTE": 2.7,
+   "hrZonesMin": [
+    6.6,
+    30.7,
+    4.4,
+    2.2,
+    0.0
+   ],
+   "avgSpeedKmh": 10.34,
+   "weather": {
+    "tempC": 3.3,
+    "dewPointC": -6.1,
+    "humidity": 64,
+    "windKmh": 13.0,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.801
+  },
+  {
+   "id": 20260204,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-02-04 07:44:00",
+   "calories": 824,
+   "distanceKm": 11.5,
+   "durationMin": 55.7,
+   "avgHr": 165,
+   "maxHr": 174,
+   "cadence": 170,
+   "strideCm": 112,
+   "gctMs": 263,
+   "vertOscCm": 9.4,
+   "vertRatio": 7.5,
+   "elevationM": 175,
+   "vo2max": 48,
+   "aerobicTE": 3.8,
+   "hrZonesMin": [
+    5.6,
+    11.1,
+    11.1,
+    22.3,
+    5.6
+   ],
+   "avgSpeedKmh": 12.39,
+   "weather": {
+    "tempC": 5.6,
+    "dewPointC": -1.9,
+    "humidity": 56,
+    "windKmh": 16.4,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.843
+  },
+  {
+   "id": 20260203,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-02-03 08:00:00",
+   "calories": 487,
+   "distanceKm": null,
+   "durationMin": 42.0,
+   "avgHr": 121
+  },
+  {
+   "id": 20260202,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-02-02 07:18:00",
+   "calories": 424,
+   "distanceKm": 9.4,
+   "durationMin": 55.3,
+   "avgHr": 140,
+   "maxHr": 148,
+   "cadence": 164,
+   "strideCm": 111,
+   "gctMs": 250,
+   "vertOscCm": 8.3,
+   "vertRatio": 8.2,
+   "elevationM": 57,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    8.3,
+    38.7,
+    5.5,
+    2.8,
+    0.0
+   ],
+   "avgSpeedKmh": 10.2,
+   "weather": {
+    "tempC": 6.0,
+    "dewPointC": -1.9,
+    "humidity": 83,
+    "windKmh": 10.2,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.883
+  },
+  {
+   "id": 20260201,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-02-01 07:22:00",
+   "calories": 730,
+   "distanceKm": 45.44,
+   "durationMin": 100.8,
+   "avgHr": 124
+  },
+  {
+   "id": 20260131,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-01-31 07:18:00",
+   "calories": 576,
+   "distanceKm": 16.35,
+   "durationMin": 97.4,
+   "avgHr": 145,
+   "maxHr": 157,
+   "cadence": 168,
+   "strideCm": 101,
+   "gctMs": 257,
+   "vertOscCm": 9.3,
+   "vertRatio": 8.5,
+   "elevationM": 164,
+   "vo2max": 47,
+   "aerobicTE": 3.1,
+   "hrZonesMin": [
+    14.6,
+    68.2,
+    9.7,
+    4.9,
+    0.0
+   ],
+   "avgSpeedKmh": 10.07,
+   "weather": {
+    "tempC": 3.8,
+    "dewPointC": -4.5,
+    "humidity": 70,
+    "windKmh": 2.5,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.957
+  },
+  {
+   "id": 20260129,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-01-29 07:52:00",
+   "calories": 796,
+   "distanceKm": 8.41,
+   "durationMin": 48.1,
+   "avgHr": 142,
+   "maxHr": 151,
+   "cadence": 167,
+   "strideCm": 106,
+   "gctMs": 241,
+   "vertOscCm": 8.4,
+   "vertRatio": 7.4,
+   "elevationM": 172,
+   "vo2max": 47,
+   "aerobicTE": 3.0,
+   "hrZonesMin": [
+    7.2,
+    33.7,
+    4.8,
+    2.4,
+    0.0
+   ],
+   "avgSpeedKmh": 10.49,
+   "weather": {
+    "tempC": 3.6,
+    "dewPointC": -2.4,
+    "humidity": 70,
+    "windKmh": 9.6,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.719
+  },
+  {
+   "id": 20260125,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-01-25 07:01:00",
+   "calories": 281,
+   "distanceKm": 34.3,
+   "durationMin": 105.2,
+   "avgHr": 138
+  },
+  {
+   "id": 20260121,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-01-21 07:40:00",
+   "calories": 799,
+   "distanceKm": 9.86,
+   "durationMin": 48.8,
+   "avgHr": 160,
+   "maxHr": 168,
+   "cadence": 170,
+   "strideCm": 107,
+   "gctMs": 253,
+   "vertOscCm": 9.4,
+   "vertRatio": 8.3,
+   "elevationM": 110,
+   "vo2max": 47,
+   "aerobicTE": 3.7,
+   "hrZonesMin": [
+    4.9,
+    9.8,
+    9.8,
+    19.5,
+    4.9
+   ],
+   "avgSpeedKmh": 12.12,
+   "weather": {
+    "tempC": 0.4,
+    "dewPointC": -9.1,
+    "humidity": 81,
+    "windKmh": 4.3,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.949
+  },
+  {
+   "id": 20260120,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-01-20 07:58:00",
+   "calories": 584,
+   "distanceKm": null,
+   "durationMin": 38.3,
+   "avgHr": 130
+  },
+  {
+   "id": 20260119,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-01-19 07:54:00",
+   "calories": 519,
+   "distanceKm": 9.05,
+   "durationMin": 53.4,
+   "avgHr": 144,
+   "maxHr": 158,
+   "cadence": 174,
+   "strideCm": 116,
+   "gctMs": 243,
+   "vertOscCm": 8.6,
+   "vertRatio": 8.5,
+   "elevationM": 65,
+   "vo2max": 47,
+   "aerobicTE": 2.8,
+   "hrZonesMin": [
+    8.0,
+    37.4,
+    5.3,
+    2.7,
+    0.0
+   ],
+   "avgSpeedKmh": 10.17,
+   "weather": {
+    "tempC": 3.5,
+    "dewPointC": -5.0,
+    "humidity": 52,
+    "windKmh": 16.5,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.901
+  },
+  {
+   "id": 20260118,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-01-18 07:14:00",
+   "calories": 357,
+   "distanceKm": 37.99,
+   "durationMin": 103.9,
+   "avgHr": 121
+  },
+  {
+   "id": 20260117,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-01-17 07:33:00",
+   "calories": 872,
+   "distanceKm": 15.78,
+   "durationMin": 96.6,
+   "avgHr": 146,
+   "maxHr": 156,
+   "cadence": 172,
+   "strideCm": 109,
+   "gctMs": 237,
+   "vertOscCm": 8.6,
+   "vertRatio": 7.5,
+   "elevationM": 132,
+   "vo2max": 48,
+   "aerobicTE": 2.4,
+   "hrZonesMin": [
+    14.5,
+    67.6,
+    9.7,
+    4.8,
+    0.0
+   ],
+   "avgSpeedKmh": 9.8,
+   "weather": {
+    "tempC": 0.2,
+    "dewPointC": -6.9,
+    "humidity": 79,
+    "windKmh": 13.9,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.122
+  },
+  {
+   "id": 20260115,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-01-15 07:28:00",
+   "calories": 866,
+   "distanceKm": 7.7,
+   "durationMin": 45.8,
+   "avgHr": 139,
+   "maxHr": 149,
+   "cadence": 164,
+   "strideCm": 101,
+   "gctMs": 236,
+   "vertOscCm": 8.9,
+   "vertRatio": 7.9,
+   "elevationM": 70,
+   "vo2max": 47,
+   "aerobicTE": 3.1,
+   "hrZonesMin": [
+    6.9,
+    32.1,
+    4.6,
+    2.3,
+    0.0
+   ],
+   "avgSpeedKmh": 10.09,
+   "weather": {
+    "tempC": 1.1,
+    "dewPointC": -7.1,
+    "humidity": 49,
+    "windKmh": 11.8,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.948
+  },
+  {
+   "id": 20260114,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-01-14 07:30:00",
+   "calories": 412,
+   "distanceKm": 8.75,
+   "durationMin": 43.7,
+   "avgHr": 163,
+   "maxHr": 173,
+   "cadence": 171,
+   "strideCm": 103,
+   "gctMs": 237,
+   "vertOscCm": 9.1,
+   "vertRatio": 8.4,
+   "elevationM": 79,
+   "vo2max": 47,
+   "aerobicTE": 3.8,
+   "hrZonesMin": [
+    4.4,
+    8.7,
+    8.7,
+    17.5,
+    4.4
+   ],
+   "avgSpeedKmh": 12.01,
+   "weather": {
+    "tempC": 0.2,
+    "dewPointC": -7.9,
+    "humidity": 45,
+    "windKmh": 12.3,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.994
+  },
+  {
+   "id": 20260113,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-01-13 07:34:00",
+   "calories": 479,
+   "distanceKm": null,
+   "durationMin": 41.0,
+   "avgHr": 127
+  },
+  {
+   "id": 20260110,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-01-10 07:55:00",
+   "calories": 849,
+   "distanceKm": 15.81,
+   "durationMin": 98.4,
+   "avgHr": 140,
+   "maxHr": 148,
+   "cadence": 167,
+   "strideCm": 104,
+   "gctMs": 244,
+   "vertOscCm": 9.1,
+   "vertRatio": 7.9,
+   "elevationM": 141,
+   "vo2max": 47,
+   "aerobicTE": 2.4,
+   "hrZonesMin": [
+    14.8,
+    68.9,
+    9.8,
+    4.9,
+    0.0
+   ],
+   "avgSpeedKmh": 9.64,
+   "weather": {
+    "tempC": 0.5,
+    "dewPointC": -7.7,
+    "humidity": 65,
+    "windKmh": 11.8,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.224
+  },
+  {
+   "id": 20260108,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-01-08 07:56:00",
+   "calories": 357,
+   "distanceKm": 6.39,
+   "durationMin": 37.9,
+   "avgHr": 142,
+   "maxHr": 155,
+   "cadence": 168,
+   "strideCm": 112,
+   "gctMs": 246,
+   "vertOscCm": 9.0,
+   "vertRatio": 7.8,
+   "elevationM": 30,
+   "vo2max": 47,
+   "aerobicTE": 2.5,
+   "hrZonesMin": [
+    5.7,
+    26.5,
+    3.8,
+    1.9,
+    0.0
+   ],
+   "avgSpeedKmh": 10.12,
+   "weather": {
+    "tempC": 2.3,
+    "dewPointC": -5.6,
+    "humidity": 75,
+    "windKmh": 2.8,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 5.931
+  },
+  {
+   "id": 20260107,
+   "name": "Tempo run",
+   "type": "running",
+   "start": "2026-01-07 07:20:00",
+   "calories": 631,
+   "distanceKm": 8.13,
+   "durationMin": 39.7,
+   "avgHr": 162,
+   "maxHr": 174,
+   "cadence": 174,
+   "strideCm": 110,
+   "gctMs": 263,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.4,
+   "elevationM": 77,
+   "vo2max": 47,
+   "aerobicTE": 4.0,
+   "hrZonesMin": [
+    4.0,
+    7.9,
+    7.9,
+    15.9,
+    4.0
+   ],
+   "avgSpeedKmh": 12.29,
+   "weather": {
+    "tempC": 0.6,
+    "dewPointC": -7.0,
+    "humidity": 70,
+    "windKmh": 7.8,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 4.883
+  },
+  {
+   "id": 20260106,
+   "name": "Strength",
+   "type": "strength_training",
+   "start": "2026-01-06 07:16:00",
+   "calories": 764,
+   "distanceKm": null,
+   "durationMin": 47.6,
+   "avgHr": 133
+  },
+  {
+   "id": 20260105,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-01-05 07:52:00",
+   "calories": 362,
+   "distanceKm": 7.36,
+   "durationMin": 45.2,
+   "avgHr": 143,
+   "maxHr": 155,
+   "cadence": 176,
+   "strideCm": 105,
+   "gctMs": 256,
+   "vertOscCm": 9.3,
+   "vertRatio": 8.5,
+   "elevationM": 26,
+   "vo2max": 48,
+   "aerobicTE": 2.9,
+   "hrZonesMin": [
+    6.8,
+    31.6,
+    4.5,
+    2.3,
+    0.0
+   ],
+   "avgSpeedKmh": 9.77,
+   "weather": {
+    "tempC": 5.0,
+    "dewPointC": -3.7,
+    "humidity": 55,
+    "windKmh": 7.2,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.141
+  },
+  {
+   "id": 20260104,
+   "name": "Road ride",
+   "type": "cycling",
+   "start": "2026-01-04 07:57:00",
+   "calories": 636,
+   "distanceKm": 44.57,
+   "durationMin": 107.9,
+   "avgHr": 118
+  },
+  {
+   "id": 20260103,
+   "name": "Long run",
+   "type": "running",
+   "start": "2026-01-03 07:11:00",
+   "calories": 734,
+   "distanceKm": 13.51,
+   "durationMin": 81.8,
+   "avgHr": 145,
+   "maxHr": 159,
+   "cadence": 169,
+   "strideCm": 102,
+   "gctMs": 260,
+   "vertOscCm": 8.8,
+   "vertRatio": 8.0,
+   "elevationM": 20,
+   "vo2max": 47,
+   "aerobicTE": 2.5,
+   "hrZonesMin": [
+    12.3,
+    57.3,
+    8.2,
+    4.1,
+    0.0
+   ],
+   "avgSpeedKmh": 9.91,
+   "weather": {
+    "tempC": 3.7,
+    "dewPointC": -3.6,
+    "humidity": 82,
+    "windKmh": 7.0,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.055
+  },
+  {
+   "id": 20260101,
+   "name": "Easy run",
+   "type": "running",
+   "start": "2026-01-01 07:54:00",
+   "calories": 892,
+   "distanceKm": 6.71,
+   "durationMin": 40.3,
+   "avgHr": 140,
+   "maxHr": 151,
+   "cadence": 170,
+   "strideCm": 112,
+   "gctMs": 256,
+   "vertOscCm": 8.7,
+   "vertRatio": 8.0,
+   "elevationM": 55,
+   "vo2max": 47,
+   "aerobicTE": 2.9,
    "hrZonesMin": [
     6.0,
     28.2,
@@ -1732,180 +6208,16 @@
     2.0,
     0.0
    ],
-   "vo2max": 50
-  },
-  {
-   "id": 1075,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-07-22 08:18:00",
-   "distanceKm": 12.12,
-   "durationMin": 60.3,
-   "avgHr": 160,
-   "calories": 828,
-   "elevationM": 111,
-   "maxHr": 171,
-   "avgSpeedKmh": 12.06,
-   "aerobicTE": 4.3,
-   "anaerobicTE": 1.3,
-   "trainingLoad": 138,
-   "cadence": 175,
-   "hrZonesMin": [
-    6.0,
-    12.1,
-    12.1,
-    24.1,
-    6.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1076,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-07-21 08:11:00",
-   "distanceKm": null,
-   "durationMin": 48.8,
-   "avgHr": 120,
-   "calories": 581,
-   "elevationM": null,
-   "maxHr": 135,
-   "avgSpeedKmh": null,
-   "aerobicTE": 2.9,
-   "anaerobicTE": 1.1,
-   "trainingLoad": 200
-  },
-  {
-   "id": 1077,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-07-20 08:23:00",
-   "distanceKm": 8.08,
-   "durationMin": 48.3,
-   "avgHr": 132,
-   "calories": 648,
-   "elevationM": 337,
-   "maxHr": 147,
-   "avgSpeedKmh": 10.04,
-   "aerobicTE": 2.8,
-   "anaerobicTE": 1.1,
-   "trainingLoad": 45,
-   "cadence": 167,
-   "hrZonesMin": [
-    7.2,
-    33.8,
-    4.8,
-    2.4,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1078,
-   "name": "Road ride",
-   "type": "cycling",
-   "start": "2026-07-19 07:58:00",
-   "distanceKm": 49.41,
-   "durationMin": 114.5,
-   "avgHr": 143,
-   "calories": 359,
-   "elevationM": 34,
-   "maxHr": 159,
-   "avgSpeedKmh": 25.89,
-   "aerobicTE": 2.8,
-   "anaerobicTE": 0.9,
-   "trainingLoad": 153
-  },
-  {
-   "id": 1079,
-   "name": "Long run",
-   "type": "running",
-   "start": "2026-07-18 08:24:00",
-   "distanceKm": 13.29,
-   "durationMin": 80.8,
-   "avgHr": 140,
-   "calories": 571,
-   "elevationM": 398,
-   "maxHr": 149,
-   "avgSpeedKmh": 9.87,
-   "aerobicTE": 3.0,
-   "anaerobicTE": 1.9,
-   "trainingLoad": 136,
-   "cadence": 173,
-   "hrZonesMin": [
-    12.1,
-    56.6,
-    8.1,
-    4.0,
-    0.0
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1081,
-   "name": "Easy run",
-   "type": "running",
-   "start": "2026-07-16 07:24:00",
-   "distanceKm": 6.07,
-   "durationMin": 36.4,
-   "avgHr": 134,
-   "calories": 419,
-   "elevationM": 351,
-   "maxHr": 146,
-   "avgSpeedKmh": 10.01,
-   "aerobicTE": 2.5,
-   "anaerobicTE": 0.9,
-   "trainingLoad": 104,
-   "cadence": 171,
-   "hrZonesMin": [
-    5.5,
-    25.5,
-    3.6,
-    1.8,
-    0.0
-   ],
-   "vo2max": 49
-  },
-  {
-   "id": 1082,
-   "name": "Tempo run",
-   "type": "running",
-   "start": "2026-07-15 08:01:00",
-   "distanceKm": 8.99,
-   "durationMin": 44.9,
-   "avgHr": 168,
-   "calories": 493,
-   "elevationM": 163,
-   "maxHr": 181,
-   "avgSpeedKmh": 12.01,
-   "aerobicTE": 3.7,
-   "anaerobicTE": 0.5,
-   "trainingLoad": 81,
-   "cadence": 170,
-   "hrZonesMin": [
-    4.5,
-    9.0,
-    9.0,
-    18.0,
-    4.5
-   ],
-   "vo2max": 50
-  },
-  {
-   "id": 1083,
-   "name": "Strength",
-   "type": "strength_training",
-   "start": "2026-07-14 07:14:00",
-   "distanceKm": null,
-   "durationMin": 47.4,
-   "avgHr": 121,
-   "calories": 618,
-   "elevationM": null,
-   "maxHr": 147,
-   "avgSpeedKmh": null,
-   "aerobicTE": 3.2,
-   "anaerobicTE": 1.5,
-   "trainingLoad": 66
+   "avgSpeedKmh": 9.99,
+   "weather": {
+    "tempC": 1.3,
+    "dewPointC": -5.9,
+    "humidity": 65,
+    "windKmh": 5.8,
+    "source": "sample"
+   },
+   "heatPct": 0.0,
+   "heatAdjPace": 6.006
   }
  ],
  "extras": {
@@ -1920,183 +6232,472 @@
    "10k": 47.6,
    "half": 105.8,
    "marathon": 223.5
+  },
+  "settings": {
+   "maxHr": 188,
+   "restingHr": 50,
+   "lthr": 170,
+   "zones": [
+    94,
+    113,
+    132,
+    151,
+    170
+   ],
+   "zonesMethod": "hr max based",
+   "source": "sample"
+  },
+  "weights": {
+   "2026-10-05": 72.4,
+   "2026-09-28": 72.3,
+   "2026-09-21": 72.5,
+   "2026-09-14": 72.4,
+   "2026-09-07": 72.2,
+   "2026-08-31": 72.2,
+   "2026-08-24": 72.3,
+   "2026-08-17": 72.3,
+   "2026-08-10": 72.0,
+   "2026-08-03": 71.9,
+   "2026-07-27": 71.8,
+   "2026-07-20": 71.7,
+   "2026-07-13": 71.9
   }
  },
  "running": {
-  "thisWeekKm": 8.1,
-  "avgWeekKm": 41.7,
+  "thisWeekKm": 9.6,
+  "avgWeekKm": 41.3,
   "runsThisWeek": 1,
-  "longestRecentKm": 18.9,
+  "longestRecentKm": 19.4,
   "cadence": 169,
-  "daysSinceLong": 9,
+  "daysSinceLong": 2,
   "vo2max": 51.4,
   "vo2": {
    "value": 51.4,
    "source": "Garmin",
    "history": [
     {
-     "date": "2026-07-15",
+     "date": "2026-01-01",
+     "value": 47
+    },
+    {
+     "date": "2026-01-03",
+     "value": 47
+    },
+    {
+     "date": "2026-01-05",
+     "value": 48
+    },
+    {
+     "date": "2026-01-07",
+     "value": 47
+    },
+    {
+     "date": "2026-01-08",
+     "value": 47
+    },
+    {
+     "date": "2026-01-10",
+     "value": 47
+    },
+    {
+     "date": "2026-01-14",
+     "value": 47
+    },
+    {
+     "date": "2026-01-15",
+     "value": 47
+    },
+    {
+     "date": "2026-01-17",
+     "value": 48
+    },
+    {
+     "date": "2026-01-19",
+     "value": 47
+    },
+    {
+     "date": "2026-01-21",
+     "value": 47
+    },
+    {
+     "date": "2026-01-29",
+     "value": 47
+    },
+    {
+     "date": "2026-01-31",
+     "value": 47
+    },
+    {
+     "date": "2026-02-02",
+     "value": 48
+    },
+    {
+     "date": "2026-02-04",
+     "value": 48
+    },
+    {
+     "date": "2026-02-05",
+     "value": 48
+    },
+    {
+     "date": "2026-02-07",
+     "value": 48
+    },
+    {
+     "date": "2026-03-02",
+     "value": 48
+    },
+    {
+     "date": "2026-03-04",
+     "value": 48
+    },
+    {
+     "date": "2026-03-05",
+     "value": 48
+    },
+    {
+     "date": "2026-03-07",
+     "value": 48
+    },
+    {
+     "date": "2026-03-11",
+     "value": 48
+    },
+    {
+     "date": "2026-03-12",
+     "value": 48
+    },
+    {
+     "date": "2026-03-14",
+     "value": 48
+    },
+    {
+     "date": "2026-03-16",
+     "value": 48
+    },
+    {
+     "date": "2026-03-18",
+     "value": 48
+    },
+    {
+     "date": "2026-03-19",
+     "value": 48
+    },
+    {
+     "date": "2026-03-21",
+     "value": 48
+    },
+    {
+     "date": "2026-03-23",
+     "value": 48
+    },
+    {
+     "date": "2026-03-25",
+     "value": 48
+    },
+    {
+     "date": "2026-03-26",
+     "value": 48
+    },
+    {
+     "date": "2026-03-28",
+     "value": 48
+    },
+    {
+     "date": "2026-03-30",
+     "value": 48
+    },
+    {
+     "date": "2026-04-01",
+     "value": 49
+    },
+    {
+     "date": "2026-04-02",
+     "value": 49
+    },
+    {
+     "date": "2026-04-04",
+     "value": 49
+    },
+    {
+     "date": "2026-04-06",
+     "value": 49
+    },
+    {
+     "date": "2026-04-08",
+     "value": 49
+    },
+    {
+     "date": "2026-04-09",
+     "value": 49
+    },
+    {
+     "date": "2026-04-11",
+     "value": 49
+    },
+    {
+     "date": "2026-04-29",
+     "value": 49
+    },
+    {
+     "date": "2026-04-30",
+     "value": 48
+    },
+    {
+     "date": "2026-05-02",
+     "value": 49
+    },
+    {
+     "date": "2026-05-06",
+     "value": 49
+    },
+    {
+     "date": "2026-05-09",
+     "value": 49
+    },
+    {
+     "date": "2026-05-11",
+     "value": 49
+    },
+    {
+     "date": "2026-05-13",
+     "value": 49
+    },
+    {
+     "date": "2026-05-14",
+     "value": 49
+    },
+    {
+     "date": "2026-05-16",
+     "value": 49
+    },
+    {
+     "date": "2026-05-18",
+     "value": 49
+    },
+    {
+     "date": "2026-05-20",
+     "value": 49
+    },
+    {
+     "date": "2026-05-21",
+     "value": 49
+    },
+    {
+     "date": "2026-05-23",
+     "value": 49
+    },
+    {
+     "date": "2026-05-25",
+     "value": 49
+    },
+    {
+     "date": "2026-05-27",
+     "value": 49
+    },
+    {
+     "date": "2026-05-28",
+     "value": 49
+    },
+    {
+     "date": "2026-05-30",
+     "value": 49
+    },
+    {
+     "date": "2026-06-01",
+     "value": 49
+    },
+    {
+     "date": "2026-06-03",
+     "value": 49
+    },
+    {
+     "date": "2026-06-04",
+     "value": 49
+    },
+    {
+     "date": "2026-06-06",
+     "value": 49
+    },
+    {
+     "date": "2026-06-10",
      "value": 50
     },
     {
-     "date": "2026-07-16",
+     "date": "2026-06-11",
+     "value": 49
+    },
+    {
+     "date": "2026-06-13",
+     "value": 50
+    },
+    {
+     "date": "2026-06-17",
+     "value": 49
+    },
+    {
+     "date": "2026-06-18",
+     "value": 50
+    },
+    {
+     "date": "2026-06-20",
+     "value": 49
+    },
+    {
+     "date": "2026-07-13",
+     "value": 49
+    },
+    {
+     "date": "2026-07-15",
      "value": 49
     },
     {
      "date": "2026-07-18",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-07-20",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-07-22",
-     "value": 50
-    },
-    {
-     "date": "2026-07-23",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-07-25",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-07-27",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-07-29",
-     "value": 50
-    },
-    {
-     "date": "2026-07-30",
-     "value": 50
-    },
-    {
-     "date": "2026-08-01",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-08-03",
-     "value": 50
+     "value": 48
     },
     {
      "date": "2026-08-05",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-08-06",
-     "value": 50
+     "value": 48
+    },
+    {
+     "date": "2026-08-08",
+     "value": 48
     },
     {
      "date": "2026-08-10",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-08-12",
-     "value": 50
+     "value": 49
     },
     {
      "date": "2026-08-13",
-     "value": 50
-    },
-    {
-     "date": "2026-08-15",
-     "value": 50
-    },
-    {
-     "date": "2026-08-19",
-     "value": 51
+     "value": 49
     },
     {
      "date": "2026-08-20",
-     "value": 51
+     "value": 49
     },
     {
-     "date": "2026-08-22",
-     "value": 51
+     "date": "2026-08-24",
+     "value": 49
+    },
+    {
+     "date": "2026-08-26",
+     "value": 49
+    },
+    {
+     "date": "2026-08-27",
+     "value": 48
     },
     {
      "date": "2026-08-29",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-08-31",
-     "value": 51
+     "value": 49
     },
     {
      "date": "2026-09-02",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-03",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-05",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-07",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-09",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-10",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-12",
-     "value": 51
+     "value": 48
+    },
+    {
+     "date": "2026-09-14",
+     "value": 48
+    },
+    {
+     "date": "2026-09-17",
+     "value": 48
     },
     {
      "date": "2026-09-19",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-21",
-     "value": 51
-    },
-    {
-     "date": "2026-09-23",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-24",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-26",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-28",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-09-30",
-     "value": 51
-    },
-    {
-     "date": "2026-10-01",
-     "value": 52
+     "value": 48
     },
     {
      "date": "2026-10-03",
-     "value": 51
+     "value": 48
     },
     {
      "date": "2026-10-05",
-     "value": 51
+     "value": 48
     }
    ],
-   "change": 1.7,
-   "since": "2026-07-15",
+   "change": 0.7,
+   "since": "2026-01-01",
    "level": "Excellent",
    "next": {
     "level": "Superior",
@@ -2111,256 +6712,904 @@
   "weekly": [
    {
     "week": "2026-07-20",
-    "km": 46.2,
-    "runs": 4,
-    "longestKm": 19.3,
+    "km": 30.0,
+    "runs": 3,
+    "longestKm": 13.4,
+    "load": 415,
     "partial": false
    },
    {
     "week": "2026-07-27",
-    "km": 49.8,
-    "runs": 4,
-    "longestKm": 20.7,
+    "km": 17.7,
+    "runs": 2,
+    "longestKm": 9.0,
+    "load": 260,
     "partial": false
    },
    {
     "week": "2026-08-03",
-    "km": 28.4,
-    "runs": 3,
-    "longestKm": 13.2,
+    "km": 40.6,
+    "runs": 4,
+    "longestKm": 15.0,
+    "load": 553,
     "partial": false
    },
    {
     "week": "2026-08-10",
-    "km": 50.1,
-    "runs": 4,
-    "longestKm": 19.2,
+    "km": 28.3,
+    "runs": 3,
+    "longestKm": 10.1,
+    "load": 385,
     "partial": false
    },
    {
     "week": "2026-08-17",
-    "km": 36.1,
-    "runs": 3,
-    "longestKm": 18.1,
+    "km": 8.7,
+    "runs": 1,
+    "longestKm": 8.7,
+    "load": 106,
     "partial": false
    },
    {
     "week": "2026-08-24",
-    "km": 21.6,
-    "runs": 1,
-    "longestKm": 21.6,
+    "km": 48.1,
+    "runs": 4,
+    "longestKm": 17.2,
+    "load": 635,
     "partial": false
    },
    {
     "week": "2026-08-31",
-    "km": 45.0,
+    "km": 49.8,
     "runs": 4,
-    "longestKm": 18.6,
+    "longestKm": 19.4,
+    "load": 640,
     "partial": false
    },
    {
     "week": "2026-09-07",
-    "km": 44.2,
+    "km": 48.6,
     "runs": 4,
-    "longestKm": 15.3,
+    "longestKm": 19.1,
+    "load": 617,
     "partial": false
    },
    {
     "week": "2026-09-14",
-    "km": 22.7,
-    "runs": 1,
-    "longestKm": 22.7,
+    "km": 39.4,
+    "runs": 3,
+    "longestKm": 20.2,
+    "load": 464,
     "partial": false
    },
    {
     "week": "2026-09-21",
-    "km": 51.1,
-    "runs": 4,
-    "longestKm": 18.9,
+    "km": 37.3,
+    "runs": 3,
+    "longestKm": 19.4,
+    "load": 440,
     "partial": false
    },
    {
     "week": "2026-09-28",
-    "km": 48.7,
-    "runs": 4,
-    "longestKm": 16.4,
+    "km": 39.8,
+    "runs": 3,
+    "longestKm": 17.4,
+    "load": 519,
     "partial": false
    },
    {
     "week": "2026-10-05",
-    "km": 8.1,
+    "km": 9.6,
     "runs": 1,
-    "longestKm": 8.1,
+    "longestKm": 9.6,
+    "load": 110,
     "partial": true
    }
   ],
+  "history": {
+   "from": "2026-01-01",
+   "weekly": [
+    {
+     "week": "2026-01-05",
+     "km": 37.7,
+     "runs": 4,
+     "longestKm": 15.8,
+     "load": 500,
+     "partial": false
+    },
+    {
+     "week": "2026-01-12",
+     "km": 32.2,
+     "runs": 3,
+     "longestKm": 15.8,
+     "load": 432,
+     "partial": false
+    },
+    {
+     "week": "2026-01-19",
+     "km": 18.9,
+     "runs": 2,
+     "longestKm": 9.9,
+     "load": 265,
+     "partial": false
+    },
+    {
+     "week": "2026-01-26",
+     "km": 24.8,
+     "runs": 2,
+     "longestKm": 16.4,
+     "load": 299,
+     "partial": false
+    },
+    {
+     "week": "2026-02-02",
+     "km": 46.2,
+     "runs": 4,
+     "longestKm": 17.7,
+     "load": 596,
+     "partial": false
+    },
+    {
+     "week": "2026-02-09",
+     "km": 0,
+     "runs": 0,
+     "longestKm": 0,
+     "load": null,
+     "partial": false
+    },
+    {
+     "week": "2026-02-16",
+     "km": 0,
+     "runs": 0,
+     "longestKm": 0,
+     "load": null,
+     "partial": false
+    },
+    {
+     "week": "2026-02-23",
+     "km": 0,
+     "runs": 0,
+     "longestKm": 0,
+     "load": null,
+     "partial": false
+    },
+    {
+     "week": "2026-03-02",
+     "km": 37.3,
+     "runs": 4,
+     "longestKm": 13.9,
+     "load": 499,
+     "partial": false
+    },
+    {
+     "week": "2026-03-09",
+     "km": 31.0,
+     "runs": 3,
+     "longestKm": 15.6,
+     "load": 410,
+     "partial": false
+    },
+    {
+     "week": "2026-03-16",
+     "km": 41.3,
+     "runs": 4,
+     "longestKm": 16.3,
+     "load": 543,
+     "partial": false
+    },
+    {
+     "week": "2026-03-23",
+     "km": 40.9,
+     "runs": 4,
+     "longestKm": 14.9,
+     "load": 532,
+     "partial": false
+    },
+    {
+     "week": "2026-03-30",
+     "km": 42.1,
+     "runs": 4,
+     "longestKm": 16.3,
+     "load": 547,
+     "partial": false
+    },
+    {
+     "week": "2026-04-06",
+     "km": 44.9,
+     "runs": 4,
+     "longestKm": 16.1,
+     "load": 579,
+     "partial": false
+    },
+    {
+     "week": "2026-04-13",
+     "km": 0,
+     "runs": 0,
+     "longestKm": 0,
+     "load": null,
+     "partial": false
+    },
+    {
+     "week": "2026-04-20",
+     "km": 0,
+     "runs": 0,
+     "longestKm": 0,
+     "load": null,
+     "partial": false
+    },
+    {
+     "week": "2026-04-27",
+     "km": 28.5,
+     "runs": 3,
+     "longestKm": 13.3,
+     "load": 388,
+     "partial": false
+    },
+    {
+     "week": "2026-05-04",
+     "km": 23.5,
+     "runs": 2,
+     "longestKm": 14.9,
+     "load": 325,
+     "partial": false
+    },
+    {
+     "week": "2026-05-11",
+     "km": 39.9,
+     "runs": 4,
+     "longestKm": 15.9,
+     "load": 528,
+     "partial": false
+    },
+    {
+     "week": "2026-05-18",
+     "km": 42.6,
+     "runs": 4,
+     "longestKm": 16.3,
+     "load": 561,
+     "partial": false
+    },
+    {
+     "week": "2026-05-25",
+     "km": 44.4,
+     "runs": 4,
+     "longestKm": 16.7,
+     "load": 580,
+     "partial": false
+    },
+    {
+     "week": "2026-06-01",
+     "km": 44.3,
+     "runs": 4,
+     "longestKm": 15.9,
+     "load": 571,
+     "partial": false
+    },
+    {
+     "week": "2026-06-08",
+     "km": 36.7,
+     "runs": 3,
+     "longestKm": 16.9,
+     "load": 471,
+     "partial": false
+    },
+    {
+     "week": "2026-06-15",
+     "km": 39.8,
+     "runs": 3,
+     "longestKm": 20.3,
+     "load": 506,
+     "partial": false
+    },
+    {
+     "week": "2026-06-22",
+     "km": 0,
+     "runs": 0,
+     "longestKm": 0,
+     "load": null,
+     "partial": false
+    },
+    {
+     "week": "2026-06-29",
+     "km": 0,
+     "runs": 0,
+     "longestKm": 0,
+     "load": null,
+     "partial": false
+    },
+    {
+     "week": "2026-07-06",
+     "km": 0,
+     "runs": 0,
+     "longestKm": 0,
+     "load": null,
+     "partial": false
+    },
+    {
+     "week": "2026-07-13",
+     "km": 31.1,
+     "runs": 3,
+     "longestKm": 14.5,
+     "load": 430,
+     "partial": false
+    },
+    {
+     "week": "2026-07-20",
+     "km": 30.0,
+     "runs": 3,
+     "longestKm": 13.4,
+     "load": 415,
+     "partial": false
+    },
+    {
+     "week": "2026-07-27",
+     "km": 17.7,
+     "runs": 2,
+     "longestKm": 9.0,
+     "load": 260,
+     "partial": false
+    },
+    {
+     "week": "2026-08-03",
+     "km": 40.6,
+     "runs": 4,
+     "longestKm": 15.0,
+     "load": 553,
+     "partial": false
+    },
+    {
+     "week": "2026-08-10",
+     "km": 28.3,
+     "runs": 3,
+     "longestKm": 10.1,
+     "load": 385,
+     "partial": false
+    },
+    {
+     "week": "2026-08-17",
+     "km": 8.7,
+     "runs": 1,
+     "longestKm": 8.7,
+     "load": 106,
+     "partial": false
+    },
+    {
+     "week": "2026-08-24",
+     "km": 48.1,
+     "runs": 4,
+     "longestKm": 17.2,
+     "load": 635,
+     "partial": false
+    },
+    {
+     "week": "2026-08-31",
+     "km": 49.8,
+     "runs": 4,
+     "longestKm": 19.4,
+     "load": 640,
+     "partial": false
+    },
+    {
+     "week": "2026-09-07",
+     "km": 48.6,
+     "runs": 4,
+     "longestKm": 19.1,
+     "load": 617,
+     "partial": false
+    },
+    {
+     "week": "2026-09-14",
+     "km": 39.4,
+     "runs": 3,
+     "longestKm": 20.2,
+     "load": 464,
+     "partial": false
+    },
+    {
+     "week": "2026-09-21",
+     "km": 37.3,
+     "runs": 3,
+     "longestKm": 19.4,
+     "load": 440,
+     "partial": false
+    },
+    {
+     "week": "2026-09-28",
+     "km": 39.8,
+     "runs": 3,
+     "longestKm": 17.4,
+     "load": 519,
+     "partial": false
+    },
+    {
+     "week": "2026-10-05",
+     "km": 9.6,
+     "runs": 1,
+     "longestKm": 9.6,
+     "load": 110,
+     "partial": true
+    }
+   ],
+   "thresholdKm": 11.8,
+   "blocks": [
+    {
+     "start": "2026-01-05",
+     "end": "2026-02-02",
+     "weeks": 5,
+     "activeWeeks": 5,
+     "km": 159.8,
+     "peakKm": 46.2,
+     "avgKm": 32.0,
+     "lateJumpPct": 86,
+     "current": false
+    },
+    {
+     "start": "2026-03-02",
+     "end": "2026-04-06",
+     "weeks": 6,
+     "activeWeeks": 6,
+     "km": 237.5,
+     "peakKm": 44.9,
+     "avgKm": 39.6,
+     "lateJumpPct": 7,
+     "current": false
+    },
+    {
+     "start": "2026-04-27",
+     "end": "2026-06-15",
+     "weeks": 8,
+     "activeWeeks": 8,
+     "km": 299.7,
+     "peakKm": 44.4,
+     "avgKm": 37.5,
+     "lateJumpPct": 8,
+     "current": false
+    },
+    {
+     "start": "2026-07-13",
+     "end": "2026-10-05",
+     "weeks": 13,
+     "activeWeeks": 12,
+     "km": 429.0,
+     "peakKm": 49.8,
+     "avgKm": 33.0,
+     "lateJumpPct": 7,
+     "current": true
+    }
+   ]
+  },
+  "monthly": [
+   {
+    "month": "2026-01",
+    "runs": 13,
+    "km": 133.8,
+    "best5k": 23.71,
+    "best5kAdj": 23.71,
+    "bestRun": {
+     "date": "2026-01-07",
+     "name": "Tempo run",
+     "distanceKm": 8.13,
+     "pace": 4.883
+    },
+    "efficiency": 1.187,
+    "efficiencyAdj": 1.187,
+    "avgTempC": 2.0
+   },
+   {
+    "month": "2026-02",
+    "runs": 4,
+    "km": 46.2,
+    "best5k": 23.04,
+    "best5kAdj": 23.03,
+    "bestRun": {
+     "date": "2026-02-04",
+     "name": "Tempo run",
+     "distanceKm": 11.5,
+     "pace": 4.843
+    },
+    "efficiency": 1.233,
+    "efficiencyAdj": 1.233,
+    "avgTempC": 4.3
+   },
+   {
+    "month": "2026-03",
+    "runs": 16,
+    "km": 159.1,
+    "best5k": 23.39,
+    "best5kAdj": 23.39,
+    "bestRun": {
+     "date": "2026-03-25",
+     "name": "Tempo run",
+     "distanceKm": 10.49,
+     "pace": 4.89
+    },
+    "efficiency": 1.21,
+    "efficiencyAdj": 1.21,
+    "avgTempC": 8.7
+   },
+   {
+    "month": "2026-04",
+    "runs": 9,
+    "km": 93.7,
+    "best5k": 23.05,
+    "best5kAdj": 23.05,
+    "bestRun": {
+     "date": "2026-04-08",
+     "name": "Tempo run",
+     "distanceKm": 10.85,
+     "pace": 4.829
+    },
+    "efficiency": 1.243,
+    "efficiencyAdj": 1.243,
+    "avgTempC": 12.2
+   },
+   {
+    "month": "2026-05",
+    "runs": 15,
+    "km": 163.7,
+    "best5k": 23.3,
+    "best5kAdj": 23.14,
+    "bestRun": {
+     "date": "2026-05-27",
+     "name": "Tempo run",
+     "distanceKm": 11.07,
+     "pace": 4.887
+    },
+    "efficiency": 1.174,
+    "efficiencyAdj": 1.181,
+    "avgTempC": 17.5
+   },
+   {
+    "month": "2026-06",
+    "runs": 10,
+    "km": 120.7,
+    "best5k": 22.43,
+    "best5kAdj": 21.87,
+    "bestRun": {
+     "date": "2026-06-10",
+     "name": "Tempo run",
+     "distanceKm": 10.61,
+     "pace": 4.694
+    },
+    "efficiency": 1.211,
+    "efficiencyAdj": 1.24,
+    "avgTempC": 24.3
+   },
+   {
+    "month": "2026-07",
+    "runs": 8,
+    "km": 78.8,
+    "best5k": 24.48,
+    "best5kAdj": 23.56,
+    "bestRun": {
+     "date": "2026-07-22",
+     "name": "Tempo run",
+     "distanceKm": 9.12,
+     "pace": 5.077
+    },
+    "efficiency": 1.126,
+    "efficiencyAdj": 1.159,
+    "avgTempC": 26.3
+   },
+   {
+    "month": "2026-08",
+    "runs": 13,
+    "km": 136.5,
+    "best5k": 23.13,
+    "best5kAdj": 22.52,
+    "bestRun": {
+     "date": "2026-08-26",
+     "name": "Tempo run",
+     "distanceKm": 12.48,
+     "pace": 4.888
+    },
+    "efficiency": 1.17,
+    "efficiencyAdj": 1.205,
+    "avgTempC": 25.8
+   },
+   {
+    "month": "2026-09",
+    "runs": 15,
+    "km": 186.7,
+    "best5k": 22.37,
+    "best5kAdj": 21.98,
+    "bestRun": {
+     "date": "2026-09-02",
+     "name": "Tempo run",
+     "distanceKm": 11.46,
+     "pace": 4.703
+    },
+    "efficiency": 1.27,
+    "efficiencyAdj": 1.285,
+    "avgTempC": 20.1
+   },
+   {
+    "month": "2026-10",
+    "runs": 2,
+    "km": 27.0,
+    "best5k": 26.98,
+    "best5kAdj": 26.93,
+    "bestRun": {
+     "date": "2026-10-05",
+     "name": "Easy run",
+     "distanceKm": 9.57,
+     "pace": 5.611
+    },
+    "efficiency": 1.227,
+    "efficiencyAdj": 1.231,
+    "avgTempC": 15.2
+   }
+  ],
+  "fitnessCompare": {
+   "peakMonth": "2026-06",
+   "peak5k": 21.87,
+   "now5k": 21.98,
+   "heatAdjusted": true,
+   "changePct": 0.5,
+   "efficiencyChangePct": 2.1,
+   "peakBestRun": {
+    "date": "2026-06-10",
+    "name": "Tempo run",
+    "distanceKm": 10.61,
+    "pace": 4.694
+   },
+   "nowBestRun": {
+    "date": "2026-09-02",
+    "name": "Tempo run",
+    "distanceKm": 11.46,
+    "pace": 4.703
+   },
+   "nowRuns": 21
+  },
+  "drift": {
+   "runs": [
+    {
+     "date": "2026-10-03",
+     "name": "Long run",
+     "distanceKm": 17.43,
+     "decoupling": 2.5,
+     "tempC": 15.3
+    },
+    {
+     "date": "2026-09-30",
+     "name": "Tempo run",
+     "distanceKm": 12.41,
+     "decoupling": 1.4,
+     "tempC": 19.2
+    },
+    {
+     "date": "2026-09-26",
+     "name": "Long run",
+     "distanceKm": 19.43,
+     "decoupling": 2.8,
+     "tempC": 18.6
+    },
+    {
+     "date": "2026-09-19",
+     "name": "Long run",
+     "distanceKm": 20.25,
+     "decoupling": 2.5,
+     "tempC": 18.0
+    },
+    {
+     "date": "2026-09-14",
+     "name": "Easy run",
+     "distanceKm": 10.99,
+     "decoupling": 2.2,
+     "tempC": 22.2
+    }
+   ],
+   "avg": 2.3
+  },
+  "dynamics": {
+   "now": {
+    "cadence": 168.5,
+    "strideCm": 110.8,
+    "gctMs": 249.5,
+    "vertOscCm": 8.9,
+    "vertRatio": 8.0
+   },
+   "before": {
+    "cadence": 171.1,
+    "strideCm": 108.0,
+    "gctMs": 256.8,
+    "vertOscCm": 8.9,
+    "vertRatio": 8.0
+   }
+  },
+  "hr": {
+   "maxHr": 188,
+   "maxHrSource": "Garmin settings",
+   "observedMaxHr": 183,
+   "restingHr": 50,
+   "lthr": 170,
+   "zones": [
+    94,
+    113,
+    132,
+    151,
+    170
+   ],
+   "zonesMethod": "hr max based",
+   "easyCap": 131,
+   "easySource": "top of your Garmin zone 2"
+  },
+  "garminLoad": null,
+  "shoes": [
+   {
+    "name": "Novablast 4",
+    "km": 137.3,
+    "runs": 12,
+    "lastUsed": "2026-10-05"
+   },
+   {
+    "name": "Pegasus 41",
+    "km": 76.5,
+    "runs": 5,
+    "lastUsed": "2026-10-03"
+   }
+  ],
+  "weight": {
+   "latest": 72.4,
+   "date": "2026-10-05",
+   "change28d": 0.2
+  },
   "efficiency": [
    {
     "date": "2026-07-15",
-    "value": 1.192
-   },
-   {
-    "date": "2026-07-16",
-    "value": 1.244
+    "value": 1.149
    },
    {
     "date": "2026-07-18",
-    "value": 1.175
+    "value": 1.078
    },
    {
     "date": "2026-07-20",
-    "value": 1.267
+    "value": 1.136
    },
    {
     "date": "2026-07-22",
-    "value": 1.256
-   },
-   {
-    "date": "2026-07-23",
-    "value": 1.171
+    "value": 1.201
    },
    {
     "date": "2026-07-25",
-    "value": 1.179
+    "value": 1.116
    },
    {
     "date": "2026-07-27",
-    "value": 1.218
+    "value": 1.075
    },
    {
     "date": "2026-07-29",
-    "value": 1.247
-   },
-   {
-    "date": "2026-07-30",
-    "value": 1.203
-   },
-   {
-    "date": "2026-08-01",
     "value": 1.167
    },
    {
     "date": "2026-08-03",
-    "value": 1.28
+    "value": 1.146
    },
    {
     "date": "2026-08-05",
-    "value": 1.252
+    "value": 1.178
    },
    {
     "date": "2026-08-06",
-    "value": 1.271
+    "value": 1.138
+   },
+   {
+    "date": "2026-08-08",
+    "value": 1.063
    },
    {
     "date": "2026-08-10",
-    "value": 1.177
+    "value": 1.131
    },
    {
     "date": "2026-08-12",
-    "value": 1.258
+    "value": 1.206
    },
    {
     "date": "2026-08-13",
-    "value": 1.188
-   },
-   {
-    "date": "2026-08-15",
-    "value": 1.203
-   },
-   {
-    "date": "2026-08-19",
-    "value": 1.296
+    "value": 1.183
    },
    {
     "date": "2026-08-20",
-    "value": 1.282
+    "value": 1.174
    },
    {
-    "date": "2026-08-22",
-    "value": 1.166
+    "date": "2026-08-24",
+    "value": 1.172
    },
    {
-    "date": "2026-08-29",
-    "value": 1.14
-   },
-   {
-    "date": "2026-08-31",
-    "value": 1.28
-   },
-   {
-    "date": "2026-09-02",
-    "value": 1.257
-   },
-   {
-    "date": "2026-09-03",
-    "value": 1.273
-   },
-   {
-    "date": "2026-09-05",
-    "value": 1.193
-   },
-   {
-    "date": "2026-09-07",
+    "date": "2026-08-26",
     "value": 1.196
    },
    {
+    "date": "2026-08-27",
+    "value": 1.17
+   },
+   {
+    "date": "2026-08-29",
+    "value": 1.097
+   },
+   {
+    "date": "2026-08-31",
+    "value": 1.125
+   },
+   {
+    "date": "2026-09-02",
+    "value": 1.304
+   },
+   {
+    "date": "2026-09-03",
+    "value": 1.223
+   },
+   {
+    "date": "2026-09-05",
+    "value": 1.159
+   },
+   {
+    "date": "2026-09-07",
+    "value": 1.246
+   },
+   {
     "date": "2026-09-09",
-    "value": 1.279
+    "value": 1.253
    },
    {
     "date": "2026-09-10",
-    "value": 1.251
+    "value": 1.243
    },
    {
     "date": "2026-09-12",
-    "value": 1.157
+    "value": 1.172
+   },
+   {
+    "date": "2026-09-14",
+    "value": 1.293
+   },
+   {
+    "date": "2026-09-17",
+    "value": 1.268
    },
    {
     "date": "2026-09-19",
-    "value": 1.203
+    "value": 1.172
    },
    {
     "date": "2026-09-21",
-    "value": 1.26
-   },
-   {
-    "date": "2026-09-23",
     "value": 1.244
    },
    {
     "date": "2026-09-24",
-    "value": 1.281
+    "value": 1.285
    },
    {
     "date": "2026-09-26",
-    "value": 1.244
+    "value": 1.17
    },
    {
     "date": "2026-09-28",
-    "value": 1.313
+    "value": 1.255
    },
    {
     "date": "2026-09-30",
-    "value": 1.265
-   },
-   {
-    "date": "2026-10-01",
-    "value": 1.287
+    "value": 1.298
    },
    {
     "date": "2026-10-03",
-    "value": 1.222
+    "value": 1.19
    },
    {
     "date": "2026-10-05",
-    "value": 1.318
+    "value": 1.264
    }
   ],
   "intensity": {
-   "easy": 75,
-   "moderate": 12,
-   "hard": 13,
-   "minutes": 928
+   "easy": 78,
+   "moderate": 11,
+   "hard": 11,
+   "minutes": 930
   },
   "paces": {
    "source": "Garmin race predictor",
@@ -2371,53 +7620,51 @@
     "marathon": 223.5
    },
    "easy": [
-    5.74,
-    6.24
+    5.9,
+    6.4
    ],
    "threshold": 4.89,
    "interval": 4.58,
-   "easyHrMax": 145,
-   "maxHr": 181
+   "easyHrMax": 131,
+   "easyHrSource": "top of your Garmin zone 2",
+   "maxHr": 188
   }
  },
  "today": {
-  "score": 62,
-  "level": "steady",
-  "label": "Good for steady training",
+  "score": 83,
+  "level": "push",
+  "label": "Ready to push",
   "source": "your HRV, resting HR, sleep and recent training",
   "factors": [
    {
     "effect": "+",
-    "text": "HRV 69 ms, 6% above your normal"
+    "text": "HRV 78 ms, 23% above your normal"
    },
    {
     "effect": "=",
-    "text": "Resting HR 53 bpm (+1 vs normal)"
+    "text": "Resting HR 51 bpm (-0 vs normal)"
    },
    {
     "effect": "=",
     "text": "Slept 6h 34m"
    },
    {
-    "effect": "=",
-    "text": "Body Battery 72"
-   },
-   {
-    "effect": "-",
-    "text": "Hard session yesterday"
+    "effect": "+",
+    "text": "Body Battery 98"
    }
   ],
-  "daysSinceHard": 0,
+  "daysSinceHard": 5,
   "date": "2026-10-05",
   "options": [
    {
-    "key": "easy",
-    "title": "Easy run",
-    "duration": "40\u201360 min",
-    "summary": "Relaxed, conversational pace: 5:44\u20136:14 /km, heart rate under 145 bpm.",
+    "key": "intervals",
+    "title": "Intervals",
+    "duration": "45\u201350 min",
+    "summary": "Short, fast repeats at 5K pace: 4:29\u20134:38 /km.",
     "steps": [
-     "40\u201360 min at 5:44\u20136:14 /km, heart rate under 145 bpm",
-     "Optional: 4\u20136 \u00d7 20 s relaxed strides at the end"
+     "15 min warm-up at 5:54\u20136:24 /km + 4 strides",
+     "6 \u00d7 800 m at 4:29\u20134:38 /km, 2 min easy jog between",
+     "10 min cool-down easy"
     ],
     "status": "recommended",
     "why": ""
@@ -2439,10 +7686,22 @@
     "key": "recovery",
     "title": "Recovery run",
     "duration": "25\u201335 min",
-    "summary": "Very easy, slower than your easy pace, heart rate under 145 bpm.",
+    "summary": "Very easy, slower than your easy pace, heart rate under 131 bpm.",
     "steps": [
-     "25\u201335 min very easy (around 6:14 /km or slower)",
+     "25\u201335 min very easy (around 6:24 /km or slower)",
      "Walk breaks are fine"
+    ],
+    "status": "good",
+    "why": ""
+   },
+   {
+    "key": "easy",
+    "title": "Easy run",
+    "duration": "40\u201360 min",
+    "summary": "Relaxed, conversational pace: 5:54\u20136:24 /km, heart rate under 131 bpm.",
+    "steps": [
+     "40\u201360 min at 5:54\u20136:24 /km, heart rate under 131 bpm",
+     "Optional: 4\u20136 \u00d7 20 s relaxed strides at the end"
     ],
     "status": "good",
     "why": ""
@@ -2451,11 +7710,24 @@
     "key": "long",
     "title": "Long run",
     "duration": "about 17 km",
-    "summary": "Builds endurance. Steady and easy: 5:44\u20136:14 /km. Better tomorrow or the day after, once you've recovered from your last hard session.",
+    "summary": "Builds endurance. Steady and easy: 5:54\u20136:24 /km.",
     "steps": [
-     "17 km at 5:44\u20136:14 /km, heart rate under 145 bpm",
+     "17 km at 5:54\u20136:24 /km, heart rate under 131 bpm",
      "Take water / fuel if over 75 min",
      "Keep the last 2 km relaxed, not a race"
+    ],
+    "status": "good",
+    "why": ""
+   },
+   {
+    "key": "tempo",
+    "title": "Tempo run",
+    "duration": "45\u201355 min",
+    "summary": "Threshold pace, comfortably hard: 4:50\u20134:56 /km.",
+    "steps": [
+     "15 min warm-up at 5:54\u20136:24 /km",
+     "3 \u00d7 8 min at 4:50\u20134:56 /km, 2 min easy jog between",
+     "10 min cool-down easy"
     ],
     "status": "good",
     "why": ""
@@ -2472,32 +7744,6 @@
     ],
     "status": "good",
     "why": ""
-   },
-   {
-    "key": "tempo",
-    "title": "Tempo run",
-    "duration": "45\u201355 min",
-    "summary": "Threshold pace, comfortably hard: 4:50\u20134:56 /km.",
-    "steps": [
-     "15 min warm-up at 5:44\u20136:14 /km",
-     "3 \u00d7 8 min at 4:50\u20134:56 /km, 2 min easy jog between",
-     "10 min cool-down easy"
-    ],
-    "status": "no",
-    "why": "You had a hard session recently; give it at least 48 hours."
-   },
-   {
-    "key": "intervals",
-    "title": "Intervals",
-    "duration": "45\u201350 min",
-    "summary": "Short, fast repeats at 5K pace: 4:29\u20134:38 /km.",
-    "steps": [
-     "15 min warm-up at 5:44\u20136:14 /km + 4 strides",
-     "6 \u00d7 800 m at 4:29\u20134:38 /km, 2 min easy jog between",
-     "10 min cool-down easy"
-    ],
-    "status": "no",
-    "why": "Save very hard efforts for a day when you're fully recovered."
    }
   ]
  },
@@ -2505,54 +7751,79 @@
   {
    "level": "watch",
    "title": "You're short on sleep",
-   "detail": "Averaging 6h 41m a night this week, average score 71; 1 night(s) under 6 hours. That's about 5h 44m below a 7h30 target. An earlier night or two would help recovery."
+   "detail": "Averaging 6h 43m a night this week, average score 79. That's about 5h 30m below a 7h30 target. An earlier night or two would help recovery."
+  },
+  {
+   "level": "watch",
+   "title": "Stress is higher this week",
+   "detail": "Average stress 31 vs 24 the week before. High all-day stress eats into recovery too."
   },
   {
    "level": "watch",
    "title": "Your long run is a big share of your week",
-   "detail": "Longest run in the last 2 weeks was 18.9 km. Keeping your long run under about 35\u201340% of your weekly distance lowers injury risk."
+   "detail": "Longest run in the last 2 weeks was 19.4 km. Keeping your long run under about 35\u201340% of your weekly distance lowers injury risk."
   },
   {
    "level": "good",
-   "title": "HRV is trending up",
-   "detail": "7-day average 69 ms, 6% above your baseline of 65 ms. You're absorbing training well."
+   "title": "Resting heart rate is down",
+   "detail": "50 bpm over the last 3 days vs your usual 52: a sign of good recovery or improving fitness."
   },
   {
    "level": "good",
    "title": "Training load is steady",
-   "detail": "6h 47m of training across 6 day(s) in the last 7 days, vs an average of 6h 01m a week over the 3 weeks before."
+   "detail": "5h 07m of training across 4 day(s) in the last 7 days, vs an average of 6h 10m a week over the 3 weeks before."
   },
   {
    "level": "good",
-   "title": "75% of your running is easy",
+   "title": "78% of your running is easy",
    "detail": "That's the 80/20 balance most coaches recommend: lots of easy running builds the base, the hard 20% builds speed."
   },
   {
    "level": "good",
    "title": "Aerobic fitness is improving",
-   "detail": "Your recent runs cover 4% more distance per heartbeat than earlier ones: you're running faster at the same effort."
+   "detail": "Your recent runs cover 6% more distance per heartbeat than earlier ones: you're running faster at the same effort."
   },
   {
    "level": "good",
-   "title": "VO2 max up 1.7",
-   "detail": "Now 51.4, up about 1.7 since 2026-07-15. Your aerobic engine is getting bigger."
+   "title": "VO2 max up 0.7",
+   "detail": "Now 51.4, up about 0.7 since 2026-01-01. Your aerobic engine is getting bigger."
+  },
+  {
+   "level": "good",
+   "title": "Your longest training block this year",
+   "detail": "This block started the week of 2026-07-13 and is in week 13. Since 2026-01-01, your earlier blocks lasted 5, 6, 8 weeks (average 6), each followed by 2+ quiet weeks. 1 of 3 ended within a few weeks of a jump of 30%+ in weekly distance; keeping increases around 10% a week may help this one last."
+  },
+  {
+   "level": "good",
+   "title": "Fitness vs June: about level with",
+   "detail": "Best heat-adjusted 5K-equivalent effort in the last 6 weeks: 21:59, vs 21:52 in June (+0.5%). At the same heart rate you cover 2% more distance than in June. This compares your best efforts, so it's only fair if you've run something hard recently."
+  },
+  {
+   "level": "good",
+   "title": "Little heart-rate drift on long runs",
+   "detail": "Average drift 2.3% over 5 long runs: your aerobic base holds up for the distance."
   },
   {
    "level": "info",
-   "title": "Daily steps down 17%",
-   "detail": "10,285 a day this week vs 12,406 the week before."
+   "title": "HRV is stable",
+   "detail": "7-day average 65 ms, in line with your baseline of 64 ms."
   },
   {
    "level": "info",
-   "title": "8.1 km run this week",
-   "detail": "Your last 4 weeks averaged 41.7 km. A sensible target for a full week is about 46 km (no more than ~10% above your average)."
+   "title": "9.6 km run this week",
+   "detail": "Your last 4 weeks averaged 41.3 km. A sensible target for a full week is about 45 km (no more than ~10% above your average)."
   },
   {
    "level": "info",
    "title": "2.6 to reach 'Superior'",
    "detail": "Your VO2 max of 51.4 rates 'Excellent' for your age and sex; 'Superior' starts at 54.0."
+  },
+  {
+   "level": "info",
+   "title": "Paces are heat-adjusted",
+   "detail": "Warm months (Jun, Jul, Aug, Sep) are corrected using temperature and dew point at the time of each run, so they compare fairly with cool ones."
   }
  ],
- "source": "sample",
- "fetchedAt": "2026-10-05T19:42:05+00:00"
+ "fetchedAt": "2026-10-05T20:57:04+00:00",
+ "source": "sample"
 }

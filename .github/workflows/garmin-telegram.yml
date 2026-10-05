@@ -29,15 +29,25 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       GARMIN_TOKENS_SEED: ${{ secrets.GARMIN_TOKENS }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # optional: Claude answers questions
       SUMMARY: ${{ github.event.schedule == '15 5 * * *' || (github.event_name == 'workflow_dispatch' && inputs.task != 'new activities') }}
       WATCH: ${{ github.event.schedule == '40 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.task != 'morning summary') }}
     steps:
       - name: Check secrets are set
         id: check
         run: |
-          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ] || [ -z "$GARMIN_TOKENS_SEED" ]; then
-            echo "::notice::Add the GARMIN_TOKENS, TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID secrets (see README). Skipping."
+          missing=""
+          [ -z "$GARMIN_TOKENS_SEED" ] && missing="$missing GARMIN_TOKENS"
+          [ -z "$TELEGRAM_BOT_TOKEN" ] && missing="$missing TELEGRAM_BOT_TOKEN"
+          [ -z "$TELEGRAM_CHAT_ID" ] && missing="$missing TELEGRAM_CHAT_ID"
+          if [ -n "$missing" ]; then
             echo "ready=false" >> "$GITHUB_OUTPUT"
+            msg="Missing repository secret(s):$missing. Add them under Settings → Secrets and variables → Actions → Repository secrets (see README)."
+            # A manual run should fail loudly; scheduled runs skip quietly until setup is done.
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              echo "::error::$msg"; exit 1
+            fi
+            echo "::notice::$msg Skipping."
           else
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
@@ -85,10 +95,15 @@ jobs:
         if: steps.check.outputs.ready == 'true' && env.WATCH == 'true'
         run: python activity_watch.py
 
+      # Replies to /report, /today and /refresh sent while your Mac was off.
+      - name: Answer Telegram commands
+        if: steps.check.outputs.ready == 'true' && env.WATCH == 'true'
+        run: python telegram_bot.py --once
+
       - name: Morning summary
         if: steps.check.outputs.ready == 'true' && env.SUMMARY == 'true'
         run: |
-          python fetch_garmin.py --days 28
+          python fetch_garmin.py --quick
           python telegram_summary.py
 
       - name: Tell me on Telegram if it failed

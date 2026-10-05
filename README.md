@@ -5,7 +5,10 @@ HRV, stress, Body Battery and recent activities, with plain-language insights
 and Telegram messages.
 
 - **`fetch_garmin.py`** signs in to Garmin Connect with your account and saves
-  your data to `site/data/garmin.json`.
+  your data to `site/data/garmin.json`: 90 days of sleep/HRV/daily data,
+  activities since 1 January 2026, laps and heart-rate/pace detail for runs over
+  4 km, weather for every run, and your Garmin heart-rate settings. History is
+  kept in `site/data/store/`, so each fetch only downloads what's new.
 - **`insights.py`** compares your recent days with your own baseline (sleep,
   HRV, resting heart rate, training load, stress, steps) and writes short
   insights into the same file.
@@ -16,6 +19,13 @@ and Telegram messages.
   shows that file as charts, tables and insights.
 - **`telegram_summary.py`** sends a morning summary to your Telegram.
 - **`activity_watch.py`** sends a Telegram message after each new activity.
+- **`telegram_bot.py`** answers `/report`, `/today` and `/refresh` sent to your bot.
+- **`coach_ai.py`** lets you ask Claude questions about your training from
+  Telegram, with your Garmin data as context (optional, needs an API key).
+- **`mcp_server.py`** connects the dashboard to the Claude desktop app, so you
+  can ask about your training in the normal Claude chat (no API key needed).
+- **`serve.py`** runs the dashboard locally with buttons for refreshing and
+  sending to Telegram, and keeps the bot answering within seconds.
 - **`.github/workflows/garmin-telegram.yml`** runs the two Telegram scripts on
   GitHub's servers, so they work while your Mac is off.
 
@@ -37,9 +47,14 @@ pip install -r requirements.txt
 ## Get your data
 
 ```bash
-python fetch_garmin.py            # last 30 days
-python fetch_garmin.py --days 90  # or further back
+python fetch_garmin.py                    # 90 days daily data, activities since 1 Jan 2026
+python fetch_garmin.py --since 2025-06-01 # go further back for activities
+python fetch_garmin.py --reanalyse        # recalculate from saved data, no Garmin login
 ```
+
+The first run downloads a lot (all days, all activities, laps for up to 40
+runs at a time, weather), so it takes a few minutes; run it in Terminal. After
+that, each fetch takes seconds and picks up the remaining run details.
 
 The first time, it asks for your Garmin email, password and, if you use 2-step
 verification, the code Garmin sends you. It then saves a login token in
@@ -50,12 +65,24 @@ Run it again whenever you want fresh numbers.
 
 ## View the dashboard
 
+The easy way: in Finder, open the `garmin-dashboard` folder and double-click
+**`start.command`**. It updates the project, installs what's needed, starts the
+dashboard and the Telegram bot, and opens the page. (The first time, macOS may
+ask you to confirm opening it.)
+
+Or from Terminal, inside the project folder:
+
 ```bash
-python -m http.server 8000 -d site
+python serve.py
 ```
 
-Then open <http://localhost:8000>. (Opening `index.html` directly from the file
-system doesn't work, because browsers block it from loading the data file.)
+Then open <http://localhost:8000>. Keep the Terminal window open while you use
+it. At the top you get **↻ Refresh from Garmin** and **Send report to
+Telegram**; after picking a workout, **Send to Telegram** sends you its plan.
+
+(`python -m http.server 8000 -d site` also works, just without those buttons.
+Opening `index.html` directly from the file system doesn't work, because
+browsers block it from loading the data file.)
 
 If `garmin.json` doesn't exist yet, the page shows demo data from
 `site/data/sample.json`, with a banner saying so. Regenerate the demo data with
@@ -74,7 +101,14 @@ If `garmin.json` doesn't exist yet, the page shows demo data from
 - **Running:** weekly distance (12 weeks), running efficiency (metres per
   heartbeat; rising means fitter), easy/moderate/hard balance, easy pace,
   VO2 max, cadence and race predictions.
-- Daily charts, recent activities and data sources.
+- **Training history:** weekly distance since January, training blocks (a block
+  ends after 2+ quiet weeks) with the week-on-week jump before each ended, and
+  fitness by month: best effort as a 5K-equivalent and distance per heartbeat,
+  both raw and heat-adjusted, compared with now.
+- **Run detail:** click any activity for weather, laps, heart rate and pace over
+  time, heart-rate drift, and your notes (run type, shoes, effort 1-10, comment).
+- **Notes & sources:** weight (from Garmin or logged here) and mileage per shoe.
+- Daily charts and recent activities.
 
 Paces come from Garmin's race predictions when available, otherwise from your
 best recent run. All of this is calculated on your computer; no AI service or
@@ -88,8 +122,14 @@ extra API is used. It's guidance, not medical advice.
   is updated (`pip install -U garminconnect`).
 - **Sign-in problems.** If you change your Garmin password or sign-in keeps
   failing, delete the `~/.garminconnect` folder and run the script again.
-- **Rate limits.** Fetching many months at once makes many requests; Garmin may
-  temporarily block you. Keep `--days` modest and re-run occasionally.
+- **Rate limits.** The first full download makes many requests; run details are
+  spread over several fetches (40 runs each) to stay under Garmin's limits.
+- **Weather** comes from [Open-Meteo](https://open-meteo.com) (free, no key) for
+  each run's start place and time, and is cached. "Heat-adjusted" paces use the
+  runner's rule of thumb on temperature + dew point; it's an estimate.
+- **Heart-rate numbers** (max HR, zones, easy ceiling, lactate threshold) come
+  from your Garmin settings when available, so the dashboard, Telegram and Claude
+  all use the same values.
 - **Missing metrics.** Values your watch doesn't record (for example HRV on
   older models) show as "—".
 
@@ -114,6 +154,61 @@ python telegram_summary.py            # send this morning's summary now
 python telegram_summary.py --dry-run  # just print it
 python activity_watch.py              # message any new activities
 ```
+
+### Ask your bot for a report
+
+Send these to your bot in Telegram:
+
+| Command | What you get |
+|---|---|
+| `/report` | today's full summary |
+| `/today` | readiness and workout options as buttons; tap one for the full plan |
+| `/refresh` | fetches new data from Garmin, then sends the report |
+
+While `python serve.py` (or `python telegram_bot.py`) is running on your Mac,
+the bot answers within seconds. When it isn't, the hourly GitHub job answers,
+so the reply can take up to an hour. The bot only answers your own chat.
+
+### Ask in the Claude desktop app (no API key)
+
+Connect the dashboard to the Claude desktop app on your Mac and ask in its
+normal chat: *"How ready am I to train today?"*, *"Refresh my Garmin data"*,
+*"How is my VO2 max trending?"*, *"Send the tempo workout to my Telegram"*.
+It uses your Claude subscription, not an API key.
+
+```bash
+cd ~/garmin-dashboard && source .venv/bin/activate
+pip install -r requirements.txt
+python mcp_server.py --install
+```
+
+Then quit Claude Desktop completely (⌘Q) and open it again. The first time
+Claude uses a tool it asks for permission; choose **Always allow** for the
+read-only ones. Claude Desktop starts the connector itself, so you don't need
+`serve.py` running for this. `--install` backs up your existing Claude Desktop
+settings first and keeps any other connectors.
+
+Tools Claude gets: `get_today`, `get_insights`, `get_running`, `get_vo2max`,
+`get_daily`, `get_activities`, `refresh_from_garmin`, `send_to_telegram`.
+This works only in Claude Desktop on your Mac (the phone app can't reach it).
+
+### Ask Claude questions in Telegram (optional)
+
+Send your bot any message that isn't a command, for example *"Should I run
+today?"*, *"Why is my HRV low?"* or *"Plan my week for a 10K"*, and Claude
+answers using your latest Garmin data. It remembers the last few questions so
+you can follow up; `/new` starts over.
+
+1. Create an API key at <https://console.anthropic.com> (API Keys → Create Key)
+   and add some credit. This is pay-per-use and separate from a Claude.ai
+   subscription; a question typically costs a few cents.
+2. Copy the key, then run `python coach_ai.py --setup` (it reads the key from
+   your clipboard and saves it to `claude.json`, which is gitignored).
+3. For answers while your Mac is off, also add an `ANTHROPIC_API_KEY`
+   repository secret on GitHub.
+
+You can also ask from Terminal: `python coach_ai.py "Should I run today?"`.
+Answers are coaching guidance, not medical advice.
 
 ### Run it automatically on GitHub
 

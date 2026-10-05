@@ -1,11 +1,13 @@
 """Download your own data from Garmin Connect into site/data/garmin.json.
 
 Uses the unofficial `garminconnect` library, which signs in the same way the
-Garmin Connect website does. Your password is only used for the first sign-in;
+Garmin Connect website does. History, per-run details and weather are kept in
+site/data/store/, so each run only fetches what's new. Your password is only used for the first sign-in;
 after that the saved login tokens in ~/.garminconnect are reused.
 
-    python fetch_garmin.py              # last 30 days
-    python fetch_garmin.py --days 90
+    python fetch_garmin.py              # 90 days of daily data, activities since 1 Jan 2026
+    python fetch_garmin.py --since 2025-06-01   # go further back for activities
+    python fetch_garmin.py --quick      # last 12 weeks only, fast (GitHub job)
     python fetch_garmin.py --sample     # write fake demo data, no Garmin login
     python fetch_garmin.py --reanalyse  # recalculate insights from saved data, no Garmin login
     python fetch_garmin.py --print-tokens  # show saved login for the GitHub secret
@@ -23,10 +25,18 @@ from pathlib import Path
 
 import coach
 import insights
+import run_detail
+import store
+import weather
 
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "site" / "data"
-ACTIVITY_DAYS = 84  # 12 weeks of activities for running trends
+DAILY_DAYS = 90  # sleep, HRV, resting HR, ... (a longer baseline for readiness trends)
+HISTORY_FROM = "2026-01-01"  # activities back to here (training blocks, fitness vs earlier months)
+DETAIL_MIN_KM = 4  # laps and time series for runs at least this long
+MAX_DETAILS_PER_FETCH = 40  # spread the first big download over a few fetches
+MAX_WEATHER_PER_FETCH = 150
+ACTIVITY_DAYS = 84  # used by the demo data
 TOKEN_DIR = os.getenv("GARMINTOKENS", "~/.garminconnect")
 
 
@@ -143,6 +153,14 @@ def activity_record(a):
         "trainingLoad": rnd(a.get("activityTrainingLoad")),
         "cadence": rnd(a.get("averageRunningCadenceInStepsPerMinute")),
         "vo2max": a.get("vO2MaxValue"),
+        # Running dynamics (need a compatible watch or HRM strap)
+        "strideCm": rnd(a.get("avgStrideLength")),
+        "gctMs": rnd(a.get("avgGroundContactTime")),
+        "vertOscCm": rnd(a.get("avgVerticalOscillation"), 1),
+        "vertRatio": rnd(a.get("avgVerticalRatio"), 1),
+        # Start point, rounded to ~100 m: only used to look up the weather
+        "lat": rnd(a.get("startLatitude"), 3),
+        "lon": rnd(a.get("startLongitude"), 3),
         # Minutes in heart-rate zones 1-5, when Garmin includes them.
         "hrZonesMin": ([round((a.get(f"hrTimeInZone_{z}") or 0) / 60, 1) for z in range(1, 6)]
                        if any(a.get(f"hrTimeInZone_{z}") for z in range(1, 6)) else None),
@@ -161,8 +179,47 @@ def first(v):
     return (v[0] if v else None) if isinstance(v, list) else v
 
 
+def find_key(obj, key):
+    """First value for `key` anywhere inside nested dicts/lists."""
+    if isinstance(obj, dict):
+        if key in obj and obj[key] is not None:
+            return obj[key]
+        obj = list(obj.values())
+    if isinstance(obj, list):
+        for v in obj:
+            found = find_key(v, key)
+            if found is not None:
+                return found
+    return None
+
+
+def fetch_settings(api, user):
+    """Your own heart-rate settings from Garmin: max HR, zones, lactate threshold."""
+    settings = {}
+    zones = safe("heart-rate zones", api.connectapi, "/biometric-service/heartRateZones")
+    if isinstance(zones, list) and zones:
+        # Prefer running-specific zones over the default set.
+        z = next((x for x in zones if (x.get("sport") or "").upper() == "RUNNING"), zones[0])
+        floors = [z.get(f"zone{i}Floor") for i in range(1, 6)]
+        if all(floors):
+            settings["zones"] = floors
+            settings["zonesMethod"] = (z.get("trainingMethod") or "").replace("_", " ").lower()
+        for key, ours in (("maxHeartRateUsed", "maxHr"), ("restingHeartRateUsed", "restingHr"),
+                          ("lactateThresholdHeartRateUsed", "lthr")):
+            if z.get(key):
+                settings[ours] = round(z[key])
+    if not settings.get("lthr"):
+        lthr = user.get("lactateThresholdHeartRate") or find_key(
+            safe("lactate threshold", lambda: api.get_lactate_threshold(latest=True)), "heartRate")
+        if lthr:
+            settings["lthr"] = round(lthr)
+    if settings:
+        settings["source"] = "Garmin"
+    return settings
+
+
 def fetch_extras(api, today):
-    """Garmin's own running metrics. Each is optional: older watches lack some."""
+    """Garmin's own running metrics and settings. Each is optional: older watches lack some."""
     ds = today.isoformat()
     extras = {}
 
@@ -178,6 +235,9 @@ def fetch_extras(api, today):
         if phrase:
             extras["trainingStatus"] = phrase.rstrip("_0123456789").replace("_", " ").capitalize()
             break
+    acute, chronic = find_key(ts, "dailyTrainingLoadAcute"), find_key(ts, "dailyTrainingLoadChronic")
+    if acute is not None:
+        extras["garminLoad"] = {"acute": round(acute), "chronic": round(chronic) if chronic else None}
     vo2 = dig(ts, "mostRecentVO2Max", "generic") or dig(first(safe("max metrics", api.get_max_metrics, ds)), "generic") or {}
     if vo2.get("vo2MaxPreciseValue") or vo2.get("vo2MaxValue"):
         extras["vo2max"] = round(vo2.get("vo2MaxPreciseValue") or vo2.get("vo2MaxValue"), 1)
@@ -193,6 +253,9 @@ def fetch_extras(api, today):
         extras["profile"] = profile
     if not extras.get("vo2max") and user.get("vo2MaxRunning"):
         extras["vo2max"] = round(user["vo2MaxRunning"], 1)
+    settings = fetch_settings(api, user)
+    if settings:
+        extras["settings"] = settings
 
     rp = first(safe("race predictions", api.get_race_predictions))
     if isinstance(rp, dict):
@@ -200,11 +263,162 @@ def fetch_extras(api, today):
         pred = {k: round(rp[g] / 60, 1) for k, g in keys.items() if rp.get(g)}
         if pred.get("10k"):
             extras["racePredictions"] = pred
+
+    body = safe("weight", api.get_body_composition, (today - timedelta(days=180)).isoformat(), ds) or {}
+    weights = {}
+    for w in body.get("dateWeightList") or []:
+        if w.get("weight") and w.get("calendarDate"):
+            weights[w["calendarDate"]] = round(w["weight"] / 1000, 1)  # grams -> kg
+    if weights:
+        extras["garminWeights"] = weights
     return extras
 
 
+# ---------- incremental sync into the local store ----------
+
+def sync_daily(api, days):
+    """Daily metrics: fetch days we don't have yet, plus the last two (still changing)."""
+    saved = store.read("daily.json", {})
+    today = date.today()
+    wanted = [(today - timedelta(days=i)).isoformat() for i in range(days)]
+    todo = [d for d in wanted if d not in saved or d >= (today - timedelta(days=1)).isoformat()]
+    print(f"Daily data: {len(todo)} day(s) to fetch ({len(saved)} saved)…")
+    for n, ds in enumerate(sorted(todo), 1):
+        saved[ds] = fetch_day(api, date.fromisoformat(ds))
+        print(f"  {ds}  ({n}/{len(todo)})", end="\r")
+        time.sleep(0.3)  # be gentle; Garmin rate-limits aggressive clients
+        if n % 20 == 0:
+            store.write("daily.json", saved)  # keep progress if interrupted
+    store.write("daily.json", saved)
+    return [saved[d] for d in sorted(saved) if d in wanted]
+
+
+def sync_activities(api, since):
+    """Activities since `since`. After the first full download, only the last few weeks
+    are re-fetched (to catch edits), the rest comes from the store."""
+    saved = {str(k): v for k, v in store.read("activities.json", {}).items()}
+    meta = store.read("meta.json", {})
+    today = date.today()
+    if meta.get("historyFrom", "9999") > since or not saved:
+        start = date.fromisoformat(since)
+    else:
+        newest = max((a["start"][:10] for a in saved.values() if a.get("start")), default=since)
+        start = max(date.fromisoformat(since), date.fromisoformat(newest) - timedelta(days=21))
+    print(f"Activities: fetching {start} to {today}…")
+    for a in fetch_activities(api, start, today):
+        old = saved.get(str(a["id"]), {})
+        a["decoupling"] = old.get("decoupling")  # computed from details, keep it
+        saved[str(a["id"])] = a
+    store.write("activities.json", saved)
+    meta["historyFrom"] = min(meta.get("historyFrom", since), since)
+    store.write("meta.json", meta)
+    return saved
+
+
+def sync_details(api, acts):
+    """Laps and time series for runs over DETAIL_MIN_KM, fetched once per run."""
+    todo = [a for a in sorted(acts.values(), key=lambda a: a.get("start") or "", reverse=True)
+            if "running" in (a.get("type") or "") and (a.get("distanceKm") or 0) >= DETAIL_MIN_KM
+            and store.detail(a["id"]) is None]
+    if not todo:
+        return
+    batch = todo[:MAX_DETAILS_PER_FETCH]
+    print(f"Run details: {len(batch)} of {len(todo)} run(s) to fetch…")
+    for n, a in enumerate(batch, 1):
+        splits = safe(f"laps {a['id']}", api.get_activity_splits, a["id"])
+        raw = safe(f"details {a['id']}", api.get_activity_details, a["id"], 1000, 0)
+        d = {"laps": run_detail.laps(splits), "series": run_detail.series(raw)}
+        d["decoupling"] = run_detail.decoupling(d)
+        store.save_detail(a["id"], d)
+        acts[str(a["id"])]["decoupling"] = d["decoupling"]
+        print(f"  {a['start'][:10]} {a.get('name') or ''}  ({n}/{len(batch)})", end="\r")
+        time.sleep(0.5)
+    store.write("activities.json", acts)
+    if len(todo) > len(batch):
+        print(f"\n  {len(todo) - len(batch)} more run(s) will be fetched next time.")
+
+
+def sync_weather(acts):
+    """Weather for each activity with a start location, looked up once."""
+    saved = store.read("weather.json", {})
+    retry_after = (date.today() - timedelta(days=1)).isoformat()
+    todo = [a for a in acts.values() if a.get("lat") is not None and a.get("start")
+            and (str(a["id"]) not in saved or saved[str(a["id"])].get("failed", "9999") < retry_after)]
+    if not todo:
+        return
+    print(f"Weather: {min(len(todo), MAX_WEATHER_PER_FETCH)} activit(ies) to look up…")
+    for a in todo[:MAX_WEATHER_PER_FETCH]:
+        w = weather.lookup(a["lat"], a["lon"], a["start"], a.get("durationMin"))
+        saved[str(a["id"])] = w or {"failed": date.today().isoformat()}
+    store.write("weather.json", saved)
+
+
+# ---------- assembling garmin.json ----------
+
+def enrich(activities, weather_by_id, notes, detail_dir="store/details"):
+    """Add weather, heat-adjusted pace, your notes and a link to per-run details."""
+    out = []
+    for a in activities:
+        a = dict(a)
+        a.pop("lat", None)
+        a.pop("lon", None)
+        w = weather_by_id.get(str(a["id"]))
+        if w and "failed" not in w:
+            a["weather"] = w
+            a["heatPct"] = weather.heat_slowdown_pct(w.get("tempC"), w.get("dewPointC"))
+            if a.get("distanceKm") and a.get("durationMin") and "running" in (a.get("type") or ""):
+                a["heatAdjPace"] = round(weather.adjusted_pace(a["durationMin"] / a["distanceKm"], a["heatPct"]), 3)
+        note = notes.get("runs", {}).get(str(a["id"]))
+        if note:
+            a["note"] = note
+        if a.get("decoupling") is not None or (detail_dir and store.detail(a["id"]) is not None):
+            a["detailPath"] = f"{detail_dir}/{a['id']}.json"
+        out.append(a)
+    return sorted(out, key=lambda a: a.get("start") or "", reverse=True)
+
+
+def finish(payload):
+    """Coaching, insights and timestamps on top of the raw data."""
+    payload.update(coach.build(payload))
+    payload["insights"] = insights.build(payload)
+    payload["fetchedAt"] = payload.get("fetchedAt") or datetime.now(timezone.utc).isoformat(timespec="seconds")
+    return payload
+
+
+def rebuild(fetched_at=None):
+    """Recalculate garmin.json from the store (after a note, or with --reanalyse)."""
+    target = DATA_DIR / "garmin.json"
+    old = json.loads(target.read_text()) if target.exists() else {}
+    acts = store.read("activities.json", {})
+    if not acts:
+        if not old:
+            sys.exit("No saved data yet. Run `python fetch_garmin.py` first.")
+        payload = old  # data from before the store existed
+    else:
+        daily = store.read("daily.json", {})
+        since = store.read("meta.json", {}).get("historyFrom", HISTORY_FROM)
+        notes = store.notes()
+        extras = dict(old.get("extras") or {})
+        extras["weights"] = {**extras.get("garminWeights", {}), **notes["weights"]}
+        payload = {
+            "athlete": old.get("athlete"),
+            "source": "garmin",
+            "historyFrom": since,
+            "daily": [daily[d] for d in sorted(daily)][-DAILY_DAYS:],
+            "activities": enrich([a for a in acts.values() if (a.get("start") or "") >= since],
+                                 store.read("weather.json", {}), notes),
+            "extras": extras,
+            "fetchedAt": fetched_at or old.get("fetchedAt"),
+        }
+    for k in ("today", "running", "insights"):
+        payload.pop(k, None)
+    target.write_text(json.dumps(finish(payload), indent=1))
+    return payload
+
+
 def sample_data(days):
-    """Plausible fake numbers so the dashboard can be tried without a Garmin account."""
+    """Plausible fake numbers so the dashboard can be tried without a Garmin account:
+    a year with build-and-stop training blocks, a hot summer and per-run details."""
     rnd = random.Random(7)
     today = date.today()
     daily = []
@@ -220,54 +434,96 @@ def sample_data(days):
             "lightMin": light, "remMin": rem, "awakeMin": rnd.randint(5, 40),
             "sleepScore": rnd.randint(62, 92), "hrv": rnd.randint(52, 78), "hrvStatus": "BALANCED",
         })
-    # Weekly pattern: easy, quality, easy, long run, plus a ride and strength.
-    plan = {0: ("running", "Easy run", 8, 50), 1: ("strength_training", "Strength", None, 40),
-            2: ("running", "Tempo run", 10, 52), 3: ("running", "Easy run", 7, 44),
-            5: ("running", "Long run", 16, 100), 6: ("cycling", "Road ride", 42, 95)}
-    activities = []
-    for i in range(0, max(days, ACTIVITY_DAYS)):
-        wd = (today - timedelta(days=i)).weekday()
-        if wd not in plan or rnd.random() < 0.15:
-            continue
-        t, name, dist, dur = plan[wd]
-        if t == "running":  # build fitness slowly over the 12 weeks
-            dist = dist * (1 + (ACTIVITY_DAYS - i) / ACTIVITY_DAYS * 0.25)
-        start = datetime.combine(today - timedelta(days=i), datetime.min.time()) + timedelta(hours=7, minutes=rnd.randint(0, 90))
-        activities.append({
-            "id": 1000 + i, "name": name, "type": t, "start": start.strftime("%Y-%m-%d %H:%M:%S"),
-            "distanceKm": round(dist * rnd.uniform(.8, 1.25), 2) if dist else None,
-            "durationMin": round(dur * rnd.uniform(.8, 1.3), 1), "avgHr": rnd.randint(118, 158),
-            "calories": rnd.randint(250, 900), "elevationM": rnd.randint(0, 400) if dist else None,
-        })
-        a = activities[-1]
-        a["maxHr"] = a["avgHr"] + rnd.randint(12, 30)
-        a["avgSpeedKmh"] = round(a["distanceKm"] / (a["durationMin"] / 60), 2) if a["distanceKm"] else None
-        a["aerobicTE"] = round(rnd.uniform(2.0, 4.2), 1)
-        a["anaerobicTE"] = round(rnd.uniform(0.0, 2.5), 1)
-        a["trainingLoad"] = rnd.randint(40, 220)
-        if t == "running":
-            a["avgHr"] = {"Easy run": rnd.randint(132, 145), "Long run": rnd.randint(138, 148), "Tempo run": rnd.randint(158, 168)}[name]
-            a["maxHr"] = a["avgHr"] + rnd.randint(8, 18)
-            a["cadence"] = rnd.randint(164, 176)
-            a["durationMin"] = round(a["distanceKm"] * {"Easy run": 6.0, "Long run": 6.1, "Tempo run": 5.0}[name] * (1 - (ACTIVITY_DAYS - i) / ACTIVITY_DAYS * 0.05), 1)
-            a["avgSpeedKmh"] = round(a["distanceKm"] / (a["durationMin"] / 60), 2)
-            easy = name != "Tempo run"
-            m = a["durationMin"]
-            a["hrZonesMin"] = [round(m * x, 1) for x in ((.15, .7, .1, .05, 0) if easy else (.1, .2, .2, .4, .1))]
-            a["aerobicTE"] = round(rnd.uniform(2.4, 3.2) if easy else rnd.uniform(3.6, 4.4), 1)
-    activities.sort(key=lambda a: a["start"], reverse=True)
-    for a in activities:  # Garmin attaches its VO2 max estimate to runs
+    since = date(today.year, 1, 1)
+    # Weeks off between blocks (build for a few weeks, then stop): offsets in weeks from 1 Jan.
+    breaks = {6, 7, 8, 15, 16, 25, 26, 27}
+    plan = {0: ("running", "Easy run", 7, 6.1), 1: ("strength_training", "Strength", None, 40),
+            2: ("running", "Tempo run", 8, 5.0), 3: ("running", "Easy run", 6, 6.0),
+            5: ("running", "Long run", 13, 6.2), 6: ("cycling", "Road ride", 42, 95)}
+    activities, details, weather_by_id = [], {}, {}
+    first_monday = since - timedelta(days=since.weekday())
+    d = since
+    while d <= today:
+        week = (d - first_monday).days // 7
+        if d.weekday() in plan and week not in breaks and rnd.random() > 0.12:
+            t, name, dist, pace = plan[d.weekday()]
+            block_week = week - max([b for b in breaks if b < week], default=-1)
+            month = d.month
+            summer = month in (6, 7, 8)
+            temp = {1: 2, 2: 4, 3: 8, 4: 12, 5: 17, 6: 24, 7: 27, 8: 26, 9: 20, 10: 13, 11: 7, 12: 3}[month] + rnd.uniform(-3, 3)
+            dew = temp - rnd.uniform(5, 10)
+            heat = weather.heat_slowdown_pct(temp, dew)
+            # Fitness improves within each block and peaks in June.
+            fitness = 1 - min(block_week, 9) * 0.006 - (0.03 if month == 6 else 0) - (0.015 if month >= 9 else 0)
+            start = datetime.combine(d, datetime.min.time()) + timedelta(hours=18 if summer else 7, minutes=rnd.randint(0, 60))
+            a = {"id": int(d.strftime("%Y%m%d")), "name": name, "type": t, "start": start.strftime("%Y-%m-%d %H:%M:%S"),
+                 "calories": rnd.randint(250, 900)}
+            if t == "running":
+                km = round(dist * (1 + min(block_week, 8) * 0.06) * rnd.uniform(.9, 1.1), 2)
+                p = pace * fitness * (1 + heat / 100) * rnd.uniform(.98, 1.02)
+                hr = {"Easy run": 140, "Long run": 144, "Tempo run": 164}[name] + rnd.randint(-4, 4) + (3 if summer else 0)
+                a.update({"distanceKm": km, "durationMin": round(km * p, 1), "avgHr": hr, "maxHr": hr + rnd.randint(8, 16),
+                          "cadence": rnd.randint(164, 176), "strideCm": rnd.randint(100, 118), "gctMs": rnd.randint(235, 265),
+                          "vertOscCm": round(rnd.uniform(8.2, 9.6), 1), "vertRatio": round(rnd.uniform(7.4, 8.6), 1),
+                          "elevationM": rnd.randint(10, 180), "vo2max": round(47 + (6 - abs(month - 6)) * 0.4 + rnd.uniform(-.3, .3)),
+                          "aerobicTE": round(rnd.uniform(2.4, 3.2) if name != "Tempo run" else rnd.uniform(3.6, 4.4), 1)})
+                m = a["durationMin"]
+                a["hrZonesMin"] = [round(m * x, 1) for x in ((.15, .7, .1, .05, 0) if name != "Tempo run" else (.1, .2, .2, .4, .1))]
+                a["avgSpeedKmh"] = round(km / (m / 60), 2)
+                weather_by_id[str(a["id"])] = {"tempC": round(temp, 1), "dewPointC": round(dew, 1),
+                                               "humidity": round(rnd.uniform(45, 85)), "windKmh": round(rnd.uniform(2, 18), 1), "source": "sample"}
+                if km >= DETAIL_MIN_KM and (today - d).days <= 21:
+                    n = int(km)
+                    laps = [{"lap": i + 1, "distanceKm": 1.0, "durationMin": round(p * (1 + (i / n) * 0.03 * (1 if summer else .5)), 2),
+                             "avgHr": hr - 6 + int(i * 12 / n), "cadence": a["cadence"] + rnd.randint(-3, 3),
+                             "strideCm": a["strideCm"], "gctMs": a["gctMs"], "vertOscCm": a["vertOscCm"]} for i in range(n)]
+                    for lap in laps:
+                        lap["pace"] = lap["durationMin"]
+                    t_series = [round(x * 0.5, 2) for x in range(int(m * 2))]
+                    det = {"laps": laps, "series": {
+                        "t": t_series, "hr": [min(hr + 10, round(hr - 15 + 15 * min(1, x / 8) + x * 0.08)) for x in t_series],
+                        "pace": [round(p * rnd.uniform(.96, 1.04), 3) for _ in t_series],
+                        "cadence": [a["cadence"] + rnd.randint(-4, 4) for _ in t_series], "elev": [400 + rnd.randint(-5, 5) for _ in t_series]}}
+                    det["decoupling"] = run_detail.decoupling(det)
+                    a["decoupling"] = det["decoupling"]
+                    details[a["id"]] = det
+            else:
+                a.update({"distanceKm": dist and round(dist * rnd.uniform(.8, 1.2), 2), "durationMin": round(pace * rnd.uniform(.9, 1.2), 1),
+                          "avgHr": rnd.randint(118, 140)})
+            activities.append(a)
+        d += timedelta(days=1)
+    notes = {"runs": {}, "weights": {(today - timedelta(days=i)).isoformat(): round(72.5 - i * 0.01 + rnd.uniform(-.3, .3), 1) for i in range(0, 90, 7)}}
+    shoes = ["Novablast 4", "Novablast 4", "Pegasus 41"]
+    for a in activities[-25:]:
         if a["type"] == "running":
-            days_ago = (today - date.fromisoformat(a["start"][:10])).days
-            a["vo2max"] = round(49.6 + (ACTIVITY_DAYS - days_ago) / ACTIVITY_DAYS * 1.8 + rnd.uniform(-0.3, 0.3))
+            notes["runs"][str(a["id"])] = {"runType": rnd.choice(["solo", "solo", "run club", "with friends"]),
+                                           "shoes": rnd.choice(shoes), "effort": rnd.randint(3, 8)}
     extras = {"vo2max": 51.4, "trainingStatus": "Productive", "profile": {"sex": "male", "age": 38},
-              "racePredictions": {"5k": 22.9, "10k": 47.6, "half": 105.8, "marathon": 223.5}}
-    return {"athlete": "Demo athlete", "daily": daily, "activities": activities, "extras": extras}
+              "racePredictions": {"5k": 22.9, "10k": 47.6, "half": 105.8, "marathon": 223.5},
+              "settings": {"maxHr": 188, "restingHr": 50, "lthr": 170, "zones": [94, 113, 132, 151, 170],
+                           "zonesMethod": "hr max based", "source": "sample"},
+              "weights": notes["weights"]}
+    payload = {"athlete": "Demo athlete", "historyFrom": since.isoformat(), "daily": daily,
+               "activities": enrich(activities, weather_by_id, notes, detail_dir=None), "extras": extras}
+    # Demo per-run details live next to sample.json, not in your private store.
+    sample_dir = DATA_DIR / "sample-details"
+    sample_dir.mkdir(parents=True, exist_ok=True)
+    for old in sample_dir.glob("*.json"):
+        old.unlink()
+    for act_id, det in details.items():
+        (sample_dir / f"{act_id}.json").write_text(json.dumps(det))
+    for a in payload["activities"]:
+        if a["id"] in details:
+            a["detailPath"] = f"sample-details/{a['id']}.json"
+    return payload
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--days", type=int, default=30, help="how many days back to fetch (default 30)")
+    p.add_argument("--days", type=int, default=DAILY_DAYS, help=f"days of sleep/HRV/daily data to keep (default {DAILY_DAYS})")
+    p.add_argument("--since", default=HISTORY_FROM, help=f"fetch activities back to this date (default {HISTORY_FROM})")
+    p.add_argument("--quick", action="store_true",
+                   help="last 12 weeks only, no per-run details or weather (used by the GitHub job)")
     p.add_argument("--sample", action="store_true", help="write fake demo data to site/data/sample.json")
     p.add_argument("--reanalyse", action="store_true",
                    help="recalculate insights and coaching from the saved data, without contacting Garmin")
@@ -284,43 +540,38 @@ def main():
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     if args.reanalyse:
-        target = DATA_DIR / "garmin.json"
-        if not target.exists():
-            sys.exit("No saved data yet. Run `python fetch_garmin.py` first.")
-        payload = json.loads(target.read_text())
-        payload.update(coach.build(payload))
-        payload["insights"] = insights.build(payload)
-        target.write_text(json.dumps(payload, indent=1))
-        print(f"Recalculated insights and coaching for {len(payload.get('daily', []))} days. Reload the page.")
+        payload = rebuild()
+        print(f"Recalculated insights and coaching for {len(payload.get('activities', []))} activities. Reload the page.")
         return
     if args.sample:
-        payload, target = sample_data(args.days), DATA_DIR / "sample.json"
-    else:
-        api = connect()
-        end = date.today()
-        start = end - timedelta(days=args.days - 1)
-        print(f"Fetching {args.days} days from Garmin Connect ({start} to {end})…")
-        daily = []
-        for i in range(args.days):
-            d = start + timedelta(days=i)
-            daily.append(fetch_day(api, d))
-            print(f"  {d}", end="\r")
-            time.sleep(0.3)  # be gentle; Garmin rate-limits aggressive clients
-        print("Fetching activities and running metrics…")
-        payload = {
-            "athlete": safe("name", api.get_full_name),
-            "daily": daily,
-            "activities": fetch_activities(api, end - timedelta(days=max(args.days, ACTIVITY_DAYS) - 1), end),
-            "extras": fetch_extras(api, end),
-        }
-        target = DATA_DIR / "garmin.json"
+        payload = finish(sample_data(DAILY_DAYS))
+        payload["source"] = "sample"
+        (DATA_DIR / "sample.json").write_text(json.dumps(payload, indent=1))
+        print(f"Saved demo data: {len(payload['daily'])} days, {len(payload['activities'])} activities")
+        return
 
-    payload.update(coach.build(payload))
-    payload["insights"] = insights.build(payload)
-    payload["source"] = "sample" if args.sample else "garmin"
-    payload["fetchedAt"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    target.write_text(json.dumps(payload, indent=1))
-    print(f"\nSaved {len(payload['daily'])} days and {len(payload['activities'])} activities to {target.relative_to(ROOT)}")
+    try:
+        date.fromisoformat(args.since)
+    except ValueError:
+        sys.exit("--since must be a date like 2026-01-01")
+    api = connect()
+    today = date.today()
+    if args.quick:
+        args.days, args.since = min(args.days, 28), max(args.since, (today - timedelta(days=ACTIVITY_DAYS)).isoformat())
+    sync_daily(api, max(7, args.days))
+    acts = sync_activities(api, args.since)
+    if not args.quick:
+        sync_details(api, acts)
+        sync_weather(acts)
+    print("\nFetching settings and running metrics…")
+    target = DATA_DIR / "garmin.json"
+    old = json.loads(target.read_text()) if target.exists() else {}
+    old.update({"athlete": safe("name", api.get_full_name) or old.get("athlete"), "extras": fetch_extras(api, today)})
+    target.write_text(json.dumps(old))
+    payload = rebuild(fetched_at=datetime.now(timezone.utc).isoformat(timespec="seconds"))
+    runs = sum(1 for a in payload["activities"] if "running" in (a.get("type") or ""))
+    print(f"Saved {len(payload['daily'])} days and {len(payload['activities'])} activities "
+          f"({runs} runs since {payload['historyFrom']}) to site/data/{target.name}")
 
 
 if __name__ == "__main__":
