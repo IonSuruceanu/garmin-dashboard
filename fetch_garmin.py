@@ -34,7 +34,12 @@ def dig(obj, *keys):
 
 
 def connect():
-    from garminconnect import Garmin, GarminConnectAuthenticationError
+    from garminconnect import (
+        Garmin,
+        GarminConnectAuthenticationError,
+        GarminConnectConnectionError,
+        GarminConnectTooManyRequestsError,
+    )
 
     token_path = Path(TOKEN_DIR).expanduser()
     token_path.mkdir(parents=True, exist_ok=True)
@@ -55,6 +60,14 @@ def connect():
         sys.exit(
             f"Garmin sign-in failed: {e}\n"
             f"If you changed your password, delete {token_path} and run again."
+        )
+    except (GarminConnectTooManyRequestsError, GarminConnectConnectionError) as e:
+        # Each run tries several sign-in methods, so retrying straight away
+        # only extends Garmin's block.
+        sys.exit(
+            f"Garmin is temporarily blocking sign-ins from this internet connection ({e}).\n"
+            "Wait 1-2 hours without retrying, or connect to a different network\n"
+            "(for example your phone's hotspot) and run the script once."
         )
     return api
 
