@@ -1,0 +1,10 @@
+# Your real Garmin data stays on your machine - never commit it
+site/data/garmin.json
+
+# Saved Garmin login tokens
+.garminconnect/
+
+.venv/
+venv/
+__pycache__/
+.DS_Store
