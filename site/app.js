@@ -56,8 +56,10 @@
     $('sync-line').textContent = (data.source === 'sample' ? 'Demo data · generated ' : 'Synced from Garmin Connect ') + ago(data.fetchedAt) +
       (rows.length ? ' · ' + day(rows[0].date) + ' – ' + day(rows[rows.length - 1].date) : '');
     if (data.source === 'sample') showBanner('You are looking at <strong>demo data</strong>. Run <code>python fetch_garmin.py</code> to load your own Garmin data.');
+    renderToday();
     renderTiles(rows);
     renderInsights();
+    renderRunning();
     renderCharts(rows);
     renderActivities();
     renderSources();
@@ -96,6 +98,121 @@
     }).join('');
   }
 
+  // ---------- today ----------
+  var OPT_TAG = { recommended: 'Recommended', good: 'Good option', no: 'Not today' };
+  function choiceKey(d) { return 'garmin-choice-' + d; }
+  function getChoice(d) { try { return localStorage.getItem(choiceKey(d)); } catch (e) { return null; } }
+  function setChoice(d, k) { try { k ? localStorage.setItem(choiceKey(d), k) : localStorage.removeItem(choiceKey(d)); } catch (e) {} }
+
+  function renderToday() {
+    var t = data.today;
+    $('today-panel').hidden = !t;
+    if (!t) return;
+    $('today-title').textContent = 'Today · ' + day(t.date, { weekday: 'long', day: 'numeric', month: 'short' });
+    $('today-source').textContent = 'Readiness from ' + t.source;
+    var effect = { '+': ['plus', '+'], '-': ['minus', '−'], '=': ['same', '·'] };
+    $('readiness').className = 'readiness ' + t.level;
+    $('readiness').innerHTML =
+      '<span class="tile-label">Readiness</span>' +
+      '<div class="ready-score">' + t.score + '<small> / 100</small></div>' +
+      '<div class="ready-meter" role="img" aria-label="Readiness ' + t.score + ' out of 100"><span style="width:' + t.score + '%"></span></div>' +
+      '<span class="ready-label">' + esc(t.label) + '</span>' +
+      '<ul class="factors">' + (t.factors || []).map(function (f) {
+        var e = effect[f.effect] || effect['='];
+        return '<li class="' + e[0] + '"><b aria-hidden="true">' + e[1] + '</b>' + esc(f.text) + '</li>';
+      }).join('') + '</ul>';
+
+    var chosen = getChoice(t.date);
+    $('options').innerHTML = t.options.map(function (o) {
+      return '<button class="option ' + o.status + (o.key === chosen ? ' chosen' : '') + '" data-key="' + o.key + '" aria-pressed="' + (o.key === chosen) + '">' +
+        '<span class="opt-tag ' + (o.key === chosen ? 'chosen' : o.status) + '">' + (o.key === chosen ? 'Your choice' : OPT_TAG[o.status]) + '</span>' +
+        '<h4>' + esc(o.title) + '</h4><span class="dur">' + esc(o.duration) + '</span>' +
+        '<p>' + esc(o.summary) + '</p>' + (o.why ? '<p class="why">' + esc(o.why) + '</p>' : '') + '</button>';
+    }).join('');
+
+    var pick = t.options.filter(function (o) { return o.key === chosen; })[0];
+    $('choice').hidden = !pick;
+    if (pick) {
+      $('choice').innerHTML = '<span class="tile-label">Your plan today</span><h3>' + esc(pick.title) + ' · ' + esc(pick.duration) + '</h3>' +
+        '<ol>' + pick.steps.map(function (st) { return '<li>' + esc(st) + '</li>'; }).join('') + '</ol>' +
+        '<div class="choice-actions">' + (pick.status === 'no' ? '<span class="muted">Heads up: ' + esc(pick.why) + '</span>' : '') +
+        '<button class="link-btn" data-clear>Change my choice</button></div>';
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    if (!data || !data.today) return;
+    var opt = e.target.closest('.option');
+    if (opt) { setChoice(data.today.date, opt.dataset.key); renderToday(); $('choice').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+    if (e.target.closest('[data-clear]')) { setChoice(data.today.date, null); renderToday(); }
+  });
+
+  // ---------- running ----------
+  function pace(p) { if (p == null) return '—'; var t = Math.round(p * 60); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); }
+  function raceTime(min) {
+    var t = Math.round(min * 60), h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), sec = t % 60;
+    return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(sec).padStart(2, '0');
+  }
+
+  function renderRunning() {
+    var r = data.running;
+    var has = r && r.weekly && r.weekly.some(function (w) { return w.runs; });
+    $('running-panel').hidden = !has;
+    if (!has) return;
+    var p = r.paces || {};
+    $('running-status').textContent = r.trainingStatus ? 'Garmin training status: ' + r.trainingStatus : '';
+    var tiles = [
+      { label: 'This week', value: num(r.thisWeekKm, 1), unit: 'km', note: r.runsThisWeek + ' run' + (r.runsThisWeek === 1 ? '' : 's') + ' so far' },
+      { label: '4-week average', value: num(r.avgWeekKm, 1), unit: 'km', note: 'per week' },
+      { label: 'Longest (2 wks)', value: num(r.longestRecentKm, 1), unit: 'km', note: r.daysSinceLong < 99 ? 'last long run ' + r.daysSinceLong + ' d ago' : '' },
+      { label: 'Easy pace', value: p.easy ? pace(p.easy[0]) + '–' + pace(p.easy[1]) : '—', unit: '/km', note: p.easyHrMax ? 'HR under ' + p.easyHrMax : '' },
+      { label: 'VO2 max', value: r.vo2max ? num(r.vo2max, 1) : '—', note: 'from Garmin' },
+      { label: 'Cadence', value: num(r.cadence), unit: 'spm', note: '4-week average' }
+    ];
+    $('run-tiles').innerHTML = tiles.map(function (t) {
+      return '<div class="tile"><span class="tile-label">' + t.label + '</span><span class="tile-value">' + t.value +
+        (t.unit && t.value !== '—' ? '<small>' + t.unit + '</small>' : '') + '</span><span class="tile-note">' + esc(t.note) + '</span></div>';
+    }).join('');
+
+    var pr = p.predictions || {};
+    var names = [['5k', '5K'], ['10k', '10K'], ['half', 'Half'], ['marathon', 'Marathon']];
+    $('predictions').innerHTML = pr['10k'] ? '<span class="tile-label">Race predictions</span>' + names.filter(function (n) { return pr[n[0]]; }).map(function (n) {
+      return '<span>' + n[1] + ' <strong>' + raceTime(pr[n[0]]) + '</strong></span>';
+    }).join('') + '<span class="muted">' + esc(p.source || '') + '</span>' : '';
+
+    var box = $('run-charts');
+    box.innerHTML = '';
+    var weeks = r.weekly.map(function (w) { return { date: w.week, km: w.km, runs: w.runs, partial: w.partial }; });
+    addChart(box, weeks, { key: 'km', title: 'Weekly distance', kind: 'bar', partialLast: true,
+      fmt: function (v, row) { return num(v, 1) + ' km · ' + row.runs + ' run' + (row.runs === 1 ? '' : 's'); },
+      when: function (row) { return 'Week of ' + day(row.date) + (row.partial ? ' (so far)' : ''); },
+      axis: function (v) { return num(v); },
+      summary: 'last 12 weeks' });
+    var eff = (r.efficiency || []).slice(-30);
+    if (eff.length >= 4) {
+      addChart(box, eff, { key: 'value', title: 'Running efficiency', kind: 'line', minSpan: 0.06, round: 0.02,
+        fmt: function (v) { return num(v, 2) + ' m per heartbeat'; },
+        axis: function (v) { return num(v, 2); },
+        summary: 'metres per heartbeat · higher = fitter' });
+    }
+
+    var it = r.intensity;
+    $('intensity').innerHTML = it ? '<h3 class="sub-head">Effort balance, last 4 weeks <span class="muted">(' + hm(it.minutes) + ' of running · aim for ~80% easy)</span></h3>' +
+      '<div class="int-bar" role="img" aria-label="Easy ' + it.easy + '%, moderate ' + it.moderate + '%, hard ' + it.hard + '%">' +
+      [['easy', 1], ['moderate', 2], ['hard', 3]].map(function (z) { return it[z[0]] ? '<span style="width:' + it[z[0]] + '%;background:var(--int-' + z[1] + ')"></span>' : ''; }).join('') + '</div>' +
+      '<div class="int-legend">' + [['Easy', 'easy', 1], ['Moderate', 'moderate', 2], ['Hard', 'hard', 3]].map(function (z) {
+        return '<span><i style="background:var(--int-' + z[2] + ')"></i>' + z[0] + ' <strong>' + it[z[1]] + '%</strong></span>';
+      }).join('') + '</div>' : '';
+  }
+
+  function addChart(wrap, rows, c) {
+    var fig = document.createElement('figure');
+    fig.className = 'chart'; fig.style.margin = 0;
+    fig.innerHTML = '<div class="chart-head"><h3>' + c.title + '</h3><span class="muted">' + esc(c.summary) + '</span></div>';
+    wrap.appendChild(fig);
+    drawChart(fig, rows, c);
+  }
+
   var CHARTS = [
     { key: 'steps', title: 'Steps', kind: 'bar', fmt: function (v) { return num(v); }, summary: function (r) { return 'avg ' + num(avg(r, 'steps')); } },
     { key: 'sleepMin', title: 'Sleep', kind: 'bar', fmt: hm, axis: function (v) { return Math.round(v / 60) + 'h'; }, summary: function (r) { return 'avg ' + hm(avg(r, 'sleepMin')); } },
@@ -118,7 +235,9 @@
   function niceMax(v) {
     if (!v) return 1;
     var p = Math.pow(10, Math.floor(Math.log10(v))), n = v / p;
-    return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * p;
+    var steps = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+    for (var i = 0; i < steps.length; i++) if (n <= steps[i]) return steps[i] * p;
+    return 10 * p;
   }
 
   function drawChart(box, rows, c) {
@@ -133,8 +252,9 @@
     var lo = 0, hi;
     if (c.kind === 'bar') hi = niceMax(Math.max.apply(null, present));
     else {
-      var mn = Math.min.apply(null, present), mx = Math.max.apply(null, present), span = Math.max(mx - mn, 4);
-      lo = Math.floor((mn - span * 0.25) / 2) * 2; hi = Math.ceil((mx + span * 0.25) / 2) * 2;
+      var mn = Math.min.apply(null, present), mx = Math.max.apply(null, present);
+      var span = Math.max(mx - mn, c.minSpan || 4), stepV = c.round || 2;
+      lo = Math.floor((mn - span * 0.25) / stepV) * stepV; hi = Math.ceil((mx + span * 0.25) / stepV) * stepV;
     }
     var iw = W - pad.l - pad.r, ih = H - pad.t - pad.b, n = rows.length, step = iw / n;
     var x = function (i) { return pad.l + step * (i + 0.5); };
@@ -159,7 +279,7 @@
         var top = y(v), h = Math.max(1, y(lo) - top), rad = Math.min(4, bw / 2, h);
         // Rounded top corners only; the bottom stays square on the baseline.
         var x0 = x(i) - bw / 2, x1 = x0 + bw, base = y(lo);
-        marks.push(el('path', { 'class': 'bar', d: 'M' + x0 + ',' + base + 'V' + (top + rad) + 'Q' + x0 + ',' + top + ' ' + (x0 + rad) + ',' + top + 'H' + (x1 - rad) + 'Q' + x1 + ',' + top + ' ' + x1 + ',' + (top + rad) + 'V' + base + 'Z' }, svg));
+        marks.push(el('path', { 'class': 'bar' + (c.partialLast && i === n - 1 ? ' partial' : ''), d: 'M' + x0 + ',' + base + 'V' + (top + rad) + 'Q' + x0 + ',' + top + ' ' + (x0 + rad) + ',' + top + 'H' + (x1 - rad) + 'Q' + x1 + ',' + top + ' ' + x1 + ',' + (top + rad) + 'V' + base + 'Z' }, svg));
       });
     } else {
       var d = '', pen = false;
@@ -190,7 +310,7 @@
       } else {
         marks.forEach(function (m, j) { if (m) m.classList.toggle('dim', j !== i); });
       }
-      tooltip.innerHTML = '<strong>' + (v == null ? 'No data' : c.fmt(v)) + '</strong>' + day(r.date, { weekday: 'short', day: 'numeric', month: 'short' });
+      tooltip.innerHTML = '<strong>' + (v == null ? 'No data' : c.fmt(v, r)) + '</strong>' + (c.when ? c.when(r, i) : day(r.date, { weekday: 'short', day: 'numeric', month: 'short' }));
       tooltip.hidden = false;
       var tx = e.clientX + 14, ty = e.clientY - 12, tw = tooltip.offsetWidth;
       if (tx + tw > window.innerWidth - 8) tx = e.clientX - tw - 14;
@@ -248,6 +368,6 @@
   var resizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () { if (data) renderCharts(visibleDays()); }, 150);
+    resizeTimer = setTimeout(function () { if (data) { renderCharts(visibleDays()); renderRunning(); } }, 150);
   });
 })();

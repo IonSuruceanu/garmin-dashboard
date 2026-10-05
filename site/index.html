@@ -27,6 +27,21 @@
 
   <div class="banner" id="banner" hidden></div>
 
+  <section class="panel today" id="today-panel" hidden>
+    <div class="panel-head">
+      <h2 id="today-title">Today</h2>
+      <span class="muted" id="today-source"></span>
+    </div>
+    <div class="today-grid">
+      <div class="readiness" id="readiness"></div>
+      <div>
+        <div class="choice" id="choice" hidden></div>
+        <h3 class="sub-head">What would you like to do?</h3>
+        <div class="options" id="options"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="tiles" id="tiles" aria-label="Summary"></section>
 
   <section class="panel" id="insights-panel" hidden>
@@ -35,6 +50,17 @@
       <span class="muted">Compared with your own baseline · not medical advice</span>
     </div>
     <div class="insights" id="insights"></div>
+  </section>
+
+  <section class="panel" id="running-panel" hidden>
+    <div class="panel-head">
+      <h2>Running</h2>
+      <span class="muted" id="running-status"></span>
+    </div>
+    <div class="tiles inner" id="run-tiles"></div>
+    <div class="predictions" id="predictions"></div>
+    <div class="charts" id="run-charts"></div>
+    <div class="intensity" id="intensity"></div>
   </section>
 
   <section class="charts" id="charts" aria-label="Daily trends"></section>

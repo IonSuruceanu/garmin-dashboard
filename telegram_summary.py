@@ -66,6 +66,11 @@ def send(message):
                                            "parse_mode": "HTML", "disable_web_page_preview": "true"})
 
 
+
+def esc(text):
+    """Escape for Telegram HTML (apostrophes and quotes can stay as they are)."""
+    return html.escape(text, quote=False)
+
 # ---------- message ----------
 
 def avg(rows, key):
@@ -137,13 +142,26 @@ def build_message(data):
             bits = [f"{a['distanceKm']:.2f} km" if a.get("distanceKm") else None,
                     hm(a["durationMin"]) if a.get("durationMin") else None,
                     f"{a['avgHr']:.0f} bpm" if a.get("avgHr") else None]
-            lines.append(f"🏃 {html.escape(a.get('name') or 'Activity')}: " + " · ".join(b for b in bits if b))
+            lines.append(f"🏃 {esc(a.get('name') or 'Activity')}: " + " · ".join(b for b in bits if b))
+
+    t = data.get("today")
+    if t and t.get("options"):
+        rec = next((o for o in t["options"] if o["status"] == "recommended"), None)
+        lines += ["", f"<b>🏃 Today: {esc(t['label'])}</b> (readiness {t['score']}/100)"]
+        if rec:
+            lines.append(f"👉 <b>{esc(rec['title'])}</b>, {esc(rec['duration'])}: {esc(rec['summary'])}")
+        others = [o["title"] for o in t["options"] if o["status"] == "good"]
+        avoid = [o["title"] for o in t["options"] if o["status"] == "no"]
+        if others:
+            lines.append("Also fine: " + esc(", ".join(others)))
+        if avoid:
+            lines.append("Not today: " + esc(", ".join(avoid)))
 
     tips = [i for i in data.get("insights") or [] if i["level"] in ("watch", "good")][:2]
     if tips:
         lines += ["", "<b>Insights</b>"]
         for i in tips:
-            lines.append(f"{'⚠️' if i['level'] == 'watch' else '✅'} <b>{html.escape(i['title'])}</b>: {html.escape(i['detail'])}")
+            lines.append(f"{'⚠️' if i['level'] == 'watch' else '✅'} <b>{esc(i['title'])}</b>: {esc(i['detail'])}")
 
     if data.get("source") == "sample":
         lines += ["", "<i>(demo data, not your real numbers)</i>"]

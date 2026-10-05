@@ -7,6 +7,8 @@ are rules of thumb, not medical advice.
 
 from datetime import date, timedelta
 
+import coach
+
 GOOD, WATCH, INFO = "good", "watch", "info"
 
 
@@ -147,5 +149,7 @@ def build(data):
     today = date.fromisoformat(daily[-1]["date"])
     found = (recovery(daily) + sleep(daily) + training_load(daily, acts, today)
              + daily_life(daily) + hard_days_and_hrv(daily, acts))
+    if data.get("running"):
+        found += coach.running_insights(data["running"])
     found.sort(key=lambda i: ORDER[i[0]])
     return [{"level": level, "title": title, "detail": detail} for level, title, detail in found]

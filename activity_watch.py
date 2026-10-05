@@ -28,6 +28,11 @@ TE_LABELS = [(1, "no real effect"), (2, "minor"), (3, "maintaining fitness"), (4
              (5, "highly improving"), (99, "overreaching")]
 
 
+
+def esc(text):
+    """Escape for Telegram HTML (apostrophes and quotes can stay as they are)."""
+    return html.escape(text, quote=False)
+
 def mmss(minutes):
     m, s = divmod(round(minutes * 60), 60)
     return f"{m}:{s:02d}"
@@ -89,7 +94,7 @@ def compare(a, history):
 def message(a, history):
     start = datetime.strptime(a["start"], "%Y-%m-%d %H:%M:%S") if a.get("start") else None
     kind = (a.get("type") or "activity").replace("_", " ")
-    lines = [f"<b>🏁 {html.escape(a.get('name') or kind.title())}</b>",
+    lines = [f"<b>🏁 {esc(a.get('name') or kind.title())}</b>",
              f"{kind.capitalize()}" + (f" · {start:%a %d %b, %H:%M}" if start else ""), ""]
     main = [f"{a['distanceKm']:.2f} km" if a.get("distanceKm") else None,
             hm(a["durationMin"]) if a.get("durationMin") else None,
@@ -110,7 +115,7 @@ def message(a, history):
         lines.append(f"📈 Training load {a['trainingLoad']}")
     note = compare(a, history)
     if note:
-        lines += ["", f"<i>{html.escape(note)}</i>"]
+        lines += ["", f"<i>{esc(note)}</i>"]
     return "\n".join(lines)
 
 

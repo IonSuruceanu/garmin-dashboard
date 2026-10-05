@@ -9,6 +9,9 @@ and Telegram messages.
 - **`insights.py`** compares your recent days with your own baseline (sleep,
   HRV, resting heart rate, training load, stress, steps) and writes short
   insights into the same file.
+- **`coach.py`** analyses your running (weekly distance, efficiency, effort
+  balance, race predictions, training paces) and works out today's readiness
+  and workout options.
 - **`site/`** is a plain web page (HTML, CSS and JavaScript, no build step) that
   shows that file as charts, tables and insights.
 - **`telegram_summary.py`** sends a morning summary to your Telegram.
@@ -57,6 +60,25 @@ system doesn't work, because browsers block it from loading the data file.)
 If `garmin.json` doesn't exist yet, the page shows demo data from
 `site/data/sample.json`, with a banner saying so. Regenerate the demo data with
 `python fetch_garmin.py --sample`.
+
+## What the dashboard shows
+
+- **Today:** a readiness score (Garmin's own if your watch provides it,
+  otherwise calculated from HRV, resting heart rate, sleep, Body Battery and
+  recent training) with the reasons behind it, and workout options: rest,
+  recovery run, easy run, long run, tempo, intervals, strength. Each is marked
+  *Recommended*, *Good option* or *Not today* (with why). Click one to choose
+  it and see the full workout with paces from your own data. Your choice is
+  remembered in this browser for the day.
+- **What's going on:** insights on recovery, sleep, training load and running.
+- **Running:** weekly distance (12 weeks), running efficiency (metres per
+  heartbeat; rising means fitter), easy/moderate/hard balance, easy pace,
+  VO2 max, cadence and race predictions.
+- Daily charts, recent activities and data sources.
+
+Paces come from Garmin's race predictions when available, otherwise from your
+best recent run. All of this is calculated on your computer; no AI service or
+extra API is used. It's guidance, not medical advice.
 
 ## Good to know
 
