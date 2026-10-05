@@ -17,6 +17,8 @@ and Telegram messages.
 - **`telegram_summary.py`** sends a morning summary to your Telegram.
 - **`activity_watch.py`** sends a Telegram message after each new activity.
 - **`telegram_bot.py`** answers `/report`, `/today` and `/refresh` sent to your bot.
+- **`coach_ai.py`** lets you ask Claude questions about your training from
+  Telegram, with your Garmin data as context (optional, needs an API key).
 - **`serve.py`** runs the dashboard locally with buttons for refreshing and
   sending to Telegram, and keeps the bot answering within seconds.
 - **`.github/workflows/garmin-telegram.yml`** runs the two Telegram scripts on
@@ -143,6 +145,24 @@ Send these to your bot in Telegram:
 While `python serve.py` (or `python telegram_bot.py`) is running on your Mac,
 the bot answers within seconds. When it isn't, the hourly GitHub job answers,
 so the reply can take up to an hour. The bot only answers your own chat.
+
+### Ask Claude questions (optional)
+
+Send your bot any message that isn't a command, for example *"Should I run
+today?"*, *"Why is my HRV low?"* or *"Plan my week for a 10K"*, and Claude
+answers using your latest Garmin data. It remembers the last few questions so
+you can follow up; `/new` starts over.
+
+1. Create an API key at <https://console.anthropic.com> (API Keys → Create Key)
+   and add some credit. This is pay-per-use and separate from a Claude.ai
+   subscription; a question typically costs a few cents.
+2. Copy the key, then run `python coach_ai.py --setup` (it reads the key from
+   your clipboard and saves it to `claude.json`, which is gitignored).
+3. For answers while your Mac is off, also add an `ANTHROPIC_API_KEY`
+   repository secret on GitHub.
+
+You can also ask from Terminal: `python coach_ai.py "Should I run today?"`.
+Answers are coaching guidance, not medical advice.
 
 ### Run it automatically on GitHub
 

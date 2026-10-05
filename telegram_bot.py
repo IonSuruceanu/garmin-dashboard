@@ -3,7 +3,9 @@
     /report   today's full summary
     /today    readiness and workout options, as buttons to pick from
     /refresh  fetch new data from Garmin, then send the report
+    /new      start a new conversation with Claude
     /help     list the commands
+    anything else is a question for Claude (needs `python coach_ai.py --setup`)
 
     python telegram_bot.py          # keep listening (replies within seconds)
     python telegram_bot.py --once   # handle waiting messages and exit (GitHub Actions)
@@ -22,13 +24,15 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import coach_ai
 import telegram_summary as tg
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "site" / "data" / "garmin.json"
 STALE_HOURS = 3
 COMMANDS = [("report", "Today's full summary"), ("today", "Readiness and workout options"),
-            ("refresh", "Fetch new data from Garmin, then report"), ("help", "List the commands")]
+            ("refresh", "Fetch new data from Garmin, then report"),
+            ("new", "Start a new conversation with Claude"), ("help", "List the commands")]
 _refresh_lock = threading.Lock()
 
 
@@ -109,6 +113,12 @@ def today_message(data):
 HELP = "\n".join(["<b>Garmin bot</b>"] + [f"/{c} · {d}" for c, d in COMMANDS])
 
 
+def help_text():
+    if coach_ai.enabled():
+        return HELP + "\n\nOr just ask a question, e.g. <i>Should I run today?</i> or <i>Why is my HRV low?</i>"
+    return HELP + "\n\n<i>To ask Claude questions here, run</i> <code>python coach_ai.py --setup</code> <i>on your Mac.</i>"
+
+
 # ---------- handling ----------
 
 def handle(update, token, chat_id):
@@ -135,8 +145,16 @@ def handle(update, token, chat_id):
         tg.send("⏳ Fetching from Garmin…")
         refresh()
         tg.send(tg.build_message(load_data()))
+    elif command == "/new":
+        coach_ai.reset()
+        tg.send("🧹 New conversation. Ask me anything about your training.")
+    elif msg.get("text") and not command.startswith("/") and coach_ai.enabled():
+        # A question for Claude, answered with your latest Garmin data.
+        tg.telegram(token, "sendChatAction", {"chat_id": chat_id, "action": "typing"})
+        answer = coach_ai.ask(msg["text"], fresh_data())
+        tg.send("🤖 " + esc(answer))
     else:
-        tg.send(HELP)
+        tg.send(help_text())
 
 
 def safe_handle(update, token, chat_id):

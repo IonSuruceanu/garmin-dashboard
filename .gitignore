@@ -4,6 +4,8 @@ site/data/garmin.json
 # Saved Garmin login tokens and Telegram bot token
 .garminconnect/
 telegram.json
+claude.json
+chat_history.json
 
 .venv/
 venv/
