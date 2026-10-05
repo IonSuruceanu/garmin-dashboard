@@ -19,6 +19,8 @@ and Telegram messages.
 - **`telegram_bot.py`** answers `/report`, `/today` and `/refresh` sent to your bot.
 - **`coach_ai.py`** lets you ask Claude questions about your training from
   Telegram, with your Garmin data as context (optional, needs an API key).
+- **`mcp_server.py`** connects the dashboard to the Claude desktop app, so you
+  can ask about your training in the normal Claude chat (no API key needed).
 - **`serve.py`** runs the dashboard locally with buttons for refreshing and
   sending to Telegram, and keeps the bot answering within seconds.
 - **`.github/workflows/garmin-telegram.yml`** runs the two Telegram scripts on
@@ -146,7 +148,30 @@ While `python serve.py` (or `python telegram_bot.py`) is running on your Mac,
 the bot answers within seconds. When it isn't, the hourly GitHub job answers,
 so the reply can take up to an hour. The bot only answers your own chat.
 
-### Ask Claude questions (optional)
+### Ask in the Claude desktop app (no API key)
+
+Connect the dashboard to the Claude desktop app on your Mac and ask in its
+normal chat: *"How ready am I to train today?"*, *"Refresh my Garmin data"*,
+*"How is my VO2 max trending?"*, *"Send the tempo workout to my Telegram"*.
+It uses your Claude subscription, not an API key.
+
+```bash
+cd ~/garmin-dashboard && source .venv/bin/activate
+pip install -r requirements.txt
+python mcp_server.py --install
+```
+
+Then quit Claude Desktop completely (⌘Q) and open it again. The first time
+Claude uses a tool it asks for permission; choose **Always allow** for the
+read-only ones. Claude Desktop starts the connector itself, so you don't need
+`serve.py` running for this. `--install` backs up your existing Claude Desktop
+settings first and keeps any other connectors.
+
+Tools Claude gets: `get_today`, `get_insights`, `get_running`, `get_vo2max`,
+`get_daily`, `get_activities`, `refresh_from_garmin`, `send_to_telegram`.
+This works only in Claude Desktop on your Mac (the phone app can't reach it).
+
+### Ask Claude questions in Telegram (optional)
 
 Send your bot any message that isn't a command, for example *"Should I run
 today?"*, *"Why is my HRV low?"* or *"Plan my week for a 10K"*, and Claude
