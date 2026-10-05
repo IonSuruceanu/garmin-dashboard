@@ -57,6 +57,7 @@
       (rows.length ? ' · ' + day(rows[0].date) + ' – ' + day(rows[rows.length - 1].date) : '');
     if (data.source === 'sample') showBanner('You are looking at <strong>demo data</strong>. Run <code>python fetch_garmin.py</code> to load your own Garmin data.');
     renderTiles(rows);
+    renderInsights();
     renderCharts(rows);
     renderActivities();
     renderSources();
@@ -75,6 +76,23 @@
     $('tiles').innerHTML = tiles.map(function (t) {
       return '<div class="tile"><span class="tile-label">' + t.label + '</span><span class="tile-value">' + t.value +
         (t.unit && t.value !== '—' ? '<small>' + t.unit + '</small>' : '') + '</span><span class="tile-note">' + esc(t.note) + '</span></div>';
+    }).join('');
+  }
+
+  // Insights are computed by insights.py when the data is fetched, so they
+  // describe the latest days regardless of the range selected above.
+  var INSIGHT_TAG = {
+    watch: ['Watch', '<path d="M12 8v5M12 16.5v.5"/><path d="M10.3 3.9L2.5 18a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>'],
+    good: ['Good', '<path d="M5 12l5 5 9-10"/>'],
+    info: ['Note', '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>']
+  };
+  function renderInsights() {
+    var list = data.insights || [];
+    $('insights-panel').hidden = !list.length;
+    $('insights').innerHTML = list.map(function (i) {
+      var tag = INSIGHT_TAG[i.level] || INSIGHT_TAG.info;
+      return '<article class="insight ' + esc(i.level) + '"><span class="insight-tag"><svg viewBox="0 0 24 24" aria-hidden="true">' + tag[1] + '</svg>' + tag[0] + '</span>' +
+        '<h3>' + esc(i.title) + '</h3><p>' + esc(i.detail) + '</p></article>';
     }).join('');
   }
 

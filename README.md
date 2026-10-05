@@ -1,14 +1,20 @@
 # garmin-dashboard
 
 A personal dashboard for your own Garmin data: steps, sleep, resting heart rate,
-HRV, stress, Body Battery and recent activities.
-
-It has two parts:
+HRV, stress, Body Battery and recent activities, with plain-language insights
+and Telegram messages.
 
 - **`fetch_garmin.py`** signs in to Garmin Connect with your account and saves
   your data to `site/data/garmin.json`.
+- **`insights.py`** compares your recent days with your own baseline (sleep,
+  HRV, resting heart rate, training load, stress, steps) and writes short
+  insights into the same file.
 - **`site/`** is a plain web page (HTML, CSS and JavaScript, no build step) that
-  shows that file as charts and tables.
+  shows that file as charts, tables and insights.
+- **`telegram_summary.py`** sends a morning summary to your Telegram.
+- **`activity_watch.py`** sends a Telegram message after each new activity.
+- **`.github/workflows/garmin-telegram.yml`** runs the two Telegram scripts on
+  GitHub's servers, so they work while your Mac is off.
 
 Your data and your Garmin login stay on your computer. `site/data/garmin.json`
 and the saved login tokens are listed in `.gitignore`, so they are never committed.
@@ -64,3 +70,56 @@ If `garmin.json` doesn't exist yet, the page shows demo data from
   temporarily block you. Keep `--days` modest and re-run occasionally.
 - **Missing metrics.** Values your watch doesn't record (for example HRV on
   older models) show as "—".
+
+## Telegram messages
+
+### Connect your bot (once, on your Mac)
+
+1. In Telegram, open **@BotFather**, send `/newbot`, pick a name and a username
+   ending in `bot`. BotFather replies with a **token** like `123456:ABC-xyz`.
+2. Run:
+   ```bash
+   python telegram_summary.py --setup
+   ```
+   Paste the token, then open your new bot in Telegram, press **Start**, and
+   press Enter in Terminal. You'll get a test message. The token is saved in
+   `telegram.json`, which is gitignored.
+
+Then, on your Mac:
+
+```bash
+python telegram_summary.py            # send this morning's summary now
+python telegram_summary.py --dry-run  # just print it
+python activity_watch.py              # message any new activities
+```
+
+### Run it automatically on GitHub
+
+The workflow sends the morning summary at about 07:15 Swiss summer time
+(06:15 in winter) and checks for new activities every hour. Your Garmin data
+is never committed; it only exists while the job runs.
+
+1. On your Mac, print your saved Garmin login:
+   ```bash
+   python fetch_garmin.py --print-tokens
+   ```
+2. On GitHub, open the repo → **Settings → Secrets and variables → Actions →
+   New repository secret**, and add three secrets:
+
+   | Name | Value |
+   |---|---|
+   | `GARMIN_TOKENS` | everything `--print-tokens` printed |
+   | `TELEGRAM_BOT_TOKEN` | the token from BotFather |
+   | `TELEGRAM_CHAT_ID` | the chat id `--setup` printed |
+3. Open the **Actions** tab → **Garmin → Telegram** → **Run workflow** to test it.
+
+Notes:
+
+- Scheduled workflows only run from the repository's default branch (`main`).
+- Activity messages arrive within about an hour of the activity syncing to
+  Garmin Connect. Garmin doesn't offer instant notifications to personal apps.
+- Each run refreshes the Garmin login and keeps it in the repo's private
+  Actions cache. If runs start failing with a sign-in error (you'll get a
+  Telegram alert), run `python fetch_garmin.py` on your Mac and update the
+  `GARMIN_TOKENS` secret with the new `--print-tokens` output.
+- On a private repo this uses roughly 750 of the 2,000 free Actions minutes a month.

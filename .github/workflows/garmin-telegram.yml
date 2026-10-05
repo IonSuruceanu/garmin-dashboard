@@ -1,0 +1,106 @@
+name: Garmin → Telegram
+
+on:
+  schedule:
+    # Times are UTC. GitHub may start scheduled runs a few minutes late.
+    - cron: "15 5 * * *" # morning summary: 07:15 in Switzerland in summer, 06:15 in winter
+    - cron: "40 * * * *" # every hour: message about any new activity
+  workflow_dispatch: # "Run workflow" button for testing
+    inputs:
+      task:
+        description: What to run
+        type: choice
+        options: [both, morning summary, new activities]
+        default: both
+
+permissions:
+  contents: read
+
+# One run at a time, so two runs never refresh the Garmin login at once.
+concurrency:
+  group: garmin
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GARMIN_TOKENS_SEED: ${{ secrets.GARMIN_TOKENS }}
+      SUMMARY: ${{ github.event.schedule == '15 5 * * *' || (github.event_name == 'workflow_dispatch' && inputs.task != 'new activities') }}
+      WATCH: ${{ github.event.schedule == '40 * * * *' || (github.event_name == 'workflow_dispatch' && inputs.task != 'morning summary') }}
+    steps:
+      - name: Check secrets are set
+        id: check
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ] || [ -z "$GARMIN_TOKENS_SEED" ]; then
+            echo "::notice::Add the GARMIN_TOKENS, TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID secrets (see README). Skipping."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.ready == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.ready == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      # Garmin refreshes the login on each run. The refreshed login (and the list
+      # of activities already messaged) is kept in the Actions cache, which is
+      # private to this repo, so the next run starts from it.
+      - name: Restore Garmin login
+        if: steps.check.outputs.ready == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.garminconnect
+          key: garmin-state-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: garmin-state-
+
+      - name: Use GARMIN_TOKENS secret if it is new
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          umask 077
+          mkdir -p ~/.garminconnect
+          seed_hash=$(printf '%s' "$GARMIN_TOKENS_SEED" | sha256sum | cut -d' ' -f1)
+          # A changed secret (e.g. after signing in again on the Mac) replaces the cached login.
+          if [ ! -f ~/.garminconnect/garmin_tokens.json ] || [ "$(cat ~/.garminconnect/seed.sha 2>/dev/null)" != "$seed_hash" ]; then
+            printf '%s' "$GARMIN_TOKENS_SEED" > ~/.garminconnect/garmin_tokens.json
+            echo "$seed_hash" > ~/.garminconnect/seed.sha
+            echo "Using login from the GARMIN_TOKENS secret."
+          else
+            echo "Using login saved by the previous run."
+          fi
+
+      - name: Install
+        if: steps.check.outputs.ready == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Message new activities
+        if: steps.check.outputs.ready == 'true' && env.WATCH == 'true'
+        run: python activity_watch.py
+
+      - name: Morning summary
+        if: steps.check.outputs.ready == 'true' && env.SUMMARY == 'true'
+        run: |
+          python fetch_garmin.py --days 28
+          python telegram_summary.py
+
+      - name: Tell me on Telegram if it failed
+        if: failure() && steps.check.outputs.ready == 'true'
+        run: |
+          curl -sS -o /dev/null "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=⚠️ Garmin → Telegram failed. Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Save refreshed Garmin login
+        if: always() && steps.check.outputs.ready == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.garminconnect
+          key: garmin-state-${{ github.run_id }}-${{ github.run_attempt }}

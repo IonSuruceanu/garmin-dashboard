@@ -7,6 +7,7 @@ after that the saved login tokens in ~/.garminconnect are reused.
     python fetch_garmin.py              # last 30 days
     python fetch_garmin.py --days 90
     python fetch_garmin.py --sample     # write fake demo data, no Garmin login
+    python fetch_garmin.py --print-tokens  # show saved login for the GitHub secret
 """
 
 import argparse
@@ -18,6 +19,8 @@ import sys
 import time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+
+import insights
 
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "site" / "data"
@@ -50,6 +53,8 @@ def connect():
     password = os.getenv("GARMIN_PASSWORD")
     has_tokens = any(token_path.iterdir())
     if not has_tokens and not (email and password):
+        if not sys.stdin.isatty():
+            sys.exit(f"No saved Garmin login in {token_path} and no GARMIN_EMAIL/GARMIN_PASSWORD set.")
         email = email or input("Garmin email: ").strip()
         password = password or getpass.getpass("Garmin password: ")
 
@@ -114,21 +119,31 @@ def fetch_day(api, d):
     }
 
 
+def activity_record(a):
+    """Trim a Garmin activity to the fields the dashboard and Telegram use."""
+    def rnd(v, n=0):
+        return round(v, n) if v is not None else None
+    return {
+        "id": a.get("activityId"),
+        "name": a.get("activityName"),
+        "type": dig(a, "activityType", "typeKey"),
+        "start": a.get("startTimeLocal"),
+        "distanceKm": round(a["distance"] / 1000, 2) if a.get("distance") else None,
+        "durationMin": round(a["duration"] / 60, 1) if a.get("duration") else None,
+        "avgHr": rnd(a.get("averageHR")),
+        "maxHr": rnd(a.get("maxHR")),
+        "avgSpeedKmh": round(a["averageSpeed"] * 3.6, 2) if a.get("averageSpeed") else None,
+        "calories": rnd(a.get("calories")),
+        "elevationM": rnd(a.get("elevationGain")),
+        "aerobicTE": rnd(a.get("aerobicTrainingEffect"), 1),
+        "anaerobicTE": rnd(a.get("anaerobicTrainingEffect"), 1),
+        "trainingLoad": rnd(a.get("activityTrainingLoad")),
+    }
+
+
 def fetch_activities(api, start, end):
     raw = safe("activities", api.get_activities_by_date, start.isoformat(), end.isoformat()) or []
-    out = []
-    for a in raw:
-        out.append({
-            "id": a.get("activityId"),
-            "name": a.get("activityName"),
-            "type": dig(a, "activityType", "typeKey"),
-            "start": a.get("startTimeLocal"),
-            "distanceKm": round(a["distance"] / 1000, 2) if a.get("distance") else None,
-            "durationMin": round(a["duration"] / 60, 1) if a.get("duration") else None,
-            "avgHr": a.get("averageHR"),
-            "calories": a.get("calories"),
-            "elevationM": a.get("elevationGain"),
-        })
+    out = [activity_record(a) for a in raw]
     out.sort(key=lambda a: a["start"] or "", reverse=True)
     return out
 
@@ -162,6 +177,12 @@ def sample_data(days):
             "durationMin": round(dur * rnd.uniform(.8, 1.3), 1), "avgHr": rnd.randint(118, 158),
             "calories": rnd.randint(250, 900), "elevationM": rnd.randint(0, 400) if dist else None,
         })
+        a = activities[-1]
+        a["maxHr"] = a["avgHr"] + rnd.randint(12, 30)
+        a["avgSpeedKmh"] = round(a["distanceKm"] / (a["durationMin"] / 60), 2) if a["distanceKm"] else None
+        a["aerobicTE"] = round(rnd.uniform(2.0, 4.2), 1)
+        a["anaerobicTE"] = round(rnd.uniform(0.0, 2.5), 1)
+        a["trainingLoad"] = rnd.randint(40, 220)
     return {"athlete": "Demo athlete", "daily": daily, "activities": activities}
 
 
@@ -169,7 +190,16 @@ def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--days", type=int, default=30, help="how many days back to fetch (default 30)")
     p.add_argument("--sample", action="store_true", help="write fake demo data to site/data/sample.json")
+    p.add_argument("--print-tokens", action="store_true",
+                   help="print your saved Garmin login, to paste into the GARMIN_TOKENS GitHub secret")
     args = p.parse_args()
+
+    if args.print_tokens:
+        token_file = Path(TOKEN_DIR).expanduser() / "garmin_tokens.json"
+        if not token_file.exists():
+            sys.exit("No saved Garmin login yet. Run `python fetch_garmin.py` once first.")
+        print(token_file.read_text())
+        return
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     if args.sample:
@@ -192,6 +222,7 @@ def main():
         }
         target = DATA_DIR / "garmin.json"
 
+    payload["insights"] = insights.build(payload)
     payload["source"] = "sample" if args.sample else "garmin"
     payload["fetchedAt"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     target.write_text(json.dumps(payload, indent=1))

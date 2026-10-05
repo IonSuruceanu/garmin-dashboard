@@ -104,6 +104,16 @@ tr:last-child td { border-bottom: 0; }
 .badge.ok { background: var(--ok-soft); color: var(--ok); }
 .badge.off { background: var(--bg); color: var(--muted); }
 
+.insights { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.insight { border: 1px solid var(--line); border-left: 3px solid var(--tone); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.insight.watch { --tone: var(--warn); --tone-soft: var(--warn-soft); }
+.insight.good { --tone: var(--ok); --tone-soft: var(--ok-soft); }
+.insight.info { --tone: var(--accent); --tone-soft: var(--accent-soft); }
+.insight-tag { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--tone); background: var(--tone-soft); padding: 3px 8px; }
+.insight-tag svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.insight h3 { font-size: 15px; }
+.insight p { margin: 0; color: var(--muted); font-size: 14px; }
+
 @media (max-width: 1000px) { .tiles { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 760px) {
   .page { padding: 24px 16px 48px; }
